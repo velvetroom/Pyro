@@ -1,9 +1,14 @@
-//
-//  Application.swift
-//  Pyro
-//
-//  Created by zero on 08.07.18.
-//  Copyright © 2018 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+@UIApplicationMain class Application:UIResponder, UIApplicationDelegate {
+    var window:UIWindow?
+    
+    func application(_:UIApplication, didFinishLaunchingWithOptions:[UIApplicationLaunchOptionsKey:Any]?) -> Bool {
+        let window:UIWindow = UIWindow(frame:UIScreen.main.bounds)
+        window.backgroundColor = UIColor.white
+        window.makeKeyAndVisible()
+        window.rootViewController = Navigation()
+        self.window = window
+        return true
+    }
+}
