@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2F063725DAC1A22CB214248E /* Pods_Pyro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C8CB7B5D80F6803E1D1E56 /* Pods_Pyro.framework */; };
+		DA39B12820F255630085FA39 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39B12720F255630085FA39 /* Interactor.swift */; };
+		DA39B12A20F255860085FA39 /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39B12920F255860085FA39 /* UsersPresenter.swift */; };
+		DA39B12C20F255D50085FA39 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39B12B20F255D50085FA39 /* UsersView.swift */; };
+		DA39B12E20F256B60085FA39 /* NavigationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39B12D20F256B60085FA39 /* NavigationProtocol.swift */; };
 		DA5DD3EF20F24BB1005BBA1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA5DD3EB20F24BB0005BBA1D /* Localizable.strings */; };
 		DA5DD3F020F24BB1005BBA1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5DD3EE20F24BB0005BBA1D /* LaunchScreen.storyboard */; };
 		DA5DD3F620F24FCB005BBA1D /* TestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5DD3F520F24FCB005BBA1D /* TestParser.swift */; };
@@ -29,6 +33,10 @@
 		28C8CB7B5D80F6803E1D1E56 /* Pods_Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07271B43219EEA35FDD3C73 /* Pods-Pyro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pyro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pyro/Pods-Pyro.release.xcconfig"; sourceTree = "<group>"; };
 		B42C05419CA0FC538FE92B6F /* Pods-Pyro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pyro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pyro/Pods-Pyro.debug.xcconfig"; sourceTree = "<group>"; };
+		DA39B12720F255630085FA39 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		DA39B12920F255860085FA39 /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
+		DA39B12B20F255D50085FA39 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		DA39B12D20F256B60085FA39 /* NavigationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationProtocol.swift; sourceTree = "<group>"; };
 		DA5DD3C520F24A2A005BBA1D /* Pyro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pyro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5DD3DE20F24B78005BBA1D /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5DD3E820F24B9E005BBA1D /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
@@ -75,6 +83,47 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DA39B12220F2552A0085FA39 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DA5DD3F720F24FDB005BBA1D /* Application.swift */,
+				DA5DD3F920F2512C005BBA1D /* Navigation.swift */,
+				DA39B12D20F256B60085FA39 /* NavigationProtocol.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		DA39B12320F255390085FA39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA39B12B20F255D50085FA39 /* UsersView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA39B12420F2553D0085FA39 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DA39B12920F255860085FA39 /* UsersPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DA39B12520F255430085FA39 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				DA39B12720F255630085FA39 /* Interactor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		DA39B12620F2554A0085FA39 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DA5DD3BC20F24A2A005BBA1D = {
 			isa = PBXGroup;
 			children = (
@@ -101,8 +150,11 @@
 		DA5DD3E920F24BB0005BBA1D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DA5DD3F720F24FDB005BBA1D /* Application.swift */,
-				DA5DD3F920F2512C005BBA1D /* Navigation.swift */,
+				DA39B12220F2552A0085FA39 /* Application */,
+				DA39B12520F255430085FA39 /* Interactor */,
+				DA39B12420F2553D0085FA39 /* Presenter */,
+				DA39B12620F2554A0085FA39 /* ViewModel */,
+				DA39B12320F255390085FA39 /* View */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -273,7 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA39B12C20F255D50085FA39 /* UsersView.swift in Sources */,
+				DA39B12820F255630085FA39 /* Interactor.swift in Sources */,
 				DA5DD3F820F24FDB005BBA1D /* Application.swift in Sources */,
+				DA39B12E20F256B60085FA39 /* NavigationProtocol.swift in Sources */,
+				DA39B12A20F255860085FA39 /* UsersPresenter.swift in Sources */,
 				DA5DD3FA20F2512C005BBA1D /* Navigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
