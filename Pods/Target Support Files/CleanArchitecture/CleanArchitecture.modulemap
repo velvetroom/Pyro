@@ -1,0 +1,6 @@
+framework module CleanArchitecture {
+  umbrella header "CleanArchitecture-umbrella.h"
+
+  export *
+  module * { export * }
+}

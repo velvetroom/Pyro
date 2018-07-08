@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F063725DAC1A22CB214248E /* Pods_Pyro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C8CB7B5D80F6803E1D1E56 /* Pods_Pyro.framework */; };
 		DA5DD3EF20F24BB1005BBA1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA5DD3EB20F24BB0005BBA1D /* Localizable.strings */; };
 		DA5DD3F020F24BB1005BBA1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5DD3EE20F24BB0005BBA1D /* LaunchScreen.storyboard */; };
 		DA5DD3F620F24FCB005BBA1D /* TestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5DD3F520F24FCB005BBA1D /* TestParser.swift */; };
@@ -25,15 +26,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA04780A20F25410000E5F8A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		28C8CB7B5D80F6803E1D1E56 /* Pods_Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A07271B43219EEA35FDD3C73 /* Pods-Pyro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pyro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pyro/Pods-Pyro.release.xcconfig"; sourceTree = "<group>"; };
+		B42C05419CA0FC538FE92B6F /* Pods-Pyro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pyro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pyro/Pods-Pyro.debug.xcconfig"; sourceTree = "<group>"; };
 		DA5DD3C520F24A2A005BBA1D /* Pyro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pyro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5DD3DE20F24B78005BBA1D /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5DD3E820F24B9E005BBA1D /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DA5DD3EC20F24BB0005BBA1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA5DD3EE20F24BB0005BBA1D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DA5DD3F220F24BDE005BBA1D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		DA5DD3F320F24BDE005BBA1D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		DA5DD3F420F24BDE005BBA1D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DA5DD3F520F24FCB005BBA1D /* TestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestParser.swift; sourceTree = "<group>"; };
 		DA5DD3F720F24FDB005BBA1D /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		DA5DD3F920F2512C005BBA1D /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
@@ -44,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F063725DAC1A22CB214248E /* Pods_Pyro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +58,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EAC4D3A9EABA4B3CCD57573 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28C8CB7B5D80F6803E1D1E56 /* Pods_Pyro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		722A36415EF6089267DCB9E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B42C05419CA0FC538FE92B6F /* Pods-Pyro.debug.xcconfig */,
+				A07271B43219EEA35FDD3C73 /* Pods-Pyro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DA5DD3BC20F24A2A005BBA1D = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +83,9 @@
 				DA5DD3ED20F24BB0005BBA1D /* Assets */,
 				DA5DD3EA20F24BB0005BBA1D /* Resources */,
 				DA5DD3C620F24A2A005BBA1D /* Products */,
+				722A36415EF6089267DCB9E9 /* Pods */,
+				1EAC4D3A9EABA4B3CCD57573 /* Frameworks */,
 				DA5DD3E820F24B9E005BBA1D /* Configuration */,
-				DA04780A20F25410000E5F8A /* Podfile */,
-				DA5DD3F420F24BDE005BBA1D /* LICENSE */,
-				DA5DD3F220F24BDE005BBA1D /* README.md */,
-				DA5DD3F320F24BDE005BBA1D /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA5DD3D720F24A2B005BBA1D /* Build configuration list for PBXNativeTarget "Pyro" */;
 			buildPhases = (
+				B4D78B6B49CD3B88DAE68AD9 /* [CP] Check Pods Manifest.lock */,
 				DA5DD3C120F24A2A005BBA1D /* Sources */,
 				DA5DD3C220F24A2A005BBA1D /* Frameworks */,
 				DA5DD3C320F24A2A005BBA1D /* Resources */,
+				957D58D7CA4145954632EC42 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +228,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		957D58D7CA4145954632EC42 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Pyro/Pods-Pyro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CleanArchitecture/CleanArchitecture.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CleanArchitecture.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pyro/Pods-Pyro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4D78B6B49CD3B88DAE68AD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pyro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA5DD3C120F24A2A005BBA1D /* Sources */ = {
@@ -369,6 +426,7 @@
 		};
 		DA5DD3D820F24A2B005BBA1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B42C05419CA0FC538FE92B6F /* Pods-Pyro.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
@@ -386,6 +444,7 @@
 		};
 		DA5DD3D920F24A2B005BBA1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A07271B43219EEA35FDD3C73 /* Pods-Pyro.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;

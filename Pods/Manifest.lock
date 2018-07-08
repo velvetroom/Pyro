@@ -1,0 +1,16 @@
+PODS:
+  - CleanArchitecture (1.7.67)
+
+DEPENDENCIES:
+  - CleanArchitecture
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CleanArchitecture
+
+SPEC CHECKSUMS:
+  CleanArchitecture: 53648d3372f7cd9406dd5d0518129dc5f2961c08
+
+PODFILE CHECKSUM: a3fc0a701d2c15e1a7b57dc96adcba1fc38a3587
+
+COCOAPODS: 1.5.3
