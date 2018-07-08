@@ -89,6 +89,7 @@
 		DA5DD3EA20F24BB0005BBA1D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA5DD3EE20F24BB0005BBA1D /* LaunchScreen.storyboard */,
 				DA5DD3EB20F24BB0005BBA1D /* Localizable.strings */,
 			);
 			path = Resources;
@@ -97,7 +98,6 @@
 		DA5DD3ED20F24BB0005BBA1D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				DA5DD3EE20F24BB0005BBA1D /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
