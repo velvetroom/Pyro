@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5025B17526FFED8F4E89476C684E0CED"
-               BuildableName = "Pods_Pyro.framework"
-               BlueprintName = "Pods-Pyro"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "DA5DD3C420F24A2A005BBA1D"
+               BuildableName = "Pyro.app"
+               BlueprintName = "Pyro"
+               ReferencedContainer = "container:Pyro.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DA5DD3DD20F24B78005BBA1D"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
+               ReferencedContainer = "container:Pyro.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DA5DD3C420F24A2A005BBA1D"
+            BuildableName = "Pyro.app"
+            BlueprintName = "Pyro"
+            ReferencedContainer = "container:Pyro.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +61,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5025B17526FFED8F4E89476C684E0CED"
-            BuildableName = "Pods_Pyro.framework"
-            BlueprintName = "Pods-Pyro"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "DA5DD3C420F24A2A005BBA1D"
+            BuildableName = "Pyro.app"
+            BlueprintName = "Pyro"
+            ReferencedContainer = "container:Pyro.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,6 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DA5DD3C420F24A2A005BBA1D"
+            BuildableName = "Pyro.app"
+            BlueprintName = "Pyro"
+            ReferencedContainer = "container:Pyro.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
