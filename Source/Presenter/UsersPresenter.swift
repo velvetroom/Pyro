@@ -6,16 +6,16 @@ class UsersPresenter:PresenterProtocol {
     weak var transition:NavigationProtocol?
     var interactor:UserInteractor!
     var viewModel:ViewModel!
-    var users:[User]
     
-    required init() {
-        self.users = []
-    }
+    required init() { }
     
     func didAppear() {
         self.interactor.load { [weak self] (users:[User]) in
-            self?.users = users
             self?.viewModel.update(property:ViewModelFactory.make(users:users))
         }
+    }
+    
+    func selectUser(index:Int) {
+        self.transition?.openStatsFor(user:self.interactor.users[index])
     }
 }

@@ -28,6 +28,10 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
         return cell
     }
     
+    func collectionView(_:UICollectionView, didSelectItemAt index:IndexPath) {
+        self.presenter.selectUser(index:index.item)
+    }
+    
     private func configureView() {
         self.title = NSLocalizedString("UsersView_Title", comment:String())
         self.content.delegate = self
