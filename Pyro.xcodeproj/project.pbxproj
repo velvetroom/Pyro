@@ -21,6 +21,8 @@
 		DA4DEAE520F333A000623916 /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DEAE420F333A000623916 /* MockUserDefaults.swift */; };
 		DA4DEAE720F337E300623916 /* StorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DEAE620F337E300623916 /* StorageConstants.swift */; };
 		DA4DEAE920F3394600623916 /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DEAE820F3394600623916 /* StorageError.swift */; };
+		DA4DEAEC20F3450900623916 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DEAEB20F3450900623916 /* UsersViewModel.swift */; };
+		DA4DEAEE20F3499300623916 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DEAED20F3499300623916 /* ViewModelFactory.swift */; };
 		DA5DD3EF20F24BB1005BBA1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA5DD3EB20F24BB0005BBA1D /* Localizable.strings */; };
 		DA5DD3F020F24BB1005BBA1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5DD3EE20F24BB0005BBA1D /* LaunchScreen.storyboard */; };
 		DA5DD3F620F24FCB005BBA1D /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5DD3F520F24FCB005BBA1D /* TestStorage.swift */; };
@@ -55,6 +57,8 @@
 		DA4DEAE420F333A000623916 /* MockUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
 		DA4DEAE620F337E300623916 /* StorageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageConstants.swift; sourceTree = "<group>"; };
 		DA4DEAE820F3394600623916 /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
+		DA4DEAEB20F3450900623916 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		DA4DEAED20F3499300623916 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		DA5DD3C520F24A2A005BBA1D /* Pyro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pyro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5DD3DE20F24B78005BBA1D /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5DD3E820F24B9E005BBA1D /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		DA39B12620F2554A0085FA39 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DA4DEAEB20F3450900623916 /* UsersViewModel.swift */,
+				DA4DEAED20F3499300623916 /* ViewModelFactory.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -378,7 +384,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA39B13020F259C50085FA39 /* UsersViewContent.swift in Sources */,
+				DA4DEAEC20F3450900623916 /* UsersViewModel.swift in Sources */,
 				DA39B12C20F255D50085FA39 /* UsersView.swift in Sources */,
+				DA4DEAEE20F3499300623916 /* ViewModelFactory.swift in Sources */,
 				DA4DEAE920F3394600623916 /* StorageError.swift in Sources */,
 				DA39B12820F255630085FA39 /* Interactor.swift in Sources */,
 				DA5DD3F820F24FDB005BBA1D /* Application.swift in Sources */,
