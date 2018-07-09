@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-class Interactor:InteractorProtocol {
+class UserInteractor:InteractorProtocol {
     weak var presenter:InteractorDelegateProtocol?
     
     required init() { }

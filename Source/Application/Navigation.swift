@@ -11,6 +11,10 @@ class Navigation:UINavigationController, NavigationProtocol {
         return nil
     }
     
+    func openStatsFor(user:User) {
+        
+    }
+    
     private func configureNavigation() {
         if #available(iOS 11.0, *) {
             self.navigationBar.prefersLargeTitles = true

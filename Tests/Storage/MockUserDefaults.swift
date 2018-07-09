@@ -14,5 +14,6 @@ class MockUserDefaults:UserDefaults {
     
     override func set(_ value:Any?, forKey defaultName:String) {
         self.onSaving?()
+        super.set(value, forKey:defaultName)
     }
 }

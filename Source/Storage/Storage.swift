@@ -15,9 +15,14 @@ class Storage {
     func load(onCompletion:@escaping(([User]) -> Void)) {
         self.dispatch.async {
             let users:[User] = self.loadUsers()
-            DispatchQueue.main.async {
-                onCompletion(users)
-            }
+            DispatchQueue.main.async { onCompletion(users) }
+        }
+    }
+    
+    func save(users:[User], onCompletion:@escaping(() -> Void)) {
+        self.dispatch.async {
+            self.saveUsers(array:self.serialise(users:users))
+            DispatchQueue.main.async { onCompletion() }
         }
     }
     
@@ -62,6 +67,14 @@ class Storage {
             users.append(user)
         }
         return users
+    }
+    
+    private func serialise(users:[User]) -> [[String:Any]] {
+        var array:[[String:Any]] = []
+        for user:User in users {
+            array.append([StorageConstants.name : user.name, StorageConstants.url : user.url])
+        }
+        return array
     }
     
     private func saveUsers(array:[[String:Any]]) {
