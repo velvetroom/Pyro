@@ -1,13 +1,10 @@
-{
-    "Users":
-    [
-    {
-         "name": "Linus Torvalds",
-         "user": "torvalds"
-    },
-    {
-         "name": "Mattt",
-         "user": "matt"
-    }
-    ]
-}
+ [
+  {
+  "name": "Linus Torvalds",
+  "url": "torvalds"
+  },
+  {
+  "name": "Mattt",
+  "url": "matt"
+  }
+]
