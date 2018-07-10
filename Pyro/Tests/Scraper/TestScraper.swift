@@ -11,13 +11,12 @@ class TestScraper:XCTestCase {
         static let firstDate:String = "2018-06-24"
         static let lastCount:Int = 9
         static let lastDate:String = "2018-07-10"
-        static let dateFormat:String = "yyyy-MM-dd"
     }
     
     override func setUp() {
         self.scraper = Scraper()
         self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = Constants.dateFormat
+        self.dateFormatter.dateFormat = StatsConstants.dateFormat
         let url:URL = Bundle(for:type(of:self)).url(forResource:"StatsMin", withExtension:"stub")!
         do { try self.data = Data(contentsOf:url) } catch { }
     }

@@ -2,7 +2,7 @@ import Foundation
 
 public class Storage {
     var userDefaults:UserDefaults
-    var dispatch:DispatchQueue
+    let dispatch:DispatchQueue
     
     public init() {
         self.userDefaults = UserDefaults(suiteName:StorageConstants.suite)!
