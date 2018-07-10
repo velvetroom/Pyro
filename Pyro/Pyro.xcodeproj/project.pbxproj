@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA59160B20F46DBA00B6AEDC /* Pyro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5915F720F46D8B00B6AEDC /* Pyro.framework */; };
+		DAA00E3520F4940A009386CE /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3420F4940A009386CE /* Stats.swift */; };
 		DAE4861C20F47084003BF78A /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861A20F47084003BF78A /* MockUserDefaults.swift */; };
 		DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861B20F47084003BF78A /* TestStorage.swift */; };
 		DAE4862620F4708E003BF78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862120F4708E003BF78A /* User.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		DA5915F720F46D8B00B6AEDC /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA59160620F46DBA00B6AEDC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAA00E3420F4940A009386CE /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		DAE4861720F4707A003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DAE4861A20F47084003BF78A /* MockUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
 		DAE4861B20F47084003BF78A /* TestStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DAA00E3320F493E1009386CE /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				DAA00E3420F4940A009386CE /* Stats.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
 		DAE4861820F47084003BF78A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		DAE4861F20F4708E003BF78A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DAA00E3320F493E1009386CE /* Stats */,
 				DAE4862020F4708E003BF78A /* User */,
 				DAE4862220F4708E003BF78A /* Storage */,
 			);
@@ -240,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE4862920F4708E003BF78A /* StorageError.swift in Sources */,
+				DAA00E3520F4940A009386CE /* Stats.swift in Sources */,
 				DAE4862620F4708E003BF78A /* User.swift in Sources */,
 				DAE4862820F4708E003BF78A /* StorageConstants.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
