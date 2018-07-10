@@ -1,6 +1,6 @@
 import Foundation
 
-class Request {
+class Request:RequestProtocol {
     private let session:URLSession
     
     init() {
