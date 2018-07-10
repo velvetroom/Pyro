@@ -10,6 +10,7 @@
 		DA01227F20F499AC00B9C5EF /* Scraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01227E20F499AC00B9C5EF /* Scraper.swift */; };
 		DA01228220F49A1C00B9C5EF /* TestScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228120F49A1C00B9C5EF /* TestScraper.swift */; };
 		DA01228420F49AB700B9C5EF /* ScraperItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228320F49AB700B9C5EF /* ScraperItem.swift */; };
+		DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */; };
 		DA59160B20F46DBA00B6AEDC /* Pyro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5915F720F46D8B00B6AEDC /* Pyro.framework */; };
 		DAA00E3520F4940A009386CE /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3420F4940A009386CE /* Stats.swift */; };
 		DAA00E3720F496AF009386CE /* StatsMin.stub in Resources */ = {isa = PBXBuildFile; fileRef = DAA00E3620F496AF009386CE /* StatsMin.stub */; };
@@ -36,6 +37,7 @@
 		DA01227E20F499AC00B9C5EF /* Scraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scraper.swift; sourceTree = "<group>"; };
 		DA01228120F49A1C00B9C5EF /* TestScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScraper.swift; sourceTree = "<group>"; };
 		DA01228320F49AB700B9C5EF /* ScraperItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperItem.swift; sourceTree = "<group>"; };
+		DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperConstants.swift; sourceTree = "<group>"; };
 		DA5915F720F46D8B00B6AEDC /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA59160620F46DBA00B6AEDC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA00E3420F4940A009386CE /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				DA01227E20F499AC00B9C5EF /* Scraper.swift */,
 				DA01228320F49AB700B9C5EF /* ScraperItem.swift */,
+				DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */,
 			);
 			path = Scraper;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				DA01228420F49AB700B9C5EF /* ScraperItem.swift in Sources */,
 				DAE4862620F4708E003BF78A /* User.swift in Sources */,
 				DAE4862820F4708E003BF78A /* StorageConstants.swift in Sources */,
+				DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
