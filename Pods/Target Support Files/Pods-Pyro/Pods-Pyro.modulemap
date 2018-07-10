@@ -1,6 +1,0 @@
-framework module Pods_Pyro {
-  umbrella header "Pods-Pyro-umbrella.h"
-
-  export *
-  module * { export * }
-}
