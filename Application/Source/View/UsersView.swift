@@ -42,11 +42,9 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     }
     
     private func configureViewModel() {
-        var viewModel:UsersViewModel = self.viewModel.property()
-        viewModel.observing = { [weak self] (property:UsersViewModel) in
+        self.presenter.viewModel.observe { [weak self] (property:UsersViewModel) in
             self?.updated(property:property)
         }
-        self.viewModel.update(property:viewModel)
     }
     
     private func updated(property:UsersViewModel) {

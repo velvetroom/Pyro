@@ -24,12 +24,12 @@ class UsersViewContent:UICollectionView {
     
     private func configureFlow() {
         let flow:UICollectionViewFlowLayout = self.collectionViewLayout as! UICollectionViewFlowLayout
-        flow.scrollDirection = UICollectionViewScrollDirection.vertical
+        flow.scrollDirection = UICollectionView.ScrollDirection.vertical
         flow.minimumInteritemSpacing = UsersConstants.Collection.cellSeparation
         flow.minimumLineSpacing = UsersConstants.Collection.cellSeparation
         flow.headerReferenceSize = CGSize.zero
         flow.footerReferenceSize = CGSize.zero
-        flow.sectionInset = UIEdgeInsetsMake(
-            UsersConstants.Collection.cellSeparation, 0, UsersConstants.Collection.cellSeparation, 0)
+        flow.sectionInset = UIEdgeInsets(top:UsersConstants.Collection.cellSeparation, left:0,
+                                         bottom:UsersConstants.Collection.cellSeparation, right:0)
     }
 }

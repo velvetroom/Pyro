@@ -1,7 +1,9 @@
 import Foundation
 import CleanArchitecture
+import Pyro
 
 class UserInteractor:InteractorProtocol {
+    weak var transition:Navigation?
     weak var presenter:InteractorDelegateProtocol?
     var users:[User]
     

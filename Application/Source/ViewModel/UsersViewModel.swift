@@ -1,8 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct UsersViewModel:ViewModelPropertyProtocol {
-    var observing:((UsersViewModel) -> Void)?
+struct UsersViewModel:ViewModelProtocol {
     var users:[NSAttributedString]
     
     init() {

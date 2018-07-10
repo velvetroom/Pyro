@@ -1,6 +1,6 @@
 import UIKit
 
-class Navigation:UINavigationController, NavigationProtocol {
+class Navigation:UINavigationController {
     init() {
         super.init(nibName:nil, bundle:nil)
         self.configureNavigation()
@@ -9,12 +9,6 @@ class Navigation:UINavigationController, NavigationProtocol {
     
     required init?(coder:NSCoder) {
         return nil
-    }
-    
-    func openStatsFor(user:User) {
-        let view:StatsView = StatsView()
-        view.presenter.interactor.user = user
-        self.pushViewController(view, animated:true)
     }
     
     private func configureNavigation() {
@@ -26,7 +20,7 @@ class Navigation:UINavigationController, NavigationProtocol {
     
     private func navigateToUsers() {
         let users:UsersView = UsersView()
-        users.transition = self
+        users.presenter.interactor.transition = self
         self.setViewControllers([users], animated:false)
     }
 }

@@ -14,6 +14,7 @@
 		DAE4862720F4708E003BF78A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862320F4708E003BF78A /* Storage.swift */; };
 		DAE4862820F4708E003BF78A /* StorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862420F4708E003BF78A /* StorageConstants.swift */; };
 		DAE4862920F4708E003BF78A /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862520F4708E003BF78A /* StorageError.swift */; };
+		DAE695A520F47B3800E8AA59 /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = DAE695A420F47B3800E8AA59 /* Users.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		DAE4862320F4708E003BF78A /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DAE4862420F4708E003BF78A /* StorageConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageConstants.swift; sourceTree = "<group>"; };
 		DAE4862520F4708E003BF78A /* StorageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
+		DAE695A420F47B3800E8AA59 /* Users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Users.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +90,8 @@
 		DAE4861920F47084003BF78A /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				DAE4861A20F47084003BF78A /* MockUserDefaults.swift */,
 				DAE4861B20F47084003BF78A /* TestStorage.swift */,
+				DAE4861A20F47084003BF78A /* MockUserDefaults.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -97,6 +99,7 @@
 		DAE4861E20F4708E003BF78A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DAE695A420F47B3800E8AA59 /* Users.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE695A520F47B3800E8AA59 /* Users.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

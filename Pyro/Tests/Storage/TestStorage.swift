@@ -14,7 +14,7 @@ class TestStorage:XCTestCase {
     
     func testLoadUsersFirstTime() {
         let expectLoadingUsers:XCTestExpectation = self.expectation(description:"Failed to load users")
-        let expectDefaults:XCTestExpectation = self.expectation(description:"Not saving to defualts")
+        let expectDefaults:XCTestExpectation = self.expectation(description:"Not saving to defaults")
         self.userDefaults.onSaving = {expectDefaults.fulfill() }
         self.storage.load { (users:[User]) in
             XCTAssertFalse(users.isEmpty, "No users loaded")

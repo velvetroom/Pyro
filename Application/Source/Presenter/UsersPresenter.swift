@@ -1,9 +1,8 @@
 import Foundation
 import CleanArchitecture
+import Pyro
 
 class UsersPresenter:PresenterProtocol {
-    weak var view:ViewProtocol?
-    weak var transition:NavigationProtocol?
     var interactor:UserInteractor!
     var viewModel:ViewModel!
     
@@ -11,11 +10,13 @@ class UsersPresenter:PresenterProtocol {
     
     func didAppear() {
         self.interactor.load { [weak self] (users:[User]) in
-            self?.viewModel.update(property:ViewModelFactory.make(users:users))
+            self?.viewModel.update(property:UsersViewModelFactory.make(users:users))
         }
     }
     
     func selectUser(index:Int) {
-        self.transition?.openStatsFor(user:self.interactor.users[index])
+        let view:StatsView = StatsView()
+        view.presenter.interactor.user = self.interactor.users[index]
+        self.interactor.transition?.pushViewController(view, animated:true)
     }
 }

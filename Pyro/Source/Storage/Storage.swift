@@ -1,10 +1,10 @@
 import Foundation
 
-class Storage {
+public class Storage {
     var userDefaults:UserDefaults
     var dispatch:DispatchQueue
     
-    init() {
+    public init() {
         self.userDefaults = UserDefaults(suiteName:StorageConstants.suite)!
         self.dispatch = DispatchQueue(label:StorageConstants.identifier, qos:DispatchQoS.background,
                                       attributes:DispatchQueue.Attributes.concurrent,
@@ -12,14 +12,14 @@ class Storage {
                                       target:DispatchQueue.global(qos:DispatchQoS.QoSClass.background))
     }
     
-    func load(onCompletion:@escaping(([User]) -> Void)) {
+    public func load(onCompletion:@escaping(([User]) -> Void)) {
         self.dispatch.async {
             let users:[User] = self.loadUsers()
             DispatchQueue.main.async { onCompletion(users) }
         }
     }
     
-    func save(users:[User], onCompletion:@escaping(() -> Void)) {
+    public func save(users:[User], onCompletion:@escaping(() -> Void)) {
         self.dispatch.async {
             self.saveUsers(array:self.serialise(users:users))
             DispatchQueue.main.async { onCompletion() }
@@ -43,7 +43,7 @@ class Storage {
     }
     
     private func loadUsersFromDefault() -> [User] {
-        let url:URL = Bundle.main.url(forResource:StorageConstants.defaultFile, withExtension:nil)!
+        let url:URL = Bundle(for:type(of:self)).url(forResource:StorageConstants.defaultFile, withExtension:nil)!
         let array:[[String:Any]]
         do {
             let data:Data = try Data(contentsOf:url, options:Data.ReadingOptions.mappedIfSafe)

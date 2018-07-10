@@ -2,6 +2,7 @@ import Foundation
 
 class MockUserDefaults:UserDefaults {
     var onSaving:(() -> Void)?
+    var value:Any?
     private static let suiteName:String = "test"
     
     init() {
@@ -12,8 +13,12 @@ class MockUserDefaults:UserDefaults {
         self.removeSuite(named:MockUserDefaults.suiteName)
     }
     
+    override func value(forKey key:String) -> Any? {
+        return self.value
+    }
+    
     override func set(_ value:Any?, forKey defaultName:String) {
         self.onSaving?()
-        super.set(value, forKey:defaultName)
+        self.value = value
     }
 }

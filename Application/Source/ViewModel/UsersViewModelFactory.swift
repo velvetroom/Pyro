@@ -1,6 +1,7 @@
 import UIKit
+import Pyro
 
-class ViewModelFactory {
+class UsersViewModelFactory {
     class func make(users:[User]) -> UsersViewModel {
         var viewModel:UsersViewModel = UsersViewModel()
         for user:User in users {
@@ -11,9 +12,9 @@ class ViewModelFactory {
     
     private class func make(user:User) -> NSAttributedString {
         let string:NSMutableAttributedString = NSMutableAttributedString()
-        let name:NSAttributedString = NSAttributedString(string:user.name, attributes:[NSAttributedStringKey.font:
+        let name:NSAttributedString = NSAttributedString(string:user.name, attributes:[NSAttributedString.Key.font:
             UIFont.systemFont(ofSize:UsersConstants.Cell.titleFontSize, weight:UIFont.Weight.bold)])
-        let url:NSAttributedString = NSAttributedString(string:" @\(user.url)", attributes:[NSAttributedStringKey.font:
+        let url:NSAttributedString = NSAttributedString(string:" @\(user.url)", attributes:[NSAttributedString.Key.font:
             UIFont.systemFont(ofSize:UsersConstants.Cell.subtitleFontSize, weight:UIFont.Weight.light)])
         string.append(name)
         string.append(url)
