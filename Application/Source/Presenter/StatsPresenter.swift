@@ -6,4 +6,10 @@ class StatsPresenter:PresenterProtocol {
     var viewModel:ViewModel!
     
     required init() { }
+    
+    func didLoad() {
+        var viewModelBuilder:StatsViewModelBuilderLoading = StatsViewModelBuilderLoading()
+        viewModelBuilder.build()
+        self.viewModel.update(property:viewModelBuilder.viewModel)
+    }
 }

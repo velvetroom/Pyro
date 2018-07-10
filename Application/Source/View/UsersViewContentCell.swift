@@ -50,6 +50,7 @@ class UsersViewContentCell:UICollectionViewCell {
         self.label.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
         self.label.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
         self.label.leftAnchor.constraint(equalTo:self.leftAnchor, constant:UsersConstants.Cell.margin).isActive = true
-        self.label.rightAnchor.constraint(equalTo:self.rightAnchor, constant:UsersConstants.Cell.margin).isActive = true
+        self.label.rightAnchor.constraint(equalTo:self.rightAnchor,
+                                          constant:-UsersConstants.Cell.margin).isActive = true
     }
 }

@@ -1,7 +1,8 @@
 import UIKit
 
 class StatsViewContentCell:UICollectionViewCell {
-    weak var label:UILabel!
+    weak var labelName:UILabel!
+    weak var labelValue:UILabel!
     
     override init(frame:CGRect) {
         super.init(frame:CGRect.zero)
@@ -20,20 +21,57 @@ class StatsViewContentCell:UICollectionViewCell {
     }
     
     private func makeOutlets() {
-        let label:UILabel = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.isUserInteractionEnabled = false
-        label.backgroundColor = UIColor.clear
-        label.numberOfLines = 0
-        label.textColor = UIColor.black
-        self.label = label
-        self.contentView.addSubview(label)
+        self.makeName()
+        self.makeValue()
     }
     
     private func layoutOutlets() {
-        self.label.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
-        self.label.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
-        self.label.leftAnchor.constraint(equalTo:self.leftAnchor, constant:UsersConstants.Cell.margin).isActive = true
-        self.label.rightAnchor.constraint(equalTo:self.rightAnchor, constant:UsersConstants.Cell.margin).isActive = true
+        self.layoutName()
+        self.layoutValue()
+    }
+    
+    private func makeName() {
+        let labelName:UILabel = UILabel()
+        labelName.translatesAutoresizingMaskIntoConstraints = false
+        labelName.isUserInteractionEnabled = false
+        labelName.backgroundColor = UIColor.clear
+        labelName.numberOfLines = 0
+        labelName.textColor = UIColor.black
+        labelName.font = UIFont.systemFont(ofSize:StatsConstants.Cell.nameFontSize, weight:UIFont.Weight.bold)
+        self.labelName = labelName
+        self.contentView.addSubview(labelName)
+    }
+    
+    private func makeValue() {
+        let labelValue:UILabel = UILabel()
+        labelValue.translatesAutoresizingMaskIntoConstraints = false
+        labelValue.isUserInteractionEnabled = false
+        labelValue.backgroundColor = UIColor.clear
+        labelValue.numberOfLines = 0
+        labelValue.textColor = UIColor(white:0.4, alpha:1)
+        labelValue.textAlignment = NSTextAlignment.right
+        labelValue.font = UIFont.systemFont(ofSize:StatsConstants.Cell.valueFontSize, weight:UIFont.Weight.light)
+        self.labelValue = labelValue
+        self.contentView.addSubview(labelValue)
+    }
+    
+    private func layoutName() {
+        self.labelName.topAnchor.constraint(equalTo:self.topAnchor,
+                                            constant:StatsConstants.Cell.marginVertical).isActive = true
+        self.labelName.leftAnchor.constraint(equalTo:self.leftAnchor,
+                                             constant:StatsConstants.Cell.marginHorizontal).isActive = true
+        self.labelName.rightAnchor.constraint(equalTo:self.rightAnchor,
+                                              constant:-StatsConstants.Cell.marginHorizontal).isActive = true
+        self.labelName.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+    }
+    
+    private func layoutValue() {
+        self.labelValue.bottomAnchor.constraint(equalTo:self.bottomAnchor,
+                                                constant:-StatsConstants.Cell.marginVertical).isActive = true
+        self.labelValue.leftAnchor.constraint(equalTo:self.leftAnchor,
+                                              constant:StatsConstants.Cell.marginHorizontal).isActive = true
+        self.labelValue.rightAnchor.constraint(equalTo:self.rightAnchor,
+                                               constant:-StatsConstants.Cell.marginHorizontal).isActive = true
+        self.labelValue.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
 }

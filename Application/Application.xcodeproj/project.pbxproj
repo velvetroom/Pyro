@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		70BFB50A4AE879690562118B /* Pods_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702746BE813A33253F9A4A7A /* Pods_Application.framework */; };
+		DA01228620F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228520F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift */; };
+		DA01228820F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228720F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift */; };
 		DAA00E2B20F486AB009386CE /* StatsViewContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2A20F486AB009386CE /* StatsViewContentCell.swift */; };
 		DAA00E2D20F48ADD009386CE /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2C20F48ADD009386CE /* StatsViewModel.swift */; };
 		DAA00E3020F48DEF009386CE /* StatsViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2F20F48DEF009386CE /* StatsViewModelItem.swift */; };
-		DAA00E3220F48F1C009386CE /* StatsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3120F48F1C009386CE /* StatsViewModelFactory.swift */; };
+		DAA00E3220F48F1C009386CE /* StatsViewModelBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3120F48F1C009386CE /* StatsViewModelBuilderProtocol.swift */; };
 		DAE4860420F47060003BF78A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE485E820F47060003BF78A /* Localizable.strings */; };
 		DAE4860520F47060003BF78A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */; };
 		DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485EE20F47060003BF78A /* UsersViewModel.swift */; };
@@ -50,11 +52,13 @@
 		702746BE813A33253F9A4A7A /* Pods_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAA37ACCC504D84A06FF955 /* Pods-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Application/Pods-Application.debug.xcconfig"; sourceTree = "<group>"; };
 		CE51436FB12A4F09707B5BEC /* Pods-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Application/Pods-Application.release.xcconfig"; sourceTree = "<group>"; };
+		DA01228520F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatsViewModelBuilderProtocol+Default.swift"; sourceTree = "<group>"; };
+		DA01228720F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderLoading.swift; sourceTree = "<group>"; };
 		DA5915D820F46D1E00B6AEDC /* Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA00E2A20F486AB009386CE /* StatsViewContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewContentCell.swift; sourceTree = "<group>"; };
 		DAA00E2C20F48ADD009386CE /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		DAA00E2F20F48DEF009386CE /* StatsViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelItem.swift; sourceTree = "<group>"; };
-		DAA00E3120F48F1C009386CE /* StatsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelFactory.swift; sourceTree = "<group>"; };
+		DAA00E3120F48F1C009386CE /* StatsViewModelBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderProtocol.swift; sourceTree = "<group>"; };
 		DAE485E620F47056003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DAE485E920F47060003BF78A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -154,7 +158,9 @@
 			children = (
 				DAE485EF20F47060003BF78A /* UsersViewModelFactory.swift */,
 				DAE485EE20F47060003BF78A /* UsersViewModel.swift */,
-				DAA00E3120F48F1C009386CE /* StatsViewModelFactory.swift */,
+				DAA00E3120F48F1C009386CE /* StatsViewModelBuilderProtocol.swift */,
+				DA01228520F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift */,
+				DA01228720F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift */,
 				DAA00E2C20F48ADD009386CE /* StatsViewModel.swift */,
 				DAA00E2F20F48DEF009386CE /* StatsViewModelItem.swift */,
 			);
@@ -336,15 +342,17 @@
 				DAE4861220F47060003BF78A /* Navigation.swift in Sources */,
 				DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */,
 				DAE4861520F47060003BF78A /* StatsInteractor.swift in Sources */,
-				DAA00E3220F48F1C009386CE /* StatsViewModelFactory.swift in Sources */,
+				DAA00E3220F48F1C009386CE /* StatsViewModelBuilderProtocol.swift in Sources */,
 				DAE4860C20F47060003BF78A /* StatsPresenter.swift in Sources */,
 				DAE4860820F47060003BF78A /* UsersViewModelFactory.swift in Sources */,
 				DAE4861620F47060003BF78A /* UserInteractor.swift in Sources */,
 				DAE4861420F47060003BF78A /* Application.swift in Sources */,
 				DAA00E2B20F486AB009386CE /* StatsViewContentCell.swift in Sources */,
 				DAE4860920F47060003BF78A /* UsersConstants.swift in Sources */,
+				DA01228620F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift in Sources */,
 				DAA00E2D20F48ADD009386CE /* StatsViewModel.swift in Sources */,
 				DAE4860A20F47060003BF78A /* StatsConstants.swift in Sources */,
+				DA01228820F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift in Sources */,
 				DAE4860E20F47060003BF78A /* UsersView.swift in Sources */,
 				DAE4860F20F47060003BF78A /* StatsViewContent.swift in Sources */,
 				DAE4861020F47060003BF78A /* UsersViewContentCell.swift in Sources */,

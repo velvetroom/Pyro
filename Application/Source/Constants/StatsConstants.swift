@@ -3,13 +3,14 @@ import UIKit
 struct StatsConstants {
     struct Collection {
         static let identifier:String = String(ObjectIdentifier(StatsViewContentCell.self).hashValue)
-        static let cellHeight:CGFloat = 100
+        static let cellHeight:CGFloat = 70
         static let cellSeparation:CGFloat = 2
     }
     
     struct Cell {
-        static let titleFontSize:CGFloat = 16
-        static let subtitleFontSize:CGFloat = 13
-        static let margin:CGFloat = 20
+        static let nameFontSize:CGFloat = 14
+        static let valueFontSize:CGFloat = 14
+        static let marginHorizontal:CGFloat = 18
+        static let marginVertical:CGFloat = 12
     }
 }

@@ -10,6 +10,6 @@ struct UsersConstants {
     struct Cell {
         static let titleFontSize:CGFloat = 16
         static let subtitleFontSize:CGFloat = 13
-        static let margin:CGFloat = 20
+        static let margin:CGFloat = 18
     }
 }

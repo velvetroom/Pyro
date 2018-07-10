@@ -10,4 +10,16 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Pyro/Resources/../../Podfile">
+   </FileRef>
+   <FileRef
+      location = "group:LICENSE">
+   </FileRef>
+   <FileRef
+      location = "group:Pyro/Resources/../../README.md">
+   </FileRef>
+   <FileRef
+      location = "group:Pyro/Resources/../../.gitignore">
+   </FileRef>
 </Workspace>

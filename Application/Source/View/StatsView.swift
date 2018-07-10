@@ -22,6 +22,8 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
         let cell:StatsViewContentCell = self.content.dequeueReusableCell(
             withReuseIdentifier:StatsConstants.Collection.identifier, for:index) as! StatsViewContentCell
+        cell.labelName.text = self.stats[index.item].name
+        cell.labelValue.text = self.stats[index.item].value
         return cell
     }
     
