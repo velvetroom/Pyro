@@ -2,6 +2,13 @@ import Foundation
 import CleanArchitecture
 
 class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    private var stats:[StatsViewModelItem]!
+    
+    override func initProperties() {
+        super.initProperties()
+        self.stats = []
+    }
+    
     override func didLoad() {
         super.didLoad()
         self.configureView()
@@ -18,7 +25,7 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
         return cell
     }
     
-    func collectionView(_:UICollectionView, numberOfItemsInSection section:Int) -> Int { return 0 }
+    func collectionView(_:UICollectionView, numberOfItemsInSection section:Int) -> Int { return self.stats.count }
     func collectionView(_:UICollectionView, shouldSelectItemAt:IndexPath) -> Bool { return false }
     func collectionView(_:UICollectionView, shouldHighlightItemAt:IndexPath) -> Bool { return false }
     
@@ -32,6 +39,9 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
     }
     
     private func configureViewModel() {
-        
+        self.presenter.viewModel.observe { [weak self] (property:StatsViewModel) in
+            self?.stats = property.items
+            self?.content.reloadData()
+        }
     }
 }

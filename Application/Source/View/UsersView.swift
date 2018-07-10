@@ -2,7 +2,7 @@ import UIKit
 import CleanArchitecture
 
 class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    var users:[NSAttributedString]!
+    private var users:[NSAttributedString]!
     
     override func initProperties() {
         super.initProperties()
