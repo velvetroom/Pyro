@@ -1,0 +1,3 @@
+StorageError_FirstTime="Storage error: Default users not loaded";
+RequestError_noResponse="Request error: Server returned no response";
+RequestError_emptyResponse="Request error: Server returned empty response";

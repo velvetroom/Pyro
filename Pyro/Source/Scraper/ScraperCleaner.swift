@@ -7,10 +7,11 @@ class ScraperCleaner {
         self.items = []
     }
     
-    func cleanOnlyFor(year:String) {
+    func cleanOnlyFor(year:Int) {
         var items:[ScraperItem] = []
+        let yearString:String = String(year)
         for item in self.items {
-            if item.date.contains(year) {
+            if item.date.contains(yearString) {
                 items.append(item)
             }
         }

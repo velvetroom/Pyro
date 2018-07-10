@@ -20,6 +20,11 @@
 		DA2062A720F503F8001B58A1 /* StatsCommandContributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A620F503F8001B58A1 /* StatsCommandContributions.swift */; };
 		DA2062A920F5040D001B58A1 /* StatsCommandMaxStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A820F5040D001B58A1 /* StatsCommandMaxStreak.swift */; };
 		DA2062AB20F50416001B58A1 /* StatsCommandCurrentStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062AA20F50416001B58A1 /* StatsCommandCurrentStreak.swift */; };
+		DA2062AE20F51A83001B58A1 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062AD20F51A83001B58A1 /* Request.swift */; };
+		DA2062B020F51ACA001B58A1 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062AF20F51ACA001B58A1 /* RequestFactory.swift */; };
+		DA2062B220F51B1E001B58A1 /* RequestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062B120F51B1E001B58A1 /* RequestConstants.swift */; };
+		DA2062B420F5216A001B58A1 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062B320F5216A001B58A1 /* RequestError.swift */; };
+		DA2062B720F5227B001B58A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA2062B520F5227B001B58A1 /* Localizable.strings */; };
 		DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */; };
 		DA32CD0120F4F61D00F75BE5 /* ScraperCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CD0020F4F61D00F75BE5 /* ScraperCleaner.swift */; };
 		DA32CD0320F4F6B000F75BE5 /* TestScraperCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CD0220F4F6B000F75BE5 /* TestScraperCleaner.swift */; };
@@ -59,6 +64,11 @@
 		DA2062A620F503F8001B58A1 /* StatsCommandContributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCommandContributions.swift; sourceTree = "<group>"; };
 		DA2062A820F5040D001B58A1 /* StatsCommandMaxStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCommandMaxStreak.swift; sourceTree = "<group>"; };
 		DA2062AA20F50416001B58A1 /* StatsCommandCurrentStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCommandCurrentStreak.swift; sourceTree = "<group>"; };
+		DA2062AD20F51A83001B58A1 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		DA2062AF20F51ACA001B58A1 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		DA2062B120F51B1E001B58A1 /* RequestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConstants.swift; sourceTree = "<group>"; };
+		DA2062B320F5216A001B58A1 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		DA2062B620F5227B001B58A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperConstants.swift; sourceTree = "<group>"; };
 		DA32CD0020F4F61D00F75BE5 /* ScraperCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperCleaner.swift; sourceTree = "<group>"; };
 		DA32CD0220F4F6B000F75BE5 /* TestScraperCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScraperCleaner.swift; sourceTree = "<group>"; };
@@ -123,6 +133,17 @@
 			path = Stats;
 			sourceTree = "<group>";
 		};
+		DA2062AC20F51A6A001B58A1 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DA2062AD20F51A83001B58A1 /* Request.swift */,
+				DA2062AF20F51ACA001B58A1 /* RequestFactory.swift */,
+				DA2062B120F51B1E001B58A1 /* RequestConstants.swift */,
+				DA2062B320F5216A001B58A1 /* RequestError.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		DA5915ED20F46D8B00B6AEDC = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +203,7 @@
 		DAE4861E20F4708E003BF78A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA2062B520F5227B001B58A1 /* Localizable.strings */,
 				DAE695A420F47B3800E8AA59 /* Users.json */,
 				DAA00E3620F496AF009386CE /* StatsMin.stub */,
 			);
@@ -193,6 +215,7 @@
 			children = (
 				DAA00E3320F493E1009386CE /* Stats */,
 				DAE4862020F4708E003BF78A /* User */,
+				DA2062AC20F51A6A001B58A1 /* Request */,
 				DAE4862220F4708E003BF78A /* Storage */,
 				DA01227D20F4999700B9C5EF /* Scraper */,
 			);
@@ -308,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE695A520F47B3800E8AA59 /* Users.json in Resources */,
+				DA2062B720F5227B001B58A1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +362,13 @@
 				DA2062AB20F50416001B58A1 /* StatsCommandCurrentStreak.swift in Sources */,
 				DA32CD0120F4F61D00F75BE5 /* ScraperCleaner.swift in Sources */,
 				DA20629820F4F910001B58A1 /* StatsBuilder.swift in Sources */,
+				DA2062AE20F51A83001B58A1 /* Request.swift in Sources */,
 				DA2062A720F503F8001B58A1 /* StatsCommandContributions.swift in Sources */,
+				DA2062B420F5216A001B58A1 /* RequestError.swift in Sources */,
+				DA2062B220F51B1E001B58A1 /* RequestConstants.swift in Sources */,
 				DAE4862820F4708E003BF78A /* StorageConstants.swift in Sources */,
 				DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */,
+				DA2062B020F51ACA001B58A1 /* RequestFactory.swift in Sources */,
 				DA2062A920F5040D001B58A1 /* StatsCommandMaxStreak.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
 				DA2062A520F503E8001B58A1 /* StatsCommandLastContribution.swift in Sources */,
@@ -368,6 +396,17 @@
 			targetProxy = DA59160C20F46DBA00B6AEDC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA2062B520F5227B001B58A1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA2062B620F5227B001B58A1 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DA5915FD20F46D8B00B6AEDC /* Debug */ = {

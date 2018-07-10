@@ -1,5 +1,4 @@
 UsersView_Title="Users";
-StorageError_FirstTime="Storage error: Default users not loaded";
 StatsViewModelItem_Status="Status";
 StatsViewModelItem_Loading="loading";
 StatsViewModelItem_FirstContribution="First contribution";

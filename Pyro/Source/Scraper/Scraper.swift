@@ -36,6 +36,6 @@ class Scraper {
     }
     
     private func makeDate(components:[String]) {
-        self.item.date = String(components[1].prefix(ScraperConstants.dateLenght))
+        self.item.date = String(components[1].prefix(ScraperConstants.dateLength))
     }
 }
