@@ -19,8 +19,6 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
         return CGSize(width:self.content.bounds.width, height:UsersConstants.Collection.cellHeight)
     }
     
-    func collectionView(_:UICollectionView, numberOfItemsInSection section:Int) -> Int { return self.users.count }
-    
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
         let cell:UsersViewContentCell = self.content.dequeueReusableCell(
             withReuseIdentifier:UsersConstants.Collection.identifier, for:index) as! UsersViewContentCell
@@ -31,6 +29,8 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     func collectionView(_:UICollectionView, didSelectItemAt index:IndexPath) {
         self.presenter.selectUser(index:index.item)
     }
+    
+    func collectionView(_:UICollectionView, numberOfItemsInSection section:Int) -> Int { return self.users.count }
     
     private func configureView() {
         self.title = NSLocalizedString("UsersView_Title", comment:String())

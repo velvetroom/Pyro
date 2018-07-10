@@ -12,7 +12,7 @@ class UsersViewContent:UICollectionView {
     }
     
     private func configureView() {
-        self.backgroundColor = UIColor(white:0.96, alpha:1)
+        self.backgroundColor = UIColor.groupTableViewBackground
         self.translatesAutoresizingMaskIntoConstraints = false
         self.clipsToBounds = true
         self.showsVerticalScrollIndicator = true

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		70BFB50A4AE879690562118B /* Pods_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702746BE813A33253F9A4A7A /* Pods_Application.framework */; };
+		DAA00E2B20F486AB009386CE /* StatsViewContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2A20F486AB009386CE /* StatsViewContentCell.swift */; };
 		DAE4860420F47060003BF78A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE485E820F47060003BF78A /* Localizable.strings */; };
 		DAE4860520F47060003BF78A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */; };
 		DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485EE20F47060003BF78A /* UsersViewModel.swift */; };
@@ -47,6 +48,7 @@
 		CDAA37ACCC504D84A06FF955 /* Pods-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Application/Pods-Application.debug.xcconfig"; sourceTree = "<group>"; };
 		CE51436FB12A4F09707B5BEC /* Pods-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Application/Pods-Application.release.xcconfig"; sourceTree = "<group>"; };
 		DA5915D820F46D1E00B6AEDC /* Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAA00E2A20F486AB009386CE /* StatsViewContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewContentCell.swift; sourceTree = "<group>"; };
 		DAE485E620F47056003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DAE485E920F47060003BF78A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				DAE485FA20F47060003BF78A /* UsersViewContentCell.swift */,
 				DAE485FB20F47060003BF78A /* StatsView.swift */,
 				DAE485F920F47060003BF78A /* StatsViewContent.swift */,
+				DAA00E2A20F486AB009386CE /* StatsViewContentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				DAE4860820F47060003BF78A /* UsersViewModelFactory.swift in Sources */,
 				DAE4861620F47060003BF78A /* UserInteractor.swift in Sources */,
 				DAE4861420F47060003BF78A /* Application.swift in Sources */,
+				DAA00E2B20F486AB009386CE /* StatsViewContentCell.swift in Sources */,
 				DAE4860920F47060003BF78A /* UsersConstants.swift in Sources */,
 				DAE4860A20F47060003BF78A /* StatsConstants.swift in Sources */,
 				DAE4860E20F47060003BF78A /* UsersView.swift in Sources */,

@@ -15,8 +15,6 @@ class UsersPresenter:PresenterProtocol {
     }
     
     func selectUser(index:Int) {
-        let view:StatsView = StatsView()
-        view.presenter.interactor.user = self.interactor.users[index]
-        self.interactor.transition?.pushViewController(view, animated:true)
+        self.interactor.transition?.pushStatsFor(user:self.interactor.users[index])
     }
 }
