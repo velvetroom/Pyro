@@ -12,7 +12,7 @@ class UserInteractor:InteractorProtocol {
     }
     
     func load(onCompletion:@escaping(([User]) -> Void)) {
-        let storage:Storage = Storage()
+        let storage:StorageProtocol = Factory.makeStorage()
         storage.load { [weak self] (users:[User]) in
             self?.users = users
             onCompletion(users)

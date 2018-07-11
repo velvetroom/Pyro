@@ -1,10 +1,10 @@
 import Foundation
 
-public class Storage {
+class Storage:StorageProtocol {
     var userDefaults:UserDefaults
     private let dispatch:DispatchQueue
     
-    public init() {
+    init() {
         self.userDefaults = UserDefaults(suiteName:StorageConstants.suite)!
         self.dispatch = DispatchQueue(label:StorageConstants.identifier, qos:DispatchQoS.background,
                                       attributes:DispatchQueue.Attributes.concurrent,
@@ -12,14 +12,14 @@ public class Storage {
                                       target:DispatchQueue.global(qos:DispatchQoS.QoSClass.background))
     }
     
-    public func load(onCompletion:@escaping(([User]) -> Void)) {
+    func load(onCompletion:@escaping(([User]) -> Void)) {
         self.dispatch.async {
             let users:[User] = self.loadUsers()
             DispatchQueue.main.async { onCompletion(users) }
         }
     }
     
-    public func save(users:[User], onCompletion:@escaping(() -> Void)) {
+    func save(users:[User], onCompletion:@escaping(() -> Void)) {
         self.dispatch.async {
             self.saveUsers(array:self.serialise(users:users))
             DispatchQueue.main.async { onCompletion() }
