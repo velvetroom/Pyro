@@ -50,12 +50,12 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     }
     
     private func updated(property:UsersViewModel) {
-        let removeIndexes:[IndexPath] = self.indexesFor(count:users.count)
+        let removeIndexes:[IndexPath] = self.indexesFor(count:self.users.count)
         let addIndexes:[IndexPath] = self.indexesFor(count:property.users.count)
-        self.users = property.users
         self.content.performBatchUpdates({ [weak self] in
             self?.content.deleteItems(at:removeIndexes)
             self?.content.insertItems(at:addIndexes)
+            self?.users = property.users
         })
     }
     

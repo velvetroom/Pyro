@@ -10,6 +10,7 @@ struct UsersConstants {
         static let identifier:String = String(ObjectIdentifier(UsersViewContentCell.self).hashValue)
         static let cellHeight:CGFloat = 64
         static let cellSeparation:CGFloat = 2
+        static let placeHolders:Int = 12
     }
     
     struct Cell {

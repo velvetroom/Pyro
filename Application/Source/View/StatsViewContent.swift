@@ -25,7 +25,7 @@ class StatsViewContent:UICollectionView {
     private func configureFlow() {
         let flow:UICollectionViewFlowLayout = self.collectionViewLayout as! UICollectionViewFlowLayout
         flow.scrollDirection = UICollectionView.ScrollDirection.vertical
-        flow.minimumInteritemSpacing = StatsConstants.Collection.cellSeparation
+        flow.minimumInteritemSpacing = 0
         flow.minimumLineSpacing = StatsConstants.Collection.cellSeparation
         flow.headerReferenceSize = CGSize.zero
         flow.footerReferenceSize = CGSize.zero

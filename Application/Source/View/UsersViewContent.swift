@@ -25,7 +25,7 @@ class UsersViewContent:UICollectionView {
     private func configureFlow() {
         let flow:UICollectionViewFlowLayout = self.collectionViewLayout as! UICollectionViewFlowLayout
         flow.scrollDirection = UICollectionView.ScrollDirection.vertical
-        flow.minimumInteritemSpacing = UsersConstants.Collection.cellSeparation
+        flow.minimumInteritemSpacing = 0
         flow.minimumLineSpacing = UsersConstants.Collection.cellSeparation
         flow.headerReferenceSize = CGSize.zero
         flow.footerReferenceSize = CGSize.zero
