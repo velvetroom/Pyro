@@ -17,6 +17,7 @@
 		DAA00E2D20F48ADD009386CE /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2C20F48ADD009386CE /* StatsViewModel.swift */; };
 		DAA00E3020F48DEF009386CE /* StatsViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2F20F48DEF009386CE /* StatsViewModelItem.swift */; };
 		DAA00E3220F48F1C009386CE /* StatsViewModelBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3120F48F1C009386CE /* StatsViewModelBuilderProtocol.swift */; };
+		DACEB85A20F6484D0018DE79 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACEB85920F6484D0018DE79 /* brand.xcassets */; };
 		DAE4860420F47060003BF78A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE485E820F47060003BF78A /* Localizable.strings */; };
 		DAE4860520F47060003BF78A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */; };
 		DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485EE20F47060003BF78A /* UsersViewModel.swift */; };
@@ -65,6 +66,7 @@
 		DAA00E2C20F48ADD009386CE /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		DAA00E2F20F48DEF009386CE /* StatsViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelItem.swift; sourceTree = "<group>"; };
 		DAA00E3120F48F1C009386CE /* StatsViewModelBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderProtocol.swift; sourceTree = "<group>"; };
+		DACEB85920F6484D0018DE79 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAE485E620F47056003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DAE485E920F47060003BF78A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		DAE4860320F47060003BF78A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				DACEB85920F6484D0018DE79 /* brand.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			files = (
 				DAE4860420F47060003BF78A /* Localizable.strings in Resources */,
 				DAE4860520F47060003BF78A /* LaunchScreen.storyboard in Resources */,
+				DACEB85A20F6484D0018DE79 /* brand.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
