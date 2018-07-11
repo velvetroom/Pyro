@@ -1,20 +1,14 @@
 import Foundation
 
-class ScraperCleaner {
-    var items:[ScraperItem]
-    
-    init() {
-        self.items = []
-    }
-    
-    func cleanOnlyFor(year:Int) {
-        var items:[ScraperItem] = []
+class ScraperCleaner:ScraperCleanerProtocol {
+    func clean(year:Int, items:[ScraperItem]) -> [ScraperItem] {
+        var clean:[ScraperItem] = []
         let yearString:String = String(year)
-        for item in self.items {
+        for item in items {
             if item.date.contains(yearString) {
-                items.append(item)
+                clean.append(item)
             }
         }
-        self.items = items
+        return clean
     }
 }

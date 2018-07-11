@@ -1,6 +1,6 @@
 import Foundation
 
-class Scraper {
+class Scraper:ScraperProtocol {
     private var items:[ScraperItem]!
     private var item:ScraperItem!
     

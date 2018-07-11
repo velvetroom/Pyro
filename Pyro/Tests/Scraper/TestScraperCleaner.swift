@@ -17,8 +17,7 @@ class TestScraperCleaner:XCTestCase {
         itemC.date = "2015-08-13"
         var itemD:ScraperItem = ScraperItem()
         itemD.date = "2016-05-12"
-        self.cleaner.items.append(contentsOf:[itemA, itemB, itemC, itemD])
-        self.cleaner.cleanOnlyFor(year:2015)
-        XCTAssertEqual(self.cleaner.items.count, 2, "Failed to clean")
+        let items:[ScraperItem] = self.cleaner.clean(year:2015, items:[itemA, itemB, itemC, itemD])
+        XCTAssertEqual(items.count, 2, "Failed to clean")
     }
 }
