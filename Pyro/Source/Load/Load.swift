@@ -1,11 +1,11 @@
 import Foundation
 
-class Load {
+class Load:LoadProtocol {
     weak var delegate:LoadDelegate?
-    var user:User!
     var request:RequestProtocol
     var scraper:ScraperProtocol
     var cleaner:ScraperCleanerProtocol
+    private var user:User!
     private var items:[ScraperItem]
     
     init() {
@@ -15,7 +15,8 @@ class Load {
         self.items = []
     }
     
-    func start() {
+    func start(user:User) {
+        self.user = user
         self.next(year:LoadConstants.startingYear)
     }
     

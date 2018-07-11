@@ -35,6 +35,17 @@
 		DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086120F5D78300BCDA13 /* ScraperProtocol.swift */; };
 		DA28086420F5D8BB00BCDA13 /* MockScraperCleanerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086320F5D8BB00BCDA13 /* MockScraperCleanerProtocol.swift */; };
 		DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086520F5D8C300BCDA13 /* MockScraperProtocol.swift */; };
+		DA28086820F5DC3200BCDA13 /* LoadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086720F5DC3200BCDA13 /* LoadProtocol.swift */; };
+		DA28086A20F5DC6200BCDA13 /* MockLoadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086920F5DC6200BCDA13 /* MockLoadProtocol.swift */; };
+		DA28086D20F5DD8900BCDA13 /* ReportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086C20F5DD8900BCDA13 /* ReportProtocol.swift */; };
+		DA28087020F5DE2F00BCDA13 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086F20F5DE2F00BCDA13 /* Report.swift */; };
+		DA28087320F5DE5000BCDA13 /* MockReportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087220F5DE5000BCDA13 /* MockReportProtocol.swift */; };
+		DA28087520F5DE6C00BCDA13 /* TestReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087420F5DE6C00BCDA13 /* TestReport.swift */; };
+		DA28087720F5DF5E00BCDA13 /* StatsBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087620F5DF5E00BCDA13 /* StatsBuilderProtocol.swift */; };
+		DA28087920F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087820F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift */; };
+		DA28087B20F5E1A800BCDA13 /* ReportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087A20F5E1A800BCDA13 /* ReportDelegate.swift */; };
+		DA28087D20F5E1DF00BCDA13 /* MockReportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087C20F5E1DF00BCDA13 /* MockReportDelegate.swift */; };
+		DA28087F20F5E4FD00BCDA13 /* ReportConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087E20F5E4FD00BCDA13 /* ReportConstants.swift */; };
 		DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */; };
 		DA32CD0120F4F61D00F75BE5 /* ScraperCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CD0020F4F61D00F75BE5 /* ScraperCleaner.swift */; };
 		DA32CD0320F4F6B000F75BE5 /* TestScraperCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CD0220F4F6B000F75BE5 /* TestScraperCleaner.swift */; };
@@ -89,6 +100,17 @@
 		DA28086120F5D78300BCDA13 /* ScraperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperProtocol.swift; sourceTree = "<group>"; };
 		DA28086320F5D8BB00BCDA13 /* MockScraperCleanerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockScraperCleanerProtocol.swift; sourceTree = "<group>"; };
 		DA28086520F5D8C300BCDA13 /* MockScraperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockScraperProtocol.swift; sourceTree = "<group>"; };
+		DA28086720F5DC3200BCDA13 /* LoadProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProtocol.swift; sourceTree = "<group>"; };
+		DA28086920F5DC6200BCDA13 /* MockLoadProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoadProtocol.swift; sourceTree = "<group>"; };
+		DA28086C20F5DD8900BCDA13 /* ReportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProtocol.swift; sourceTree = "<group>"; };
+		DA28086F20F5DE2F00BCDA13 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		DA28087220F5DE5000BCDA13 /* MockReportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportProtocol.swift; sourceTree = "<group>"; };
+		DA28087420F5DE6C00BCDA13 /* TestReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReport.swift; sourceTree = "<group>"; };
+		DA28087620F5DF5E00BCDA13 /* StatsBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBuilderProtocol.swift; sourceTree = "<group>"; };
+		DA28087820F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStatsBuilderProtocol.swift; sourceTree = "<group>"; };
+		DA28087A20F5E1A800BCDA13 /* ReportDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDelegate.swift; sourceTree = "<group>"; };
+		DA28087C20F5E1DF00BCDA13 /* MockReportDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportDelegate.swift; sourceTree = "<group>"; };
+		DA28087E20F5E4FD00BCDA13 /* ReportConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportConstants.swift; sourceTree = "<group>"; };
 		DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperConstants.swift; sourceTree = "<group>"; };
 		DA32CD0020F4F61D00F75BE5 /* ScraperCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperCleaner.swift; sourceTree = "<group>"; };
 		DA32CD0220F4F6B000F75BE5 /* TestScraperCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScraperCleaner.swift; sourceTree = "<group>"; };
@@ -153,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				DA20629A20F4F93F001B58A1 /* TestStatsBuilder.swift */,
+				DA28087820F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -172,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				DA2062C020F527FA001B58A1 /* TestLoad.swift */,
+				DA28086920F5DC6200BCDA13 /* MockLoadProtocol.swift */,
 				DA2062C420F529F2001B58A1 /* MockLoadDelegate.swift */,
 				DA2062BB20F5249A001B58A1 /* MockRequestProtocol.swift */,
 			);
@@ -181,11 +205,40 @@
 		DA2062BD20F527B2001B58A1 /* Load */ = {
 			isa = PBXGroup;
 			children = (
+				DA28086720F5DC3200BCDA13 /* LoadProtocol.swift */,
 				DA2062BE20F527C3001B58A1 /* Load.swift */,
 				DA2062C220F5286B001B58A1 /* LoadDelegate.swift */,
 				DA28085D20F5D1EA00BCDA13 /* LoadConstants.swift */,
 			);
 			path = Load;
+			sourceTree = "<group>";
+		};
+		DA28086B20F5DD5A00BCDA13 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				DA28086C20F5DD8900BCDA13 /* ReportProtocol.swift */,
+				DA28087A20F5E1A800BCDA13 /* ReportDelegate.swift */,
+				DA28086F20F5DE2F00BCDA13 /* Report.swift */,
+				DA28087E20F5E4FD00BCDA13 /* ReportConstants.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		DA28086E20F5DE1100BCDA13 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		DA28087120F5DE4200BCDA13 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				DA28087420F5DE6C00BCDA13 /* TestReport.swift */,
+				DA28087220F5DE5000BCDA13 /* MockReportProtocol.swift */,
+				DA28087C20F5E1DF00BCDA13 /* MockReportDelegate.swift */,
+			);
+			path = Report;
 			sourceTree = "<group>";
 		};
 		DA5915ED20F46D8B00B6AEDC = {
@@ -212,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				DAA00E3420F4940A009386CE /* Stats.swift */,
+				DA28087620F5DF5E00BCDA13 /* StatsBuilderProtocol.swift */,
 				DA20629720F4F910001B58A1 /* StatsBuilder.swift */,
 				DA20629E20F50098001B58A1 /* StatsCommandProtocol.swift */,
 				DA2062A020F502A3001B58A1 /* StatsCommandComposite.swift */,
@@ -228,6 +282,7 @@
 		DAE4861820F47084003BF78A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DA28087120F5DE4200BCDA13 /* Report */,
 				DA20629920F4F932001B58A1 /* Stats */,
 				DA2062BA20F5248A001B58A1 /* Load */,
 				DAE4861920F47084003BF78A /* Storage */,
@@ -258,6 +313,8 @@
 		DAE4861F20F4708E003BF78A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DA28086E20F5DE1100BCDA13 /* Factory */,
+				DA28086B20F5DD5A00BCDA13 /* Report */,
 				DAA00E3320F493E1009386CE /* Stats */,
 				DAE4862020F4708E003BF78A /* User */,
 				DA2062AC20F51A6A001B58A1 /* Request */,
@@ -396,16 +453,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA28086D20F5DD8900BCDA13 /* ReportProtocol.swift in Sources */,
 				DA20629D20F4FA2F001B58A1 /* StatsConstants.swift in Sources */,
 				DAE4862920F4708E003BF78A /* StorageError.swift in Sources */,
 				DAA00E3520F4940A009386CE /* Stats.swift in Sources */,
 				DA28085E20F5D1EA00BCDA13 /* LoadConstants.swift in Sources */,
 				DA01227F20F499AC00B9C5EF /* Scraper.swift in Sources */,
+				DA28087B20F5E1A800BCDA13 /* ReportDelegate.swift in Sources */,
 				DA01228420F49AB700B9C5EF /* ScraperItem.swift in Sources */,
 				DA20629F20F50098001B58A1 /* StatsCommandProtocol.swift in Sources */,
+				DA28087F20F5E4FD00BCDA13 /* ReportConstants.swift in Sources */,
 				DA2062A320F503B2001B58A1 /* StatsCommandFirstContribution.swift in Sources */,
 				DAE4862620F4708E003BF78A /* User.swift in Sources */,
 				DA2062A120F502A3001B58A1 /* StatsCommandComposite.swift in Sources */,
+				DA28087020F5DE2F00BCDA13 /* Report.swift in Sources */,
 				DA2062AB20F50416001B58A1 /* StatsCommandCurrentStreak.swift in Sources */,
 				DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */,
 				DA32CD0120F4F61D00F75BE5 /* ScraperCleaner.swift in Sources */,
@@ -419,10 +480,12 @@
 				DA2062C320F5286B001B58A1 /* LoadDelegate.swift in Sources */,
 				DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */,
 				DA2062B920F5242B001B58A1 /* RequestProtocol.swift in Sources */,
+				DA28087720F5DF5E00BCDA13 /* StatsBuilderProtocol.swift in Sources */,
 				DA2062A920F5040D001B58A1 /* StatsCommandMaxStreak.swift in Sources */,
 				DA28086020F5D6E700BCDA13 /* ScraperCleanerProtocol.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
 				DA2062A520F503E8001B58A1 /* StatsCommandLastContribution.swift in Sources */,
+				DA28086820F5DC3200BCDA13 /* LoadProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,8 +500,13 @@
 				DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */,
 				DA2062BC20F5249A001B58A1 /* MockRequestProtocol.swift in Sources */,
 				DA28086420F5D8BB00BCDA13 /* MockScraperCleanerProtocol.swift in Sources */,
+				DA28087320F5DE5000BCDA13 /* MockReportProtocol.swift in Sources */,
 				DA01228220F49A1C00B9C5EF /* TestScraper.swift in Sources */,
+				DA28087920F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift in Sources */,
 				DA2062C520F529F2001B58A1 /* MockLoadDelegate.swift in Sources */,
+				DA28087D20F5E1DF00BCDA13 /* MockReportDelegate.swift in Sources */,
+				DA28086A20F5DC6200BCDA13 /* MockLoadProtocol.swift in Sources */,
+				DA28087520F5DE6C00BCDA13 /* TestReport.swift in Sources */,
 				DA20629B20F4F93F001B58A1 /* TestStatsBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

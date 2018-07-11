@@ -19,9 +19,8 @@ class TestStatsBuilder:XCTestCase {
         let dateFormatter:DateFormatter = DateFormatter()
         dateFormatter.dateFormat = StatsConstants.dateFormat
         let expectedDate:Date = dateFormatter.date(from:itemA.date)!
-        self.builder.items = [itemA, itemB, itemC]
-        self.builder.build()
-        XCTAssertEqual(self.builder.stats.firstContribution, expectedDate, "Invalid stats")
+        let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
+        XCTAssertEqual(stats.firstContribution, expectedDate, "Invalid stats")
     }
     
     func testMakesLastContribution() {
@@ -34,9 +33,8 @@ class TestStatsBuilder:XCTestCase {
         let dateFormatter:DateFormatter = DateFormatter()
         dateFormatter.dateFormat = StatsConstants.dateFormat
         let expectedDate:Date = dateFormatter.date(from:itemC.date)!
-        self.builder.items = [itemA, itemB, itemC]
-        self.builder.build()
-        XCTAssertEqual(self.builder.stats.lastContribution, expectedDate, "Invalid stats")
+        let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
+        XCTAssertEqual(stats.lastContribution, expectedDate, "Invalid stats")
     }
     
     func testMakesContributions() {
@@ -50,9 +48,8 @@ class TestStatsBuilder:XCTestCase {
         itemC.count = 5
         itemC.date = "2000-01-01"
         let expectedCount:Int = itemA.count + itemB.count + itemC.count
-        self.builder.items = [itemA, itemB, itemC]
-        self.builder.build()
-        XCTAssertEqual(self.builder.stats.contributions, expectedCount, "Invalid stats")
+        let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
+        XCTAssertEqual(stats.contributions, expectedCount, "Invalid stats")
     }
     
     func testMakesMaxStreak() {
@@ -78,9 +75,8 @@ class TestStatsBuilder:XCTestCase {
         var itemH:ScraperItem = ScraperItem()
         itemH.count = 56
         itemH.date = "2000-01-01"
-        self.builder.items = [itemA, itemB, itemC, itemD, itemE, itemF, itemG, itemH]
-        self.builder.build()
-        XCTAssertEqual(self.builder.stats.maxStreak, 3, "Invalid stats")
+        let stats:Stats = self.builder.build(items:[itemA, itemB, itemC, itemD, itemE, itemF, itemG, itemH])
+        XCTAssertEqual(stats.maxStreak, 3, "Invalid stats")
     }
     
     func testMakesCurrentStreak() {
@@ -93,8 +89,7 @@ class TestStatsBuilder:XCTestCase {
         var itemC:ScraperItem = ScraperItem()
         itemC.count = 5
         itemC.date = "2000-01-01"
-        self.builder.items = [itemA, itemB, itemC]
-        self.builder.build()
-        XCTAssertEqual(self.builder.stats.currentStreak, 2, "Invalid stats")
+        let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
+        XCTAssertEqual(stats.currentStreak, 2, "Invalid stats")
     }
 }

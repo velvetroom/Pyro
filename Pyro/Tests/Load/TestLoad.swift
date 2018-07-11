@@ -14,7 +14,6 @@ class TestLoad:XCTestCase {
         self.request = MockRequestProtocol()
         self.scraper = MockScraperProtocol()
         self.cleaner = MockScraperCleanerProtocol()
-        self.load.user = User()
         self.load.delegate = self.delegate
         self.load.request = self.request
         self.load.scraper = self.scraper
@@ -25,7 +24,7 @@ class TestLoad:XCTestCase {
         var received:Bool = false
         self.request.data = Data()
         self.delegate.onCompleted = { received = true }
-        self.load.start()
+        self.load.start(user:User())
         XCTAssertTrue(received, "Not received")
     }
     
@@ -33,7 +32,7 @@ class TestLoad:XCTestCase {
         var received:Bool = false
         self.request.error = RequestError.emptyResponse
         self.delegate.onError = { received = true }
-        self.load.start()
+        self.load.start(user:User())
         XCTAssertTrue(received, "Not received")
     }
     
@@ -48,7 +47,7 @@ class TestLoad:XCTestCase {
                 receiveEndingYear.fulfill()
             }
         }
-        self.load.start()
+        self.load.start(user:User())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
@@ -59,7 +58,7 @@ class TestLoad:XCTestCase {
             expect?.fulfill()
             expect = nil
         }
-        self.load.start()
+        self.load.start(user:User())
         self.waitForExpectations(timeout:0.1, handler:nil)
     }
     
@@ -70,7 +69,12 @@ class TestLoad:XCTestCase {
             expect?.fulfill()
             expect = nil
         }
-        self.load.start()
+        self.load.start(user:User())
         self.waitForExpectations(timeout:0.1, handler:nil)
+    }
+    
+    func testNotRetainingDelegate() {
+        self.delegate = nil
+        XCTAssertNil(self.load.delegate, "Retains delegate")
     }
 }

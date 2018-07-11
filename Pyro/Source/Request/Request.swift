@@ -4,8 +4,7 @@ class Request:RequestProtocol {
     private let session:URLSession
     
     init() {
-        let configuration:URLSessionConfiguration = URLSessionConfiguration.background(
-            withIdentifier:RequestConstants.identifier)
+        let configuration:URLSessionConfiguration = URLSessionConfiguration.ephemeral
         configuration.allowsCellularAccess = true
         configuration.isDiscretionary = true
         configuration.networkServiceType = URLRequest.NetworkServiceType.default
@@ -14,8 +13,8 @@ class Request:RequestProtocol {
     }
     
     func make(user:User, year:Int, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
-        let request:URLRequest = self.makeRequest(user:user, year:year)
-        session.dataTask(with:request) { (data:Data?, response:URLResponse?, error:Error?) in
+        let request:URLRequest = self.request(user:user, year:year)
+        self.session.dataTask(with:request) { (data:Data?, response:URLResponse?, error:Error?) in
             if let error:Error = error {
                 onError(error)
             }
@@ -25,14 +24,13 @@ class Request:RequestProtocol {
                 } else {
                     onCompletion(data)
                 }
-            }
-            else {
+            } else {
                 onError(RequestError.noResponse)
             }
         }
     }
     
-    private func makeRequest(user:User, year:Int) -> URLRequest {
+    private func request(user:User, year:Int) -> URLRequest {
         let url:URL = URL(string:RequestConstants.urlPrefix + user.url + RequestConstants.urlMiddle +
             String(year) + RequestConstants.urlSuffix)!
         var request:URLRequest = URLRequest(url:url, cachePolicy:URLRequest.CachePolicy.returnCacheDataElseLoad,

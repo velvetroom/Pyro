@@ -1,7 +1,6 @@
 import Foundation
 
 struct RequestConstants {
-    static let identifier:String = "iturbide.Pyro"
     static let method:String = "GET"
     static let urlPrefix:String = "https://github.com/users/"
     static let urlMiddle:String = "/contributions?from="

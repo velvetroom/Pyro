@@ -1,20 +1,18 @@
 import Foundation
 
-class StatsBuilder {
-    var items:[ScraperItem]
-    var stats:Stats
+class StatsBuilder:StatsBuilderProtocol {
     private let command:StatsCommandProtocol
     
     init() {
-        self.items = []
-        self.stats = Stats()
         self.command = StatsCommandComposite()
     }
     
-    func build() {
-        for item:ScraperItem in self.items {
+    func build(items:[ScraperItem]) -> Stats {
+        var stats:Stats = Stats()
+        for item:ScraperItem in items {
             self.command.evaluate(item:item)
         }
-        self.command.print(stats:&self.stats)
+        self.command.print(stats:&stats)
+        return stats
     }
 }

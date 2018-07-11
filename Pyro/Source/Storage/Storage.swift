@@ -2,7 +2,7 @@ import Foundation
 
 public class Storage {
     var userDefaults:UserDefaults
-    let dispatch:DispatchQueue
+    private let dispatch:DispatchQueue
     
     public init() {
         self.userDefaults = UserDefaults(suiteName:StorageConstants.suite)!
@@ -49,11 +49,7 @@ public class Storage {
             let data:Data = try Data(contentsOf:url, options:Data.ReadingOptions.mappedIfSafe)
             try array = JSONSerialization.jsonObject(with:data,
                                                      options:JSONSerialization.ReadingOptions()) as! [[String:Any]]
-        } catch let error {
-            print(error)
-            return []
-            
-        }
+        } catch { return [] }
         self.saveUsers(array:array)
         return self.deserialise(array:array)
     }
