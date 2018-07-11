@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Stats {
+public struct Stats:Codable {
     public var firstContribution:Date
     public var lastContribution:Date
     public var contributions:Int

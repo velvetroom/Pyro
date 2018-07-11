@@ -1,4 +1,4 @@
-StorageError_FirstTime="Storage error: Default users not loaded.";
+StorageError_fileNotFound="Storage error: File not found.";
 RequestError_noResponse="Request error: Server returned no response.";
 RequestError_emptyResponse="Request error: Server returned empty response.";
 RequestError_banned="Server error: Too many requests sent to server.\nWait a few minutes and try again.";

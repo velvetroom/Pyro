@@ -1,0 +1,29 @@
+{
+    "users":
+    [
+     {
+        "name": "Linus Torvalds",
+        "url": "torvalds",
+        "stats":
+        {
+            "firstContribution": 0,
+            "lastContribution": 0,
+            "contributions": 0,
+            "maxStreak": 0,
+            "currentStreak": 0
+         }
+     },
+     {
+        "name": "Mattt",
+        "url": "mattt",
+        "stats":
+        {
+            "firstContribution": 0,
+            "lastContribution": 0,
+            "contributions": 0,
+            "maxStreak": 0,
+            "currentStreak": 0
+        }
+     }
+    ]
+}

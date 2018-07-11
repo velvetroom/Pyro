@@ -54,15 +54,18 @@
 		DA32CD0320F4F6B000F75BE5 /* TestScraperCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CD0220F4F6B000F75BE5 /* TestScraperCleaner.swift */; };
 		DA59160B20F46DBA00B6AEDC /* Pyro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5915F720F46D8B00B6AEDC /* Pyro.framework */; };
 		DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */; };
+		DA7E6E8120F60C8F00E6F38E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8020F60C8F00E6F38E /* Store.swift */; };
+		DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8220F6158B00E6F38E /* StorageFile.swift */; };
+		DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */; };
 		DAA00E3520F4940A009386CE /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3420F4940A009386CE /* Stats.swift */; };
 		DAA00E3720F496AF009386CE /* StatsMin.stub in Resources */ = {isa = PBXBuildFile; fileRef = DAA00E3620F496AF009386CE /* StatsMin.stub */; };
-		DAE4861C20F47084003BF78A /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861A20F47084003BF78A /* MockUserDefaults.swift */; };
+		DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861A20F47084003BF78A /* MockStorageFileProtocol.swift */; };
 		DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861B20F47084003BF78A /* TestStorage.swift */; };
 		DAE4862620F4708E003BF78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862120F4708E003BF78A /* User.swift */; };
 		DAE4862720F4708E003BF78A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862320F4708E003BF78A /* Storage.swift */; };
 		DAE4862820F4708E003BF78A /* StorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862420F4708E003BF78A /* StorageConstants.swift */; };
 		DAE4862920F4708E003BF78A /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862520F4708E003BF78A /* StorageError.swift */; };
-		DAE695A520F47B3800E8AA59 /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = DAE695A420F47B3800E8AA59 /* Users.json */; };
+		DAE695A520F47B3800E8AA59 /* Store.json in Resources */ = {isa = PBXBuildFile; fileRef = DAE695A420F47B3800E8AA59 /* Store.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,16 +127,19 @@
 		DA5915F720F46D8B00B6AEDC /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA59160620F46DBA00B6AEDC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnalyser.swift; sourceTree = "<group>"; };
+		DA7E6E8020F60C8F00E6F38E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		DA7E6E8220F6158B00E6F38E /* StorageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFile.swift; sourceTree = "<group>"; };
+		DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFileProtocol.swift; sourceTree = "<group>"; };
 		DAA00E3420F4940A009386CE /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		DAA00E3620F496AF009386CE /* StatsMin.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsMin.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DAE4861720F4707A003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
-		DAE4861A20F47084003BF78A /* MockUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
+		DAE4861A20F47084003BF78A /* MockStorageFileProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockStorageFileProtocol.swift; sourceTree = "<group>"; };
 		DAE4861B20F47084003BF78A /* TestStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
 		DAE4862120F4708E003BF78A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DAE4862320F4708E003BF78A /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DAE4862420F4708E003BF78A /* StorageConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageConstants.swift; sourceTree = "<group>"; };
 		DAE4862520F4708E003BF78A /* StorageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
-		DAE695A420F47B3800E8AA59 /* Users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Users.json; sourceTree = "<group>"; };
+		DAE695A420F47B3800E8AA59 /* Store.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Store.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +312,7 @@
 			children = (
 				DAE4861B20F47084003BF78A /* TestStorage.swift */,
 				DA28088420F5EB8E00BCDA13 /* MockStorageProtocol.swift */,
-				DAE4861A20F47084003BF78A /* MockUserDefaults.swift */,
+				DAE4861A20F47084003BF78A /* MockStorageFileProtocol.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -315,7 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				DA2062B520F5227B001B58A1 /* Localizable.strings */,
-				DAE695A420F47B3800E8AA59 /* Users.json */,
+				DAE695A420F47B3800E8AA59 /* Store.json */,
 				DAA00E3620F496AF009386CE /* StatsMin.stub */,
 			);
 			path = Resources;
@@ -347,8 +353,11 @@
 		DAE4862220F4708E003BF78A /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				DA7E6E8020F60C8F00E6F38E /* Store.swift */,
 				DA28088220F5EB1F00BCDA13 /* StorageProtocol.swift */,
 				DAE4862320F4708E003BF78A /* Storage.swift */,
+				DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */,
+				DA7E6E8220F6158B00E6F38E /* StorageFile.swift */,
 				DAE4862420F4708E003BF78A /* StorageConstants.swift */,
 				DAE4862520F4708E003BF78A /* StorageError.swift */,
 			);
@@ -445,7 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE695A520F47B3800E8AA59 /* Users.json in Resources */,
+				DAE695A520F47B3800E8AA59 /* Store.json in Resources */,
 				DA2062B720F5227B001B58A1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,8 +489,10 @@
 				DA2062A320F503B2001B58A1 /* StatsCommandFirstContribution.swift in Sources */,
 				DAE4862620F4708E003BF78A /* User.swift in Sources */,
 				DA2062A120F502A3001B58A1 /* StatsCommandComposite.swift in Sources */,
+				DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */,
 				DA28087020F5DE2F00BCDA13 /* Report.swift in Sources */,
 				DA2062AB20F50416001B58A1 /* StatsCommandCurrentStreak.swift in Sources */,
+				DA7E6E8120F60C8F00E6F38E /* Store.swift in Sources */,
 				DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */,
 				DA32CD0120F4F61D00F75BE5 /* ScraperCleaner.swift in Sources */,
 				DA2062BF20F527C3001B58A1 /* Load.swift in Sources */,
@@ -497,6 +508,7 @@
 				DA28087720F5DF5E00BCDA13 /* StatsBuilderProtocol.swift in Sources */,
 				DA28088120F5EADF00BCDA13 /* Factory.swift in Sources */,
 				DA2062A920F5040D001B58A1 /* StatsCommandMaxStreak.swift in Sources */,
+				DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */,
 				DA28086020F5D6E700BCDA13 /* ScraperCleanerProtocol.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
 				DA2062A520F503E8001B58A1 /* StatsCommandLastContribution.swift in Sources */,
@@ -508,7 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE4861C20F47084003BF78A /* MockUserDefaults.swift in Sources */,
+				DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */,
 				DA32CD0320F4F6B000F75BE5 /* TestScraperCleaner.swift in Sources */,
 				DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */,
 				DA2062C120F527FA001B58A1 /* TestLoad.swift in Sources */,

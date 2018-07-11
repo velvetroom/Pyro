@@ -9,7 +9,7 @@ class MockStorageProtocol:StorageProtocol {
         self.onLoad?()
     }
     
-    func save(users:[User], onCompletion:@escaping(() -> Void)) {
+    func save(users:[User]) {
         self.onSave?()
     }
 }
