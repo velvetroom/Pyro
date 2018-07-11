@@ -13,10 +13,21 @@ class UserInteractor:InteractorProtocol {
         self.storage = Factory.makeStorage()
     }
     
-    func load(onCompletion:@escaping(([User]) -> Void)) {
+    func load(onCompletion:@escaping(() -> Void)) {
         self.storage.load { [weak self] (users:[User]) in
             self?.users = users
-            onCompletion(users)
+            onCompletion()
         }
+    }
+    
+    func add(name:String, url:String) {
+        var user:User = User()
+        user.name = name
+        user.url = url
+        self.users.append(user)
+        self.users.sort { (userA:User, userB:User) -> Bool in
+            return userA.name.caseInsensitiveCompare(userB.name) == ComparisonResult.orderedAscending
+        }
+        self.storage.save(users:self.users)
     }
 }

@@ -36,6 +36,8 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
         self.title = NSLocalizedString("UsersView_Title", comment:String())
         self.content.delegate = self
         self.content.dataSource = self
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonItem.SystemItem.add,
+                                                                 target:self, action:#selector(self.selectorAdd))
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.always
         }
@@ -63,5 +65,9 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
             indexes.append(IndexPath(item:index, section:0))
         }
         return indexes
+    }
+    
+    @objc private func selectorAdd() {
+        self.presenter.addNew()
     }
 }

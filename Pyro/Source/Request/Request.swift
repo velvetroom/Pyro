@@ -14,7 +14,12 @@ class Request:RequestProtocol {
     }
     
     func make(user:User, year:Int, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
-        let request:URLRequest = self.request(user:user, year:year)
+        guard
+            let request:URLRequest = self.request(user:user, year:year)
+        else {
+            onError(RequestError.userNotValid)
+            return
+        }
         self.task?.cancel()
         self.task = self.session.dataTask(with:request) { (data:Data?, response:URLResponse?, error:Error?) in
             let analyser:RequestAnalyser = RequestAnalyser()
@@ -28,9 +33,12 @@ class Request:RequestProtocol {
         self.task?.resume()
     }
     
-    private func request(user:User, year:Int) -> URLRequest {
-        let url:URL = URL(string:RequestConstants.urlPrefix + user.url + RequestConstants.urlMiddle +
-            String(year) + RequestConstants.urlSuffix)!
+    private func request(user:User, year:Int) -> URLRequest? {
+        guard
+            let userPath:String = user.url.addingPercentEncoding(withAllowedCharacters:CharacterSet.urlPathAllowed),
+            let url:URL = URL(string:RequestConstants.urlPrefix + userPath + RequestConstants.urlMiddle +
+                String(year) + RequestConstants.urlSuffix)
+        else { return nil }
         var request:URLRequest = URLRequest(url:url, cachePolicy:URLRequest.CachePolicy.reloadIgnoringCacheData,
                                             timeoutInterval:RequestConstants.timeout)
         request.httpMethod = RequestConstants.method

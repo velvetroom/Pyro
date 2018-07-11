@@ -35,6 +35,8 @@ class RequestAnalyser {
             self.onCompletion?(data)
         case RequestConstants.codeBanned:
             self.onError?(RequestError.banned)
+        case RequestConstants.codeFourZeroFour:
+            self.onError?(RequestError.fourZeroFour)
         default:
             self.onError?(RequestError.unknown)
         }
