@@ -1,3 +1,5 @@
-StorageError_FirstTime="Storage error: Default users not loaded";
-RequestError_noResponse="Request error: Server returned no response";
-RequestError_emptyResponse="Request error: Server returned empty response";
+StorageError_FirstTime="Storage error: Default users not loaded.";
+RequestError_noResponse="Request error: Server returned no response.";
+RequestError_emptyResponse="Request error: Server returned empty response.";
+RequestError_banned="Server error: Too many requests sent to server.\nWait a few minutes and try again.";
+RequestError_unknown="Unknown server error, wait for a few minutes and try again.";

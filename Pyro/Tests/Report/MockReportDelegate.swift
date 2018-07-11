@@ -1,5 +1,5 @@
 import Foundation
-@testable import Pyro
+import Pyro
 
 class MockReportDelegate:ReportDelegate {
     var onCompleted:(() -> Void)?

@@ -16,7 +16,7 @@ class Report:ReportProtocol, LoadDelegate {
         self.load.delegate = self
     }
     
-    func report(user:User) {
+    func make(user:User) {
         self.dispatch.async { [weak self] in
             self?.load.start(user:user)
         }

@@ -13,15 +13,20 @@ class Storage:StorageProtocol {
     }
     
     func load(onCompletion:@escaping(([User]) -> Void)) {
-        self.dispatch.async {
-            let users:[User] = self.loadUsers()
+        self.dispatch.async { [weak self] in
+            guard
+                let users:[User] = self?.loadUsers()
+            else { return }
             DispatchQueue.main.async { onCompletion(users) }
         }
     }
     
     func save(users:[User], onCompletion:@escaping(() -> Void)) {
-        self.dispatch.async {
-            self.saveUsers(array:self.serialise(users:users))
+        self.dispatch.async { [weak self] in
+            guard
+                let array:[[String:Any]] = self?.serialise(users:users)
+            else { return }
+            self?.saveUsers(array:array)
             DispatchQueue.main.async { onCompletion() }
         }
     }
@@ -37,7 +42,8 @@ class Storage:StorageProtocol {
     }
     
     private func loadUsersFromStorage() throws -> [User] {
-        guard let array:[[String:Any]] = self.userDefaults.value(forKey:StorageConstants.users) as? [[String:Any]]
+        guard
+            let array:[[String:Any]] = self.userDefaults.value(forKey:StorageConstants.users) as? [[String:Any]]
         else { throw StorageError.firstTime }
         return self.deserialise(array:array)
     }

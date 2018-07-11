@@ -3,7 +3,7 @@ import UIKit
 struct StatsConstants {
     struct Collection {
         static let identifier:String = String(ObjectIdentifier(StatsViewContentCell.self).hashValue)
-        static let cellHeight:CGFloat = 70
+        static let cellHeight:CGFloat = 80
         static let cellSeparation:CGFloat = 2
     }
     

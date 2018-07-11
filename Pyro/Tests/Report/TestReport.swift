@@ -33,7 +33,7 @@ class TestReport:XCTestCase {
             XCTAssertEqual(Thread.current, Thread.main, "Should be on main thread")
             expectDelegateReturns.fulfill()
         }
-        self.report.report(user:User())
+        self.report.make(user:User())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
@@ -44,7 +44,7 @@ class TestReport:XCTestCase {
             XCTAssertEqual(Thread.current, Thread.main, "Should be on main thread")
             expect.fulfill()
         }
-        self.report.report(user:User())
+        self.report.make(user:User())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
 }

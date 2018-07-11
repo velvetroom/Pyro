@@ -6,4 +6,6 @@ struct RequestConstants {
     static let urlMiddle:String = "/contributions?from="
     static let urlSuffix:String = "-01-01"
     static let timeout:TimeInterval = 15
+    static let codeSuccess:Int = 200
+    static let codeBanned:Int = 429
 }

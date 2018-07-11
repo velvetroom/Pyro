@@ -38,7 +38,7 @@ class Load:LoadProtocol {
     
     private func completed(year:Int, data:Data) {
         let uncleanItems:[ScraperItem] = self.scraper.makeItems(data:data)
-        let items:[ScraperItem] = self.cleaner.clean(year:year, items:uncleanItems)
+        let items:[ScraperItem] = self.cleaner.clean(year:year - 1, items:uncleanItems)
         self.items.append(contentsOf:items)
         self.next(year:year + 1)
     }

@@ -14,11 +14,12 @@ class TestStatsBuilder:XCTestCase {
         itemA.date = "2001-09-09"
         var itemB:ScraperItem = ScraperItem()
         itemB.date = "2001-10-08"
+        itemB.count = 1
         var itemC:ScraperItem = ScraperItem()
         itemC.date = "2001-11-07"
         let dateFormatter:DateFormatter = DateFormatter()
         dateFormatter.dateFormat = StatsConstants.dateFormat
-        let expectedDate:Date = dateFormatter.date(from:itemA.date)!
+        let expectedDate:Date = dateFormatter.date(from:itemB.date)!
         let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
         XCTAssertEqual(stats.firstContribution, expectedDate, "Invalid stats")
     }
@@ -28,11 +29,12 @@ class TestStatsBuilder:XCTestCase {
         itemA.date = "2001-09-09"
         var itemB:ScraperItem = ScraperItem()
         itemB.date = "2001-10-08"
+        itemB.count = 1
         var itemC:ScraperItem = ScraperItem()
         itemC.date = "2001-11-07"
         let dateFormatter:DateFormatter = DateFormatter()
         dateFormatter.dateFormat = StatsConstants.dateFormat
-        let expectedDate:Date = dateFormatter.date(from:itemC.date)!
+        let expectedDate:Date = dateFormatter.date(from:itemB.date)!
         let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
         XCTAssertEqual(stats.lastContribution, expectedDate, "Invalid stats")
     }

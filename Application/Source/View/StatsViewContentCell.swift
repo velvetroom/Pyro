@@ -48,9 +48,8 @@ class StatsViewContentCell:UICollectionViewCell {
         labelValue.isUserInteractionEnabled = false
         labelValue.backgroundColor = UIColor.clear
         labelValue.numberOfLines = 0
-        labelValue.textColor = UIColor(white:0.4, alpha:1)
-        labelValue.textAlignment = NSTextAlignment.right
-        labelValue.font = UIFont.systemFont(ofSize:StatsConstants.Cell.valueFontSize, weight:UIFont.Weight.light)
+        labelValue.textColor = self.tintColor
+        labelValue.font = UIFont.systemFont(ofSize:StatsConstants.Cell.valueFontSize, weight:UIFont.Weight.medium)
         self.labelValue = labelValue
         self.contentView.addSubview(labelValue)
     }

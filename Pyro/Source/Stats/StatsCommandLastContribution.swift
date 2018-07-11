@@ -1,15 +1,19 @@
 import Foundation
 
 class StatsCommandLastContribution:StatsCommandProtocol {
-    private var date:String!
+    private var date:String?
     
     func evaluate(item:ScraperItem) {
-        self.date = item.date
+        if item.count > 0 {
+            self.date = item.date
+        }
     }
     
     func print(stats:inout Stats) {
-        let formatter:DateFormatter = DateFormatter()
-        formatter.dateFormat = StatsConstants.dateFormat
-        stats.lastContribution = formatter.date(from:self.date)!
+        if let date:String = self.date {
+            let formatter:DateFormatter = DateFormatter()
+            formatter.dateFormat = StatsConstants.dateFormat
+            stats.lastContribution = formatter.date(from:date)!
+        }
     }
 }

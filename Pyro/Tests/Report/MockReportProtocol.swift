@@ -1,11 +1,11 @@
 import Foundation
-@testable import Pyro
+import Pyro
 
 class MockReportProtocol:ReportProtocol {
     var onReport:(() -> Void)?
     weak var delegate:ReportDelegate?
     
-    func report(user:User) {
+    func make(user:User) {
         self.onReport?()
     }
 }

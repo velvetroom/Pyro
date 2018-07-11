@@ -6,14 +6,15 @@ class UserInteractor:InteractorProtocol {
     weak var transition:Navigation?
     weak var presenter:InteractorDelegateProtocol?
     var users:[User]
+    private let storage:StorageProtocol
     
     required init() {
         self.users = []
+        self.storage = Factory.makeStorage()
     }
     
     func load(onCompletion:@escaping(([User]) -> Void)) {
-        let storage:StorageProtocol = Factory.makeStorage()
-        storage.load { [weak self] (users:[User]) in
+        self.storage.load { [weak self] (users:[User]) in
             self?.users = users
             onCompletion(users)
         }
