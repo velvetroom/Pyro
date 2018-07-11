@@ -8,7 +8,7 @@ struct UsersConstants {
     
     struct Collection {
         static let identifier:String = String(ObjectIdentifier(UsersViewContentCell.self).hashValue)
-        static let cellHeight:CGFloat = 60
+        static let cellHeight:CGFloat = 64
         static let cellSeparation:CGFloat = 2
     }
     
