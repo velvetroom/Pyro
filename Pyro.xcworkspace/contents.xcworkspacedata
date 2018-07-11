@@ -11,6 +11,9 @@
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Design">
+   </FileRef>
+   <FileRef
       location = "group:Pyro/Resources/../../Podfile">
    </FileRef>
    <FileRef
