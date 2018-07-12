@@ -738,7 +738,6 @@
 		DA59160F20F46DBA00B6AEDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
 				INFOPLIST_FILE = Configuration/tests.plist;
@@ -756,7 +755,6 @@
 		DA59161020F46DBA00B6AEDC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
 				INFOPLIST_FILE = Configuration/tests.plist;
