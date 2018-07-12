@@ -2,6 +2,7 @@
     "users":
     [
      {
+     "identifier": "egamma",
      "name": "Erich Gamma",
      "url": "egamma",
      "stats":
@@ -14,6 +15,7 @@
      }
      },
      {
+     "identifier": "gvanrossum",
      "name": "Guido van Rossum",
      "url": "gvanrossum",
      "stats":
@@ -26,6 +28,7 @@
      }
      },
      {
+     "identifier": "gvanrossum",
      "name": "Kent Beck",
      "url": "kentbeck",
      "stats":
@@ -36,7 +39,9 @@
      "maxStreak": 0,
      "currentStreak": 0
      }
-     },{
+     },
+     {
+     "identifier": "gvanrossum",
      "name": "Linus Torvalds",
      "url": "torvalds",
      "stats":
@@ -49,6 +54,7 @@
      }
      },
      {
+     "identifier": "gvanrossum",
      "name": "Martin Fowler",
      "url": "martinfowler",
      "stats":
@@ -61,6 +67,7 @@
      }
      },
      {
+     "identifier": "gvanrossum",
      "name": "Mattt",
      "url": "mattt",
      "stats":
@@ -73,6 +80,7 @@
      }
      },
      {
+     "identifier": "gvanrossum",
      "name": "Robert C. Martin",
      "url": "unclebob",
      "stats":
@@ -85,6 +93,7 @@
      }
      },
      {
+     "identifier": "gvanrossum",
      "name": "Ward Cunningham",
      "url": "wardcunningham",
      "stats":
