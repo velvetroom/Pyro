@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70BFB50A4AE879690562118B /* Pods_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702746BE813A33253F9A4A7A /* Pods_Application.framework */; };
 		DA01228620F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228520F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift */; };
 		DA01228820F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228720F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift */; };
-		DA1B165420F781A600C2A9A2 /* TestUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B165320F781A600C2A9A2 /* TestUserInteractor.swift */; };
 		DA28088720F5F26A00BCDA13 /* StatsViewModelBuilderReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088620F5F26A00BCDA13 /* StatsViewModelBuilderReady.swift */; };
 		DA28088920F5F52C00BCDA13 /* StatsViewModelBuilderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088820F5F52C00BCDA13 /* StatsViewModelBuilderError.swift */; };
 		DA7E6E8920F625C100E6F38E /* UsersViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8820F625C100E6F38E /* UsersViewNew.swift */; };
@@ -36,18 +34,9 @@
 		DAE4861420F47060003BF78A /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FF20F47060003BF78A /* Application.swift */; };
 		DAE4861520F47060003BF78A /* StatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4860120F47060003BF78A /* StatsInteractor.swift */; };
 		DAE4861620F47060003BF78A /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4860220F47060003BF78A /* UserInteractor.swift */; };
-		DAE4863120F47221003BF78A /* Pyro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAE4862E20F4721D003BF78A /* Pyro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DAE9E93A20F7918300B5492C /* Pyro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9E93720F7918100B5492C /* Pyro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DAE9E93C20F7918900B5492C /* Pods_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9E93B20F7918900B5492C /* Pods_Application.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DA1B164D20F780BB00C2A9A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA5915D020F46D1E00B6AEDC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DA5915D720F46D1E00B6AEDC;
-			remoteInfo = Application;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DAE4862D20F47214003BF78A /* Embed Frameworks */ = {
@@ -56,7 +45,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DAE4863120F47221003BF78A /* Pyro.framework in Embed Frameworks */,
+				DAE9E93A20F7918300B5492C /* Pyro.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,13 +53,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		702746BE813A33253F9A4A7A /* Pods_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAA37ACCC504D84A06FF955 /* Pods-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Application/Pods-Application.debug.xcconfig"; sourceTree = "<group>"; };
 		CE51436FB12A4F09707B5BEC /* Pods-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Application/Pods-Application.release.xcconfig"; sourceTree = "<group>"; };
 		DA01228520F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatsViewModelBuilderProtocol+Default.swift"; sourceTree = "<group>"; };
 		DA01228720F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderLoading.swift; sourceTree = "<group>"; };
-		DA1B164820F780BB00C2A9A2 /* TestsApplicacion.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestsApplicacion.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA1B165320F781A600C2A9A2 /* TestUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserInteractor.swift; sourceTree = "<group>"; };
 		DA28088620F5F26A00BCDA13 /* StatsViewModelBuilderReady.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderReady.swift; sourceTree = "<group>"; };
 		DA28088820F5F52C00BCDA13 /* StatsViewModelBuilderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderError.swift; sourceTree = "<group>"; };
 		DA5915D820F46D1E00B6AEDC /* Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,22 +84,16 @@
 		DAE485FF20F47060003BF78A /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		DAE4860120F47060003BF78A /* StatsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsInteractor.swift; sourceTree = "<group>"; };
 		DAE4860220F47060003BF78A /* UserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
-		DAE4862E20F4721D003BF78A /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE9E93720F7918100B5492C /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE9E93B20F7918900B5492C /* Pods_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DA1B164520F780BB00C2A9A2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DA5915D520F46D1E00B6AEDC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70BFB50A4AE879690562118B /* Pods_Application.framework in Frameworks */,
+				DAE9E93C20F7918900B5492C /* Pods_Application.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +103,8 @@
 		0AD6F0B7549AECC6A1E43EE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DAE4862E20F4721D003BF78A /* Pyro.framework */,
-				702746BE813A33253F9A4A7A /* Pods_Application.framework */,
+				DAE9E93B20F7918900B5492C /* Pods_Application.framework */,
+				DAE9E93720F7918100B5492C /* Pyro.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,19 +118,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		DA1B165220F7817300C2A9A2 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				DA1B165320F781A600C2A9A2 /* TestUserInteractor.swift */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		DA5915CF20F46D1E00B6AEDC = {
 			isa = PBXGroup;
 			children = (
 				DAE485EC20F47060003BF78A /* Source */,
-				DA1B165220F7817300C2A9A2 /* Tests */,
 				DAE4860320F47060003BF78A /* Assets */,
 				DAE485E720F47060003BF78A /* Resources */,
 				DA5915D920F46D1E00B6AEDC /* Products */,
@@ -164,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				DA5915D820F46D1E00B6AEDC /* Application.app */,
-				DA1B164820F780BB00C2A9A2 /* TestsApplicacion.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,24 +238,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA1B164720F780BB00C2A9A2 /* TestsApplicacion */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA1B165120F780BB00C2A9A2 /* Build configuration list for PBXNativeTarget "TestsApplicacion" */;
-			buildPhases = (
-				DA1B164420F780BB00C2A9A2 /* Sources */,
-				DA1B164520F780BB00C2A9A2 /* Frameworks */,
-				DA1B164620F780BB00C2A9A2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA1B164E20F780BB00C2A9A2 /* PBXTargetDependency */,
-			);
-			name = TestsApplicacion;
-			productName = TestsApplicacion;
-			productReference = DA1B164820F780BB00C2A9A2 /* TestsApplicacion.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		DA5915D720F46D1E00B6AEDC /* Application */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA5915EA20F46D1F00B6AEDC /* Build configuration list for PBXNativeTarget "Application" */;
@@ -316,10 +268,6 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = iturbide;
 				TargetAttributes = {
-					DA1B164720F780BB00C2A9A2 = {
-						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
-					};
 					DA5915D720F46D1E00B6AEDC = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -339,19 +287,11 @@
 			projectRoot = "";
 			targets = (
 				DA5915D720F46D1E00B6AEDC /* Application */,
-				DA1B164720F780BB00C2A9A2 /* TestsApplicacion */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DA1B164620F780BB00C2A9A2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DA5915D620F46D1E00B6AEDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,14 +344,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DA1B164420F780BB00C2A9A2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DA1B165420F781A600C2A9A2 /* TestUserInteractor.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DA5915D420F46D1E00B6AEDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -445,14 +377,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		DA1B164E20F780BB00C2A9A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DA5915D720F46D1E00B6AEDC /* Application */;
-			targetProxy = DA1B164D20F780BB00C2A9A2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		DAE485E820F47060003BF78A /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -465,43 +389,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DA1B164F20F780BB00C2A9A2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 7AMWG3RLHN;
-				INFOPLIST_FILE = Configuration/tests.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = iturbide.Pyro.TestsApplicacion;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DA1B165020F780BB00C2A9A2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 7AMWG3RLHN;
-				INFOPLIST_FILE = Configuration/tests.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = iturbide.Pyro.TestsApplicacion;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		DA5915E820F46D1F00B6AEDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -661,15 +548,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA1B165120F780BB00C2A9A2 /* Build configuration list for PBXNativeTarget "TestsApplicacion" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA1B164F20F780BB00C2A9A2 /* Debug */,
-				DA1B165020F780BB00C2A9A2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DA5915D320F46D1E00B6AEDC /* Build configuration list for PBXProject "Application" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

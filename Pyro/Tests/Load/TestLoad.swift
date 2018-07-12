@@ -9,6 +9,7 @@ class TestLoad:XCTestCase {
     private var cleaner:MockScraperCleanerProtocol!
 
     override func setUp() {
+        super.setUp()
         self.load = Load()
         self.delegate = MockLoadDelegate()
         self.request = MockRequestProtocol()

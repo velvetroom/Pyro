@@ -26,10 +26,7 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
         return cell
     }
     
-    func collectionView(_:UICollectionView, didSelectItemAt index:IndexPath) {
-        self.presenter.selectUser(index:index.item)
-    }
-    
+    func collectionView(_:UICollectionView, didSelectItemAt index:IndexPath) { self.presenter.selectUser(index:index) }
     func collectionView(_:UICollectionView, numberOfItemsInSection section:Int) -> Int { return self.users.count }
     
     private func configureView() {

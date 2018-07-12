@@ -40,16 +40,6 @@
                ReferencedContainer = "container:../Pyro/Pyro.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DA1B164720F780BB00C2A9A2"
-               BuildableName = "TestsApplicacion.xctest"
-               BlueprintName = "TestsApplicacion"
-               ReferencedContainer = "container:Application.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

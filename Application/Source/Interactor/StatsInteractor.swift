@@ -8,16 +8,16 @@ class StatsInteractor:InteractorProtocol, ReportDelegate {
     var user:User
     var stats:Stats?
     var error:Error?
-    private var report:ReportProtocol
+    weak var pyro:PyroProtocol!
     
     required init() {
         self.user = User()
-        self.report = Factory.makeReport()
-        self.report.delegate = self
+//        self.report = Factory.makeReport()
+//        self.report.delegate = self
     }
     
     func generateReport() {
-        self.report.make(user:user)
+//        self.report.make(user:user)
     }
     
     func reportCompleted(stats:Stats) {

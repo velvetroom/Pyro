@@ -1,12 +1,10 @@
 import Foundation
 
 class Storage:StorageProtocol {
-    var store:Store
     var file:StorageFileProtocol
     private let dispatch:DispatchQueue
     
     init() {
-        self.store = Store()
         self.file = StorageFile()
         self.dispatch = DispatchQueue(label:StorageConstants.identifier, qos:DispatchQoS.background,
                                       attributes:DispatchQueue.Attributes.concurrent,
@@ -14,45 +12,53 @@ class Storage:StorageProtocol {
                                       target:DispatchQueue.global(qos:DispatchQoS.QoSClass.background))
     }
     
-    func load(onCompletion:@escaping(([User]) -> Void)) {
+    func load(onCompletion:@escaping((Store) -> Void)) {
         self.dispatch.async { [weak self] in
-            do { try self?.loadFromFile() } catch { do { try self?.loadUserBase() } catch { } }
-            DispatchQueue.main.async { [weak self] in
-                guard let store:Store = self?.store else { return }
-                onCompletion(store.users)
+            guard let store:Store = self?.load() else { return }
+            DispatchQueue.main.async {
+                onCompletion(store)
             }
         }
     }
     
-    func save(users:[User]) {
+    func save(store:Store) {
         self.dispatch.async { [weak self] in
-            self?.store.users = users
-            self?.save()
+            let data:Data
+            do {
+                try data = JSONEncoder().encode(store)
+                try self?.file.save(data:data)
+            } catch { }
         }
     }
     
-    private func loadFromFile() throws {
-        let data:Data = try self.file.load()
-        try self.store = JSONDecoder().decode(Store.self, from:data)
+    private func load() -> Store {
+        do {
+            return try self.loadFile()
+        } catch {
+            do {
+                return try self.loadUserBase()
+            } catch {
+                return Store()
+            }
+        }
     }
     
-    private func loadUserBase() throws {
+    private func loadFile() throws -> Store {
+        let data:Data = try self.file.load()
+        let store:Store = try JSONDecoder().decode(Store.self, from:data)
+        return store
+    }
+    
+    private func loadUserBase() throws -> Store {
         let url:URL = Bundle(for:type(of:self)).url(forResource:StorageConstants.userBaseFile, withExtension:nil)!
         let data:Data = try Data(contentsOf:url, options:Data.ReadingOptions.uncached)
         let userBase:[UserBase] = try JSONDecoder().decode([UserBase].self, from:data)
-        self.createUsersFrom(userBase:userBase)
-        self.save()
+        let store:Store = self.createUsersFrom(userBase:userBase)
+        self.save(store:store)
+        return store
     }
     
-    private func save() {
-        let data:Data
-        do {
-            try data = JSONEncoder().encode(self.store)
-            try self.file.save(data:data)
-        } catch { }
-    }
-    
-    private func createUsersFrom(userBase:[UserBase]) {
+    private func createUsersFrom(userBase:[UserBase]) -> Store {
         var store:Store = Store()
         for base:UserBase in userBase {
             var user:User = User()
@@ -61,6 +67,6 @@ class Storage:StorageProtocol {
             user.identifier = UUID().uuidString
             store.users.append(user)
         }
-        self.store = store
+        return store
     }
 }

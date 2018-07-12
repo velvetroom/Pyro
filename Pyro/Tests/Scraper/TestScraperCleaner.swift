@@ -5,6 +5,7 @@ class TestScraperCleaner:XCTestCase {
     private var cleaner:ScraperCleaner!
     
     override func setUp() {
+        super.setUp()
         self.cleaner = ScraperCleaner()
     }
     

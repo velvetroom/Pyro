@@ -12,19 +12,14 @@ class TestStorage:XCTestCase {
         self.storage.file = self.file
     }
     
-    func testLoadUsersFirstTime() {
+    func testLoadFromUsersBase() {
         let expectLoadingUsers:XCTestExpectation = self.expectation(description:"Failed to load users")
         let expectSave:XCTestExpectation = self.expectation(description:"Not saving")
-        let invalidName:String = "invalid"
-        var user:User = User()
-        user.name = invalidName
-        self.storage.store.users.append(user)
         self.file.onSave = { expectSave.fulfill() }
         self.file.error = StorageError.fileNotFound
-        self.storage.load { (users:[User]) in
-            XCTAssertFalse(users.isEmpty, "No users loaded")
-            for user:User in users {
-                XCTAssertNotEqual(user.name, invalidName, "Failed to remove old store before loading new")
+        self.storage.load { (store:Store) in
+            XCTAssertFalse(store.users.isEmpty, "No users loaded")
+            for user:User in store.users {
                 XCTAssertFalse(user.name.isEmpty, "Not loaded")
                 XCTAssertFalse(user.url.isEmpty, "Not loaded")
                 XCTAssertFalse(user.identifier.isEmpty, "Failed to assign identifier")
@@ -35,16 +30,16 @@ class TestStorage:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testSaveUsers() {
+    func testSaveSendsToFile() {
         let expectSave:XCTestExpectation = self.expectation(description:"Failed to save users")
         self.file.onSave = { expectSave.fulfill() }
-        self.storage.save(users:[])
+        self.storage.save(store:Store())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testLoadUsersNotFirstTime() {
+    func testLoadUsersFromFile() {
         let expectLoad:XCTestExpectation = self.expectation(description:"Failed to load users")
-        self.storage.load { (users:[User]) in
+        self.storage.load { (store:Store) in
             expectLoad.fulfill()
         }
         self.waitForExpectations(timeout:0.3, handler:nil)

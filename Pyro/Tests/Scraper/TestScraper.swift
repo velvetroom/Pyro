@@ -14,6 +14,7 @@ class TestScraper:XCTestCase {
     }
     
     override func setUp() {
+        super.setUp()
         self.scraper = Scraper()
         self.dateFormatter = DateFormatter()
         self.dateFormatter.dateFormat = StatsConstants.dateFormat

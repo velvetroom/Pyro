@@ -67,6 +67,9 @@
 		DAE4862720F4708E003BF78A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862320F4708E003BF78A /* Storage.swift */; };
 		DAE4862820F4708E003BF78A /* StorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862420F4708E003BF78A /* StorageConstants.swift */; };
 		DAE4862920F4708E003BF78A /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862520F4708E003BF78A /* StorageError.swift */; };
+		DAE9E92D20F78CCC00B5492C /* PyroProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9E92C20F78CCC00B5492C /* PyroProtocol.swift */; };
+		DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9E92E20F78CD300B5492C /* Pyro.swift */; };
+		DAE9E93220F78FB500B5492C /* TestPyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9E93120F78FB500B5492C /* TestPyro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +145,9 @@
 		DAE4862320F4708E003BF78A /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DAE4862420F4708E003BF78A /* StorageConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageConstants.swift; sourceTree = "<group>"; };
 		DAE4862520F4708E003BF78A /* StorageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
+		DAE9E92C20F78CCC00B5492C /* PyroProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyroProtocol.swift; sourceTree = "<group>"; };
+		DAE9E92E20F78CD300B5492C /* Pyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pyro.swift; sourceTree = "<group>"; };
+		DAE9E93120F78FB500B5492C /* TestPyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyro.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +306,7 @@
 		DAE4861820F47084003BF78A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DAE9E93020F78FA800B5492C /* Pyro */,
 				DA28087120F5DE4200BCDA13 /* Report */,
 				DA20629920F4F932001B58A1 /* Stats */,
 				DA2062BA20F5248A001B58A1 /* Load */,
@@ -333,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				DA28086E20F5DE1100BCDA13 /* Factory */,
+				DAE9E92B20F78CB800B5492C /* Pyro */,
 				DA28086B20F5DD5A00BCDA13 /* Report */,
 				DAA00E3320F493E1009386CE /* Stats */,
 				DAE4862020F4708E003BF78A /* User */,
@@ -365,6 +373,23 @@
 				DA7E6E8020F60C8F00E6F38E /* Store.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		DAE9E92B20F78CB800B5492C /* Pyro */ = {
+			isa = PBXGroup;
+			children = (
+				DAE9E92C20F78CCC00B5492C /* PyroProtocol.swift */,
+				DAE9E92E20F78CD300B5492C /* Pyro.swift */,
+			);
+			path = Pyro;
+			sourceTree = "<group>";
+		};
+		DAE9E93020F78FA800B5492C /* Pyro */ = {
+			isa = PBXGroup;
+			children = (
+				DAE9E93120F78FB500B5492C /* TestPyro.swift */,
+			);
+			path = Pyro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,7 +523,9 @@
 				DA2062AB20F50416001B58A1 /* StatsCommandCurrentStreak.swift in Sources */,
 				DA7E6E8120F60C8F00E6F38E /* Store.swift in Sources */,
 				DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */,
+				DAE9E92D20F78CCC00B5492C /* PyroProtocol.swift in Sources */,
 				DA32CD0120F4F61D00F75BE5 /* ScraperCleaner.swift in Sources */,
+				DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */,
 				DA2062BF20F527C3001B58A1 /* Load.swift in Sources */,
 				DA20629820F4F910001B58A1 /* StatsBuilder.swift in Sources */,
 				DA2062AE20F51A83001B58A1 /* Request.swift in Sources */,
@@ -527,6 +554,7 @@
 				DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */,
 				DA32CD0320F4F6B000F75BE5 /* TestScraperCleaner.swift in Sources */,
 				DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */,
+				DAE9E93220F78FB500B5492C /* TestPyro.swift in Sources */,
 				DA2062C120F527FA001B58A1 /* TestLoad.swift in Sources */,
 				DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */,
 				DA28088520F5EB8E00BCDA13 /* MockStorageProtocol.swift in Sources */,

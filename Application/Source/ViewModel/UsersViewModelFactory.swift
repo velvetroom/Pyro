@@ -2,15 +2,15 @@ import UIKit
 import Pyro
 
 class UsersViewModelFactory {
-    class func make(users:[User]) -> UsersViewModel {
+    func make(pyro:PyroProtocol) -> UsersViewModel {
         var viewModel:UsersViewModel = UsersViewModel()
-        for user:User in users {
+        for user:User in pyro.users {
             viewModel.users.append(make(user:user))
         }
         return viewModel
     }
     
-    private class func make(user:User) -> NSAttributedString {
+    private func make(user:User) -> NSAttributedString {
         let string:NSMutableAttributedString = NSMutableAttributedString()
         let name:NSAttributedString = NSAttributedString(string:user.name, attributes:[NSAttributedString.Key.font:
             UIFont.systemFont(ofSize:UsersConstants.Cell.titleFontSize, weight:UIFont.Weight.bold)])
@@ -20,6 +20,4 @@ class UsersViewModelFactory {
         string.append(url)
         return string
     }
-    
-    private init() { }
 }

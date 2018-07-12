@@ -4,8 +4,11 @@ import CleanArchitecture
 class UsersPresenter:PresenterProtocol {
     var interactor:UserInteractor!
     var viewModel:ViewModel!
+    private var factory:UsersViewModelFactory
     
-    required init() { }
+    required init() {
+        self.factory = UsersViewModelFactory()
+    }
     
     func didAppear() {
         self.interactor.load { [weak self] in
@@ -13,8 +16,8 @@ class UsersPresenter:PresenterProtocol {
         }
     }
     
-    func selectUser(index:Int) {
-        self.interactor.transition?.pushStatsFor(user:self.interactor.users[index])
+    func selectUser(index:IndexPath) {
+        self.interactor.selectUser(index:index.item)
     }
     
     func addNew() {
@@ -30,6 +33,6 @@ class UsersPresenter:PresenterProtocol {
     }
     
     private func updateViewModel() {
-        self.viewModel.update(property:UsersViewModelFactory.make(users:self.interactor.users))
+        self.viewModel.update(property:self.factory.make(pyro:self.interactor.pyro))
     }
 }
