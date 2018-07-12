@@ -52,6 +52,8 @@
 		DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */; };
 		DA32CD0120F4F61D00F75BE5 /* ScraperCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CD0020F4F61D00F75BE5 /* ScraperCleaner.swift */; };
 		DA32CD0320F4F6B000F75BE5 /* TestScraperCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CD0220F4F6B000F75BE5 /* TestScraperCleaner.swift */; };
+		DA455BA420F72256000EBE10 /* UserBase.json in Resources */ = {isa = PBXBuildFile; fileRef = DA455BA320F72256000EBE10 /* UserBase.json */; };
+		DA455BA620F72375000EBE10 /* UserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA455BA520F72375000EBE10 /* UserBase.swift */; };
 		DA59160B20F46DBA00B6AEDC /* Pyro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5915F720F46D8B00B6AEDC /* Pyro.framework */; };
 		DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */; };
 		DA7E6E8120F60C8F00E6F38E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8020F60C8F00E6F38E /* Store.swift */; };
@@ -65,7 +67,6 @@
 		DAE4862720F4708E003BF78A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862320F4708E003BF78A /* Storage.swift */; };
 		DAE4862820F4708E003BF78A /* StorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862420F4708E003BF78A /* StorageConstants.swift */; };
 		DAE4862920F4708E003BF78A /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862520F4708E003BF78A /* StorageError.swift */; };
-		DAE695A520F47B3800E8AA59 /* Store.json in Resources */ = {isa = PBXBuildFile; fileRef = DAE695A420F47B3800E8AA59 /* Store.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,8 @@
 		DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperConstants.swift; sourceTree = "<group>"; };
 		DA32CD0020F4F61D00F75BE5 /* ScraperCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperCleaner.swift; sourceTree = "<group>"; };
 		DA32CD0220F4F6B000F75BE5 /* TestScraperCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScraperCleaner.swift; sourceTree = "<group>"; };
+		DA455BA320F72256000EBE10 /* UserBase.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserBase.json; sourceTree = "<group>"; };
+		DA455BA520F72375000EBE10 /* UserBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBase.swift; sourceTree = "<group>"; };
 		DA5915F720F46D8B00B6AEDC /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA59160620F46DBA00B6AEDC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnalyser.swift; sourceTree = "<group>"; };
@@ -139,7 +142,6 @@
 		DAE4862320F4708E003BF78A /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DAE4862420F4708E003BF78A /* StorageConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageConstants.swift; sourceTree = "<group>"; };
 		DAE4862520F4708E003BF78A /* StorageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
-		DAE695A420F47B3800E8AA59 /* Store.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Store.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,7 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				DA2062B520F5227B001B58A1 /* Localizable.strings */,
-				DAE695A420F47B3800E8AA59 /* Store.json */,
+				DA455BA320F72256000EBE10 /* UserBase.json */,
 				DAA00E3620F496AF009386CE /* StatsMin.stub */,
 			);
 			path = Resources;
@@ -346,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE4862120F4708E003BF78A /* User.swift */,
+				DA455BA520F72375000EBE10 /* UserBase.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -353,13 +356,13 @@
 		DAE4862220F4708E003BF78A /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				DA7E6E8020F60C8F00E6F38E /* Store.swift */,
 				DA28088220F5EB1F00BCDA13 /* StorageProtocol.swift */,
 				DAE4862320F4708E003BF78A /* Storage.swift */,
 				DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */,
 				DA7E6E8220F6158B00E6F38E /* StorageFile.swift */,
 				DAE4862420F4708E003BF78A /* StorageConstants.swift */,
 				DAE4862520F4708E003BF78A /* StorageError.swift */,
+				DA7E6E8020F60C8F00E6F38E /* Store.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -454,8 +457,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE695A520F47B3800E8AA59 /* Store.json in Resources */,
 				DA2062B720F5227B001B58A1 /* Localizable.strings in Resources */,
+				DA455BA420F72256000EBE10 /* UserBase.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +492,7 @@
 				DA2062A320F503B2001B58A1 /* StatsCommandFirstContribution.swift in Sources */,
 				DAE4862620F4708E003BF78A /* User.swift in Sources */,
 				DA2062A120F502A3001B58A1 /* StatsCommandComposite.swift in Sources */,
+				DA455BA620F72375000EBE10 /* UserBase.swift in Sources */,
 				DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */,
 				DA28087020F5DE2F00BCDA13 /* Report.swift in Sources */,
 				DA2062AB20F50416001B58A1 /* StatsCommandCurrentStreak.swift in Sources */,

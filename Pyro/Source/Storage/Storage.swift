@@ -16,7 +16,7 @@ class Storage:StorageProtocol {
     
     func load(onCompletion:@escaping(([User]) -> Void)) {
         self.dispatch.async { [weak self] in
-            do { try self?.loadFromFile() } catch { self?.loadFromDefault() }
+            do { try self?.loadFromFile() } catch { do { try self?.loadUserBase() } catch { } }
             DispatchQueue.main.async { [weak self] in
                 guard let store:Store = self?.store else { return }
                 onCompletion(store.users)
@@ -33,28 +33,34 @@ class Storage:StorageProtocol {
     
     private func loadFromFile() throws {
         let data:Data = try self.file.load()
-        self.loaded(data:data)
+        try self.store = JSONDecoder().decode(Store.self, from:data)
     }
     
-    private func loadFromDefault() {
-        let url:URL = Bundle(for:type(of:self)).url(forResource:StorageConstants.file, withExtension:nil)!
-        let data:Data
-        do { try data = Data(contentsOf:url, options:Data.ReadingOptions.uncached) } catch { return }
-        self.loaded(data:data)
+    private func loadUserBase() throws {
+        let url:URL = Bundle(for:type(of:self)).url(forResource:StorageConstants.userBaseFile, withExtension:nil)!
+        let data:Data = try Data(contentsOf:url, options:Data.ReadingOptions.uncached)
+        let userBase:[UserBase] = try JSONDecoder().decode([UserBase].self, from:data)
+        self.createUsersFrom(userBase:userBase)
         self.save()
-    }
-    
-    private func loaded(data:Data) {
-        do { try self.store = JSONDecoder().decode(Store.self, from:data) } catch { }
     }
     
     private func save() {
         let data:Data
-        do { try data = JSONEncoder().encode(self.store) } catch { return }
-        self.save(data:data)
+        do {
+            try data = JSONEncoder().encode(self.store)
+            try self.file.save(data:data)
+        } catch { }
     }
     
-    private func save(data:Data) {
-        do { try self.file.save(data:data) } catch { }
+    private func createUsersFrom(userBase:[UserBase]) {
+        var store:Store = Store()
+        for base:UserBase in userBase {
+            var user:User = User()
+            user.name = base.name
+            user.url = base.url
+            user.identifier = UUID().uuidString
+            store.users.append(user)
+        }
+        self.store = store
     }
 }

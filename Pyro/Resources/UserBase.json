@@ -1,0 +1,34 @@
+[
+ {
+ "name": "Erich Gamma",
+ "url": "erichgamma"
+ },
+ {
+ "name": "Guido van Rossum",
+ "url": "gvanrossum"
+ },
+ {
+ "name": "Kent Beck",
+ "url": "kentbeck"
+ },
+ {
+ "name": "Linus Torvalds",
+ "url": "torvalds"
+ },
+ {
+ "name": "Martin Fowler",
+ "url": "martinfowler"
+ },
+ {
+ "name": "Mattt",
+ "url": "mattt"
+ },
+ {
+ "name": "Robert C. Martin",
+ "url": "unclebob"
+ },
+ {
+ "name": "Ward Cunningham",
+ "url": "wardcunningham"
+ }
+]
