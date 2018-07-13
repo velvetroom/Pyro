@@ -2,7 +2,7 @@ import UIKit
 import Pyro
 
 class UsersViewModelFactory {
-    func make(pyro:PyroProtocol) -> UsersViewModel {
+    func make(pyro:Pyro) -> UsersViewModel {
         var viewModel:UsersViewModel = UsersViewModel()
         for user:User in pyro.users {
             viewModel.users.append(make(user:user))

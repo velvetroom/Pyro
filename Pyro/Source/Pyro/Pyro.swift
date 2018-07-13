@@ -1,22 +1,22 @@
 import Foundation
 
-class Pyro:PyroProtocol {
-    var users:[User]
+public class Pyro {
+    public var users:[User]
     var storage:StorageProtocol
     
-    init() {
+    public init() {
         self.users = []
         self.storage = Storage()
     }
     
-    func load(onCompletion:@escaping(() -> Void)) {
+    public func load(onCompletion:@escaping(() -> Void)) {
         self.storage.load { [weak self] (users:[User]) in
             self?.users = users
             onCompletion()
         }
     }
     
-    func addUser(name:String, url:String) {
+    public func addUser(name:String, url:String) {
         var user:User = UserFactory.make()
         user.name = name
         user.url = url

@@ -9,7 +9,7 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
         super.init()
     }
     
-    required init?(coder: NSCoder) { return nil }
+    required init?(coder:NSCoder) { return nil }
     
     override func viewDidLoad() {
         super.viewDidLoad()

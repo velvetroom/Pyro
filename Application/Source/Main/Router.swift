@@ -12,7 +12,7 @@ class Router:UINavigationController {
         return nil
     }
     
-    func routeToUsers(pyro:PyroProtocol, user:User) {
+    func routeToUsers(pyro:Pyro, user:User) {
         let view:StatsView = StatsView()
         view.presenter.interactor.pyro = pyro
         view.presenter.interactor.user = user

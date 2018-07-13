@@ -5,10 +5,10 @@ import Pyro
 class UserInteractor:InteractorProtocol {
     weak var router:Router?
     weak var presenter:InteractorDelegateProtocol?
-    var pyro:PyroProtocol
+    var pyro:Pyro
     
     required init() {
-        self.pyro = Factory.makePyro()
+        self.pyro = Pyro()
     }
     
     func load(onCompletion:@escaping(() -> Void)) {
