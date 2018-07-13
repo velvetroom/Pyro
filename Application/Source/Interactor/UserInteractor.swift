@@ -16,7 +16,7 @@ class UserInteractor:InteractorProtocol {
     }
     
     func selectUser(index:Int) {
-        self.transition?.pushStatsFor(user:self.pyro.users[index])
+        self.transition?.routeToUsers(pyro:self.pyro, user:self.pyro.users[index])
     }
     
     func add(name:String, url:String) {

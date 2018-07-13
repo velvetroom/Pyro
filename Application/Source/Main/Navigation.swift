@@ -1,5 +1,5 @@
 import UIKit
-import CleanArchitecture
+import Pyro
 
 class Navigation:UINavigationController {
     init() {
@@ -12,12 +12,12 @@ class Navigation:UINavigationController {
         return nil
     }
     
-    func pushStatsFor() -> InteractorProtocol {
+    func routeToUsers(pyro:PyroProtocol, user:User) {
         let view:StatsView = StatsView()
+        view.presenter.interactor.pyro = pyro
         view.presenter.interactor.user = user
         view.presenter.interactor.transition = self
         self.pushViewController(view, animated:true)
-        return view.presenter.interactor
     }
     
     private func configureNavigation() {
