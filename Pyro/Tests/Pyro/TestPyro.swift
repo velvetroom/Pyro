@@ -33,10 +33,35 @@ class TestPyro:XCTestCase {
     }
     
     func testAddUserAssignsIdentifier() {
-        
+        let name:String = "hello world"
+        let url:String = "lorem ipsum"
+        self.pyro.addUser(name:name, url:url)
+        XCTAssertFalse(self.pyro.users.isEmpty, "Failed to add")
+        guard let user:User = self.pyro.users.first else { return }
+        XCTAssertEqual(user.name, name, "Not assigned")
+        XCTAssertEqual(user.url, url, "Not assigned")
+        XCTAssertFalse(user.identifier.isEmpty, "Not assigned")
     }
     
-    func testAddUserSortsTheUserList() {
+    func testAddUserSortsUsersByName() {
+        let nameA:String = "abc"
+        let nameB:String = "fgh"
+        let nameC:String = "xyz"
+        self.pyro.addUser(name:nameB, url:String())
+        self.pyro.addUser(name:nameA, url:String())
+        self.pyro.addUser(name:nameC, url:String())
+        XCTAssertFalse(self.pyro.users.isEmpty, "Failed to add")
+        if self.pyro.users.isEmpty { return }
         
+        XCTAssertEqual(self.pyro.users[0].name, nameA, "Not sorted")
+        XCTAssertEqual(self.pyro.users[1].name, nameB, "Not sorted")
+        XCTAssertEqual(self.pyro.users[2].name, nameC, "Not sorted")
+    }
+    
+    func testAddUserSaves() {
+        let expect:XCTestExpectation = self.expectation(description:"Not saved")
+        self.storage.onSave = { expect.fulfill() }
+        self.pyro.addUser(name:String(), url:String())
+        self.waitForExpectations(timeout:0.3, handler:nil)
     }
 }

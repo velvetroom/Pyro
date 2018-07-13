@@ -20,7 +20,7 @@ class UsersPresenter:PresenterProtocol {
         self.interactor.selectUser(index:index.item)
     }
     
-    func addNew() {
+    func createUser() {
         let alert:UsersViewNew = UsersViewNew(title:nil, message:nil, preferredStyle:UIAlertController.Style.alert)
         alert.presenter = self
         alert.configureView()

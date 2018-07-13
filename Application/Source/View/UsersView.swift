@@ -65,6 +65,6 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     }
     
     @objc private func selectorAdd() {
-        self.presenter.addNew()
+        self.presenter.createUser()
     }
 }

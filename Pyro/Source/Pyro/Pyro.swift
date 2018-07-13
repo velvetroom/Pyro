@@ -17,18 +17,23 @@ class Pyro:PyroProtocol {
         }
     }
     
+    func addUser(name:String, url:String) {
+        var user:User = User()
+        user.identifier = UUID().uuidString
+        user.name = name
+        user.url = url
+        self.add(user:user)
+        self.save()
+    }
+    
     func save() {
         self.storage.save(store:self.store)
     }
     
-    func addUser(name:String, url:String) {
-        //        var user:User = User()
-        //        user.name = name
-        //        user.url = url
-        //        self.users.append(user)
-        //        self.users.sort { (userA:User, userB:User) -> Bool in
-        //            return userA.name.caseInsensitiveCompare(userB.name) == ComparisonResult.orderedAscending
-        //        }
-        //        self.storage.save(users:self.users)
+    private func add(user:User) {
+        self.store.users.append(user)
+        self.store.users.sort { (userA:User, userB:User) -> Bool in
+            return userA.name.caseInsensitiveCompare(userB.name) == ComparisonResult.orderedAscending
+        }
     }
 }
