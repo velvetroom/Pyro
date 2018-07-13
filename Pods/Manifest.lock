@@ -1,5 +1,5 @@
 PODS:
-  - CleanArchitecture (1.7.67)
+  - CleanArchitecture (1.9.86)
 
 DEPENDENCIES:
   - CleanArchitecture
@@ -9,8 +9,8 @@ SPEC REPOS:
     - CleanArchitecture
 
 SPEC CHECKSUMS:
-  CleanArchitecture: 53648d3372f7cd9406dd5d0518129dc5f2961c08
+  CleanArchitecture: 21ee6fe2c8617934661158cbb14e8a4e7431d1c0
 
-PODFILE CHECKSUM: a3fc0a701d2c15e1a7b57dc96adcba1fc38a3587
+PODFILE CHECKSUM: 4f357576296b203fb5afbbc89e97d373d95ef849
 
 COCOAPODS: 1.5.3

@@ -1,0 +1,7 @@
+StorageError_fileNotFound="Storage error: File not found.";
+RequestError_userNotValid="Request error: User not valid.";
+RequestError_noResponse="Request error: Server returned no response.";
+RequestError_emptyResponse="Request error: Server returned empty response.";
+RequestError_banned="Server error: Too many requests sent to server.\nWait a few minutes and try again.";
+RequestError_fourZeroFour="Error: User does not exist.";
+RequestError_unknown="Unknown server error, wait for a few minutes and try again.";

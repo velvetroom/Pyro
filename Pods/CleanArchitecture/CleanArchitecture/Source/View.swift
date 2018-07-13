@@ -1,32 +1,13 @@
 import UIKit
 
-open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController, ViewProtocol {
+open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController {
     open var presenter:Presenter
     open var content:Content!
     
-    open var transition:Presenter.Transition? {
-        get {
-            return self.presenter.transition
-        }
-        set(newValue) {
-            self.presenter.transition = newValue
-        }
-    }
-    
-    open var interactor:InteractorProtocol {
-        get {
-            return self.presenter.interactor
-        }
-    }
-    
-    open var viewModel:ViewModel {
-        get {
-            return self.presenter.viewModel
-        }
-    }
-    
     public required init() {
-        self.presenter = PresenterFactory.makePresenter()
+        self.presenter = Presenter()
+        self.presenter.interactor = Presenter.Interactor()
+        self.presenter.interactor.presenter = self.presenter
         super.init(nibName:nil, bundle:nil)
         self.postInit()
     }
@@ -79,7 +60,6 @@ open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController, V
     private func postInit() {
         self.content = Content()
         self.presenter.viewModel = ViewModel()
-        self.presenter.view = self
         self.initProperties()
     }
 }

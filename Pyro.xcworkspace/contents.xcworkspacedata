@@ -2,21 +2,27 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Pyro.xcodeproj">
+      location = "group:Application/Application.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pyro/Pyro.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Design">
+   </FileRef>
+   <FileRef
+      location = "group:Pyro/Resources/../../Podfile">
+   </FileRef>
+   <FileRef
       location = "group:LICENSE">
    </FileRef>
    <FileRef
-      location = "group:README.md">
+      location = "group:Pyro/Resources/../../README.md">
    </FileRef>
    <FileRef
-      location = "group:Podfile">
-   </FileRef>
-   <FileRef
-      location = "group:.gitignore">
+      location = "group:Pyro/Resources/../../.gitignore">
    </FileRef>
 </Workspace>

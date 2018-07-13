@@ -1,0 +1,100 @@
+{
+    "users":
+    [
+     {
+     "name": "Erich Gamma",
+     "url": "egamma",
+     "stats":
+     {
+     "firstContribution": 0,
+     "lastContribution": 0,
+     "contributions": 0,
+     "maxStreak": 0,
+     "currentStreak": 0
+     }
+     },
+     {
+     "name": "Guido van Rossum",
+     "url": "gvanrossum",
+     "stats":
+     {
+     "firstContribution": 0,
+     "lastContribution": 0,
+     "contributions": 0,
+     "maxStreak": 0,
+     "currentStreak": 0
+     }
+     },
+     {
+     "name": "Kent Beck",
+     "url": "kentbeck",
+     "stats":
+     {
+     "firstContribution": 0,
+     "lastContribution": 0,
+     "contributions": 0,
+     "maxStreak": 0,
+     "currentStreak": 0
+     }
+     },{
+     "name": "Linus Torvalds",
+     "url": "torvalds",
+     "stats":
+     {
+     "firstContribution": 0,
+     "lastContribution": 0,
+     "contributions": 0,
+     "maxStreak": 0,
+     "currentStreak": 0
+     }
+     },
+     {
+     "name": "Martin Fowler",
+     "url": "martinfowler",
+     "stats":
+     {
+     "firstContribution": 0,
+     "lastContribution": 0,
+     "contributions": 0,
+     "maxStreak": 0,
+     "currentStreak": 0
+     }
+     },
+     {
+     "name": "Mattt",
+     "url": "mattt",
+     "stats":
+     {
+     "firstContribution": 0,
+     "lastContribution": 0,
+     "contributions": 0,
+     "maxStreak": 0,
+     "currentStreak": 0
+     }
+     },
+     {
+     "name": "Robert C. Martin",
+     "url": "unclebob",
+     "stats":
+     {
+     "firstContribution": 0,
+     "lastContribution": 0,
+     "contributions": 0,
+     "maxStreak": 0,
+     "currentStreak": 0
+     }
+     },
+     {
+     "name": "Ward Cunningham",
+     "url": "wardcunningham",
+     "stats":
+     {
+     "firstContribution": 0,
+     "lastContribution": 0,
+     "contributions": 0,
+     "maxStreak": 0,
+     "currentStreak": 0
+     }
+     }
+     ]
+}
