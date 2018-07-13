@@ -3,7 +3,7 @@ import CleanArchitecture
 import Pyro
 
 class UserInteractor:InteractorProtocol {
-    weak var transition:Navigation?
+    weak var router:Router?
     weak var presenter:InteractorDelegateProtocol?
     var pyro:PyroProtocol
     
@@ -16,7 +16,7 @@ class UserInteractor:InteractorProtocol {
     }
     
     func selectUser(index:Int) {
-        self.transition?.routeToUsers(pyro:self.pyro, user:self.pyro.users[index])
+        self.router?.routeToUsers(pyro:self.pyro, user:self.pyro.users[index])
     }
     
     func add(name:String, url:String) {

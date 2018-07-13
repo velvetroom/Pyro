@@ -7,7 +7,7 @@ import UIKit
         let window:UIWindow = UIWindow(frame:UIScreen.main.bounds)
         window.backgroundColor = UIColor.white
         window.makeKeyAndVisible()
-        window.rootViewController = Navigation()
+        window.rootViewController = Router()
         self.window = window
         return true
     }

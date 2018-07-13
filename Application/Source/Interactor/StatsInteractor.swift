@@ -3,7 +3,7 @@ import CleanArchitecture
 import Pyro
 
 class StatsInteractor:InteractorProtocol, ReportDelegate {
-    weak var transition:Navigation?
+    weak var router:Router?
     weak var presenter:InteractorDelegateProtocol?
     weak var pyro:PyroProtocol!
     var user:User!

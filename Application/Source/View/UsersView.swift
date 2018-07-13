@@ -2,15 +2,17 @@ import UIKit
 import CleanArchitecture
 
 class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    private var users:[NSAttributedString]!
+    private var users:[NSAttributedString]
     
-    override func initProperties() {
-        super.initProperties()
+    required init() {
         self.users = []
+        super.init()
     }
     
-    override func didLoad() {
-        super.didLoad()
+    required init?(coder:NSCoder) { return nil }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.configureView()
         self.configureViewModel()
     }

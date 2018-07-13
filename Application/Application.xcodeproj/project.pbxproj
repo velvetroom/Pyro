@@ -30,7 +30,7 @@
 		DAE4860F20F47060003BF78A /* StatsViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F920F47060003BF78A /* StatsViewContent.swift */; };
 		DAE4861020F47060003BF78A /* UsersViewContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FA20F47060003BF78A /* UsersViewContentCell.swift */; };
 		DAE4861120F47060003BF78A /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FB20F47060003BF78A /* StatsView.swift */; };
-		DAE4861220F47060003BF78A /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FD20F47060003BF78A /* Navigation.swift */; };
+		DAE4861220F47060003BF78A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FD20F47060003BF78A /* Router.swift */; };
 		DAE4861420F47060003BF78A /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FF20F47060003BF78A /* Application.swift */; };
 		DAE4861520F47060003BF78A /* StatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4860120F47060003BF78A /* StatsInteractor.swift */; };
 		DAE4861620F47060003BF78A /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4860220F47060003BF78A /* UserInteractor.swift */; };
@@ -80,7 +80,7 @@
 		DAE485F920F47060003BF78A /* StatsViewContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewContent.swift; sourceTree = "<group>"; };
 		DAE485FA20F47060003BF78A /* UsersViewContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewContentCell.swift; sourceTree = "<group>"; };
 		DAE485FB20F47060003BF78A /* StatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
-		DAE485FD20F47060003BF78A /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		DAE485FD20F47060003BF78A /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DAE485FF20F47060003BF78A /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		DAE4860120F47060003BF78A /* StatsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsInteractor.swift; sourceTree = "<group>"; };
 		DAE4860220F47060003BF78A /* UserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE485FF20F47060003BF78A /* Application.swift */,
-				DAE485FD20F47060003BF78A /* Navigation.swift */,
+				DAE485FD20F47060003BF78A /* Router.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 				DAA00E3020F48DEF009386CE /* StatsViewModelItem.swift in Sources */,
 				DAE4860D20F47060003BF78A /* UsersViewContent.swift in Sources */,
 				DAE4860B20F47060003BF78A /* UsersPresenter.swift in Sources */,
-				DAE4861220F47060003BF78A /* Navigation.swift in Sources */,
+				DAE4861220F47060003BF78A /* Router.swift in Sources */,
 				DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */,
 				DAE4861520F47060003BF78A /* StatsInteractor.swift in Sources */,
 				DAA00E3220F48F1C009386CE /* StatsViewModelBuilderProtocol.swift in Sources */,

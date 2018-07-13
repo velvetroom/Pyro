@@ -1,16 +1,18 @@
-import Foundation
+import UIKit
 import CleanArchitecture
 
 class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    private var stats:[StatsViewModelItem]!
+    private var stats:[StatsViewModelItem]
     
-    override func initProperties() {
-        super.initProperties()
+    required init() {
         self.stats = []
+        super.init()
     }
     
-    override func didLoad() {
-        super.didLoad()
+    required init?(coder: NSCoder) { return nil }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.configureView()
         self.configureViewModel()
     }

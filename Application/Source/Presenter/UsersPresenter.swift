@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 import CleanArchitecture
 
 class UsersPresenter:PresenterProtocol {
@@ -24,7 +24,7 @@ class UsersPresenter:PresenterProtocol {
         let alert:UsersViewNew = UsersViewNew(title:nil, message:nil, preferredStyle:UIAlertController.Style.alert)
         alert.presenter = self
         alert.configureView()
-        self.interactor.transition?.present(alert, animated:true, completion:nil)
+        self.interactor.router?.present(alert, animated:true, completion:nil)
     }
     
     func add(name:String, url:String) {
