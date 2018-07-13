@@ -18,7 +18,7 @@ class TestPyro:XCTestCase {
         let invalidName:String = "invalid"
         var user:User = User()
         user.name = invalidName
-        self.pyro.store.users.append(user)
+        self.pyro.users.append(user)
         
         self.storage.onLoad = { expect.fulfill() }
         self.pyro.load { XCTAssertTrue(self.pyro.users.isEmpty, "Failed to replace users") }

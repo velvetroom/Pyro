@@ -5,12 +5,12 @@ class MockStorageProtocol:StorageProtocol {
     var onLoad:(() -> Void)?
     var onSave:(() -> Void)?
     
-    func load(onCompletion:@escaping((Store) -> Void)) {
+    func load(onCompletion:@escaping(([User]) -> Void)) {
         self.onLoad?()
-        onCompletion(Store())
+        onCompletion([])
     }
     
-    func save(store:Store) {
+    func save(users:[User]) {
         self.onSave?()
     }
 }

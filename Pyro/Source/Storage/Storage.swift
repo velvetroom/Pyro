@@ -12,61 +12,57 @@ class Storage:StorageProtocol {
                                       target:DispatchQueue.global(qos:DispatchQoS.QoSClass.background))
     }
     
-    func load(onCompletion:@escaping((Store) -> Void)) {
+    func load(onCompletion:@escaping(([User]) -> Void)) {
         self.dispatch.async { [weak self] in
-            guard let store:Store = self?.load() else { return }
+            guard let users:[User] = self?.load() else { return }
             DispatchQueue.main.async {
-                onCompletion(store)
+                onCompletion(users)
             }
         }
     }
     
-    func save(store:Store) {
+    func save(users:[User]) {
         self.dispatch.async { [weak self] in
             let data:Data
             do {
-                try data = JSONEncoder().encode(store)
+                try data = JSONEncoder().encode(users)
                 try self?.file.save(data:data)
             } catch { }
         }
     }
     
-    private func load() -> Store {
+    private func load() -> [User] {
+        var users:[User] = []
         do {
-            return try self.loadFile()
+            try users = self.loadFile()
         } catch {
-            do {
-                return try self.loadUserBase()
-            } catch {
-                return Store()
-            }
+            do { try users = self.loadUserBase() } catch { }
         }
+        return users
     }
     
-    private func loadFile() throws -> Store {
+    private func loadFile() throws -> [User] {
         let data:Data = try self.file.load()
-        let store:Store = try JSONDecoder().decode(Store.self, from:data)
-        return store
+        return try JSONDecoder().decode([User].self, from:data)
     }
     
-    private func loadUserBase() throws -> Store {
+    private func loadUserBase() throws -> [User] {
         let url:URL = Bundle(for:type(of:self)).url(forResource:StorageConstants.userBaseFile, withExtension:nil)!
         let data:Data = try Data(contentsOf:url, options:Data.ReadingOptions.uncached)
         let userBase:[UserBase] = try JSONDecoder().decode([UserBase].self, from:data)
-        let store:Store = self.createUsersFrom(userBase:userBase)
-        self.save(store:store)
-        return store
+        let users:[User] = self.createUsersFrom(userBase:userBase)
+        self.save(users:users)
+        return users
     }
     
-    private func createUsersFrom(userBase:[UserBase]) -> Store {
-        var store:Store = Store()
+    private func createUsersFrom(userBase:[UserBase]) -> [User] {
+        var users:[User] = []
         for base:UserBase in userBase {
-            var user:User = User()
+            var user:User = UserFactory.make()
             user.name = base.name
             user.url = base.url
-            user.identifier = UUID().uuidString
-            store.users.append(user)
+            users.append(user)
         }
-        return store
+        return users
     }
 }

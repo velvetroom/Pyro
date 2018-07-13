@@ -17,9 +17,9 @@ class TestStorage:XCTestCase {
         let expectSave:XCTestExpectation = self.expectation(description:"Not saving")
         self.file.onSave = { expectSave.fulfill() }
         self.file.error = StorageError.fileNotFound
-        self.storage.load { (store:Store) in
-            XCTAssertFalse(store.users.isEmpty, "No users loaded")
-            for user:User in store.users {
+        self.storage.load { (users:[User]) in
+            XCTAssertFalse(users.isEmpty, "No users loaded")
+            for user:User in users {
                 XCTAssertFalse(user.name.isEmpty, "Not loaded")
                 XCTAssertFalse(user.url.isEmpty, "Not loaded")
                 XCTAssertFalse(user.identifier.isEmpty, "Failed to assign identifier")
@@ -33,13 +33,13 @@ class TestStorage:XCTestCase {
     func testSaveSendsToFile() {
         let expectSave:XCTestExpectation = self.expectation(description:"Failed to save users")
         self.file.onSave = { expectSave.fulfill() }
-        self.storage.save(store:Store())
+        self.storage.save(users:[])
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
     func testLoadUsersFromFile() {
         let expectLoad:XCTestExpectation = self.expectation(description:"Failed to load users")
-        self.storage.load { (store:Store) in
+        self.storage.load { (users:[User]) in
             expectLoad.fulfill()
         }
         self.waitForExpectations(timeout:0.3, handler:nil)

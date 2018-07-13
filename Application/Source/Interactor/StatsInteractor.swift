@@ -5,13 +5,12 @@ import Pyro
 class StatsInteractor:InteractorProtocol, ReportDelegate {
     weak var transition:Navigation?
     weak var presenter:InteractorDelegateProtocol?
-    var user:User
+    weak var pyro:PyroProtocol!
+    var user:User!
     var stats:Stats?
     var error:Error?
-    weak var pyro:PyroProtocol!
     
     required init() {
-        self.user = User()
 //        self.report = Factory.makeReport()
 //        self.report.delegate = self
     }
