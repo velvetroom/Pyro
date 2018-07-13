@@ -1,8 +1,8 @@
 import Foundation
 
 public protocol InteractorProtocol:AnyObject {
-    associatedtype Transition
-    var transition:Transition? { get set }
+    associatedtype Router
+    var router:Router? { get set }
     var presenter:InteractorDelegateProtocol? { get set }
     
     init()
