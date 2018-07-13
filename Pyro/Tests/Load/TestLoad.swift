@@ -63,6 +63,12 @@ class TestLoad:XCTestCase {
         self.waitForExpectations(timeout:0.1, handler:nil)
     }
     
+    func testRemovesPreviousItemsBeforeStarting() {
+        self.load.items = [ScraperItem()]
+        self.load.start(user:User())
+        XCTAssertTrue(self.load.items.isEmpty, "Not removed")
+    }
+    
     func testScrapsItems() {
         var expect:XCTestExpectation? = self.expectation(description:"Items not cleaned")
         self.request.data = Data()

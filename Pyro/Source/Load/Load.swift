@@ -5,8 +5,8 @@ class Load:LoadProtocol {
     var request:RequestProtocol
     var scraper:ScraperProtocol
     var cleaner:ScraperCleanerProtocol
+    var items:[ScraperItem]
     private var user:User!
-    private var items:[ScraperItem]
     
     init() {
         self.request = Request()
@@ -17,6 +17,7 @@ class Load:LoadProtocol {
     
     func start(user:User) {
         self.user = user
+        self.items = []
         self.next(year:LoadConstants.startingYear)
     }
     
@@ -38,7 +39,7 @@ class Load:LoadProtocol {
     
     private func completed(year:Int, data:Data) {
         let uncleanItems:[ScraperItem] = self.scraper.makeItems(data:data)
-        let items:[ScraperItem] = self.cleaner.clean(year:year - 1, items:uncleanItems)
+        let items:[ScraperItem] = self.cleaner.clean(year:year, items:uncleanItems)
         self.items.append(contentsOf:items)
         self.next(year:year + 1)
     }
