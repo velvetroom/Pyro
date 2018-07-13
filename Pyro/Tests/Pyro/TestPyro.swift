@@ -4,12 +4,17 @@ import XCTest
 class TestPyro:XCTestCase {
     private var pyro:Pyro!
     private var storage:MockStorageProtocol!
+    private var report:MockReportProtocol!
+    private var reportDelegate:MockReportDelegate!
     
     override func setUp() {
         super.setUp()
         self.pyro = Pyro()
         self.storage = MockStorageProtocol()
+        self.report = MockReportProtocol()
+        self.reportDelegate = MockReportDelegate()
         self.pyro.storage = self.storage
+        self.pyro.report = self.report
     }
     
     func testLoadUsersFromStorage() {
@@ -62,6 +67,16 @@ class TestPyro:XCTestCase {
         let expect:XCTestExpectation = self.expectation(description:"Not saved")
         self.storage.onSave = { expect.fulfill() }
         self.pyro.addUser(name:String(), url:String())
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testMakeReportAssignsDelegateToReport() {
+        let expect:XCTestExpectation = self.expectation(description:"Not saved")
+        self.report.onReport = {
+            XCTAssertNotNil(self.report.delegate, "Not assigned")
+            expect.fulfill()
+        }
+        self.pyro.makeReport(user:User(), delegate:self.reportDelegate)
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
 }

@@ -3,10 +3,12 @@ import Foundation
 public class Pyro {
     public var users:[User]
     var storage:StorageProtocol
+    var report:ReportProtocol
     
     public init() {
         self.users = []
         self.storage = Storage()
+        self.report = Report()
     }
     
     public func load(onCompletion:@escaping(() -> Void)) {
@@ -22,6 +24,11 @@ public class Pyro {
         user.url = url
         self.add(user:user)
         self.save()
+    }
+    
+    public func makeReport(user:User, delegate:ReportDelegate) {
+        self.report.delegate = delegate
+        self.report.make(user:user)
     }
     
     func save() {

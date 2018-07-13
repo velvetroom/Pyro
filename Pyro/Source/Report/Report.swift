@@ -1,6 +1,6 @@
 import Foundation
 
-class Report:LoadDelegate {
+class Report:ReportProtocol, LoadDelegate {
     weak var delegate:ReportDelegate?
     var load:LoadProtocol
     var builder:StatsBuilderProtocol

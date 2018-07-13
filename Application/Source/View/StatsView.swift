@@ -12,9 +12,9 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
     required init?(coder:NSCoder) { return nil }
     
     override func viewDidLoad() {
+        self.configureViewModel()
         super.viewDidLoad()
         self.configureView()
-        self.configureViewModel()
     }
     
     func collectionView(_:UICollectionView, layout:UICollectionViewLayout, sizeForItemAt:IndexPath) -> CGSize {

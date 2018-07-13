@@ -12,8 +12,8 @@ class StatsInteractor:InteractorProtocol {
     
     required init() { }
     
-    func generateReport() {
-//        self.report.make(user:user)
+    func generateReport(delegate:ReportDelegate) {
+        self.pyro.makeReport(user:self.user, delegate:delegate)
     }
     
     func reportCompleted(stats:Stats) {
