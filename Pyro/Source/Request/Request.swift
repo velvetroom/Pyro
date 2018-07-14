@@ -9,7 +9,7 @@ class Request:RequestProtocol {
         configuration.allowsCellularAccess = true
         configuration.isDiscretionary = true
         configuration.networkServiceType = URLRequest.NetworkServiceType.default
-        configuration.requestCachePolicy = URLRequest.CachePolicy.reloadIgnoringCacheData
+        configuration.requestCachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData
         self.session = URLSession(configuration:configuration, delegate:nil, delegateQueue:OperationQueue())
     }
     
@@ -39,7 +39,8 @@ class Request:RequestProtocol {
             let url:URL = URL(string:RequestConstants.urlPrefix + userPath + RequestConstants.urlMiddle +
                 String(year) + RequestConstants.urlSuffix)
         else { return nil }
-        var request:URLRequest = URLRequest(url:url, cachePolicy:URLRequest.CachePolicy.reloadIgnoringCacheData,
+        var request:URLRequest = URLRequest(url:url,
+                                            cachePolicy:URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData,
                                             timeoutInterval:RequestConstants.timeout)
         request.httpMethod = RequestConstants.method
         request.allowsCellularAccess = true
