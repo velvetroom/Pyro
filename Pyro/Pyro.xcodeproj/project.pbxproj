@@ -54,6 +54,8 @@
 		DA5E6D4620F9F56600120292 /* StatsDuplicates.stub in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */; };
 		DA5E6D4920F9FB6B00120292 /* StatsFuture.stub in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6D4720F9FB0A00120292 /* StatsFuture.stub */; };
 		DA5E6D4B20F9FEF200120292 /* ScraperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4A20F9FEF200120292 /* ScraperError.swift */; };
+		DA5E6D4D20FA083A00120292 /* StatsContributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4C20FA083A00120292 /* StatsContributions.swift */; };
+		DA5E6D4F20FA088A00120292 /* StatsStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4E20FA088A00120292 /* StatsStreak.swift */; };
 		DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */; };
 		DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8220F6158B00E6F38E /* StorageFile.swift */; };
 		DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */; };
@@ -129,6 +131,8 @@
 		DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsDuplicates.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DA5E6D4720F9FB0A00120292 /* StatsFuture.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsFuture.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DA5E6D4A20F9FEF200120292 /* ScraperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperError.swift; sourceTree = "<group>"; };
+		DA5E6D4C20FA083A00120292 /* StatsContributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContributions.swift; sourceTree = "<group>"; };
+		DA5E6D4E20FA088A00120292 /* StatsStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStreak.swift; sourceTree = "<group>"; };
 		DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnalyser.swift; sourceTree = "<group>"; };
 		DA7E6E8220F6158B00E6F38E /* StorageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFile.swift; sourceTree = "<group>"; };
 		DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFileProtocol.swift; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				DAA00E3420F4940A009386CE /* Stats.swift */,
+				DA5E6D4C20FA083A00120292 /* StatsContributions.swift */,
+				DA5E6D4E20FA088A00120292 /* StatsStreak.swift */,
 				DA28087620F5DF5E00BCDA13 /* StatsBuilderProtocol.swift */,
 				DA20629720F4F910001B58A1 /* StatsBuilder.swift */,
 				DA20629E20F50098001B58A1 /* StatsCommandProtocol.swift */,
@@ -501,6 +507,7 @@
 				DA01228420F49AB700B9C5EF /* ScraperItem.swift in Sources */,
 				DA20629F20F50098001B58A1 /* StatsCommandProtocol.swift in Sources */,
 				DA28087F20F5E4FD00BCDA13 /* ReportConstants.swift in Sources */,
+				DA5E6D4F20FA088A00120292 /* StatsStreak.swift in Sources */,
 				DA2062A320F503B2001B58A1 /* StatsCommandFirstContribution.swift in Sources */,
 				DAE4862620F4708E003BF78A /* User.swift in Sources */,
 				DA2062A120F502A3001B58A1 /* StatsCommandComposite.swift in Sources */,
@@ -523,6 +530,7 @@
 				DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */,
 				DA5E6D4B20F9FEF200120292 /* ScraperError.swift in Sources */,
 				DA2062B920F5242B001B58A1 /* RequestProtocol.swift in Sources */,
+				DA5E6D4D20FA083A00120292 /* StatsContributions.swift in Sources */,
 				DA28087720F5DF5E00BCDA13 /* StatsBuilderProtocol.swift in Sources */,
 				DA2062A920F5040D001B58A1 /* StatsCommandMaxStreak.swift in Sources */,
 				DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */,

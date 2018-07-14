@@ -12,6 +12,6 @@ class StatsCommandContributions:StatsCommandProtocol {
     }
     
     func print(stats:inout Stats) {
-        stats.contributions = self.contributions
+        stats.contributions.count = self.contributions
     }
 }

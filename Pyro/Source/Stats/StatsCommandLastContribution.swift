@@ -13,7 +13,7 @@ class StatsCommandLastContribution:StatsCommandProtocol {
         if let date:String = self.date {
             let formatter:DateFormatter = DateFormatter()
             formatter.dateFormat = StatsConstants.dateFormat
-            stats.lastContribution = formatter.date(from:date)!
+            stats.contributions.last = formatter.date(from:date)!
         }
     }
 }

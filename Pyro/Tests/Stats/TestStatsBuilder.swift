@@ -21,7 +21,7 @@ class TestStatsBuilder:XCTestCase {
         dateFormatter.dateFormat = StatsConstants.dateFormat
         let expectedDate:Date = dateFormatter.date(from:itemB.date)!
         let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
-        XCTAssertEqual(stats.firstContribution, expectedDate, "Invalid stats")
+        XCTAssertEqual(stats.contributions.first, expectedDate, "Invalid stats")
     }
     
     func testMakesLastContribution() {
@@ -36,7 +36,7 @@ class TestStatsBuilder:XCTestCase {
         dateFormatter.dateFormat = StatsConstants.dateFormat
         let expectedDate:Date = dateFormatter.date(from:itemB.date)!
         let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
-        XCTAssertEqual(stats.lastContribution, expectedDate, "Invalid stats")
+        XCTAssertEqual(stats.contributions.last, expectedDate, "Invalid stats")
     }
     
     func testMakesContributions() {
@@ -51,7 +51,7 @@ class TestStatsBuilder:XCTestCase {
         itemC.date = "2000-01-01"
         let expectedCount:Int = itemA.count + itemB.count + itemC.count
         let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
-        XCTAssertEqual(stats.contributions, expectedCount, "Invalid stats")
+        XCTAssertEqual(stats.contributions.count, expectedCount, "Invalid stats")
     }
     
     func testMakesMaxStreak() {
@@ -78,7 +78,7 @@ class TestStatsBuilder:XCTestCase {
         itemH.count = 56
         itemH.date = "2000-01-01"
         let stats:Stats = self.builder.build(items:[itemA, itemB, itemC, itemD, itemE, itemF, itemG, itemH])
-        XCTAssertEqual(stats.maxStreak, 3, "Invalid stats")
+        XCTAssertEqual(stats.streak.max, 3, "Invalid stats")
     }
     
     func testMakesCurrentStreak() {
@@ -92,7 +92,7 @@ class TestStatsBuilder:XCTestCase {
         itemC.count = 5
         itemC.date = "2000-01-01"
         let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
-        XCTAssertEqual(stats.currentStreak, 2, "Invalid stats")
+        XCTAssertEqual(stats.streak.current, 2, "Invalid stats")
     }
     
     func testAddTimestamp() {

@@ -19,6 +19,6 @@ class StatsCommandMaxStreak:StatsCommandProtocol {
     }
     
     func print(stats:inout Stats) {
-        stats.maxStreak = max(self.currentStreak, self.maxStreak)
+        stats.streak.max = max(self.currentStreak, self.maxStreak)
     }
 }
