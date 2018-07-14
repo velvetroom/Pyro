@@ -1,5 +1,5 @@
 import Foundation
-import Pyro
+@testable import Pyro
 
 class MockStorageProtocol:StorageProtocol {
     var onLoad:(() -> Void)?
@@ -7,6 +7,7 @@ class MockStorageProtocol:StorageProtocol {
     
     func load(onCompletion:@escaping(([User]) -> Void)) {
         self.onLoad?()
+        onCompletion([])
     }
     
     func save(users:[User]) {

@@ -1,5 +1,5 @@
 import Foundation
-import Pyro
+@testable import Pyro
 
 class MockReportProtocol:ReportProtocol {
     var onReport:(() -> Void)?

@@ -6,18 +6,16 @@ class TestLoad:XCTestCase {
     private var delegate:MockLoadDelegate!
     private var request:MockRequestProtocol!
     private var scraper:MockScraperProtocol!
-    private var cleaner:MockScraperCleanerProtocol!
 
     override func setUp() {
+        super.setUp()
         self.load = Load()
         self.delegate = MockLoadDelegate()
         self.request = MockRequestProtocol()
         self.scraper = MockScraperProtocol()
-        self.cleaner = MockScraperCleanerProtocol()
         self.load.delegate = self.delegate
         self.load.request = self.request
         self.load.scraper = self.scraper
-        self.load.cleaner = self.cleaner
     }
 
     func testSendsLoadedItemsToDelegate() {
@@ -51,17 +49,6 @@ class TestLoad:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testCleansItems() {
-        var expect:XCTestExpectation? = self.expectation(description:"Items not cleaned")
-        self.request.data = Data()
-        self.cleaner.onClean = {
-            expect?.fulfill()
-            expect = nil
-        }
-        self.load.start(user:User())
-        self.waitForExpectations(timeout:0.1, handler:nil)
-    }
-    
     func testScrapsItems() {
         var expect:XCTestExpectation? = self.expectation(description:"Items not cleaned")
         self.request.data = Data()
@@ -76,5 +63,19 @@ class TestLoad:XCTestCase {
     func testNotRetainingDelegate() {
         self.delegate = nil
         XCTAssertNil(self.load.delegate, "Retains delegate")
+    }
+    
+    func testIfErrorStopRequestingFollowinYears() {
+        let completed:XCTestExpectation = self.expectation(description:"Failed to complete")
+        self.request.data = Data()
+        var timesRequested:Int = 0
+        self.request.onReceived = { (year:Int) in
+            timesRequested += 1
+        }
+        self.scraper.error = ScraperError.dateInTheFuture
+        self.delegate.onCompleted = { completed.fulfill() }
+        self.load.start(user:User())
+        self.waitForExpectations(timeout:0.3, handler:nil)
+        XCTAssertEqual(timesRequested, 1, "Requested more than expected")
     }
 }

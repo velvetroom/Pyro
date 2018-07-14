@@ -1,41 +1,66 @@
 import Foundation
 
 class Scraper:ScraperProtocol {
-    private var items:[ScraperItem]!
-    private var item:ScraperItem!
+    var items:[ScraperItem] { get { return self.repository.items } }
+    var repository:ScraperItems
+    private let today:Date
+    private let dateFormatter:DateFormatter
     
-    func makeItems(data:Data) -> [ScraperItem] {
-        self.items = []
-        let string:String = String(data:data, encoding:String.Encoding.utf8)!
-        self.makeItems(string:string)
-        return self.items
+    init() {
+        self.repository = ScraperItems()
+        self.today = Date()
+        self.dateFormatter = DateFormatter()
+        self.dateFormatter.dateFormat = StatsConstants.dateFormat
     }
     
-    private func makeItems(string:String) {
+    func makeItems(data:Data) throws {
+        let string:String = String(data:data, encoding:String.Encoding.utf8)!
         let items:[String] = self.makeComponents(string:string)
         for item:String in items {
             let components:[String] = item.components(separatedBy:ScraperConstants.prefixDate)
-            self.item = ScraperItem()
-            self.makeCount(components:components)
-            self.makeDate(components:components)
-            self.items.append(self.item)
+            try self.makeItemWith(components:components)
         }
     }
     
     private func makeComponents(string:String) -> [String] {
-        var items:[String] = string.components(separatedBy:ScraperConstants.prefixCount)
-        if items.count > 0 {
-            items.removeFirst()
+        var components:[String] = string.components(separatedBy:ScraperConstants.prefixCount)
+        if components.count > 0 {
+            components.removeFirst()
         }
-        return items
+        return components
     }
     
-    private func makeCount(components:[String]) {
-        guard let countString:String = components.first else { return }
-        self.item.count = Int(countString)!
+    private func makeItemWith(components:[String]) throws {
+        let date:String = self.date(components:components)
+        if try self.valid(date:date) {
+            var item:ScraperItem = ScraperItem()
+            item.date = date
+            item.count = self.count(components:components)
+            self.repository.checklist[date] = true
+            self.repository.items.append(item)
+        }
     }
     
-    private func makeDate(components:[String]) {
-        self.item.date = String(components[1].prefix(ScraperConstants.dateLength))
+    private func date(components:[String]) -> String  {
+        return String(components[1].prefix(ScraperConstants.dateLength))
+    }
+    
+    private func valid(date:String) throws -> Bool {
+        if self.repository.checklist[date] == nil {
+            guard
+                let itemDate:Date = dateFormatter.date(from:date),
+                itemDate <= self.today
+            else { throw ScraperError.dateInTheFuture }
+            return true
+        }
+        return false
+    }
+    
+    private func count(components:[String]) -> Int {
+        guard
+            let countString:String = components.first,
+            let countInt:Int = Int(countString)
+        else { return 0 }
+        return countInt
     }
 }

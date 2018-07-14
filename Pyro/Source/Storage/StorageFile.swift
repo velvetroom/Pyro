@@ -6,7 +6,7 @@ class StorageFile:StorageFileProtocol {
     init() {
         let app:URL = FileManager.default.urls(for:FileManager.SearchPathDirectory.documentDirectory,
                                                in:FileManager.SearchPathDomainMask.userDomainMask).last!
-        self.url = app.appendingPathComponent(StorageConstants.file)
+        self.url = app.appendingPathComponent(StorageConstants.storeFile)
     }
     
     func load() throws -> Data {

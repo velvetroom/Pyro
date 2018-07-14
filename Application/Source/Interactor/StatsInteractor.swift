@@ -2,32 +2,31 @@ import Foundation
 import CleanArchitecture
 import Pyro
 
-class StatsInteractor:InteractorProtocol, ReportDelegate {
-    weak var transition:Navigation?
+class StatsInteractor:InteractorProtocol, PyroDelegate {
+    weak var router:Router?
     weak var presenter:InteractorDelegateProtocol?
-    var user:User
-    var stats:Stats?
+    weak var pyro:Pyro!
+    weak var user:User!
     var error:Error?
-    private var report:ReportProtocol
     
-    required init() {
-        self.user = User()
-        self.report = Factory.makeReport()
-        self.report.delegate = self
+    required init() { }
+    
+    func synchStats() {
+        self.pyro.delegate = self
+        self.pyro.makeReport(user:self.user)
     }
     
-    func generateReport() {
-        self.report.make(user:user)
+    func delete() {
+        self.pyro.delete(user:self.user)
+        self.router?.popViewController(animated:true)
     }
     
-    func reportCompleted(stats:Stats) {
-        self.stats = stats
+    func pyroUpdated() {
         self.error = nil
         self.presenter?.shouldUpdate()
     }
     
-    func reportFailed(error:Error) {
-        self.stats = nil
+    func pyroFailed(error:Error) {
         self.error = error
         self.presenter?.shouldUpdate()
     }

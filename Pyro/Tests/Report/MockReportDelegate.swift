@@ -1,15 +1,15 @@
 import Foundation
-import Pyro
+@testable import Pyro
 
 class MockReportDelegate:ReportDelegate {
     var onCompleted:(() -> Void)?
     var onError:(() -> Void)?
     
-    func reportCompleted(stats:Stats) {
+    func reportCompleted() {
         self.onCompleted?()
     }
     
-    func reportFailed(error: Error) {
+    func reportFailed(error:Error) {
         self.onError?()
     }
 }

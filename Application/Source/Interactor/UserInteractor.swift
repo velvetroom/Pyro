@@ -2,32 +2,30 @@ import Foundation
 import CleanArchitecture
 import Pyro
 
-class UserInteractor:InteractorProtocol {
-    weak var transition:Navigation?
+class UserInteractor:InteractorProtocol, PyroDelegate {
+    weak var router:Router?
     weak var presenter:InteractorDelegateProtocol?
-    var users:[User]
-    private let storage:StorageProtocol
+    var pyro:Pyro
     
     required init() {
-        self.users = []
-        self.storage = Factory.makeStorage()
+        self.pyro = Pyro()
     }
     
-    func load(onCompletion:@escaping(() -> Void)) {
-        self.storage.load { [weak self] (users:[User]) in
-            self?.users = users
-            onCompletion()
-        }
+    func load() {
+        self.pyro.delegate = self
+        self.pyro.load()
+    }
+    
+    func selectUser(index:Int) {
+        self.router?.routeToUsers(pyro:self.pyro, user:self.pyro.users[index])
     }
     
     func add(name:String, url:String) {
-        var user:User = User()
-        user.name = name
-        user.url = url
-        self.users.append(user)
-        self.users.sort { (userA:User, userB:User) -> Bool in
-            return userA.name.caseInsensitiveCompare(userB.name) == ComparisonResult.orderedAscending
-        }
-        self.storage.save(users:self.users)
+        self.pyro.delegate = self
+        self.pyro.addUser(name:name, url:url)
+    }
+    
+    func pyroUpdated() {
+        self.presenter?.shouldUpdate()
     }
 }

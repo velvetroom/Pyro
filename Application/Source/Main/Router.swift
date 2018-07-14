@@ -1,7 +1,7 @@
 import UIKit
 import Pyro
 
-class Navigation:UINavigationController {
+class Router:UINavigationController {
     init() {
         super.init(nibName:nil, bundle:nil)
         self.configureNavigation()
@@ -12,10 +12,11 @@ class Navigation:UINavigationController {
         return nil
     }
     
-    func pushStatsFor(user:User) {
+    func routeToUsers(pyro:Pyro, user:User) {
         let view:StatsView = StatsView()
+        view.presenter.interactor.pyro = pyro
         view.presenter.interactor.user = user
-        view.presenter.interactor.transition = self
+        view.presenter.interactor.router = self
         self.pushViewController(view, animated:true)
     }
     
@@ -28,7 +29,7 @@ class Navigation:UINavigationController {
     
     private func navigateToUsers() {
         let users:UsersView = UsersView()
-        users.presenter.interactor.transition = self
+        users.presenter.interactor.router = self
         self.setViewControllers([users], animated:false)
     }
 }

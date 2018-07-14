@@ -2,17 +2,19 @@ import UIKit
 import CleanArchitecture
 
 class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    private var users:[NSAttributedString]!
+    private var users:[NSAttributedString]
     
-    override func initProperties() {
-        super.initProperties()
+    required init() {
         self.users = []
+        super.init()
     }
     
-    override func didLoad() {
-        super.didLoad()
-        self.configureView()
+    required init?(coder:NSCoder) { return nil }
+    
+    override func viewDidLoad() {
         self.configureViewModel()
+        super.viewDidLoad()
+        self.configureView()
     }
     
     func collectionView(_:UICollectionView, layout:UICollectionViewLayout, sizeForItemAt:IndexPath) -> CGSize {
@@ -26,10 +28,7 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
         return cell
     }
     
-    func collectionView(_:UICollectionView, didSelectItemAt index:IndexPath) {
-        self.presenter.selectUser(index:index.item)
-    }
-    
+    func collectionView(_:UICollectionView, didSelectItemAt index:IndexPath) { self.presenter.selectUser(index:index) }
     func collectionView(_:UICollectionView, numberOfItemsInSection section:Int) -> Int { return self.users.count }
     
     private func configureView() {
@@ -68,6 +67,6 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     }
     
     @objc private func selectorAdd() {
-        self.presenter.addNew()
+        self.presenter.createUser()
     }
 }

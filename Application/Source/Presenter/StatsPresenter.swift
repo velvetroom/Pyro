@@ -1,6 +1,5 @@
-import Foundation
+import UIKit
 import CleanArchitecture
-import Pyro
 
 class StatsPresenter:PresenterProtocol {
     var interactor:StatsInteractor!
@@ -8,31 +7,38 @@ class StatsPresenter:PresenterProtocol {
     
     required init() { }
     
-    func didLoad() {
-        self.updateViewModel()
+    func synchronize() {
+        self.updateWith(builder:StatsViewModelBuilderLoading())
+        self.interactor.synchStats()
     }
     
-    func didAppear() {
-        self.interactor.generateReport()
+    func deleteUser() {
+        let alert:StatsViewDelete = StatsViewDelete(title:nil, message:nil,
+                                                    preferredStyle:UIAlertController.Style.alert)
+        alert.presenter = self
+        alert.configureView()
+        self.interactor.router?.present(alert, animated:true, completion:nil)
+    }
+    
+    func confirmDelete() {
+        self.interactor.delete()
+    }
+    
+    func didLoad() {
+        self.shouldUpdate()
     }
     
     func shouldUpdate() {
-        self.updateViewModel()
+        if let error:Error = self.interactor.error {
+            self.updateWith(builder:StatsViewModelBuilderError(error:error))
+        } else {
+            self.updateWith(builder:StatsViewModelBuilderStats(stats:self.interactor.user.stats))
+        }
     }
     
-    private func updateViewModel() {
-        var builder:StatsViewModelBuilderProtocol = self.makeBuilder()
+    private func updateWith(builder:StatsViewModelBuilderProtocol) {
+        var builder:StatsViewModelBuilderProtocol = builder
         builder.build()
         self.viewModel.update(property:builder.viewModel)
-    }
-    
-    private func makeBuilder() -> StatsViewModelBuilderProtocol {
-        if let error:Error = self.interactor.error {
-            return StatsViewModelBuilderError(error:error)
-        } else if let stats:Stats = self.interactor.stats {
-            return StatsViewModelBuilderReady(stats:stats)
-        } else {
-            return StatsViewModelBuilderLoading()
-        }
     }
 }

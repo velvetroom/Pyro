@@ -15,7 +15,7 @@ class StatsCommandFirstContribution:StatsCommandProtocol {
     
     func print(stats:inout Stats) {
         if let date:Date = self.date {
-            stats.firstContribution = date
+            stats.contributions.first = date
         }
     }
 }

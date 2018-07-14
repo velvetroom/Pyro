@@ -1,35 +1,35 @@
-import Foundation
+import UIKit
 import CleanArchitecture
 
 class UsersPresenter:PresenterProtocol {
     var interactor:UserInteractor!
     var viewModel:ViewModel!
+    private var factory:UsersViewModelFactory
     
-    required init() { }
+    required init() {
+        self.factory = UsersViewModelFactory()
+    }
     
     func didAppear() {
-        self.interactor.load { [weak self] in
-            self?.updateViewModel()
-        }
+        self.interactor.load()
     }
     
-    func selectUser(index:Int) {
-        self.interactor.transition?.pushStatsFor(user:self.interactor.users[index])
+    func selectUser(index:IndexPath) {
+        self.interactor.selectUser(index:index.item)
     }
     
-    func addNew() {
+    func createUser() {
         let alert:UsersViewNew = UsersViewNew(title:nil, message:nil, preferredStyle:UIAlertController.Style.alert)
         alert.presenter = self
         alert.configureView()
-        self.interactor.transition?.present(alert, animated:true, completion:nil)
+        self.interactor.router?.present(alert, animated:true, completion:nil)
     }
     
     func add(name:String, url:String) {
         self.interactor.add(name:name, url:url)
-        self.updateViewModel()
     }
     
-    private func updateViewModel() {
-        self.viewModel.update(property:UsersViewModelFactory.make(users:self.interactor.users))
+    func shouldUpdate() {
+        self.viewModel.update(property:self.factory.make(pyro:self.interactor.pyro))
     }
 }

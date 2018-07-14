@@ -16,6 +16,6 @@ class StatsCommandCurrentStreak:StatsCommandProtocol {
     }
     
     func print(stats:inout Stats) {
-        stats.currentStreak = self.streak
+        stats.streak.current = self.streak
     }
 }

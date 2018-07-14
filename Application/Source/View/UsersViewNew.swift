@@ -2,9 +2,9 @@ import UIKit
 
 class UsersViewNew:UIAlertController, UITextFieldDelegate {
     weak var presenter:UsersPresenter?
-    private var fieldName:UITextField!
-    private var fieldUrl:UITextField!
-    private var accept:UIAlertAction!
+    private weak var fieldName:UITextField!
+    private weak var fieldUrl:UITextField!
+    private weak var accept:UIAlertAction!
     
     func configureView() {
         self.title = NSLocalizedString("UsersViewNew_Title", comment:String())
@@ -22,12 +22,13 @@ class UsersViewNew:UIAlertController, UITextFieldDelegate {
     }
     
     private func makeOutlets() {
-        self.accept = UIAlertAction(title:NSLocalizedString("UsersViewNew_Add", comment:String()),
+        let accept:UIAlertAction = UIAlertAction(title:NSLocalizedString("UsersViewNew_Add", comment:String()),
                                     style:UIAlertAction.Style.default, handler:
         { [weak self] (action:UIAlertAction) in
             self?.createUser()
         })
-        self.accept.isEnabled = false
+        accept.isEnabled = false
+        self.accept = accept
         self.addTextField { [weak self] (field:UITextField) in
             field.placeholder = NSLocalizedString("UsersViewNew_Name", comment:String())
             self?.configure(field:field)
@@ -38,7 +39,7 @@ class UsersViewNew:UIAlertController, UITextFieldDelegate {
             self?.configure(field:field)
             self?.fieldUrl = field
         }
-        self.addAction(self.accept)
+        self.addAction(accept)
         self.addAction(UIAlertAction(title:NSLocalizedString("UsersViewNew_Cancel", comment:String()),
                                      style:UIAlertAction.Style.cancel, handler:nil))
     }
