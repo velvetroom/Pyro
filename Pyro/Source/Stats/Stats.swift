@@ -1,6 +1,7 @@
 import Foundation
 
 public struct Stats:Codable {
+    public var timestamp:Date?
     public var firstContribution:Date
     public var lastContribution:Date
     public var contributions:Int

@@ -94,4 +94,9 @@ class TestStatsBuilder:XCTestCase {
         let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
         XCTAssertEqual(stats.currentStreak, 2, "Invalid stats")
     }
+    
+    func testAddTimestamp() {
+        let stats:Stats = self.builder.build(items:[])
+        XCTAssertNotNil(stats.timestamp, "Timestamp not added")
+    }
 }

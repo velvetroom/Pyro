@@ -24,18 +24,14 @@ class Report:ReportProtocol, LoadDelegate {
     
     func loadCompleted(items:[ScraperItem]) {
         let stats:Stats = self.builder.build(items:items)
-        self.completed(stats:stats)
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.reportCompleted(stats:stats)
+        }
     }
     
     func loadFailed(error:Error) {
         DispatchQueue.main.async { [weak self] in
             self?.delegate?.reportFailed(error:error)
-        }
-    }
-    
-    private func completed(stats:Stats) {
-        DispatchQueue.main.async { [weak self] in
-            self?.delegate?.reportCompleted(stats:stats)
         }
     }
 }
