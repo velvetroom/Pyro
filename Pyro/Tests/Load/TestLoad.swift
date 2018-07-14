@@ -64,4 +64,18 @@ class TestLoad:XCTestCase {
         self.delegate = nil
         XCTAssertNil(self.load.delegate, "Retains delegate")
     }
+    
+    func testIfErrorStopRequestingFollowinYears() {
+        let completed:XCTestExpectation = self.expectation(description:"Failed to complete")
+        self.request.data = Data()
+        var timesRequested:Int = 0
+        self.request.onReceived = { (year:Int) in
+            timesRequested += 1
+        }
+        self.scraper.error = ScraperError.dateInTheFuture
+        self.delegate.onCompleted = { completed.fulfill() }
+        self.load.start(user:User())
+        self.waitForExpectations(timeout:0.3, handler:nil)
+        XCTAssertEqual(timesRequested, 1, "Requested more than expected")
+    }
 }

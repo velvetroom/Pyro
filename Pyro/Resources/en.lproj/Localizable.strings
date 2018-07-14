@@ -1,4 +1,5 @@
 StorageError_fileNotFound="Storage error: File not found.";
+ScraperError_dateInTheFuture="Scraper error: Item's date is in the future.";
 RequestError_userNotValid="Request error: User not valid.";
 RequestError_noResponse="Request error: Server returned no response.";
 RequestError_emptyResponse="Request error: Server returned empty response.";

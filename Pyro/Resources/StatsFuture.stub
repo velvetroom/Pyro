@@ -1,0 +1,7 @@
+<svg width="676" height="104" class="js-calendar-graph-svg">
+    <g transform="translate(16, 20)">
+        <g transform="translate(650, 0)">
+            <rect class="day" width="10" height="10" x="-37" y="0" fill="#7bc96f" data-count="16" data-date="2050-06-24"/>
+        </g>
+    </g>
+</svg>

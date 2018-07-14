@@ -20,16 +20,25 @@ class Load:LoadProtocol {
         if year <= LoadConstants.endingYear {
             self.load(year:year)
         } else {
-            self.delegate?.loadCompleted(items:self.scraper.items)
+            self.finished()
         }
     }
     
     private func load(year:Int) {
         self.request.make(user:self.user, year:year, onCompletion: { [weak self] (data:Data) in
-            self?.scraper.makeItems(data:data)
+            do {
+                try self?.scraper.makeItems(data:data)
+            } catch {
+                self?.finished()
+                return
+            }
             self?.next(year:year + 1)
         }, onError: { [weak self] (error:Error) in
             self?.delegate?.loadFailed(error:error)
         })
+    }
+    
+    private func finished() {
+        self.delegate?.loadCompleted(items:self.scraper.items)
     }
 }

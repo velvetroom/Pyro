@@ -5,6 +5,7 @@ class TestScraper:XCTestCase {
     private var scraper:Scraper!
     private var dataMin:Data!
     private var dataDuplicates:Data!
+    private var dataFuture:Data!
     private var dateFormatter:DateFormatter!
     private struct Constants {
         static let expectedDaysMin:Int = 17
@@ -22,12 +23,14 @@ class TestScraper:XCTestCase {
         self.dateFormatter.dateFormat = StatsConstants.dateFormat
         let urlMin:URL = Bundle(for:type(of:self)).url(forResource:"StatsMin", withExtension:"stub")!
         let urlDuplicates:URL = Bundle(for:type(of:self)).url(forResource:"StatsDuplicates", withExtension:"stub")!
+        let urlFuture:URL = Bundle(for:type(of:self)).url(forResource:"StatsFuture", withExtension:"stub")!
         do { try self.dataMin = Data(contentsOf:urlMin) } catch { }
         do { try self.dataDuplicates = Data(contentsOf:urlDuplicates) } catch { }
+        do { try self.dataFuture = Data(contentsOf:urlFuture) } catch { }
     }
     
     func testReturnsAnItemPerDay() {
-        self.scraper.makeItems(data:self.dataMin)
+        XCTAssertNoThrow(try self.scraper.makeItems(data:self.dataMin), "Failed to scrap")
         XCTAssertEqual(self.scraper.items.count, Constants.expectedDaysMin, "Not all days scrapped")
         XCTAssertEqual(Constants.firstCount, self.scraper.items.first?.count, "Invalid count")
         XCTAssertEqual(Constants.firstDate, self.scraper.items.first?.date, "Invalid date")
@@ -36,7 +39,7 @@ class TestScraper:XCTestCase {
     }
     
     func testItemsOrderedByDate() {
-        self.scraper.makeItems(data:self.dataMin)
+        XCTAssertNoThrow(try self.scraper.makeItems(data:self.dataMin), "Failed to scrap")
         var previousDate:Date?
         for item:ScraperItem in self.scraper.items {
             let date:Date? = self.dateFormatter.date(from:item.date)
@@ -51,14 +54,23 @@ class TestScraper:XCTestCase {
     }
     
     func testAvoidsDuplicates() {
-        self.scraper.makeItems(data:self.dataDuplicates)
+        XCTAssertNoThrow(try self.scraper.makeItems(data:self.dataDuplicates), "Failed to scrap")
         XCTAssertEqual(self.scraper.items.count, Constants.expectedDaysDuplicates, "Not removing duplicates")
     }
     
     func testAddItemsFromDifferentYears() {
-        self.scraper.makeItems(data:self.dataMin)
-        self.scraper.makeItems(data:self.dataDuplicates)
+        XCTAssertNoThrow(try self.scraper.makeItems(data:self.dataMin), "Failed to scrap")
+        XCTAssertNoThrow(try self.scraper.makeItems(data:self.dataDuplicates), "Failed to scrap")
         XCTAssertEqual(self.scraper.items.count, Constants.expectedDaysDuplicates + Constants.expectedDaysMin,
                        "Not appending items")
+    }
+    
+    func testVoidFutureItems() {
+        do { try self.scraper.makeItems(data:self.dataFuture) } catch { }
+        XCTAssertEqual(self.scraper.items.count, 0, "Not avoiding future")
+    }
+    
+    func testThrowIfItemsInTheFuture() {
+        XCTAssertThrowsError(try self.scraper.makeItems(data:self.dataFuture), "Not throwing")
     }
 }
