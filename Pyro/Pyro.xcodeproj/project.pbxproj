@@ -56,6 +56,8 @@
 		DA5E6D4B20F9FEF200120292 /* ScraperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4A20F9FEF200120292 /* ScraperError.swift */; };
 		DA5E6D4D20FA083A00120292 /* StatsContributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4C20FA083A00120292 /* StatsContributions.swift */; };
 		DA5E6D4F20FA088A00120292 /* StatsStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4E20FA088A00120292 /* StatsStreak.swift */; };
+		DA5E6D5120FA0A2900120292 /* StatsHistogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5020FA0A2900120292 /* StatsHistogram.swift */; };
+		DA5E6D5320FA0A7C00120292 /* StatsHistogramMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5220FA0A7C00120292 /* StatsHistogramMonth.swift */; };
 		DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */; };
 		DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8220F6158B00E6F38E /* StorageFile.swift */; };
 		DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */; };
@@ -133,6 +135,8 @@
 		DA5E6D4A20F9FEF200120292 /* ScraperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperError.swift; sourceTree = "<group>"; };
 		DA5E6D4C20FA083A00120292 /* StatsContributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContributions.swift; sourceTree = "<group>"; };
 		DA5E6D4E20FA088A00120292 /* StatsStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStreak.swift; sourceTree = "<group>"; };
+		DA5E6D5020FA0A2900120292 /* StatsHistogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHistogram.swift; sourceTree = "<group>"; };
+		DA5E6D5220FA0A7C00120292 /* StatsHistogramMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHistogramMonth.swift; sourceTree = "<group>"; };
 		DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnalyser.swift; sourceTree = "<group>"; };
 		DA7E6E8220F6158B00E6F38E /* StorageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFile.swift; sourceTree = "<group>"; };
 		DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFileProtocol.swift; sourceTree = "<group>"; };
@@ -281,6 +285,8 @@
 				DAA00E3420F4940A009386CE /* Stats.swift */,
 				DA5E6D4C20FA083A00120292 /* StatsContributions.swift */,
 				DA5E6D4E20FA088A00120292 /* StatsStreak.swift */,
+				DA5E6D5020FA0A2900120292 /* StatsHistogram.swift */,
+				DA5E6D5220FA0A7C00120292 /* StatsHistogramMonth.swift */,
 				DA28087620F5DF5E00BCDA13 /* StatsBuilderProtocol.swift */,
 				DA20629720F4F910001B58A1 /* StatsBuilder.swift */,
 				DA20629E20F50098001B58A1 /* StatsCommandProtocol.swift */,
@@ -505,6 +511,7 @@
 				DA01227F20F499AC00B9C5EF /* Scraper.swift in Sources */,
 				DA28087B20F5E1A800BCDA13 /* ReportDelegate.swift in Sources */,
 				DA01228420F49AB700B9C5EF /* ScraperItem.swift in Sources */,
+				DA5E6D5120FA0A2900120292 /* StatsHistogram.swift in Sources */,
 				DA20629F20F50098001B58A1 /* StatsCommandProtocol.swift in Sources */,
 				DA28087F20F5E4FD00BCDA13 /* ReportConstants.swift in Sources */,
 				DA5E6D4F20FA088A00120292 /* StatsStreak.swift in Sources */,
@@ -518,6 +525,7 @@
 				DA2062AB20F50416001B58A1 /* StatsCommandCurrentStreak.swift in Sources */,
 				DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */,
 				DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */,
+				DA5E6D5320FA0A7C00120292 /* StatsHistogramMonth.swift in Sources */,
 				DA2062BF20F527C3001B58A1 /* Load.swift in Sources */,
 				DA20629820F4F910001B58A1 /* StatsBuilder.swift in Sources */,
 				DA2062AE20F51A83001B58A1 /* Request.swift in Sources */,
