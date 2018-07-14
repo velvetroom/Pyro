@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 import CleanArchitecture
 
 class StatsPresenter:PresenterProtocol {
@@ -10,6 +10,18 @@ class StatsPresenter:PresenterProtocol {
     func synchronize() {
         self.updateWith(builder:StatsViewModelBuilderLoading())
         self.interactor.synchStats()
+    }
+    
+    func deleteUser() {
+        let alert:StatsViewDelete = StatsViewDelete(title:nil, message:nil,
+                                                    preferredStyle:UIAlertController.Style.alert)
+        alert.presenter = self
+        alert.configureView()
+        self.interactor.router?.present(alert, animated:true, completion:nil)
+    }
+    
+    func confirmDelete() {
+        self.interactor.delete()
     }
     
     func didLoad() {

@@ -101,4 +101,25 @@ class TestPyro:XCTestCase {
         self.storage.onSave = { XCTFail("Should not save") }
         self.pyro.reportFailed(error:RequestError.banned)
     }
+    
+    func testMakeReportCallsReporter() {
+        let expect:XCTestExpectation = self.expectation(description:"Not reported")
+        self.report.onReport = { expect.fulfill() }
+        self.pyro.makeReport(user:User())
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testDeleteRemovesUser() {
+        let user:User = UserFactory.make()
+        self.pyro.users.append(user)
+        self.pyro.delete(user:user)
+        XCTAssertTrue(self.pyro.users.isEmpty, "Failed to remove user")
+    }
+    
+    func testDeleteSaves() {
+        let expect:XCTestExpectation = self.expectation(description:"Not saved")
+        self.storage.onSave = { expect.fulfill() }
+        self.pyro.delete(user:User())
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
 }

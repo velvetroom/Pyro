@@ -33,6 +33,11 @@ public class Pyro:ReportDelegate {
         self.report.make(user:user)
     }
     
+    public func delete(user:User) {
+        self.users.removeAll { (listedUser:User) -> Bool in return listedUser === user }
+        self.save()
+    }
+    
     func save() {
         self.storage.save(users:self.users)
     }

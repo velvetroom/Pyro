@@ -36,6 +36,7 @@
 		DAE4861620F47060003BF78A /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4860220F47060003BF78A /* UserInteractor.swift */; };
 		DAE9E93A20F7918300B5492C /* Pyro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9E93720F7918100B5492C /* Pyro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAE9E93C20F7918900B5492C /* Pods_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9E93B20F7918900B5492C /* Pods_Application.framework */; };
+		DAF0E0C320FA1F4F0010C121 /* StatsViewDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0E0C220FA1F4F0010C121 /* StatsViewDelete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +87,7 @@
 		DAE4860220F47060003BF78A /* UserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		DAE9E93720F7918100B5492C /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE9E93B20F7918900B5492C /* Pods_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF0E0C220FA1F4F0010C121 /* StatsViewDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewDelete.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				DAE485FB20F47060003BF78A /* StatsView.swift */,
 				DAE485F920F47060003BF78A /* StatsViewContent.swift */,
 				DAA00E2A20F486AB009386CE /* StatsViewContentCell.swift */,
+				DAF0E0C220FA1F4F0010C121 /* StatsViewDelete.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				DAE4860D20F47060003BF78A /* UsersViewContent.swift in Sources */,
 				DAE4860B20F47060003BF78A /* UsersPresenter.swift in Sources */,
 				DAE4861220F47060003BF78A /* Router.swift in Sources */,
+				DAF0E0C320FA1F4F0010C121 /* StatsViewDelete.swift in Sources */,
 				DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */,
 				DAE4861520F47060003BF78A /* StatsInteractor.swift in Sources */,
 				DAA00E3220F48F1C009386CE /* StatsViewModelBuilderProtocol.swift in Sources */,

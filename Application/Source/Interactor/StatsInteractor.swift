@@ -16,6 +16,11 @@ class StatsInteractor:InteractorProtocol, PyroDelegate {
         self.pyro.makeReport(user:self.user)
     }
     
+    func delete() {
+        self.pyro.delete(user:self.user)
+        self.router?.popViewController(animated:true)
+    }
+    
     func pyroUpdated() {
         self.error = nil
         self.presenter?.shouldUpdate()

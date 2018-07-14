@@ -65,7 +65,7 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
     }
     
     @objc private func selectorDelete() {
-        
+        self.presenter.deleteUser()
     }
     
     @objc private func selectorSynch() {
