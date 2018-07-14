@@ -7,19 +7,25 @@ class StatsPresenter:PresenterProtocol {
     
     required init() { }
     
+    func synchronize() {
+        self.updateWith(builder:StatsViewModelBuilderLoading())
+        self.interactor.synchStats()
+    }
+    
     func didLoad() {
-        var builder:StatsViewModelBuilderProtocol = StatsViewModelBuilderLoading()
-        builder.build()
-        self.viewModel.update(property:builder.viewModel)
+        self.shouldUpdate()
     }
     
     func shouldUpdate() {
-        var builder:StatsViewModelBuilderProtocol
         if let error:Error = self.interactor.error {
-            builder = StatsViewModelBuilderError(error:error)
+            self.updateWith(builder:StatsViewModelBuilderError(error:error))
         } else {
-            builder = StatsViewModelBuilderReady(stats:self.interactor.user.stats)
+            self.updateWith(builder:StatsViewModelBuilderStats(stats:self.interactor.user.stats))
         }
+    }
+    
+    private func updateWith(builder:StatsViewModelBuilderProtocol) {
+        var builder:StatsViewModelBuilderProtocol = builder
         builder.build()
         self.viewModel.update(property:builder.viewModel)
     }

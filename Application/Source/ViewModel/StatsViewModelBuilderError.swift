@@ -11,6 +11,7 @@ class StatsViewModelBuilderError:StatsViewModelBuilderProtocol {
     
     init(error:Error) {
         self.viewModel = StatsViewModel()
+        self.viewModel.actionsEnabled = true
         let string:String = NSLocalizedString("StatsViewModelItem_Error", comment:String())
         self.status = error.localizedDescription
         self.firstContribution = string

@@ -12,6 +12,7 @@ class StatsViewModelBuilderLoading:StatsViewModelBuilderProtocol {
     init() {
         let loadingSymbol:String = "..."
         self.viewModel = StatsViewModel()
+        self.viewModel.actionsEnabled = false
         self.status = NSLocalizedString("StatsViewModelItem_Loading", comment:String())
         self.firstContribution = loadingSymbol
         self.lastContribution = loadingSymbol

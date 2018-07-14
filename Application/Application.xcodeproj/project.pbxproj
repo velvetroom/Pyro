@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA01228620F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228520F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift */; };
 		DA01228820F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228720F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift */; };
-		DA28088720F5F26A00BCDA13 /* StatsViewModelBuilderReady.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088620F5F26A00BCDA13 /* StatsViewModelBuilderReady.swift */; };
+		DA28088720F5F26A00BCDA13 /* StatsViewModelBuilderStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088620F5F26A00BCDA13 /* StatsViewModelBuilderStats.swift */; };
 		DA28088920F5F52C00BCDA13 /* StatsViewModelBuilderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088820F5F52C00BCDA13 /* StatsViewModelBuilderError.swift */; };
 		DA7E6E8920F625C100E6F38E /* UsersViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8820F625C100E6F38E /* UsersViewNew.swift */; };
 		DAA00E2B20F486AB009386CE /* StatsViewContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2A20F486AB009386CE /* StatsViewContentCell.swift */; };
@@ -57,7 +57,7 @@
 		CE51436FB12A4F09707B5BEC /* Pods-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Application/Pods-Application.release.xcconfig"; sourceTree = "<group>"; };
 		DA01228520F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatsViewModelBuilderProtocol+Default.swift"; sourceTree = "<group>"; };
 		DA01228720F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderLoading.swift; sourceTree = "<group>"; };
-		DA28088620F5F26A00BCDA13 /* StatsViewModelBuilderReady.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderReady.swift; sourceTree = "<group>"; };
+		DA28088620F5F26A00BCDA13 /* StatsViewModelBuilderStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderStats.swift; sourceTree = "<group>"; };
 		DA28088820F5F52C00BCDA13 /* StatsViewModelBuilderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderError.swift; sourceTree = "<group>"; };
 		DA5915D820F46D1E00B6AEDC /* Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7E6E8820F625C100E6F38E /* UsersViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewNew.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				DAA00E3120F48F1C009386CE /* StatsViewModelBuilderProtocol.swift */,
 				DA01228520F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift */,
 				DA01228720F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift */,
-				DA28088620F5F26A00BCDA13 /* StatsViewModelBuilderReady.swift */,
+				DA28088620F5F26A00BCDA13 /* StatsViewModelBuilderStats.swift */,
 				DA28088820F5F52C00BCDA13 /* StatsViewModelBuilderError.swift */,
 				DAA00E2C20F48ADD009386CE /* StatsViewModel.swift */,
 				DAA00E2F20F48DEF009386CE /* StatsViewModelItem.swift */,
@@ -348,7 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA28088720F5F26A00BCDA13 /* StatsViewModelBuilderReady.swift in Sources */,
+				DA28088720F5F26A00BCDA13 /* StatsViewModelBuilderStats.swift in Sources */,
 				DAE4861120F47060003BF78A /* StatsView.swift in Sources */,
 				DAA00E3020F48DEF009386CE /* StatsViewModelItem.swift in Sources */,
 				DAE4860D20F47060003BF78A /* UsersViewContent.swift in Sources */,
