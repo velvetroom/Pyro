@@ -89,4 +89,16 @@ class TestPyro:XCTestCase {
         self.pyro.reportFailed(error:RequestError.banned)
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
+    
+    func testReportCompletedSaves() {
+        let expect:XCTestExpectation = self.expectation(description:"Not saved")
+        self.storage.onSave = { expect.fulfill() }
+        self.pyro.reportCompleted()
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testReportFailedNotSaving() {
+        self.storage.onSave = { XCTFail("Should not save") }
+        self.pyro.reportFailed(error:RequestError.banned)
+    }
 }

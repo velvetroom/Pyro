@@ -38,6 +38,7 @@ public class Pyro:ReportDelegate {
     }
     
     func reportCompleted() {
+        self.save()
         self.delegate?.pyroUpdated()
     }
     
