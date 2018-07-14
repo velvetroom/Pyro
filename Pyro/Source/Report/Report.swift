@@ -4,6 +4,7 @@ class Report:ReportProtocol, LoadDelegate {
     weak var delegate:ReportDelegate?
     var load:LoadProtocol
     var builder:StatsBuilderProtocol
+    weak var user:User?
     private let dispatch:DispatchQueue
     
     init() {
@@ -17,15 +18,16 @@ class Report:ReportProtocol, LoadDelegate {
     }
     
     func make(user:User) {
+        self.user = user
         self.dispatch.async { [weak self] in
             self?.load.start(user:user)
         }
     }
     
     func loadCompleted(items:[ScraperItem]) {
-        let stats:Stats = self.builder.build(items:items)
+        self.user?.stats = self.builder.build(items:items)
         DispatchQueue.main.async { [weak self] in
-            self?.delegate?.reportCompleted(stats:stats)
+            self?.delegate?.reportCompleted()
         }
     }
     

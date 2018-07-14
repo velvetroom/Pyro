@@ -58,6 +58,9 @@
 		DA5E6D4F20FA088A00120292 /* StatsStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4E20FA088A00120292 /* StatsStreak.swift */; };
 		DA5E6D5120FA0A2900120292 /* StatsHistogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5020FA0A2900120292 /* StatsHistogram.swift */; };
 		DA5E6D5320FA0A7C00120292 /* StatsHistogramMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5220FA0A7C00120292 /* StatsHistogramMonth.swift */; };
+		DA5E6D5520FA0DBA00120292 /* PyroDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5420FA0DBA00120292 /* PyroDelegate.swift */; };
+		DA5E6D5720FA0ECE00120292 /* PyroDelegate+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5620FA0ECE00120292 /* PyroDelegate+Default.swift */; };
+		DA5E6D5920FA10F300120292 /* MockPyroDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5820FA10F300120292 /* MockPyroDelegate.swift */; };
 		DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */; };
 		DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8220F6158B00E6F38E /* StorageFile.swift */; };
 		DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */; };
@@ -137,6 +140,9 @@
 		DA5E6D4E20FA088A00120292 /* StatsStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStreak.swift; sourceTree = "<group>"; };
 		DA5E6D5020FA0A2900120292 /* StatsHistogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHistogram.swift; sourceTree = "<group>"; };
 		DA5E6D5220FA0A7C00120292 /* StatsHistogramMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHistogramMonth.swift; sourceTree = "<group>"; };
+		DA5E6D5420FA0DBA00120292 /* PyroDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyroDelegate.swift; sourceTree = "<group>"; };
+		DA5E6D5620FA0ECE00120292 /* PyroDelegate+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PyroDelegate+Default.swift"; sourceTree = "<group>"; };
+		DA5E6D5820FA10F300120292 /* MockPyroDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPyroDelegate.swift; sourceTree = "<group>"; };
 		DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnalyser.swift; sourceTree = "<group>"; };
 		DA7E6E8220F6158B00E6F38E /* StorageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFile.swift; sourceTree = "<group>"; };
 		DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFileProtocol.swift; sourceTree = "<group>"; };
@@ -241,8 +247,8 @@
 		DA28086B20F5DD5A00BCDA13 /* Report */ = {
 			isa = PBXGroup;
 			children = (
-				DA28087A20F5E1A800BCDA13 /* ReportDelegate.swift */,
 				DAB840ED20F8EC8D00CA3A45 /* ReportProtocol.swift */,
+				DA28087A20F5E1A800BCDA13 /* ReportDelegate.swift */,
 				DA28086F20F5DE2F00BCDA13 /* Report.swift */,
 				DA28087E20F5E4FD00BCDA13 /* ReportConstants.swift */,
 			);
@@ -378,6 +384,8 @@
 			isa = PBXGroup;
 			children = (
 				DAE9E92E20F78CD300B5492C /* Pyro.swift */,
+				DA5E6D5420FA0DBA00120292 /* PyroDelegate.swift */,
+				DA5E6D5620FA0ECE00120292 /* PyroDelegate+Default.swift */,
 			);
 			path = Pyro;
 			sourceTree = "<group>";
@@ -386,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE9E93120F78FB500B5492C /* TestPyro.swift */,
+				DA5E6D5820FA10F300120292 /* MockPyroDelegate.swift */,
 			);
 			path = Pyro;
 			sourceTree = "<group>";
@@ -506,6 +515,7 @@
 				DA28088320F5EB2000BCDA13 /* StorageProtocol.swift in Sources */,
 				DAE4862920F4708E003BF78A /* StorageError.swift in Sources */,
 				DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */,
+				DA5E6D5720FA0ECE00120292 /* PyroDelegate+Default.swift in Sources */,
 				DAA00E3520F4940A009386CE /* Stats.swift in Sources */,
 				DA28085E20F5D1EA00BCDA13 /* LoadConstants.swift in Sources */,
 				DA01227F20F499AC00B9C5EF /* Scraper.swift in Sources */,
@@ -542,6 +552,7 @@
 				DA28087720F5DF5E00BCDA13 /* StatsBuilderProtocol.swift in Sources */,
 				DA2062A920F5040D001B58A1 /* StatsCommandMaxStreak.swift in Sources */,
 				DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */,
+				DA5E6D5520FA0DBA00120292 /* PyroDelegate.swift in Sources */,
 				DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
 				DA2062A520F503E8001B58A1 /* StatsCommandLastContribution.swift in Sources */,
@@ -553,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5E6D5920FA10F300120292 /* MockPyroDelegate.swift in Sources */,
 				DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */,
 				DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */,
 				DAE9E93220F78FB500B5492C /* TestPyro.swift in Sources */,

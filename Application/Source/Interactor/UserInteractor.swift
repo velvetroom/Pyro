@@ -2,7 +2,7 @@ import Foundation
 import CleanArchitecture
 import Pyro
 
-class UserInteractor:InteractorProtocol {
+class UserInteractor:InteractorProtocol, PyroDelegate {
     weak var router:Router?
     weak var presenter:InteractorDelegateProtocol?
     var pyro:Pyro
@@ -11,8 +11,9 @@ class UserInteractor:InteractorProtocol {
         self.pyro = Pyro()
     }
     
-    func load(onCompletion:@escaping(() -> Void)) {
-        self.pyro.load(onCompletion:onCompletion)
+    func load() {
+        self.pyro.delegate = self
+        self.pyro.load()
     }
     
     func selectUser(index:Int) {
@@ -20,6 +21,11 @@ class UserInteractor:InteractorProtocol {
     }
     
     func add(name:String, url:String) {
+        self.pyro.delegate = self
         self.pyro.addUser(name:name, url:url)
+    }
+    
+    func pyroUpdated() {
+        self.presenter?.shouldUpdate()
     }
 }

@@ -5,29 +5,33 @@ class TestPyro:XCTestCase {
     private var pyro:Pyro!
     private var storage:MockStorageProtocol!
     private var report:MockReportProtocol!
-    private var reportDelegate:MockReportDelegate!
+    private var delegate:MockPyroDelegate!
     
     override func setUp() {
         super.setUp()
         self.pyro = Pyro()
         self.storage = MockStorageProtocol()
         self.report = MockReportProtocol()
-        self.reportDelegate = MockReportDelegate()
+        self.delegate = MockPyroDelegate()
         self.pyro.storage = self.storage
         self.pyro.report = self.report
+        self.pyro.delegate = self.delegate
     }
     
     func testLoadUsersFromStorage() {
-        let expect:XCTestExpectation = self.expectation(description:"Storage not called")
+        let expectStorage:XCTestExpectation = self.expectation(description:"Storage not called")
+        let expectDelegate:XCTestExpectation = self.expectation(description:"Delegate not notified")
         
         let invalidName:String = "invalid"
         let user:User = User()
         user.name = invalidName
         self.pyro.users.append(user)
         
-        self.storage.onLoad = { expect.fulfill() }
-        self.pyro.load { XCTAssertTrue(self.pyro.users.isEmpty, "Failed to replace users") }
+        self.storage.onLoad = { expectStorage.fulfill() }
+        self.delegate.onUpdated = { expectDelegate.fulfill() }
+        self.pyro.load()
         self.waitForExpectations(timeout:0.3, handler:nil)
+        XCTAssertTrue(self.pyro.users.isEmpty, "Failed to replace users")
     }
     
     func testSaveCallsStorage() {
@@ -64,19 +68,25 @@ class TestPyro:XCTestCase {
     }
     
     func testAddUserSaves() {
-        let expect:XCTestExpectation = self.expectation(description:"Not saved")
-        self.storage.onSave = { expect.fulfill() }
+        let expectStorage:XCTestExpectation = self.expectation(description:"Storage not called")
+        let expectDelegate:XCTestExpectation = self.expectation(description:"Delegate not notified")
+        self.storage.onSave = { expectStorage.fulfill() }
+        self.delegate.onUpdated = { expectDelegate.fulfill() }
         self.pyro.addUser(name:String(), url:String())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testMakeReportAssignsDelegateToReport() {
-        let expect:XCTestExpectation = self.expectation(description:"Not saved")
-        self.report.onReport = {
-            XCTAssertNotNil(self.report.delegate, "Not assigned")
-            expect.fulfill()
-        }
-        self.pyro.makeReport(user:User(), delegate:self.reportDelegate)
+    func testReportCompletedUpdatesDelegate() {
+        let expect:XCTestExpectation = self.expectation(description:"Delegate not notified")
+        self.delegate.onUpdated = { expect.fulfill() }
+        self.pyro.reportCompleted()
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testReportErrorNotifiesDelegate() {
+        let expect:XCTestExpectation = self.expectation(description:"Delegate not notified")
+        self.delegate.onError = { expect.fulfill() }
+        self.pyro.reportFailed(error:RequestError.banned)
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
 }

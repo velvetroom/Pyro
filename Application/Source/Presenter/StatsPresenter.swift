@@ -1,8 +1,7 @@
 import Foundation
 import CleanArchitecture
-import Pyro
 
-class StatsPresenter:PresenterProtocol, ReportDelegate {
+class StatsPresenter:PresenterProtocol {
     var interactor:StatsInteractor!
     var viewModel:ViewModel!
     
@@ -14,18 +13,13 @@ class StatsPresenter:PresenterProtocol, ReportDelegate {
         self.viewModel.update(property:builder.viewModel)
     }
     
-    func didAppear() {
-        self.interactor.generateReport(delegate:self)
-    }
-    
-    func reportCompleted(stats:Stats) {
-        var builder:StatsViewModelBuilderProtocol = StatsViewModelBuilderReady(stats:stats)
-        builder.build()
-        self.viewModel.update(property:builder.viewModel)
-    }
-    
-    func reportFailed(error:Error) {
-        var builder:StatsViewModelBuilderProtocol = StatsViewModelBuilderError(error:error)
+    func shouldUpdate() {
+        var builder:StatsViewModelBuilderProtocol
+        if let error:Error = self.interactor.error {
+            builder = StatsViewModelBuilderError(error:error)
+        } else {
+            builder = StatsViewModelBuilderReady(stats:self.interactor.user.stats)
+        }
         builder.build()
         self.viewModel.update(property:builder.viewModel)
     }

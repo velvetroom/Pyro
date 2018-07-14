@@ -11,9 +11,7 @@ class UsersPresenter:PresenterProtocol {
     }
     
     func didAppear() {
-        self.interactor.load { [weak self] in
-            self?.updateViewModel()
-        }
+        self.interactor.load()
     }
     
     func selectUser(index:IndexPath) {
@@ -29,10 +27,9 @@ class UsersPresenter:PresenterProtocol {
     
     func add(name:String, url:String) {
         self.interactor.add(name:name, url:url)
-        self.updateViewModel()
     }
     
-    private func updateViewModel() {
+    func shouldUpdate() {
         self.viewModel.update(property:self.factory.make(pyro:self.interactor.pyro))
     }
 }

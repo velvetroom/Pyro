@@ -1,7 +1,8 @@
 import Foundation
 
-public class Pyro {
+public class Pyro:ReportDelegate {
     public var users:[User]
+    public weak var delegate:PyroDelegate?
     var storage:StorageProtocol
     var report:ReportProtocol
     
@@ -9,12 +10,13 @@ public class Pyro {
         self.users = []
         self.storage = Storage()
         self.report = Report()
+        self.report.delegate = self
     }
     
-    public func load(onCompletion:@escaping(() -> Void)) {
+    public func load() {
         self.storage.load { [weak self] (users:[User]) in
             self?.users = users
-            onCompletion()
+            self?.delegate?.pyroUpdated()
         }
     }
     
@@ -24,15 +26,23 @@ public class Pyro {
         user.url = url
         self.add(user:user)
         self.save()
+        self.delegate?.pyroUpdated()
     }
     
-    public func makeReport(user:User, delegate:ReportDelegate) {
-        self.report.delegate = delegate
+    public func makeReport(user:User) {
         self.report.make(user:user)
     }
     
     func save() {
         self.storage.save(users:self.users)
+    }
+    
+    func reportCompleted() {
+        self.delegate?.pyroUpdated()
+    }
+    
+    func reportFailed(error:Error) {
+        self.delegate?.pyroFailed(error:error)
     }
     
     private func add(user:User) {

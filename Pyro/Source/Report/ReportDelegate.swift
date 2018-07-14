@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol ReportDelegate:AnyObject {
-    func reportCompleted(stats:Stats)
+protocol ReportDelegate:AnyObject {
+    func reportCompleted()
     func reportFailed(error:Error)
 }

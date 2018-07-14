@@ -6,6 +6,7 @@ class TestReport:XCTestCase {
     private var delegate:MockReportDelegate!
     private var load:MockLoadProtocol!
     private var builder:MockStatsBuilderProtocol!
+    private var user:User!
     
     override func setUp() {
         super.setUp()
@@ -13,6 +14,8 @@ class TestReport:XCTestCase {
         self.delegate = MockReportDelegate()
         self.load = MockLoadProtocol()
         self.builder = MockStatsBuilderProtocol()
+        self.user = User()
+        self.report.user = self.user
         self.report.delegate = self.delegate
         self.report.load = self.load
         self.report.builder = self.builder
@@ -46,5 +49,10 @@ class TestReport:XCTestCase {
         }
         self.report.make(user:User())
         self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testNotRetainingUser() {
+        self.user = nil
+        XCTAssertNil(self.report.user, "Retains user")
     }
 }
