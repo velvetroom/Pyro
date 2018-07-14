@@ -31,9 +31,7 @@
 		DA2062C320F5286B001B58A1 /* LoadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062C220F5286B001B58A1 /* LoadDelegate.swift */; };
 		DA2062C520F529F2001B58A1 /* MockLoadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062C420F529F2001B58A1 /* MockLoadDelegate.swift */; };
 		DA28085E20F5D1EA00BCDA13 /* LoadConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28085D20F5D1EA00BCDA13 /* LoadConstants.swift */; };
-		DA28086020F5D6E700BCDA13 /* ScraperCleanerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28085F20F5D6E700BCDA13 /* ScraperCleanerProtocol.swift */; };
 		DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086120F5D78300BCDA13 /* ScraperProtocol.swift */; };
-		DA28086420F5D8BB00BCDA13 /* MockScraperCleanerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086320F5D8BB00BCDA13 /* MockScraperCleanerProtocol.swift */; };
 		DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086520F5D8C300BCDA13 /* MockScraperProtocol.swift */; };
 		DA28086820F5DC3200BCDA13 /* LoadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086720F5DC3200BCDA13 /* LoadProtocol.swift */; };
 		DA28086A20F5DC6200BCDA13 /* MockLoadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086920F5DC6200BCDA13 /* MockLoadProtocol.swift */; };
@@ -48,12 +46,12 @@
 		DA28088320F5EB2000BCDA13 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088220F5EB1F00BCDA13 /* StorageProtocol.swift */; };
 		DA28088520F5EB8E00BCDA13 /* MockStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088420F5EB8E00BCDA13 /* MockStorageProtocol.swift */; };
 		DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */; };
-		DA32CD0120F4F61D00F75BE5 /* ScraperCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CD0020F4F61D00F75BE5 /* ScraperCleaner.swift */; };
-		DA32CD0320F4F6B000F75BE5 /* TestScraperCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CD0220F4F6B000F75BE5 /* TestScraperCleaner.swift */; };
 		DA455BA420F72256000EBE10 /* UserBase.json in Resources */ = {isa = PBXBuildFile; fileRef = DA455BA320F72256000EBE10 /* UserBase.json */; };
 		DA455BA620F72375000EBE10 /* UserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA455BA520F72375000EBE10 /* UserBase.swift */; };
 		DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49406020F87D27002F0C1F /* UserFactory.swift */; };
 		DA59160B20F46DBA00B6AEDC /* Pyro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5915F720F46D8B00B6AEDC /* Pyro.framework */; };
+		DA5E6D4320F9ECEF00120292 /* ScraperItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4220F9ECEF00120292 /* ScraperItems.swift */; };
+		DA5E6D4620F9F56600120292 /* StatsDuplicates.stub in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */; };
 		DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */; };
 		DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8220F6158B00E6F38E /* StorageFile.swift */; };
 		DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */; };
@@ -105,9 +103,7 @@
 		DA2062C220F5286B001B58A1 /* LoadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDelegate.swift; sourceTree = "<group>"; };
 		DA2062C420F529F2001B58A1 /* MockLoadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoadDelegate.swift; sourceTree = "<group>"; };
 		DA28085D20F5D1EA00BCDA13 /* LoadConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadConstants.swift; sourceTree = "<group>"; };
-		DA28085F20F5D6E700BCDA13 /* ScraperCleanerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperCleanerProtocol.swift; sourceTree = "<group>"; };
 		DA28086120F5D78300BCDA13 /* ScraperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperProtocol.swift; sourceTree = "<group>"; };
-		DA28086320F5D8BB00BCDA13 /* MockScraperCleanerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockScraperCleanerProtocol.swift; sourceTree = "<group>"; };
 		DA28086520F5D8C300BCDA13 /* MockScraperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockScraperProtocol.swift; sourceTree = "<group>"; };
 		DA28086720F5DC3200BCDA13 /* LoadProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProtocol.swift; sourceTree = "<group>"; };
 		DA28086920F5DC6200BCDA13 /* MockLoadProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoadProtocol.swift; sourceTree = "<group>"; };
@@ -122,13 +118,13 @@
 		DA28088220F5EB1F00BCDA13 /* StorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
 		DA28088420F5EB8E00BCDA13 /* MockStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageProtocol.swift; sourceTree = "<group>"; };
 		DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperConstants.swift; sourceTree = "<group>"; };
-		DA32CD0020F4F61D00F75BE5 /* ScraperCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperCleaner.swift; sourceTree = "<group>"; };
-		DA32CD0220F4F6B000F75BE5 /* TestScraperCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScraperCleaner.swift; sourceTree = "<group>"; };
 		DA455BA320F72256000EBE10 /* UserBase.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserBase.json; sourceTree = "<group>"; };
 		DA455BA520F72375000EBE10 /* UserBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBase.swift; sourceTree = "<group>"; };
 		DA49406020F87D27002F0C1F /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		DA5915F720F46D8B00B6AEDC /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA59160620F46DBA00B6AEDC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5E6D4220F9ECEF00120292 /* ScraperItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperItems.swift; sourceTree = "<group>"; };
+		DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsDuplicates.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnalyser.swift; sourceTree = "<group>"; };
 		DA7E6E8220F6158B00E6F38E /* StorageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFile.swift; sourceTree = "<group>"; };
 		DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFileProtocol.swift; sourceTree = "<group>"; };
@@ -170,9 +166,8 @@
 			children = (
 				DA28086120F5D78300BCDA13 /* ScraperProtocol.swift */,
 				DA01227E20F499AC00B9C5EF /* Scraper.swift */,
+				DA5E6D4220F9ECEF00120292 /* ScraperItems.swift */,
 				DA01228320F49AB700B9C5EF /* ScraperItem.swift */,
-				DA28085F20F5D6E700BCDA13 /* ScraperCleanerProtocol.swift */,
-				DA32CD0020F4F61D00F75BE5 /* ScraperCleaner.swift */,
 				DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */,
 			);
 			path = Scraper;
@@ -182,9 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				DA01228120F49A1C00B9C5EF /* TestScraper.swift */,
-				DA32CD0220F4F6B000F75BE5 /* TestScraperCleaner.swift */,
 				DA28086520F5D8C300BCDA13 /* MockScraperProtocol.swift */,
-				DA28086320F5D8BB00BCDA13 /* MockScraperCleanerProtocol.swift */,
 			);
 			path = Scraper;
 			sourceTree = "<group>";
@@ -320,6 +313,7 @@
 				DA2062B520F5227B001B58A1 /* Localizable.strings */,
 				DA455BA320F72256000EBE10 /* UserBase.json */,
 				DAA00E3620F496AF009386CE /* StatsMin.stub */,
+				DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -478,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAA00E3720F496AF009386CE /* StatsMin.stub in Resources */,
+				DA5E6D4620F9F56600120292 /* StatsDuplicates.stub in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,12 +497,12 @@
 				DA2062A320F503B2001B58A1 /* StatsCommandFirstContribution.swift in Sources */,
 				DAE4862620F4708E003BF78A /* User.swift in Sources */,
 				DA2062A120F502A3001B58A1 /* StatsCommandComposite.swift in Sources */,
+				DA5E6D4320F9ECEF00120292 /* ScraperItems.swift in Sources */,
 				DA455BA620F72375000EBE10 /* UserBase.swift in Sources */,
 				DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */,
 				DA28087020F5DE2F00BCDA13 /* Report.swift in Sources */,
 				DA2062AB20F50416001B58A1 /* StatsCommandCurrentStreak.swift in Sources */,
 				DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */,
-				DA32CD0120F4F61D00F75BE5 /* ScraperCleaner.swift in Sources */,
 				DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */,
 				DA2062BF20F527C3001B58A1 /* Load.swift in Sources */,
 				DA20629820F4F910001B58A1 /* StatsBuilder.swift in Sources */,
@@ -524,7 +519,6 @@
 				DA2062A920F5040D001B58A1 /* StatsCommandMaxStreak.swift in Sources */,
 				DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */,
 				DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */,
-				DA28086020F5D6E700BCDA13 /* ScraperCleanerProtocol.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
 				DA2062A520F503E8001B58A1 /* StatsCommandLastContribution.swift in Sources */,
 				DA28086820F5DC3200BCDA13 /* LoadProtocol.swift in Sources */,
@@ -536,14 +530,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */,
-				DA32CD0320F4F6B000F75BE5 /* TestScraperCleaner.swift in Sources */,
 				DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */,
 				DAE9E93220F78FB500B5492C /* TestPyro.swift in Sources */,
 				DA2062C120F527FA001B58A1 /* TestLoad.swift in Sources */,
 				DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */,
 				DA28088520F5EB8E00BCDA13 /* MockStorageProtocol.swift in Sources */,
 				DA2062BC20F5249A001B58A1 /* MockRequestProtocol.swift in Sources */,
-				DA28086420F5D8BB00BCDA13 /* MockScraperCleanerProtocol.swift in Sources */,
 				DA28087320F5DE5000BCDA13 /* MockReportProtocol.swift in Sources */,
 				DA01228220F49A1C00B9C5EF /* TestScraper.swift in Sources */,
 				DA28087920F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift in Sources */,

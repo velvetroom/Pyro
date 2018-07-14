@@ -3,8 +3,13 @@ import Foundation
 
 class MockScraperProtocol:ScraperProtocol {
     var onMakeItems:(() -> Void)?
-    func makeItems(data:Data) -> [ScraperItem] {
+    var items:[ScraperItem]
+    
+    init() {
+        self.items = []
+    }
+    
+    func makeItems(data:Data) {
         self.onMakeItems?()
-        return []
     }
 }

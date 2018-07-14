@@ -1,5 +1,7 @@
 import Foundation
 
 protocol ScraperProtocol {
-    func makeItems(data:Data) -> [ScraperItem]
+    var items:[ScraperItem] { get }
+    
+    func makeItems(data:Data)
 }
