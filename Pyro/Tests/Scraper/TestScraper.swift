@@ -54,4 +54,11 @@ class TestScraper:XCTestCase {
         self.scraper.makeItems(data:self.dataDuplicates)
         XCTAssertEqual(self.scraper.items.count, Constants.expectedDaysDuplicates, "Not removing duplicates")
     }
+    
+    func testAddItemsFromDifferentYears() {
+        self.scraper.makeItems(data:self.dataMin)
+        self.scraper.makeItems(data:self.dataDuplicates)
+        XCTAssertEqual(self.scraper.items.count, Constants.expectedDaysDuplicates + Constants.expectedDaysMin,
+                       "Not appending items")
+    }
 }

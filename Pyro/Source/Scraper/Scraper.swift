@@ -9,7 +9,6 @@ class Scraper:ScraperProtocol {
     }
     
     func makeItems(data:Data) {
-        self.repository.items = []
         let string:String = String(data:data, encoding:String.Encoding.utf8)!
         self.makeItems(string:string)
     }
