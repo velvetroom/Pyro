@@ -58,7 +58,7 @@ class Storage:StorageProtocol {
     private func createUsersFrom(userBase:[UserBase]) -> [User] {
         var users:[User] = []
         for base:UserBase in userBase {
-            var user:User = UserFactory.make()
+            let user:User = UserFactory.make()
             user.name = base.name
             user.url = base.url
             users.append(user)

@@ -19,7 +19,7 @@ public class Pyro {
     }
     
     public func addUser(name:String, url:String) {
-        var user:User = UserFactory.make()
+        let user:User = UserFactory.make()
         user.name = name
         user.url = url
         self.add(user:user)

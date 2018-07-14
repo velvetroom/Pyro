@@ -21,7 +21,7 @@ class TestPyro:XCTestCase {
         let expect:XCTestExpectation = self.expectation(description:"Storage not called")
         
         let invalidName:String = "invalid"
-        var user:User = User()
+        let user:User = User()
         user.name = invalidName
         self.pyro.users.append(user)
         
