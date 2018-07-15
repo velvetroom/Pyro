@@ -31,6 +31,12 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     func collectionView(_:UICollectionView, didSelectItemAt index:IndexPath) { self.presenter.selectUser(index:index) }
     func collectionView(_:UICollectionView, numberOfItemsInSection section:Int) -> Int { return self.users.count }
     
+    override func willTransition(to newCollection:UITraitCollection,
+                                 with coordinator:UIViewControllerTransitionCoordinator) {
+        super.willTransition(to:newCollection, with:coordinator)
+        self.content.collectionViewLayout.invalidateLayout()
+    }
+    
     private func configureView() {
         self.title = NSLocalizedString("UsersView_Title", comment:String())
         self.content.delegate = self

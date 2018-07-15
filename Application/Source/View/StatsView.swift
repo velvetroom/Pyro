@@ -36,6 +36,12 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
     func collectionView(_:UICollectionView, shouldSelectItemAt:IndexPath) -> Bool { return false }
     func collectionView(_:UICollectionView, shouldHighlightItemAt:IndexPath) -> Bool { return false }
     
+    override func willTransition(to newCollection:UITraitCollection,
+                                 with coordinator:UIViewControllerTransitionCoordinator) {
+        super.willTransition(to:newCollection, with:coordinator)
+        self.content.collectionViewLayout.invalidateLayout()
+    }
+    
     private func configureView() {
         self.title = self.presenter.interactor.user.name
         self.content.delegate = self
