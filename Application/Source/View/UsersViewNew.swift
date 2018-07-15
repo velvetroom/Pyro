@@ -48,7 +48,7 @@ class UsersViewNew:UIAlertController, UITextFieldDelegate {
         field.autocapitalizationType = UITextAutocapitalizationType.words
         field.autocorrectionType = UITextAutocorrectionType.no
         field.spellCheckingType = UITextSpellCheckingType.no
-        field.font = UIFont.systemFont(ofSize:UsersConstants.New.fontSize, weight:UIFont.Weight.medium)
+        field.font = UIFont.systemFont(ofSize:Constants.fontSize, weight:UIFont.Weight.medium)
         field.borderStyle = UITextField.BorderStyle.none
         field.delegate = self
     }
@@ -56,4 +56,8 @@ class UsersViewNew:UIAlertController, UITextFieldDelegate {
     private func createUser() {
         self.presenter?.add(name:self.fieldName.text!, url:self.fieldUrl.text!)
     }
+}
+
+private struct Constants {
+    static let fontSize:CGFloat = 20
 }

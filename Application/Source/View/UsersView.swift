@@ -2,7 +2,7 @@ import UIKit
 import CleanArchitecture
 
 class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    private var users:[NSAttributedString]
+    var users:[NSAttributedString]
     
     required init() {
         self.users = []
@@ -17,13 +17,18 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
         self.configureView()
     }
     
+    override func viewWillAppear(_ animated:Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(false, animated:false)
+    }
+    
     func collectionView(_:UICollectionView, layout:UICollectionViewLayout, sizeForItemAt:IndexPath) -> CGSize {
-        return CGSize(width:self.content.bounds.width, height:UsersConstants.Collection.cellHeight)
+        return CGSize(width:self.content.bounds.width, height:Constants.cellHeight)
     }
     
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
-        let cell:UsersViewContentCell = self.content.dequeueReusableCell(
-            withReuseIdentifier:UsersConstants.Collection.identifier, for:index) as! UsersViewContentCell
+        let cell:UsersViewCell = self.content.dequeueReusableCell(
+            withReuseIdentifier:String(describing:UsersViewCell.self), for:index) as! UsersViewCell
         cell.label.attributedText = self.users[index.item]
         return cell
     }
@@ -37,42 +42,25 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
         self.content.collectionViewLayout.invalidateLayout()
     }
     
-    private func configureView() {
-        self.title = NSLocalizedString("UsersView_Title", comment:String())
-        self.content.delegate = self
-        self.content.dataSource = self
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonItem.SystemItem.add,
-                                                                 target:self, action:#selector(self.selectorAdd))
-        if #available(iOS 11.0, *) {
-            self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.always
-        }
-    }
-    
-    private func configureViewModel() {
-        self.presenter.viewModel.observe { [weak self] (property:UsersViewModel) in
-            self?.updated(property:property)
-        }
-    }
-    
-    private func updated(property:UsersViewModel) {
-        let removeIndexes:[IndexPath] = self.indexesFor(count:self.users.count)
-        let addIndexes:[IndexPath] = self.indexesFor(count:property.users.count)
-        self.content.performBatchUpdates({ [weak self] in
-            self?.content.deleteItems(at:removeIndexes)
-            self?.content.insertItems(at:addIndexes)
-            self?.users = property.users
-        })
-    }
-    
-    private func indexesFor(count:Int) -> [IndexPath] {
-        var indexes:[IndexPath] = []
-        for index:Int in 0 ..< count {
-            indexes.append(IndexPath(item:index, section:0))
-        }
-        return indexes
-    }
-    
-    @objc private func selectorAdd() {
+    @objc func selectorAdd() {
         self.presenter.createUser()
     }
+    
+    @objc func selectorSort(segmented:UISegmentedControl) {
+        switch segmented.selectedSegmentIndex {
+        case Sort.contributions.rawValue: self.presenter.sortByContributions()
+        case Sort.streak.rawValue: self.presenter.sortByStreak()
+        default: self.presenter.sortByName()
+        }
+    }
+}
+
+private struct Constants {
+    static let cellHeight:CGFloat = 52
+}
+
+private enum Sort:Int {
+    case name
+    case contributions
+    case streak
 }

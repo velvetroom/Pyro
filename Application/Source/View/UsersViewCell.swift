@@ -1,6 +1,6 @@
 import UIKit
 
-class UsersViewContentCell:UICollectionViewCell {
+class UsersViewCell:UICollectionViewCell {
     weak var label:UILabel!
     
     override init(frame:CGRect) {
@@ -28,10 +28,8 @@ class UsersViewContentCell:UICollectionViewCell {
     
     private func configureView() {
         if self.isSelected || self.isHighlighted {
-            self.label.textColor = UIColor.white
-            self.backgroundColor = self.tintColor
+            self.backgroundColor = UIColor.clear
         } else {
-            self.label.textColor = UIColor.black
             self.backgroundColor = UIColor.white
         }
     }
@@ -42,6 +40,7 @@ class UsersViewContentCell:UICollectionViewCell {
         label.isUserInteractionEnabled = false
         label.backgroundColor = UIColor.clear
         label.numberOfLines = 0
+        label.textColor = UIColor.black
         self.label = label
         self.contentView.addSubview(label)
     }
@@ -49,8 +48,11 @@ class UsersViewContentCell:UICollectionViewCell {
     private func layoutOutlets() {
         self.label.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
         self.label.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
-        self.label.leftAnchor.constraint(equalTo:self.leftAnchor, constant:UsersConstants.Cell.margin).isActive = true
-        self.label.rightAnchor.constraint(equalTo:self.rightAnchor,
-                                          constant:-UsersConstants.Cell.margin).isActive = true
+        self.label.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
+        self.label.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
     }
+}
+
+private struct Constants {
+    static let margin:CGFloat = 18
 }

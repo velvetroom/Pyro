@@ -10,10 +10,6 @@ class UsersPresenter:PresenterProtocol {
         self.factory = UsersViewModelFactory()
     }
     
-    func didAppear() {
-        self.interactor.load()
-    }
-    
     func selectUser(index:IndexPath) {
         self.interactor.selectUser(index:index.item)
     }
@@ -27,6 +23,22 @@ class UsersPresenter:PresenterProtocol {
     
     func add(name:String, url:String) {
         self.interactor.add(name:name, url:url)
+    }
+    
+    func sortByName() {
+        
+    }
+    
+    func sortByContributions() {
+        
+    }
+    
+    func sortByStreak() {
+        
+    }
+    
+    func didAppear() {
+        self.interactor.load()
     }
     
     func shouldUpdate() {

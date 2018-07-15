@@ -31,14 +31,10 @@ class RequestAnalyser {
     
     private func analyse(data:Data, statusCode:Int) {
         switch statusCode {
-        case RequestConstants.codeSuccess:
-            self.onCompletion?(data)
-        case RequestConstants.codeBanned:
-            self.onError?(RequestError.banned)
-        case RequestConstants.codeFourZeroFour:
-            self.onError?(RequestError.fourZeroFour)
-        default:
-            self.onError?(RequestError.unknown)
+        case RequestConstants.codeSuccess: self.onCompletion?(data)
+        case RequestConstants.codeBanned: self.onError?(RequestError.banned)
+        case RequestConstants.codeFourZeroFour: self.onError?(RequestError.fourZeroFour)
+        default: self.onError?(RequestError.unknown)
         }
     }
 }

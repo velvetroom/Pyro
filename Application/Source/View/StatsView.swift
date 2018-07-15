@@ -2,9 +2,9 @@ import UIKit
 import CleanArchitecture
 
 class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    private var stats:[StatsViewModelItem]
     weak var buttonDelete:UIBarButtonItem!
     weak var buttonSynch:UIBarButtonItem!
+    private var stats:[StatsViewModelItem]
     
     required init() {
         self.stats = []
@@ -20,13 +20,18 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
         self.configureView()
     }
     
+    override func viewWillAppear(_ animated:Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(true, animated:false)
+    }
+    
     func collectionView(_:UICollectionView, layout:UICollectionViewLayout, sizeForItemAt:IndexPath) -> CGSize {
-        return CGSize(width:self.content.bounds.width, height:StatsConstants.Collection.cellHeight)
+        return CGSize(width:self.content.bounds.width, height:Constants.cellHeight)
     }
     
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
-        let cell:StatsViewContentCell = self.content.dequeueReusableCell(
-            withReuseIdentifier:StatsConstants.Collection.identifier, for:index) as! StatsViewContentCell
+        let cell:StatsViewCell = self.content.dequeueReusableCell(
+            withReuseIdentifier:String(describing:StatsViewCell.self), for:index) as! StatsViewCell
         cell.labelName.text = self.stats[index.item].name
         cell.labelValue.text = self.stats[index.item].value
         return cell
@@ -46,6 +51,7 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
         self.title = self.presenter.interactor.user.name
         self.content.delegate = self
         self.content.dataSource = self
+        self.content.register(StatsViewCell.self, forCellWithReuseIdentifier:String(describing:StatsViewCell.self))
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.always
         }
@@ -77,4 +83,8 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
     @objc private func selectorSynch() {
         self.presenter.synchronize()
     }
+}
+
+private struct Constants {
+    static let cellHeight:CGFloat = 80
 }

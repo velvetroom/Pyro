@@ -12,7 +12,7 @@
 		DA28088720F5F26A00BCDA13 /* StatsViewModelBuilderStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088620F5F26A00BCDA13 /* StatsViewModelBuilderStats.swift */; };
 		DA28088920F5F52C00BCDA13 /* StatsViewModelBuilderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088820F5F52C00BCDA13 /* StatsViewModelBuilderError.swift */; };
 		DA7E6E8920F625C100E6F38E /* UsersViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8820F625C100E6F38E /* UsersViewNew.swift */; };
-		DAA00E2B20F486AB009386CE /* StatsViewContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2A20F486AB009386CE /* StatsViewContentCell.swift */; };
+		DAA00E2B20F486AB009386CE /* StatsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2A20F486AB009386CE /* StatsViewCell.swift */; };
 		DAA00E2D20F48ADD009386CE /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2C20F48ADD009386CE /* StatsViewModel.swift */; };
 		DAA00E3020F48DEF009386CE /* StatsViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2F20F48DEF009386CE /* StatsViewModelItem.swift */; };
 		DAA00E3220F48F1C009386CE /* StatsViewModelBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3120F48F1C009386CE /* StatsViewModelBuilderProtocol.swift */; };
@@ -21,22 +21,22 @@
 		DAE4860520F47060003BF78A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */; };
 		DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485EE20F47060003BF78A /* UsersViewModel.swift */; };
 		DAE4860820F47060003BF78A /* UsersViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485EF20F47060003BF78A /* UsersViewModelFactory.swift */; };
-		DAE4860920F47060003BF78A /* UsersConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F120F47060003BF78A /* UsersConstants.swift */; };
-		DAE4860A20F47060003BF78A /* StatsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F220F47060003BF78A /* StatsConstants.swift */; };
 		DAE4860B20F47060003BF78A /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F420F47060003BF78A /* UsersPresenter.swift */; };
 		DAE4860C20F47060003BF78A /* StatsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F520F47060003BF78A /* StatsPresenter.swift */; };
 		DAE4860D20F47060003BF78A /* UsersViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F720F47060003BF78A /* UsersViewContent.swift */; };
 		DAE4860E20F47060003BF78A /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F820F47060003BF78A /* UsersView.swift */; };
 		DAE4860F20F47060003BF78A /* StatsViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F920F47060003BF78A /* StatsViewContent.swift */; };
-		DAE4861020F47060003BF78A /* UsersViewContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FA20F47060003BF78A /* UsersViewContentCell.swift */; };
+		DAE4861020F47060003BF78A /* UsersViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FA20F47060003BF78A /* UsersViewCell.swift */; };
 		DAE4861120F47060003BF78A /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FB20F47060003BF78A /* StatsView.swift */; };
 		DAE4861220F47060003BF78A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FD20F47060003BF78A /* Router.swift */; };
 		DAE4861420F47060003BF78A /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FF20F47060003BF78A /* Application.swift */; };
 		DAE4861520F47060003BF78A /* StatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4860120F47060003BF78A /* StatsInteractor.swift */; };
 		DAE4861620F47060003BF78A /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4860220F47060003BF78A /* UserInteractor.swift */; };
+		DAE9D97D20FB93F3007E1357 /* UsersViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9D97C20FB93F3007E1357 /* UsersViewModelItem.swift */; };
 		DAE9E93A20F7918300B5492C /* Pyro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9E93720F7918100B5492C /* Pyro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAE9E93C20F7918900B5492C /* Pods_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9E93B20F7918900B5492C /* Pods_Application.framework */; };
 		DAF0E0C320FA1F4F0010C121 /* StatsViewDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0E0C220FA1F4F0010C121 /* StatsViewDelete.swift */; };
+		DAFBF9A720FB7D3200B81D19 /* UsersView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFBF9A620FB7D3200B81D19 /* UsersView+Configure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,7 +62,7 @@
 		DA28088820F5F52C00BCDA13 /* StatsViewModelBuilderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderError.swift; sourceTree = "<group>"; };
 		DA5915D820F46D1E00B6AEDC /* Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7E6E8820F625C100E6F38E /* UsersViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewNew.swift; sourceTree = "<group>"; };
-		DAA00E2A20F486AB009386CE /* StatsViewContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewContentCell.swift; sourceTree = "<group>"; };
+		DAA00E2A20F486AB009386CE /* StatsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewCell.swift; sourceTree = "<group>"; };
 		DAA00E2C20F48ADD009386CE /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		DAA00E2F20F48DEF009386CE /* StatsViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelItem.swift; sourceTree = "<group>"; };
 		DAA00E3120F48F1C009386CE /* StatsViewModelBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModelBuilderProtocol.swift; sourceTree = "<group>"; };
@@ -72,22 +72,22 @@
 		DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAE485EE20F47060003BF78A /* UsersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		DAE485EF20F47060003BF78A /* UsersViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModelFactory.swift; sourceTree = "<group>"; };
-		DAE485F120F47060003BF78A /* UsersConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersConstants.swift; sourceTree = "<group>"; };
-		DAE485F220F47060003BF78A /* StatsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsConstants.swift; sourceTree = "<group>"; };
 		DAE485F420F47060003BF78A /* UsersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		DAE485F520F47060003BF78A /* StatsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsPresenter.swift; sourceTree = "<group>"; };
 		DAE485F720F47060003BF78A /* UsersViewContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewContent.swift; sourceTree = "<group>"; };
 		DAE485F820F47060003BF78A /* UsersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		DAE485F920F47060003BF78A /* StatsViewContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewContent.swift; sourceTree = "<group>"; };
-		DAE485FA20F47060003BF78A /* UsersViewContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewContentCell.swift; sourceTree = "<group>"; };
+		DAE485FA20F47060003BF78A /* UsersViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewCell.swift; sourceTree = "<group>"; };
 		DAE485FB20F47060003BF78A /* StatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		DAE485FD20F47060003BF78A /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DAE485FF20F47060003BF78A /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		DAE4860120F47060003BF78A /* StatsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsInteractor.swift; sourceTree = "<group>"; };
 		DAE4860220F47060003BF78A /* UserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
+		DAE9D97C20FB93F3007E1357 /* UsersViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModelItem.swift; sourceTree = "<group>"; };
 		DAE9E93720F7918100B5492C /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE9E93B20F7918900B5492C /* Pods_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF0E0C220FA1F4F0010C121 /* StatsViewDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewDelete.swift; sourceTree = "<group>"; };
+		DAFBF9A620FB7D3200B81D19 /* UsersView+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersView+Configure.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +158,6 @@
 				DAE485F320F47060003BF78A /* Presenter */,
 				DAE485ED20F47060003BF78A /* ViewModel */,
 				DAE485F620F47060003BF78A /* View */,
-				DAE485F020F47060003BF78A /* Constants */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -168,6 +167,7 @@
 			children = (
 				DAE485EF20F47060003BF78A /* UsersViewModelFactory.swift */,
 				DAE485EE20F47060003BF78A /* UsersViewModel.swift */,
+				DAE9D97C20FB93F3007E1357 /* UsersViewModelItem.swift */,
 				DAA00E3120F48F1C009386CE /* StatsViewModelBuilderProtocol.swift */,
 				DA01228520F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift */,
 				DA01228720F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift */,
@@ -177,15 +177,6 @@
 				DAA00E2F20F48DEF009386CE /* StatsViewModelItem.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		DAE485F020F47060003BF78A /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				DAE485F120F47060003BF78A /* UsersConstants.swift */,
-				DAE485F220F47060003BF78A /* StatsConstants.swift */,
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 		DAE485F320F47060003BF78A /* Presenter */ = {
@@ -201,12 +192,13 @@
 			isa = PBXGroup;
 			children = (
 				DAE485F820F47060003BF78A /* UsersView.swift */,
+				DAFBF9A620FB7D3200B81D19 /* UsersView+Configure.swift */,
 				DAE485F720F47060003BF78A /* UsersViewContent.swift */,
-				DAE485FA20F47060003BF78A /* UsersViewContentCell.swift */,
+				DAE485FA20F47060003BF78A /* UsersViewCell.swift */,
 				DA7E6E8820F625C100E6F38E /* UsersViewNew.swift */,
 				DAE485FB20F47060003BF78A /* StatsView.swift */,
 				DAE485F920F47060003BF78A /* StatsViewContent.swift */,
-				DAA00E2A20F486AB009386CE /* StatsViewContentCell.swift */,
+				DAA00E2A20F486AB009386CE /* StatsViewCell.swift */,
 				DAF0E0C220FA1F4F0010C121 /* StatsViewDelete.swift */,
 			);
 			path = View;
@@ -351,11 +343,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE9D97D20FB93F3007E1357 /* UsersViewModelItem.swift in Sources */,
 				DA28088720F5F26A00BCDA13 /* StatsViewModelBuilderStats.swift in Sources */,
 				DAE4861120F47060003BF78A /* StatsView.swift in Sources */,
 				DAA00E3020F48DEF009386CE /* StatsViewModelItem.swift in Sources */,
 				DAE4860D20F47060003BF78A /* UsersViewContent.swift in Sources */,
 				DAE4860B20F47060003BF78A /* UsersPresenter.swift in Sources */,
+				DAFBF9A720FB7D3200B81D19 /* UsersView+Configure.swift in Sources */,
 				DAE4861220F47060003BF78A /* Router.swift in Sources */,
 				DAF0E0C320FA1F4F0010C121 /* StatsViewDelete.swift in Sources */,
 				DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */,
@@ -365,16 +359,14 @@
 				DAE4860820F47060003BF78A /* UsersViewModelFactory.swift in Sources */,
 				DAE4861620F47060003BF78A /* UserInteractor.swift in Sources */,
 				DAE4861420F47060003BF78A /* Application.swift in Sources */,
-				DAA00E2B20F486AB009386CE /* StatsViewContentCell.swift in Sources */,
-				DAE4860920F47060003BF78A /* UsersConstants.swift in Sources */,
+				DAA00E2B20F486AB009386CE /* StatsViewCell.swift in Sources */,
 				DA01228620F4A04700B9C5EF /* StatsViewModelBuilderProtocol+Default.swift in Sources */,
 				DAA00E2D20F48ADD009386CE /* StatsViewModel.swift in Sources */,
-				DAE4860A20F47060003BF78A /* StatsConstants.swift in Sources */,
 				DA01228820F4A19600B9C5EF /* StatsViewModelBuilderLoading.swift in Sources */,
 				DAE4860E20F47060003BF78A /* UsersView.swift in Sources */,
 				DA7E6E8920F625C100E6F38E /* UsersViewNew.swift in Sources */,
 				DAE4860F20F47060003BF78A /* StatsViewContent.swift in Sources */,
-				DAE4861020F47060003BF78A /* UsersViewContentCell.swift in Sources */,
+				DAE4861020F47060003BF78A /* UsersViewCell.swift in Sources */,
 				DA28088920F5F52C00BCDA13 /* StatsViewModelBuilderError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

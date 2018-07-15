@@ -2,7 +2,7 @@ import Foundation
 import CleanArchitecture
 
 struct UsersViewModel:ViewModelProtocol {
-    var users:[NSAttributedString]
+    var users:[UsersViewModelItem]
     
     init() {
         self.users = []
