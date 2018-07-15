@@ -20,13 +20,14 @@ public class Pyro:ReportDelegate {
         }
     }
     
-    public func addUser(name:String, url:String) {
+    @discardableResult public func addUser(name:String, url:String) -> User {
         let user:User = UserFactory.make()
         user.name = name
         user.url = url
         self.add(user:user)
         self.save()
         self.delegate?.pyroUpdated()
+        return user
     }
     
     public func makeReport(user:User) {
