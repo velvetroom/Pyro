@@ -2,7 +2,7 @@ import UIKit
 import CleanArchitecture
 
 class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    var users:[NSAttributedString]
+    var users:[UsersViewModelItem]
     
     required init() {
         self.users = []
@@ -29,7 +29,7 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
         let cell:UsersViewCell = self.content.dequeueReusableCell(
             withReuseIdentifier:String(describing:UsersViewCell.self), for:index) as! UsersViewCell
-        cell.label.attributedText = self.users[index.item]
+        cell.label.attributedText = self.users[index.item].name
         return cell
     }
     
@@ -47,20 +47,11 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     }
     
     @objc func selectorSort(segmented:UISegmentedControl) {
-        switch segmented.selectedSegmentIndex {
-        case Sort.contributions.rawValue: self.presenter.sortByContributions()
-        case Sort.streak.rawValue: self.presenter.sortByStreak()
-        default: self.presenter.sortByName()
-        }
+        self.presenter.sort = UsersPresenterSort(rawValue:segmented.selectedSegmentIndex)!
+        self.presenter.shouldUpdate()
     }
 }
 
 private struct Constants {
     static let cellHeight:CGFloat = 52
-}
-
-private enum Sort:Int {
-    case name
-    case contributions
-    case streak
 }

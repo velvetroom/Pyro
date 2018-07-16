@@ -2,15 +2,17 @@ import UIKit
 import Pyro
 
 class UsersViewModelFactory {
-    func make(pyro:Pyro) -> UsersViewModel {
+    func orderedByName(pyro:Pyro) -> UsersViewModel {
         var viewModel:UsersViewModel = UsersViewModel()
         for user:User in pyro.users {
-            viewModel.users.append(make(user:user))
+            var item:UsersViewModelItem = UsersViewModelItem()
+            item.name = self.makeName(user:user)
+            viewModel.users.append(item)
         }
         return viewModel
     }
     
-    private func make(user:User) -> NSAttributedString {
+    private func makeName(user:User) -> NSAttributedString {
         let string:NSMutableAttributedString = NSMutableAttributedString()
         let name:NSAttributedString = NSAttributedString(string:user.name, attributes:[NSAttributedString.Key.font:
             UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.bold)])

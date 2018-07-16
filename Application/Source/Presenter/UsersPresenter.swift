@@ -2,11 +2,13 @@ import UIKit
 import CleanArchitecture
 
 class UsersPresenter:PresenterProtocol {
+    var sort:UsersPresenterSort
     var interactor:UserInteractor!
     var viewModel:ViewModel!
     private var factory:UsersViewModelFactory
     
     required init() {
+        self.sort = UsersPresenterSort.name
         self.factory = UsersViewModelFactory()
     }
     
@@ -42,6 +44,12 @@ class UsersPresenter:PresenterProtocol {
     }
     
     func shouldUpdate() {
-        self.viewModel.update(property:self.factory.make(pyro:self.interactor.pyro))
+        let viewModel:UsersViewModel
+        switch self.sort {
+        case UsersPresenterSort.name: viewModel = self.factory.orderedByName(pyro:self.interactor.pyro)
+        case UsersPresenterSort.contributions: viewModel = self.factory.orderedByName(pyro:self.interactor.pyro)
+        case UsersPresenterSort.streak: viewModel = self.factory.orderedByName(pyro:self.interactor.pyro)
+        }
+        self.viewModel.update(property:viewModel)
     }
 }
