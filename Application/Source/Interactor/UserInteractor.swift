@@ -16,8 +16,8 @@ class UserInteractor:InteractorProtocol, PyroDelegate {
         self.pyro.load()
     }
     
-    func selectUser(index:Int) {
-        self.select(user:self.pyro.users[index])
+    func select(user:User) {
+        self.router?.routeToUsers(pyro:self.pyro, user:user)
     }
     
     func add(name:String, url:String) {
@@ -28,9 +28,5 @@ class UserInteractor:InteractorProtocol, PyroDelegate {
     
     func pyroUpdated() {
         self.presenter?.shouldUpdate()
-    }
-    
-    private func select(user:User) {
-        self.router?.routeToUsers(pyro:self.pyro, user:user)
     }
 }

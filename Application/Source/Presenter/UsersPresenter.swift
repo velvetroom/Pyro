@@ -12,8 +12,8 @@ class UsersPresenter:PresenterProtocol {
         self.factory = UsersViewModelFactory()
     }
     
-    func selectUser(index:IndexPath) {
-        self.interactor.selectUser(index:index.item)
+    func select(item:UsersViewModelItem) {
+        self.interactor.select(user:item.user)
     }
     
     func createUser() {
@@ -46,9 +46,9 @@ class UsersPresenter:PresenterProtocol {
     func shouldUpdate() {
         let viewModel:UsersViewModel
         switch self.sort {
-        case UsersPresenterSort.name: viewModel = self.factory.orderedByName(pyro:self.interactor.pyro)
-        case UsersPresenterSort.contributions: viewModel = self.factory.orderedByName(pyro:self.interactor.pyro)
-        case UsersPresenterSort.streak: viewModel = self.factory.orderedByName(pyro:self.interactor.pyro)
+        case UsersPresenterSort.name: viewModel = self.factory.byName(pyro:self.interactor.pyro)
+        case UsersPresenterSort.contributions: viewModel = self.factory.byContributions(pyro:self.interactor.pyro)
+        case UsersPresenterSort.streak: viewModel = self.factory.byStreak(pyro:self.interactor.pyro)
         }
         self.viewModel.update(property:viewModel)
     }

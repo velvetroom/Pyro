@@ -29,11 +29,15 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
         let cell:UsersViewCell = self.content.dequeueReusableCell(
             withReuseIdentifier:String(describing:UsersViewCell.self), for:index) as! UsersViewCell
-        cell.label.attributedText = self.users[index.item].name
+        cell.labelName.attributedText = self.users[index.item].name
+        cell.labelValue.attributedText = self.users[index.item].value
         return cell
     }
     
-    func collectionView(_:UICollectionView, didSelectItemAt index:IndexPath) { self.presenter.selectUser(index:index) }
+    func collectionView(_:UICollectionView, didSelectItemAt index:IndexPath) {
+        self.presenter.select(item:self.users[index.item])
+    }
+    
     func collectionView(_:UICollectionView, numberOfItemsInSection section:Int) -> Int { return self.users.count }
     
     override func willTransition(to newCollection:UITraitCollection,
