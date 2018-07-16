@@ -4,7 +4,7 @@ import CleanArchitecture
 class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     weak var buttonDelete:UIBarButtonItem!
     weak var buttonSynch:UIBarButtonItem!
-    private var stats:[StatsViewModelItem]
+    var stats:[StatsViewModelItem]
     
     required init() {
         self.stats = []
@@ -14,15 +14,14 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
     required init?(coder:NSCoder) { return nil }
     
     override func viewDidLoad() {
-        self.configureNavigationItems()
         self.configureViewModel()
-        super.viewDidLoad()
         self.configureView()
+        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated:Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setToolbarHidden(true, animated:false)
+        self.navigationController?.setToolbarHidden(false, animated:false)
     }
     
     func collectionView(_:UICollectionView, layout:UICollectionViewLayout, sizeForItemAt:IndexPath) -> CGSize {
@@ -47,41 +46,17 @@ class StatsView:View<StatsPresenter, StatsViewContent>, UICollectionViewDelegate
         self.content.collectionViewLayout.invalidateLayout()
     }
     
-    private func configureView() {
-        self.title = self.presenter.interactor.user.name
-        self.content.delegate = self
-        self.content.dataSource = self
-        self.content.register(StatsViewCell.self, forCellWithReuseIdentifier:String(describing:StatsViewCell.self))
-        if #available(iOS 11.0, *) {
-            self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.always
-        }
-    }
-    
-    private func configureNavigationItems() {
-        let buttonSynch:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonItem.SystemItem.refresh,
-                                                          target:self, action:#selector(self.selectorSynch))
-        self.buttonSynch = buttonSynch
-        let buttonDelete:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonItem.SystemItem.trash,
-                                                           target:self, action:#selector(self.selectorDelete))
-        self.buttonDelete = buttonDelete
-        self.navigationItem.rightBarButtonItems = [buttonSynch, buttonDelete]
-    }
-    
-    private func configureViewModel() {
-        self.presenter.viewModel.observe { [weak self] (property:StatsViewModel) in
-            self?.stats = property.items
-            self?.buttonDelete.isEnabled = property.actionsEnabled
-            self?.buttonSynch.isEnabled = property.actionsEnabled
-            self?.content.reloadData()
-        }
-    }
-    
-    @objc private func selectorDelete() {
+    @objc func selectorDelete() {
         self.presenter.deleteUser()
     }
     
-    @objc private func selectorSynch() {
-        self.presenter.synchronize()
+    @objc func selectorSynch() {
+        self.content.refresh.beginRefreshing()
+        self.content.showRefreshing()
+    }
+    
+    @objc func selectorRefresh() {
+        
     }
 }
 
