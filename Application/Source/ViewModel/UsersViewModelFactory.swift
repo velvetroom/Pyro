@@ -96,5 +96,5 @@ class UsersViewModelFactory {
 private struct Constants {
     static let titleFontSize:CGFloat = 15
     static let subtitleFontSize:CGFloat = 13
-    static let valueFontSize:CGFloat = 15
+    static let valueFontSize:CGFloat = 13
 }
