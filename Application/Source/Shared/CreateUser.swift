@@ -2,8 +2,8 @@ import UIKit
 
 class CreateUser:UIAlertController, UITextFieldDelegate {
     weak var presenter:UsersPresenter?
-    private weak var fieldName:UITextField!
-    private weak var fieldUrl:UITextField!
+    private weak var name:UITextField!
+    private weak var url:UITextField!
     private weak var accept:UIAlertAction!
     
     func configureView() {
@@ -13,7 +13,7 @@ class CreateUser:UIAlertController, UITextFieldDelegate {
     }
     
     func textField(_:UITextField, shouldChangeCharactersIn:NSRange, replacementString:String) -> Bool {
-        if self.fieldName.text!.isEmpty || self.fieldUrl.text!.isEmpty {
+        if self.name.text!.isEmpty || self.url.text!.isEmpty {
             self.accept.isEnabled = false
         } else {
             self.accept.isEnabled = true
@@ -32,12 +32,12 @@ class CreateUser:UIAlertController, UITextFieldDelegate {
         self.addTextField { [weak self] (field:UITextField) in
             field.placeholder = NSLocalizedString("UsersViewNew_Name", comment:String())
             self?.configure(field:field)
-            self?.fieldName = field
+            self?.name = field
         }
         self.addTextField { [weak self] (field:UITextField) in
             field.placeholder = NSLocalizedString("UsersViewNew_Url", comment:String())
             self?.configure(field:field)
-            self?.fieldUrl = field
+            self?.url = field
         }
         self.addAction(accept)
         self.addAction(UIAlertAction(title:NSLocalizedString("UsersViewNew_Cancel", comment:String()),
@@ -54,7 +54,7 @@ class CreateUser:UIAlertController, UITextFieldDelegate {
     }
     
     private func createUser() {
-        self.presenter?.add(name:self.fieldName.text!, url:self.fieldUrl.text!)
+        self.presenter?.add(name:self.name.text!, url:self.url.text!)
     }
 }
 

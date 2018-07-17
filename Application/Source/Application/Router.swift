@@ -8,9 +8,7 @@ class Router:UINavigationController {
         self.navigateToUsers()
     }
     
-    required init?(coder:NSCoder) {
-        return nil
-    }
+    required init?(coder:NSCoder) { return nil }
     
     func routeToUsers(pyro:Pyro, user:User) {
         let view:StatsView = StatsView()

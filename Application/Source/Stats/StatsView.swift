@@ -2,8 +2,8 @@ import UIKit
 import CleanArchitecture
 
 class StatsView:View<StatsPresenter, StatsContent> {
-    weak var buttonDelete:UIBarButtonItem!
-    weak var buttonSynch:UIBarButtonItem!
+    weak var delete:UIBarButtonItem!
+    weak var synch:UIBarButtonItem!
     
     override func viewDidLoad() {
         self.configureViewModel()

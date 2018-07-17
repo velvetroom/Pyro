@@ -7,9 +7,7 @@ class UsersContent:UICollectionView {
         self.configureFlow()
     }
     
-    required init?(coder:NSCoder) {
-        return nil
-    }
+    required init?(coder:NSCoder) { return nil }
     
     private func configureView() {
         self.backgroundColor = UIColor.white

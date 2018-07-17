@@ -1,10 +1,9 @@
 import UIKit
 
 class UsersCell:UICollectionViewCell {
-    weak var labelName:UILabel!
-    weak var labelValue:UILabel!
+    weak var name:UILabel!
+    weak var value:UILabel!
     weak var border:UIView!
-    weak var indicator:UIView!
     
     override init(frame:CGRect) {
         super.init(frame:CGRect.zero)
@@ -13,21 +12,9 @@ class UsersCell:UICollectionViewCell {
         self.configureView()
     }
     
-    required init?(coder:NSCoder) {
-        return nil
-    }
-    
-    override var isSelected:Bool {
-        didSet {
-            self.configureView()
-        }
-    }
-    
-    override var isHighlighted:Bool {
-        didSet {
-            self.configureView()
-        }
-    }
+    required init?(coder:NSCoder) { return nil }
+    override var isSelected:Bool { didSet { self.configureView() } }
+    override var isHighlighted:Bool { didSet { self.configureView() } }
     
     private func configureView() {
         if self.isSelected || self.isHighlighted {
@@ -56,7 +43,7 @@ class UsersCell:UICollectionViewCell {
         label.backgroundColor = UIColor.clear
         label.numberOfLines = 0
         label.textColor = UIColor.black
-        self.labelName = label
+        self.name = label
         self.contentView.addSubview(label)
     }
     
@@ -68,7 +55,7 @@ class UsersCell:UICollectionViewCell {
         label.numberOfLines = 0
         label.textColor = UIColor.black
         label.textAlignment = NSTextAlignment.right
-        self.labelValue = label
+        self.value = label
         self.contentView.addSubview(label)
     }
     
@@ -82,17 +69,17 @@ class UsersCell:UICollectionViewCell {
     }
     
     private func layoutName() {
-        self.labelName.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
-        self.labelName.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
-        self.labelName.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
-        self.labelName.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
+        self.name.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
+        self.name.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        self.name.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
+        self.name.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
     }
     
     private func layoutValue() {
-        self.labelValue.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
-        self.labelValue.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
-        self.labelValue.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
-        self.labelValue.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
+        self.value.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
+        self.value.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        self.value.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
+        self.value.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
     }
     
     private func layoutBorder() {

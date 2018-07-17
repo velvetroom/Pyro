@@ -27,18 +27,6 @@ class UsersPresenter:PresenterProtocol {
         self.interactor.add(name:name, url:url)
     }
     
-    func sortByName() {
-        
-    }
-    
-    func sortByContributions() {
-        
-    }
-    
-    func sortByStreak() {
-        
-    }
-    
     func didAppear() {
         self.interactor.load()
     }

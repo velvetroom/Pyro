@@ -5,8 +5,8 @@ extension StatsView {
         self.configureTitle()
         self.configureNavigation()
         self.configureToolbar()
-        self.content.viewStreak.labelAmount.text = "56"
-        self.content.viewContributions.labelAmount.text = "13,456"
+        self.content.streak.amount.text = "56"
+        self.content.contributions.amount.text = "13,456"
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.never
         }
@@ -14,8 +14,8 @@ extension StatsView {
     
     func configureViewModel() {
         self.presenter.viewModel.observe { [weak self] (property:StatsViewModel) in
-            self?.buttonDelete.isEnabled = property.actionsEnabled
-            self?.buttonSynch.isEnabled = property.actionsEnabled
+            self?.delete.isEnabled = property.actionsEnabled
+            self?.synch.isEnabled = property.actionsEnabled
         }
     }
     
@@ -39,7 +39,7 @@ extension StatsView {
         let buttonDelete:UIBarButtonItem = UIBarButtonItem(
             title:NSLocalizedString("StatsView_Delete", comment:String()),
             style:UIBarButtonItem.Style.plain, target:self, action:#selector(self.selectorDelete))
-        self.buttonDelete = buttonDelete
+        self.delete = buttonDelete
         self.navigationItem.rightBarButtonItem = buttonDelete
     }
     
@@ -47,7 +47,7 @@ extension StatsView {
         let buttonSynch:UIBarButtonItem = UIBarButtonItem(
             title:NSLocalizedString("StatsView_Synch", comment:String()), style:UIBarButtonItem.Style.plain,
             target:self, action:#selector(self.selectorSynch))
-        self.buttonSynch = buttonSynch
+        self.synch = buttonSynch
         self.setToolbarItems([buttonSynch], animated:false)
     }
 }
