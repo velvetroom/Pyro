@@ -20,6 +20,7 @@
 		DABD000A20FC666A00BC5818 /* UsersPresenterSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD000920FC666A00BC5818 /* UsersPresenterSort.swift */; };
 		DABD000C20FC7BB600BC5818 /* StatsView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD000B20FC7BB600BC5818 /* StatsView+Configure.swift */; };
 		DACEB85A20F6484D0018DE79 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACEB85920F6484D0018DE79 /* brand.xcassets */; };
+		DAD88E6420FDEABA0059F447 /* StatsViewStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD88E6320FDEABA0059F447 /* StatsViewStat.swift */; };
 		DAE4860420F47060003BF78A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE485E820F47060003BF78A /* Localizable.strings */; };
 		DAE4860520F47060003BF78A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */; };
 		DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485EE20F47060003BF78A /* UsersViewModel.swift */; };
@@ -72,6 +73,7 @@
 		DABD000920FC666A00BC5818 /* UsersPresenterSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenterSort.swift; sourceTree = "<group>"; };
 		DABD000B20FC7BB600BC5818 /* StatsView+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatsView+Configure.swift"; sourceTree = "<group>"; };
 		DACEB85920F6484D0018DE79 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
+		DAD88E6320FDEABA0059F447 /* StatsViewStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewStat.swift; sourceTree = "<group>"; };
 		DAE485E620F47056003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DAE485E920F47060003BF78A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				DAE485FB20F47060003BF78A /* StatsView.swift */,
 				DABD000B20FC7BB600BC5818 /* StatsView+Configure.swift */,
 				DA4F5D8B20FCD53B00D3AA4A /* StatsViewContent.swift */,
+				DAD88E6320FDEABA0059F447 /* StatsViewStat.swift */,
 				DAF0E0C220FA1F4F0010C121 /* StatsViewDelete.swift */,
 				DA4F5D8D20FCDFAD00D3AA4A /* LoadingView.swift */,
 			);
@@ -373,6 +376,7 @@
 				DA4F5D8C20FCD53B00D3AA4A /* StatsViewContent.swift in Sources */,
 				DAE4860E20F47060003BF78A /* UsersView.swift in Sources */,
 				DA7E6E8920F625C100E6F38E /* UsersViewNew.swift in Sources */,
+				DAD88E6420FDEABA0059F447 /* StatsViewStat.swift in Sources */,
 				DABD000A20FC666A00BC5818 /* UsersPresenterSort.swift in Sources */,
 				DAE4861020F47060003BF78A /* UsersViewCell.swift in Sources */,
 				DA28088920F5F52C00BCDA13 /* StatsViewModelBuilderError.swift in Sources */,

@@ -5,7 +5,8 @@ extension StatsView {
         self.title = self.presenter.interactor.user.name
         self.configureNavigation()
         self.configureToolbar()
-        self.content.labelStreak.text = String(self.presenter.interactor.user.stats.contributions.count)
+        self.content.viewStreak.labelAmount.text = String(self.presenter.interactor.user.stats.streak.max)
+        self.content.viewContributions.labelAmount.text = String(self.presenter.interactor.user.stats.contributions.count)
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.never
         }

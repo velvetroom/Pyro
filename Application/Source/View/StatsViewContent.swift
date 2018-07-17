@@ -1,8 +1,8 @@
 import UIKit
 
 class StatsViewContent:UIView {
-    weak var viewSpin:LoadingView!
-    weak var labelStreak:UILabel!
+    weak var viewStreak:StatsViewStat!
+    weak var viewContributions:StatsViewStat!
     
     init() {
         super.init(frame:CGRect.zero)
@@ -20,50 +20,48 @@ class StatsViewContent:UIView {
     }
     
     private func makeOutlets() {
-        self.makeSpin()
         self.makeStreak()
+        self.makeContributions()
     }
     
     private func layoutOutlets() {
-        self.layoutSpin()
         self.layoutStreak()
-    }
-    
-    private func makeSpin() {
-        let viewSpin:LoadingView = LoadingView()
-        viewSpin.tintColor = UIColor.black
-        self.viewSpin = viewSpin
-        self.addSubview(viewSpin)
+        self.layoutContributions()
     }
     
     private func makeStreak() {
-        let labelStreak:UILabel = UILabel()
-        labelStreak.translatesAutoresizingMaskIntoConstraints = false
-        labelStreak.backgroundColor = UIColor.clear
-        labelStreak.textAlignment = NSTextAlignment.right
-        labelStreak.textColor = UIColor.black
-        labelStreak.font = UIFont.systemFont(ofSize:Constants.streakFontSize, weight:UIFont.Weight.light)
-        self.labelStreak = labelStreak
-        self.addSubview(labelStreak)
+        let viewStreak:StatsViewStat = StatsViewStat()
+        viewStreak.labelAmount.font = UIFont.systemFont(ofSize:Constants.streakFontSize, weight:UIFont.Weight.light)
+        viewStreak.labelTitle.text = NSLocalizedString("StatsViewContent_StreakTitle", comment:String())
+        self.viewStreak = viewStreak
+        self.addSubview(viewStreak)
     }
     
-    private func layoutSpin() {
-        self.viewSpin.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
-        self.viewSpin.centerYAnchor.constraint(equalTo:self.centerYAnchor).isActive = true
+    private func makeContributions() {
+        let viewContributions:StatsViewStat = StatsViewStat()
+        viewContributions.labelAmount.font = UIFont.systemFont(ofSize:Constants.statFontSize,
+                                                               weight:UIFont.Weight.light)
+        viewContributions.labelTitle.text = NSLocalizedString("StatsViewContent_ContributionsTitle", comment:String())
+        self.viewContributions = viewContributions
+        self.addSubview(viewContributions)
     }
     
     private func layoutStreak() {
-        self.labelStreak.rightAnchor.constraint(equalTo:self.rightAnchor,
-                                                constant:Constants.streakRight).isActive = true
-        self.labelStreak.topAnchor.constraint(equalTo:self.topAnchor, constant:Constants.streakTop).isActive = true
-        self.labelStreak.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
-        self.labelStreak.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.viewStreak.topAnchor.constraint(equalTo:self.topAnchor, constant:Constants.streakTop).isActive = true
+        self.viewStreak.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
+    }
+    
+    private func layoutContributions() {
+        self.viewContributions.topAnchor.constraint(equalTo:self.viewStreak.bottomAnchor,
+                                             constant:Constants.statMargin).isActive = true
+        self.viewContributions.leftAnchor.constraint(equalTo:self.leftAnchor,
+                                                     constant:Constants.statMargin).isActive = true
     }
 }
 
 private struct Constants {
-    static let spinTop:CGFloat = 100
-    static let streakFontSize:CGFloat = 50
-    static let streakRight:CGFloat = -20
-    static let streakTop:CGFloat = 90
+    static let streakTop:CGFloat = 80
+    static let statMargin:CGFloat = 20
+    static let streakFontSize:CGFloat = 35
+    static let statFontSize:CGFloat = 25
 }
