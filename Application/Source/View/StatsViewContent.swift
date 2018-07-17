@@ -39,7 +39,6 @@ class StatsViewContent:UIView {
         let labelStreak:UILabel = UILabel()
         labelStreak.translatesAutoresizingMaskIntoConstraints = false
         labelStreak.backgroundColor = UIColor.clear
-        labelStreak.textAlignment = NSTextAlignment.center
         labelStreak.font = UIFont.systemFont(ofSize:Constants.streakFontSize, weight:UIFont.Weight.light)
         self.labelStreak = labelStreak
         self.addSubview(labelStreak)
@@ -47,17 +46,22 @@ class StatsViewContent:UIView {
     
     private func layoutSpin() {
         self.viewSpin.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
-        self.viewSpin.centerYAnchor.constraint(equalTo:self.centerYAnchor).isActive = true
+        self.viewSpin.topAnchor.constraint(equalTo:self.topAnchor, constant:Constants.spinTop).isActive = true
     }
     
     private func layoutStreak() {
-        self.labelStreak.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
-        self.labelStreak.centerYAnchor.constraint(equalTo:self.centerYAnchor).isActive = true
+        self.labelStreak.leftAnchor.constraint(equalTo:self.viewSpin.centerXAnchor,
+                                               constant:Constants.streakLeft).isActive = true
+        self.labelStreak.centerYAnchor.constraint(equalTo:self.viewSpin.centerYAnchor,
+                                                  constant:Constants.streakTop).isActive = true
         self.labelStreak.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         self.labelStreak.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
 }
 
 private struct Constants {
-    static let streakFontSize:CGFloat = 20
+    static let spinTop:CGFloat = 100
+    static let streakFontSize:CGFloat = 30
+    static let streakLeft:CGFloat = -10
+    static let streakTop:CGFloat = 3
 }
