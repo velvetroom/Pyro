@@ -1,7 +1,7 @@
 import UIKit
 
 class StatsViewContent:UIView {
-    weak var viewSpin:StatsViewSpin!
+    weak var viewSpin:LoadingView!
     weak var labelStreak:UILabel!
     
     init() {
@@ -30,7 +30,8 @@ class StatsViewContent:UIView {
     }
     
     private func makeSpin() {
-        let viewSpin:StatsViewSpin = StatsViewSpin()
+        let viewSpin:LoadingView = LoadingView()
+        viewSpin.tintColor = UIColor.black
         self.viewSpin = viewSpin
         self.addSubview(viewSpin)
     }
@@ -39,6 +40,8 @@ class StatsViewContent:UIView {
         let labelStreak:UILabel = UILabel()
         labelStreak.translatesAutoresizingMaskIntoConstraints = false
         labelStreak.backgroundColor = UIColor.clear
+        labelStreak.textAlignment = NSTextAlignment.right
+        labelStreak.textColor = UIColor.black
         labelStreak.font = UIFont.systemFont(ofSize:Constants.streakFontSize, weight:UIFont.Weight.light)
         self.labelStreak = labelStreak
         self.addSubview(labelStreak)
@@ -46,14 +49,13 @@ class StatsViewContent:UIView {
     
     private func layoutSpin() {
         self.viewSpin.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
-        self.viewSpin.topAnchor.constraint(equalTo:self.topAnchor, constant:Constants.spinTop).isActive = true
+        self.viewSpin.centerYAnchor.constraint(equalTo:self.centerYAnchor).isActive = true
     }
     
     private func layoutStreak() {
-        self.labelStreak.leftAnchor.constraint(equalTo:self.viewSpin.centerXAnchor,
-                                               constant:Constants.streakLeft).isActive = true
-        self.labelStreak.centerYAnchor.constraint(equalTo:self.viewSpin.centerYAnchor,
-                                                  constant:Constants.streakTop).isActive = true
+        self.labelStreak.rightAnchor.constraint(equalTo:self.rightAnchor,
+                                                constant:Constants.streakRight).isActive = true
+        self.labelStreak.topAnchor.constraint(equalTo:self.topAnchor, constant:Constants.streakTop).isActive = true
         self.labelStreak.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         self.labelStreak.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
@@ -61,7 +63,7 @@ class StatsViewContent:UIView {
 
 private struct Constants {
     static let spinTop:CGFloat = 100
-    static let streakFontSize:CGFloat = 30
-    static let streakLeft:CGFloat = -10
-    static let streakTop:CGFloat = 3
+    static let streakFontSize:CGFloat = 50
+    static let streakRight:CGFloat = -20
+    static let streakTop:CGFloat = 90
 }
