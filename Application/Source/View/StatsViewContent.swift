@@ -1,8 +1,8 @@
 import UIKit
 
 class StatsViewContent:UIView {
-    weak var viewStreak:StatsViewStat!
-    weak var viewContributions:StatsViewStat!
+    weak var viewStreak:StatsViewStreak!
+    weak var viewContributions:StatsViewContributions!
     
     init() {
         super.init(frame:CGRect.zero)
@@ -30,38 +30,35 @@ class StatsViewContent:UIView {
     }
     
     private func makeStreak() {
-        let viewStreak:StatsViewStat = StatsViewStat()
-        viewStreak.labelAmount.font = UIFont.systemFont(ofSize:Constants.streakFontSize, weight:UIFont.Weight.light)
-        viewStreak.labelTitle.text = NSLocalizedString("StatsViewContent_StreakTitle", comment:String())
+        let viewStreak:StatsViewStreak = StatsViewStreak()
         self.viewStreak = viewStreak
         self.addSubview(viewStreak)
     }
     
     private func makeContributions() {
-        let viewContributions:StatsViewStat = StatsViewStat()
-        viewContributions.labelAmount.font = UIFont.systemFont(ofSize:Constants.statFontSize,
-                                                               weight:UIFont.Weight.light)
-        viewContributions.labelTitle.text = NSLocalizedString("StatsViewContent_ContributionsTitle", comment:String())
+        let viewContributions:StatsViewContributions = StatsViewContributions()
         self.viewContributions = viewContributions
         self.addSubview(viewContributions)
     }
     
     private func layoutStreak() {
-        self.viewStreak.topAnchor.constraint(equalTo:self.topAnchor, constant:Constants.streakTop).isActive = true
-        self.viewStreak.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
+        self.viewStreak.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
+        self.viewStreak.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
+        self.viewStreak.widthAnchor.constraint(equalToConstant:Constants.statWidth).isActive = true
+        self.viewStreak.heightAnchor.constraint(equalToConstant:Constants.statHeight).isActive = true
     }
     
     private func layoutContributions() {
-        self.viewContributions.topAnchor.constraint(equalTo:self.viewStreak.bottomAnchor,
-                                             constant:Constants.statMargin).isActive = true
-        self.viewContributions.leftAnchor.constraint(equalTo:self.leftAnchor,
-                                                     constant:Constants.statMargin).isActive = true
+        self.viewContributions.bottomAnchor.constraint(equalTo:self.viewStreak.bottomAnchor).isActive = true
+        self.viewContributions.rightAnchor.constraint(equalTo:self.rightAnchor,
+                                                      constant:-Constants.margin).isActive = true
+        self.viewContributions.widthAnchor.constraint(equalToConstant:Constants.statWidth).isActive = true
+        self.viewContributions.heightAnchor.constraint(equalToConstant:Constants.statHeight).isActive = true
     }
 }
 
 private struct Constants {
-    static let streakTop:CGFloat = 80
-    static let statMargin:CGFloat = 20
-    static let streakFontSize:CGFloat = 35
-    static let statFontSize:CGFloat = 25
+    static let statWidth:CGFloat = 150
+    static let statHeight:CGFloat = 170
+    static let margin:CGFloat = 20
 }

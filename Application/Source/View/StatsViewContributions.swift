@@ -1,6 +1,6 @@
 import UIKit
 
-class StatsViewStat:UIView {
+class StatsViewContributions:UIView {
     weak var labelAmount:UILabel!
     weak var labelTitle:UILabel!
     
@@ -13,12 +13,6 @@ class StatsViewStat:UIView {
     
     required init?(coder:NSCoder) {
         return nil
-    }
-    
-    override func layoutSubviews() {
-        self.intrinsicContentSize = CGSize(width:max(self.labelAmount.bounds.width, self.labelTitle.bounds.width),
-                                           height:self.labelTitle.bounds.maxY)
-        super.layoutSubviews()
     }
     
     private func configureView() {
@@ -41,8 +35,9 @@ class StatsViewStat:UIView {
         let labelAmount:UILabel = UILabel()
         labelAmount.translatesAutoresizingMaskIntoConstraints = false
         labelAmount.backgroundColor = UIColor.clear
-        labelAmount.textAlignment = NSTextAlignment.center
         labelAmount.textColor = UIColor.black
+        labelAmount.font = UIFont.systemFont(ofSize:Constants.amountFontSize, weight:UIFont.Weight.light)
+        labelAmount.textAlignment = NSTextAlignment.right
         self.labelAmount = labelAmount
         self.addSubview(labelAmount)
     }
@@ -51,26 +46,30 @@ class StatsViewStat:UIView {
         let labelTitle:UILabel = UILabel()
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
+        labelTitle.textColor = UIColor(white:0, alpha:0.3)
         labelTitle.textAlignment = NSTextAlignment.right
-        labelTitle.textColor = UIColor(white:0, alpha:0.2)
-        labelTitle.font = UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.bold)
+        labelTitle.font = UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.regular)
+        labelTitle.text = NSLocalizedString("StatsViewContent_ContributionsTitle", comment:String())
         self.labelTitle = labelTitle
         self.addSubview(labelTitle)
     }
     
     private func layoutAmount() {
-        self.labelAmount.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
-        self.labelAmount.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
+        self.labelAmount.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+        self.labelAmount.bottomAnchor.constraint(equalTo:self.labelTitle.topAnchor).isActive = true
+        self.labelAmount.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.labelAmount.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
     
     private func layoutTitle() {
-        self.labelTitle.rightAnchor.constraint(equalTo:self.labelAmount.rightAnchor).isActive = true
-        self.labelTitle.topAnchor.constraint(equalTo:self.labelAmount.bottomAnchor,
-                                             constant:Constants.titleTop).isActive = true
+        self.labelTitle.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+        self.labelTitle.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        self.labelTitle.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.labelTitle.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
 }
 
 private struct Constants {
-    static let titleFontSize:CGFloat = 12
-    static let titleTop:CGFloat = 2
+    static let amountFontSize:CGFloat = 32
+    static let titleFontSize:CGFloat = 14
 }
