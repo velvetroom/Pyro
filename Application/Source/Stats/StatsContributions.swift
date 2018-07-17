@@ -1,8 +1,8 @@
 import UIKit
 
 class StatsContributions:UIView {
-    weak var labelAmount:UILabel!
-    weak var labelTitle:UILabel!
+    weak var amount:UILabel!
+    weak var title:UILabel!
     
     init() {
         super.init(frame:CGRect.zero)
@@ -32,40 +32,40 @@ class StatsContributions:UIView {
     }
     
     private func makeAmount() {
-        let labelAmount:UILabel = UILabel()
-        labelAmount.translatesAutoresizingMaskIntoConstraints = false
-        labelAmount.backgroundColor = UIColor.clear
-        labelAmount.textColor = UIColor.black
-        labelAmount.font = UIFont.systemFont(ofSize:Constants.amountFontSize, weight:UIFont.Weight.light)
-        labelAmount.textAlignment = NSTextAlignment.right
-        self.labelAmount = labelAmount
-        self.addSubview(labelAmount)
+        let amount:UILabel = UILabel()
+        amount.translatesAutoresizingMaskIntoConstraints = false
+        amount.backgroundColor = UIColor.clear
+        amount.textColor = UIColor.black
+        amount.font = UIFont.systemFont(ofSize:Constants.amountFontSize, weight:UIFont.Weight.light)
+        amount.textAlignment = NSTextAlignment.right
+        self.amount = amount
+        self.addSubview(amount)
     }
     
     private func makeTitle() {
-        let labelTitle:UILabel = UILabel()
-        labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.backgroundColor = UIColor.clear
-        labelTitle.textColor = UIColor(white:0, alpha:0.3)
-        labelTitle.textAlignment = NSTextAlignment.right
-        labelTitle.font = UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.regular)
-        labelTitle.text = NSLocalizedString("StatsViewContent_ContributionsTitle", comment:String())
-        self.labelTitle = labelTitle
-        self.addSubview(labelTitle)
+        let title:UILabel = UILabel()
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.backgroundColor = UIColor.clear
+        title.textColor = UIColor(white:0, alpha:0.3)
+        title.textAlignment = NSTextAlignment.right
+        title.font = UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.regular)
+        title.text = NSLocalizedString("StatsViewContent_ContributionsTitle", comment:String())
+        self.title = title
+        self.addSubview(title)
     }
     
     private func layoutAmount() {
-        self.labelAmount.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
-        self.labelAmount.bottomAnchor.constraint(equalTo:self.labelTitle.topAnchor).isActive = true
-        self.labelAmount.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
-        self.labelAmount.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.amount.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+        self.amount.bottomAnchor.constraint(equalTo:self.title.topAnchor).isActive = true
+        self.amount.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.amount.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
     
     private func layoutTitle() {
-        self.labelTitle.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
-        self.labelTitle.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
-        self.labelTitle.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
-        self.labelTitle.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.title.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+        self.title.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        self.title.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.title.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
 }
 
