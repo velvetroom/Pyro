@@ -37,6 +37,10 @@ class StatsViewContent:UIView {
     
     private func makeStreak() {
         let labelStreak:UILabel = UILabel()
+        labelStreak.translatesAutoresizingMaskIntoConstraints = false
+        labelStreak.backgroundColor = UIColor.clear
+        labelStreak.textAlignment = NSTextAlignment.center
+        labelStreak.font = UIFont.systemFont(ofSize:Constants.streakFontSize, weight:UIFont.Weight.light)
         self.labelStreak = labelStreak
         self.addSubview(labelStreak)
     }
@@ -47,6 +51,13 @@ class StatsViewContent:UIView {
     }
     
     private func layoutStreak() {
-        
+        self.labelStreak.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
+        self.labelStreak.centerYAnchor.constraint(equalTo:self.centerYAnchor).isActive = true
+        self.labelStreak.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.labelStreak.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
+}
+
+private struct Constants {
+    static let streakFontSize:CGFloat = 20
 }

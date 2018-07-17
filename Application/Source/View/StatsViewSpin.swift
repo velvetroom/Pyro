@@ -63,7 +63,7 @@ class StatsViewSpin:UIView {
     func layerWith(size: CGSize, color: UIColor) -> CALayer {
         let layer: CAShapeLayer = CAShapeLayer()
         var path: UIBezierPath = UIBezierPath()
-        let lineWidth: CGFloat = 2
+        let lineWidth: CGFloat = 5
         
         path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                     radius: size.width / 2,
@@ -72,7 +72,7 @@ class StatsViewSpin:UIView {
                     clockwise: true)
         layer.fillColor = nil
         layer.strokeColor = color.cgColor
-        layer.lineWidth = 2
+        layer.lineWidth = 5
         
         layer.backgroundColor = nil
         layer.path = path.cgPath
