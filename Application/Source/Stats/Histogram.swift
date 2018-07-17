@@ -1,6 +1,6 @@
 import UIKit
 
-class StatsViewHistogram:UIView {
+class Histogram:UIView {
     init() {
         super.init(frame:CGRect.zero)
     }

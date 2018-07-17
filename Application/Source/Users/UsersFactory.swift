@@ -1,7 +1,7 @@
 import UIKit
 import Pyro
 
-class UsersViewModelFactory {
+class UsersFactory {
     private let numberFormatter:NumberFormatter
     
     init() {
@@ -12,7 +12,7 @@ class UsersViewModelFactory {
     func byName(pyro:Pyro) -> UsersViewModel {
         var viewModel:UsersViewModel = UsersViewModel()
         for user:User in pyro.users {
-            var item:UsersViewModelItem = UsersViewModelItem()
+            var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
             viewModel.users.append(item)
@@ -23,7 +23,7 @@ class UsersViewModelFactory {
     func byContributions(pyro:Pyro) -> UsersViewModel {
         var viewModel:UsersViewModel = UsersViewModel()
         for user:User in self.usersByContributions(pyro:pyro) {
-            var item:UsersViewModelItem = UsersViewModelItem()
+            var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
             if user.stats.timestamp != nil {
@@ -37,7 +37,7 @@ class UsersViewModelFactory {
     func byStreak(pyro:Pyro) -> UsersViewModel {
         var viewModel:UsersViewModel = UsersViewModel()
         for user:User in self.usersByStreak(pyro:pyro) {
-            var item:UsersViewModelItem = UsersViewModelItem()
+            var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
             if user.stats.timestamp != nil {
@@ -51,10 +51,10 @@ class UsersViewModelFactory {
     private func makeName(user:User) -> NSAttributedString {
         let string:NSMutableAttributedString = NSMutableAttributedString()
         let name:NSAttributedString = NSAttributedString(string:user.name, attributes:[NSAttributedString.Key.font:
-            UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.bold)])
+            UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.regular)])
         let url:NSAttributedString = NSAttributedString(string:"\n\(user.url)",
             attributes:[NSAttributedString.Key.font:UIFont.systemFont(ofSize:Constants.subtitleFontSize,
-                                                                      weight:UIFont.Weight.light)])
+                                                                      weight:UIFont.Weight.ultraLight)])
         string.append(name)
         string.append(url)
         return string
@@ -94,7 +94,7 @@ class UsersViewModelFactory {
 }
 
 private struct Constants {
-    static let titleFontSize:CGFloat = 15
-    static let subtitleFontSize:CGFloat = 13
+    static let titleFontSize:CGFloat = 16
+    static let subtitleFontSize:CGFloat = 12
     static let valueFontSize:CGFloat = 13
 }

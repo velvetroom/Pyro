@@ -1,6 +1,6 @@
 import Foundation
 
-enum UsersPresenterSort:Int {
+enum UsersSort:Int {
     case name
     case contributions
     case streak

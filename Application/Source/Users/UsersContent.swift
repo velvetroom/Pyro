@@ -1,6 +1,6 @@
 import UIKit
 
-class UsersViewContent:UICollectionView {
+class UsersContent:UICollectionView {
     init() {
         super.init(frame:CGRect.zero, collectionViewLayout:UICollectionViewFlowLayout())
         self.configureView()
@@ -12,7 +12,7 @@ class UsersViewContent:UICollectionView {
     }
     
     private func configureView() {
-        self.backgroundColor = UIColor.groupTableViewBackground
+        self.backgroundColor = UIColor.white
         self.translatesAutoresizingMaskIntoConstraints = false
         self.clipsToBounds = true
         self.showsVerticalScrollIndicator = true
@@ -25,13 +25,13 @@ class UsersViewContent:UICollectionView {
         let flow:UICollectionViewFlowLayout = self.collectionViewLayout as! UICollectionViewFlowLayout
         flow.scrollDirection = UICollectionView.ScrollDirection.vertical
         flow.minimumInteritemSpacing = 0
-        flow.minimumLineSpacing = Constants.separation
+        flow.minimumLineSpacing = Constants.interLine
         flow.headerReferenceSize = CGSize.zero
         flow.footerReferenceSize = CGSize.zero
-        flow.sectionInset = UIEdgeInsets(top:Constants.separation, left:0, bottom:Constants.separation, right:0)
+        flow.sectionInset = UIEdgeInsets.zero
     }
 }
 
 private struct Constants {
-    static let separation:CGFloat = 1
+    static let interLine:CGFloat = -1
 }

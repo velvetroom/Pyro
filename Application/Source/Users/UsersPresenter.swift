@@ -2,22 +2,22 @@ import UIKit
 import CleanArchitecture
 
 class UsersPresenter:PresenterProtocol {
-    var sort:UsersPresenterSort
-    var interactor:UserInteractor!
+    var sort:UsersSort
+    var interactor:UsersInteractor!
     var viewModel:ViewModel!
-    private var factory:UsersViewModelFactory
+    private var factory:UsersFactory
     
     required init() {
-        self.sort = UsersPresenterSort.name
-        self.factory = UsersViewModelFactory()
+        self.sort = UsersSort.name
+        self.factory = UsersFactory()
     }
     
-    func select(item:UsersViewModelItem) {
+    func select(item:UsersItem) {
         self.interactor.select(user:item.user)
     }
     
     func createUser() {
-        let alert:UsersViewNew = UsersViewNew(title:nil, message:nil, preferredStyle:UIAlertController.Style.alert)
+        let alert:CreateUser = CreateUser(title:nil, message:nil, preferredStyle:UIAlertController.Style.alert)
         alert.presenter = self
         alert.configureView()
         self.interactor.router?.present(alert, animated:true, completion:nil)
@@ -46,9 +46,9 @@ class UsersPresenter:PresenterProtocol {
     func shouldUpdate() {
         let viewModel:UsersViewModel
         switch self.sort {
-        case UsersPresenterSort.name: viewModel = self.factory.byName(pyro:self.interactor.pyro)
-        case UsersPresenterSort.contributions: viewModel = self.factory.byContributions(pyro:self.interactor.pyro)
-        case UsersPresenterSort.streak: viewModel = self.factory.byStreak(pyro:self.interactor.pyro)
+        case UsersSort.name: viewModel = self.factory.byName(pyro:self.interactor.pyro)
+        case UsersSort.contributions: viewModel = self.factory.byContributions(pyro:self.interactor.pyro)
+        case UsersSort.streak: viewModel = self.factory.byStreak(pyro:self.interactor.pyro)
         }
         self.viewModel.update(property:viewModel)
     }

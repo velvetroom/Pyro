@@ -1,6 +1,6 @@
 import UIKit
 
-class StatsViewStreak:UIView {
+class StatsStreak:UIView {
     weak var labelAmount:UILabel!
     weak var labelTitle:UILabel!
     

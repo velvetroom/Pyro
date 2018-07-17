@@ -1,7 +1,7 @@
 import Foundation
 import Pyro
 
-struct UsersViewModelItem {
+struct UsersItem {
     weak var user:User!
     var name:NSAttributedString
     var value:NSAttributedString

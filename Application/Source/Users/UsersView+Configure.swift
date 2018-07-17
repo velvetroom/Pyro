@@ -5,7 +5,7 @@ extension UsersView {
         self.title = NSLocalizedString("UsersView_Title", comment:String())
         self.content.delegate = self
         self.content.dataSource = self
-        self.content.register(UsersViewCell.self, forCellWithReuseIdentifier:String(describing:UsersViewCell.self))
+        self.content.register(UsersCell.self, forCellWithReuseIdentifier:String(describing:UsersCell.self))
         self.configureNavigationBar()
         self.configureToolBar()
     }

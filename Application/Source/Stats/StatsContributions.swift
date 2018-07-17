@@ -1,6 +1,6 @@
 import UIKit
 
-class StatsViewContributions:UIView {
+class StatsContributions:UIView {
     weak var labelAmount:UILabel!
     weak var labelTitle:UILabel!
     

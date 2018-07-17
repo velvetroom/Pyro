@@ -1,8 +1,8 @@
 import UIKit
 
-class StatsViewContent:UIView {
-    weak var viewStreak:StatsViewStreak!
-    weak var viewContributions:StatsViewContributions!
+class StatsContent:UIView {
+    weak var viewStreak:StatsStreak!
+    weak var viewContributions:StatsContributions!
     
     init() {
         super.init(frame:CGRect.zero)
@@ -30,13 +30,13 @@ class StatsViewContent:UIView {
     }
     
     private func makeStreak() {
-        let viewStreak:StatsViewStreak = StatsViewStreak()
+        let viewStreak:StatsStreak = StatsStreak()
         self.viewStreak = viewStreak
         self.addSubview(viewStreak)
     }
     
     private func makeContributions() {
-        let viewContributions:StatsViewContributions = StatsViewContributions()
+        let viewContributions:StatsContributions = StatsContributions()
         self.viewContributions = viewContributions
         self.addSubview(viewContributions)
     }

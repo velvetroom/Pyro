@@ -1,8 +1,9 @@
 import UIKit
 import CleanArchitecture
 
-class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    var users:[UsersViewModelItem]
+class UsersView:View<UsersPresenter, UsersContent>, UICollectionViewDelegate, UICollectionViewDataSource,
+UICollectionViewDelegateFlowLayout {
+    var users:[UsersItem]
     
     required init() {
         self.users = []
@@ -27,8 +28,8 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     }
     
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
-        let cell:UsersViewCell = self.content.dequeueReusableCell(
-            withReuseIdentifier:String(describing:UsersViewCell.self), for:index) as! UsersViewCell
+        let cell:UsersCell = self.content.dequeueReusableCell(
+            withReuseIdentifier:String(describing:UsersCell.self), for:index) as! UsersCell
         cell.labelName.attributedText = self.users[index.item].name
         cell.labelValue.attributedText = self.users[index.item].value
         return cell
@@ -51,7 +52,7 @@ class UsersView:View<UsersPresenter, UsersViewContent>, UICollectionViewDelegate
     }
     
     @objc func selectorSort(segmented:UISegmentedControl) {
-        self.presenter.sort = UsersPresenterSort(rawValue:segmented.selectedSegmentIndex)!
+        self.presenter.sort = UsersSort(rawValue:segmented.selectedSegmentIndex)!
         self.presenter.shouldUpdate()
     }
 }

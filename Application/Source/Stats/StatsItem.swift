@@ -1,6 +1,6 @@
 import Foundation
 
-struct StatsViewModelItem {
+struct StatsItem {
     var name:String
     var value:String
     

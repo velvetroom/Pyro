@@ -2,7 +2,7 @@ import Foundation
 import CleanArchitecture
 
 struct StatsViewModel:ViewModelProtocol {
-    var items:[StatsViewModelItem]
+    var items:[StatsItem]
     var actionsEnabled:Bool
     
     init() {

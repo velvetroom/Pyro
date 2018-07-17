@@ -2,7 +2,7 @@ import Foundation
 import CleanArchitecture
 import Pyro
 
-class UserInteractor:InteractorProtocol, PyroDelegate {
+class UsersInteractor:InteractorProtocol, PyroDelegate {
     weak var router:Router?
     weak var presenter:InteractorDelegateProtocol?
     var pyro:Pyro
