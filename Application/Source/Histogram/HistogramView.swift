@@ -1,13 +1,15 @@
 import UIKit
 
 class HistogramView:UIView {
+    weak var background:HistograBackgroundView!
     var months:[HistogramMonthView]
     
     init() {
         self.months = []
         super.init(frame:CGRect.zero)
         self.configureView()
-        self.makeMonths()
+        self.makeOutlets()
+        self.layoutOutlets()
     }
     
     required init?(coder:NSCoder) {
@@ -19,22 +21,49 @@ class HistogramView:UIView {
         self.clipsToBounds = true
     }
     
+    private func makeOutlets() {
+        self.makeBackground()
+        self.makeMonths()
+    }
+    
+    private func layoutOutlets() {
+        self.layoutBackground()
+    }
+    
+    private func makeBackground() {
+        let background:HistograBackgroundView = HistograBackgroundView()
+        self.background = background
+        self.addSubview(background)
+    }
+    
     private func makeMonths() {
-        let multiplier:CGFloat = 1.0 / CGFloat(Constants.months)
-        var rightAnchor:NSLayoutXAxisAnchor = self.leftAnchor
+        var anchor:NSLayoutXAxisAnchor = self.leftAnchor
         for _:Int in 0 ..< Constants.months {
             let month:HistogramMonthView = HistogramMonthView()
             self.months.append(month)
             self.addSubview(month)
-            month.leftAnchor.constraint(equalTo:rightAnchor).isActive = true
-            month.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
-            month.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
-            month.widthAnchor.constraint(equalTo:self.widthAnchor, multiplier:multiplier).isActive = true
-            rightAnchor = month.rightAnchor
+            self.layout(month:month, anchor:anchor)
+            anchor = month.rightAnchor
         }
+    }
+    
+    private func layoutBackground() {
+        self.background.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
+        self.background.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        self.background.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
+        self.background.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+    }
+    
+    private func layout(month:HistogramMonthView, anchor:NSLayoutXAxisAnchor) {
+        month.leftAnchor.constraint(equalTo:anchor).isActive = true
+        month.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        month.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
+        month.widthAnchor.constraint(equalTo:self.widthAnchor,
+                                     multiplier:Constants.monthWidthMultiplier).isActive = true
     }
 }
 
 private struct Constants {
     static let months:Int = 12
+    static let monthWidthMultiplier:CGFloat = 1.0 / CGFloat(Constants.months)
 }
