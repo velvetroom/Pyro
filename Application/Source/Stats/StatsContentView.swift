@@ -12,9 +12,7 @@ class StatsContentView:UIView {
         self.layoutOutlets()
     }
     
-    required init?(coder:NSCoder) {
-        return nil
-    }
+    required init?(coder:NSCoder) { return nil }
     
     private func configureView() {
         self.backgroundColor = UIColor.white
@@ -53,7 +51,6 @@ class StatsContentView:UIView {
     private func layoutAmount() {
         self.amount.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.amount.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
-        self.amount.heightAnchor.constraint(equalToConstant:Constants.amountHeight).isActive = true
         if #available(iOS 11.0, *) {
             self.amount.topAnchor.constraint(equalTo:self.safeAreaLayoutGuide.topAnchor).isActive = true
         } else {
@@ -64,7 +61,6 @@ class StatsContentView:UIView {
     private func layoutHistogram() {
         self.histogram.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.histogram.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
-        self.histogram.heightAnchor.constraint(equalToConstant:Constants.histogramHeight).isActive = true
         if #available(iOS 11.0, *) {
             self.histogram.bottomAnchor.constraint(equalTo:self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         } else {
@@ -76,12 +72,5 @@ class StatsContentView:UIView {
         self.years.topAnchor.constraint(equalTo:self.amount.bottomAnchor).isActive = true
         self.years.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.years.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
-        self.years.heightAnchor.constraint(equalToConstant:Constants.yearsHeight).isActive = true
     }
-}
-
-private struct Constants {
-    static let amountHeight:CGFloat = 110
-    static let histogramHeight:CGFloat = 300
-    static let yearsHeight:CGFloat = 60
 }

@@ -12,8 +12,14 @@ class HistogramView:UIView {
         self.layoutOutlets()
     }
     
-    required init?(coder:NSCoder) {
-        return nil
+    required init?(coder:NSCoder) { return nil }
+    override var intrinsicContentSize:CGSize { get { return CGSize(width:UIView.noIntrinsicMetric,
+                                                                   height:Constants.height) } }
+    
+    func update(items:[Month]) {
+        for index:Int in 0 ..< self.months.count {
+            self.months[index].update(amount:Constants.height * CGFloat(items[index].ratio))
+        }
     }
     
     private func configureView() {
@@ -64,6 +70,7 @@ class HistogramView:UIView {
 }
 
 private struct Constants {
+    static let height:CGFloat = 300
     static let months:Int = 12
     static let monthWidthMultiplier:CGFloat = 1.0 / CGFloat(Constants.months)
 }

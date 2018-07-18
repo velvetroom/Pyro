@@ -1,6 +1,7 @@
 import UIKit
 
 class UsersCellView:UICollectionViewCell {
+    static let identifier:String = String(describing:self)
     weak var name:UILabel!
     weak var value:UILabel!
     weak var border:UIView!

@@ -13,9 +13,9 @@ class StatsAmountView:UIView {
         self.layoutOutlets()
     }
     
-    required init?(coder:NSCoder) {
-        return nil
-    }
+    required init?(coder:NSCoder) { return nil }
+    override var intrinsicContentSize:CGSize { get { return CGSize(width:UIView.noIntrinsicMetric,
+                                                                   height:Constants.height) } }
     
     private func configureView() {
         self.isUserInteractionEnabled = false
@@ -116,4 +116,5 @@ private struct Constants {
     static let contributionsFontSize:CGFloat = 32
     static let titleFontSize:CGFloat = 14
     static let margin:CGFloat = 20
+    static let height:CGFloat = 110
 }

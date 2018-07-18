@@ -15,7 +15,6 @@ UICollectionViewDelegateFlowLayout {
     required init?(coder:NSCoder) { return nil }
     
     override func viewDidLoad() {
-        self.configureViewModel()
         self.configureView()
         super.viewDidLoad()
     }
@@ -25,18 +24,22 @@ UICollectionViewDelegateFlowLayout {
         self.navigationController?.setToolbarHidden(false, animated:false)
     }
     
-    func collectionView(_:UICollectionView, layout:UICollectionViewLayout, sizeForItemAt:IndexPath) -> CGSize {
-        return CGSize(width:Constants.cellWidth, height:self.content.years.bounds.height)
+    func collectionView(_:UICollectionView, layout:UICollectionViewLayout, insetForSectionAt:Int) -> UIEdgeInsets {
+        let margin:CGFloat = (self.content.years.bounds.width - YearsCellView.width) / 2.0
+        return UIEdgeInsets(top:0, left:margin, bottom:0, right:margin)
     }
     
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
-        let cell:YearsCellView = self.content.years.dequeueReusableCell(
-            withReuseIdentifier:String(describing:YearsCellView.self), for:index) as! YearsCellView
+        let cell:YearsCellView = self.content.years.dequeueReusableCell(withReuseIdentifier:YearsCellView.identifier,
+                                                                        for:index) as! YearsCellView
+        cell.label.text = String(self.years[index.item].value)
         return cell
     }
     
     func collectionView(_:UICollectionView, didSelectItemAt index:IndexPath) {
-        
+        self.content.years.scrollToItem(at:index, at:UICollectionView.ScrollPosition.centeredHorizontally,
+                                        animated:true)
+        self.presenter.select(year:self.years[index.item])
     }
     
     func collectionView(_:UICollectionView, numberOfItemsInSection:Int) -> Int { return self.years.count }
@@ -50,10 +53,6 @@ UICollectionViewDelegateFlowLayout {
     }
     
     @objc func selectorRefresh() {
-        
-    }
-}
 
-private struct Constants {
-    static let cellWidth:CGFloat = 100
+    }
 }

@@ -28,8 +28,8 @@ UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
-        let cell:UsersCellView = self.content.dequeueReusableCell(
-            withReuseIdentifier:String(describing:UsersCellView.self), for:index) as! UsersCellView
+        let cell:UsersCellView = self.content.dequeueReusableCell(withReuseIdentifier:UsersCellView.identifier,
+                                                                  for:index) as! UsersCellView
         cell.name.attributedText = self.users[index.item].name
         cell.value.attributedText = self.users[index.item].value
         return cell

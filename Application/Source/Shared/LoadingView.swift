@@ -19,10 +19,7 @@ class LoadingView:UIView {
         self.animatePulse()
     }
     
-    required init?(coder:NSCoder) {
-        return nil
-    }
-    
+    required init?(coder:NSCoder) { return nil }
     override var intrinsicContentSize:CGSize { get { return CGSize(width:Constants.size, height:Constants.size) } }
     
     private func configureView() {

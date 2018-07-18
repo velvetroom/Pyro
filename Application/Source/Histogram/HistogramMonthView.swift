@@ -1,6 +1,8 @@
 import UIKit
 
 class HistogramMonthView:UIView {
+    weak var layoutIndicatorBottom:NSLayoutConstraint!
+    weak var indicator:UIView!
     weak var borderLeft:UIView!
     weak var borderRight:UIView!
     
@@ -11,8 +13,13 @@ class HistogramMonthView:UIView {
         self.layoutOutlets()
     }
     
-    required init?(coder:NSCoder) {
-        return nil
+    required init?(coder:NSCoder) { return nil }
+    
+    func update(amount:CGFloat) {
+        self.layoutIndicatorBottom.constant = amount
+        UIView.animate(withDuration:Constants.animationDuration) { [weak self] in
+            self?.layoutIfNeeded()
+        }
     }
     
     private func configureView() {
@@ -22,11 +29,22 @@ class HistogramMonthView:UIView {
     private func makeOutlets() {
         self.makeBorderLeft()
         self.makeBorderRight()
+        self.makeIndicator()
     }
     
     private func layoutOutlets() {
         self.layoutBorderLeft()
         self.layoutBorderRight()
+        self.layoutIndicator()
+    }
+    
+    private func makeIndicator() {
+        let indicator:UIView = UIView()
+        indicator.backgroundColor = UIColor(white:0, alpha:0.2)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.isUserInteractionEnabled = false
+        self.indicator = indicator
+        self.addSubview(indicator)
     }
     
     private func makeBorderLeft() {
@@ -47,6 +65,14 @@ class HistogramMonthView:UIView {
         self.addSubview(borderRight)
     }
     
+    private func layoutIndicator() {
+        self.indicator.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
+        self.indicator.heightAnchor.constraint(equalToConstant:Constants.indicator).isActive = true
+        self.indicator.widthAnchor.constraint(equalToConstant:Constants.indicator).isActive = true
+        self.layoutIndicatorBottom = self.indicator.bottomAnchor.constraint(equalTo:self.bottomAnchor)
+        self.layoutIndicatorBottom.isActive = true
+    }
+    
     private func layoutBorderLeft() {
         self.borderLeft.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
         self.borderLeft.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
@@ -63,5 +89,7 @@ class HistogramMonthView:UIView {
 }
 
 private struct Constants {
+    static let animationDuration:TimeInterval = 0.3
+    static let indicator:CGFloat = 2
     static let border:CGFloat = 0.5
 }

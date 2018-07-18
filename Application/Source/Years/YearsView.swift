@@ -8,15 +8,17 @@ class YearsView:UICollectionView {
     }
     
     required init?(coder:NSCoder) { return nil }
+    override var intrinsicContentSize:CGSize { get { return CGSize(width:UIView.noIntrinsicMetric,
+                                                                   height:Constants.height) } }
     
     private func configureView() {
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = UIColor.clear
         self.translatesAutoresizingMaskIntoConstraints = false
         self.clipsToBounds = true
         self.showsVerticalScrollIndicator = true
         self.showsHorizontalScrollIndicator = false
-        self.alwaysBounceVertical = true
-        self.alwaysBounceHorizontal = false
+        self.alwaysBounceVertical = false
+        self.alwaysBounceHorizontal = true
     }
     
     private func configureFlow() {
@@ -26,5 +28,10 @@ class YearsView:UICollectionView {
         flow.minimumLineSpacing = 0
         flow.headerReferenceSize = CGSize.zero
         flow.footerReferenceSize = CGSize.zero
+        flow.itemSize = CGSize(width:YearsCellView.width, height:Constants.height)
     }
+}
+
+private struct Constants {
+    static let height:CGFloat = 120
 }

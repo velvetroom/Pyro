@@ -4,17 +4,18 @@ import CleanArchitecture
 class StatsPresenter:PresenterProtocol {
     var interactor:StatsInteractor!
     var viewModel:ViewModel!
+    private var factory:StatsFactory
     
-    required init() { }
+    required init() {
+        self.factory = StatsFactory()
+    }
     
     func synchronize() {
-//        self.updateWith(builder:StatsViewModelBuilderLoading())
         self.interactor.synchStats()
     }
     
     func deleteUser() {
-        let alert:DeleteView = DeleteView(title:nil, message:nil,
-                                                    preferredStyle:UIAlertController.Style.alert)
+        let alert:DeleteView = DeleteView(title:nil, message:nil, preferredStyle:UIAlertController.Style.alert)
         alert.presenter = self
         alert.configureView()
         self.interactor.router?.present(alert, animated:true, completion:nil)
@@ -24,21 +25,17 @@ class StatsPresenter:PresenterProtocol {
         self.interactor.delete()
     }
     
+    func select(year:Year) {
+        var property:StatsMonthsViewModel = StatsMonthsViewModel()
+        property.items = year.months
+        self.viewModel.update(property:property)
+    }
+    
     func didLoad() {
-        self.shouldUpdate()
+        self.viewModel.update(property:self.factory.makeContent())
     }
     
-    func shouldUpdate() {
-//        if let error:Error = self.interactor.error {
-//            self.updateWith(builder:StatsViewModelBuilderError(error:error))
-//        } else {
-//            self.updateWith(builder:StatsViewModelBuilderStats(stats:self.interactor.user.stats))
-//        }
+    func didAppear() {
+        self.viewModel.update(property:self.factory.makeYears())
     }
-    
-//    private func updateWith(builder:StatsViewModelBuilderProtocol) {
-//        var builder:StatsViewModelBuilderProtocol = builder
-//        builder.build()
-//        self.viewModel.update(property:builder.viewModel)
-//    }
 }
