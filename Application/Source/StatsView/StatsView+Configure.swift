@@ -5,8 +5,8 @@ extension StatsView {
         self.configureTitle()
         self.configureNavigation()
         self.configureToolbar()
-        self.content.streak.amount.text = "56"
-        self.content.contributions.amount.text = "13,456"
+        self.content.amount.streak.text = "56"
+        self.content.amount.contributions.text = "13,456"
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.never
         }
