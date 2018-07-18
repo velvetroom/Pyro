@@ -1,11 +1,11 @@
-import Foundation
+import UIKit
 
 struct Month {
-    var ratio:Float
-    var contributions:Int
+    var ratio:CGFloat
+    var contributions:NSAttributedString
     
     init() {
         self.ratio = 0
-        self.contributions = 0
+        self.contributions = NSAttributedString()
     }
 }

@@ -23,6 +23,9 @@
 		DAC0C9FE20FF3E0E00B5E98B /* StatsMonthsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0C9FD20FF3E0E00B5E98B /* StatsMonthsViewModel.swift */; };
 		DAC0CA0020FF3E1900B5E98B /* StatsYearsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0C9FF20FF3E1900B5E98B /* StatsYearsViewModel.swift */; };
 		DAC0CA0220FF413000B5E98B /* StatsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0CA0120FF413000B5E98B /* StatsFactory.swift */; };
+		DAC0CA1020FF612E00B5E98B /* StatsContentView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0CA0F20FF612E00B5E98B /* StatsContentView+Touch.swift */; };
+		DAC0CA1220FF6F4900B5E98B /* StatsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0CA1120FF6F4900B5E98B /* StatsDetailView.swift */; };
+		DAC0CA1420FF73E600B5E98B /* HistogramIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0CA1320FF73E600B5E98B /* HistogramIndicatorView.swift */; };
 		DACEB85A20F6484D0018DE79 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACEB85920F6484D0018DE79 /* brand.xcassets */; };
 		DAD6F4A920FE33E100548A2D /* HistogramMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD6F4A820FE33E100548A2D /* HistogramMonthView.swift */; };
 		DAD88E6420FDEABA0059F447 /* StatsAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD88E6320FDEABA0059F447 /* StatsAmountView.swift */; };
@@ -81,6 +84,9 @@
 		DAC0C9FD20FF3E0E00B5E98B /* StatsMonthsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsMonthsViewModel.swift; sourceTree = "<group>"; };
 		DAC0C9FF20FF3E1900B5E98B /* StatsYearsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsYearsViewModel.swift; sourceTree = "<group>"; };
 		DAC0CA0120FF413000B5E98B /* StatsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsFactory.swift; sourceTree = "<group>"; };
+		DAC0CA0F20FF612E00B5E98B /* StatsContentView+Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatsContentView+Touch.swift"; sourceTree = "<group>"; };
+		DAC0CA1120FF6F4900B5E98B /* StatsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDetailView.swift; sourceTree = "<group>"; };
+		DAC0CA1320FF73E600B5E98B /* HistogramIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramIndicatorView.swift; sourceTree = "<group>"; };
 		DACEB85920F6484D0018DE79 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAD6F4A820FE33E100548A2D /* HistogramMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramMonthView.swift; sourceTree = "<group>"; };
 		DAD88E6320FDEABA0059F447 /* StatsAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsAmountView.swift; sourceTree = "<group>"; };
@@ -164,8 +170,10 @@
 				DAE485FB20F47060003BF78A /* StatsView.swift */,
 				DABD000B20FC7BB600BC5818 /* StatsView+Configure.swift */,
 				DA4F5D8B20FCD53B00D3AA4A /* StatsContentView.swift */,
+				DAC0CA0F20FF612E00B5E98B /* StatsContentView+Touch.swift */,
 				DAD88E6320FDEABA0059F447 /* StatsAmountView.swift */,
 				DA8A8F2020FF2D68002EEFAE /* StatsTitleView.swift */,
+				DAC0CA1120FF6F4900B5E98B /* StatsDetailView.swift */,
 				DAC0CA0120FF413000B5E98B /* StatsFactory.swift */,
 			);
 			path = Stats;
@@ -209,6 +217,7 @@
 				DA07BB6820FE28180042175F /* HistogramView.swift */,
 				DA8A8F1320FF1030002EEFAE /* HistogramBackgroundView.swift */,
 				DAD6F4A820FE33E100548A2D /* HistogramMonthView.swift */,
+				DAC0CA1320FF73E600B5E98B /* HistogramIndicatorView.swift */,
 			);
 			path = Histogram;
 			sourceTree = "<group>";
@@ -376,10 +385,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE9D97D20FB93F3007E1357 /* UsersItem.swift in Sources */,
+				DAC0CA1420FF73E600B5E98B /* HistogramIndicatorView.swift in Sources */,
 				DA8A8F1420FF1030002EEFAE /* HistogramBackgroundView.swift in Sources */,
 				DAE4861120F47060003BF78A /* StatsView.swift in Sources */,
 				DA8A8F1920FF19A6002EEFAE /* YearsCellView.swift in Sources */,
 				DAC0CA0220FF413000B5E98B /* StatsFactory.swift in Sources */,
+				DAC0CA1220FF6F4900B5E98B /* StatsDetailView.swift in Sources */,
 				DA4F5D8E20FCDFAD00D3AA4A /* LoadingView.swift in Sources */,
 				DA8A8F2120FF2D68002EEFAE /* StatsTitleView.swift in Sources */,
 				DAE4860D20F47060003BF78A /* UsersContentView.swift in Sources */,
@@ -388,6 +399,7 @@
 				DAE4860B20F47060003BF78A /* UsersPresenter.swift in Sources */,
 				DA07BB6920FE28180042175F /* HistogramView.swift in Sources */,
 				DAFBF9A720FB7D3200B81D19 /* UsersView+Configure.swift in Sources */,
+				DAC0CA1020FF612E00B5E98B /* StatsContentView+Touch.swift in Sources */,
 				DAE4861220F47060003BF78A /* Router.swift in Sources */,
 				DAF0E0C320FA1F4F0010C121 /* DeleteView.swift in Sources */,
 				DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */,

@@ -7,7 +7,7 @@ class HistogramView:UIView {
     init() {
         self.months = []
         super.init(frame:CGRect.zero)
-        self.configureView()
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.makeOutlets()
         self.layoutOutlets()
     }
@@ -18,13 +18,9 @@ class HistogramView:UIView {
     
     func update(items:[Month]) {
         for index:Int in 0 ..< self.months.count {
-            self.months[index].update(amount:Constants.height * CGFloat(items[index].ratio))
+            self.months[index].update(amount:Constants.height * items[index].ratio)
+            self.months[index].contributions = items[index].contributions
         }
-    }
-    
-    private func configureView() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.clipsToBounds = true
     }
     
     private func makeOutlets() {

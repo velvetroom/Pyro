@@ -1,33 +1,37 @@
 import UIKit
 
 class StatsContentView:UIView {
+    weak var month:HistogramMonthView?
     weak var amount:StatsAmountView!
     weak var years:YearsView!
     weak var histogram:HistogramView!
+    weak var detail:StatsDetailView!
     
     init() {
         super.init(frame:CGRect.zero)
-        self.configureView()
+        self.backgroundColor = UIColor.white
         self.makeOutlets()
         self.layoutOutlets()
     }
     
     required init?(coder:NSCoder) { return nil }
-    
-    private func configureView() {
-        self.backgroundColor = UIColor.white
-    }
+    override func touchesBegan(_ touches:Set<UITouch>, with:UIEvent?) { self.touching(touch:touches.first!) }
+    override func touchesMoved(_ touches:Set<UITouch>, with:UIEvent?) { self.touching(touch:touches.first!) }
+    override func touchesEnded(_:Set<UITouch>, with:UIEvent?) { self.touchEnded() }
+    override func touchesCancelled(_:Set<UITouch>, with:UIEvent?) { self.touchEnded() }
     
     private func makeOutlets() {
         self.makeHistogram()
         self.makeYears()
         self.makeAmount()
+        self.makeDetail()
     }
     
     private func layoutOutlets() {
         self.layoutHistogram()
         self.layoutAmount()
         self.layoutYears()
+        self.layoutDetail()
     }
     
     private func makeAmount() {
@@ -46,6 +50,12 @@ class StatsContentView:UIView {
         let years:YearsView = YearsView()
         self.years = years
         self.addSubview(years)
+    }
+    
+    private func makeDetail() {
+        let detail:StatsDetailView = StatsDetailView()
+        self.detail = detail
+        self.addSubview(detail)
     }
     
     private func layoutAmount() {
@@ -72,5 +82,11 @@ class StatsContentView:UIView {
         self.years.topAnchor.constraint(equalTo:self.amount.bottomAnchor).isActive = true
         self.years.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.years.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+    }
+    
+    private func layoutDetail() {
+        self.detail.topAnchor.constraint(equalTo:self.years.bottomAnchor).isActive = true
+        self.detail.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
+        self.detail.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
     }
 }

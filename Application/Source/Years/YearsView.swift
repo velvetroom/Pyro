@@ -33,5 +33,5 @@ class YearsView:UICollectionView {
 }
 
 private struct Constants {
-    static let height:CGFloat = 120
+    static let height:CGFloat = 80
 }

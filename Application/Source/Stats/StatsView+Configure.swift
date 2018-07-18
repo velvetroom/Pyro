@@ -47,8 +47,8 @@ extension StatsView {
     private func updated(property:StatsContentViewModel) {
         self.delete.isEnabled = property.actionsEnabled
         self.synch.isEnabled = property.actionsEnabled
-        self.content.amount.streak.text = property.streak
-        self.content.amount.contributions.text = property.contributions
+        self.content.amount.streak.attributedText = property.streak
+        self.content.amount.contributions.attributedText = property.contributions
     }
     
     private func updated(property:StatsYearsViewModel) {
@@ -58,8 +58,8 @@ extension StatsView {
         if lastItem >= 0 {
             self.content.years.selectItem(at:IndexPath(item:lastItem, section:0), animated:false,
                                           scrollPosition:UICollectionView.ScrollPosition.centeredHorizontally)
+            self.presenter.select(year:self.years[lastItem])
         }
-        self.presenter.select(year:self.years[lastItem])
     }
     
     private func updated(property:StatsMonthsViewModel) {

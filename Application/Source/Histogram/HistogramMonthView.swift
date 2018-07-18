@@ -1,14 +1,16 @@
 import UIKit
 
 class HistogramMonthView:UIView {
-    weak var layoutIndicatorBottom:NSLayoutConstraint!
-    weak var indicator:UIView!
+    weak var indicator:HistogramIndicatorView!
     weak var borderLeft:UIView!
     weak var borderRight:UIView!
+    weak var background:HistograBackgroundView!
+    var contributions:NSAttributedString
     
     init() {
+        self.contributions = NSAttributedString()
         super.init(frame:CGRect.zero)
-        self.configureView()
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.makeOutlets()
         self.layoutOutlets()
     }
@@ -16,33 +18,44 @@ class HistogramMonthView:UIView {
     required init?(coder:NSCoder) { return nil }
     
     func update(amount:CGFloat) {
-        self.layoutIndicatorBottom.constant = amount
+        self.indicator.layoutY.constant = amount
         UIView.animate(withDuration:Constants.animationDuration) { [weak self] in
             self?.layoutIfNeeded()
         }
     }
     
-    private func configureView() {
-        self.translatesAutoresizingMaskIntoConstraints = false
+    func highlight() {
+        UIView.animate(withDuration:Constants.animationDuration) { [weak self] in
+            self?.indicator.highlight()
+            self?.background.alpha = 1
+            self?.layoutIfNeeded()
+        }
+    }
+    
+    func unhighlight() {
+        UIView.animate(withDuration:Constants.animationDuration) { [weak self] in
+            self?.indicator.unhighlight()
+            self?.background.alpha = 0
+            self?.layoutIfNeeded()
+        }
     }
     
     private func makeOutlets() {
+        self.makeBackground()
         self.makeBorderLeft()
         self.makeBorderRight()
         self.makeIndicator()
     }
     
     private func layoutOutlets() {
+        self.layoutBackground()
         self.layoutBorderLeft()
         self.layoutBorderRight()
         self.layoutIndicator()
     }
     
     private func makeIndicator() {
-        let indicator:UIView = UIView()
-        indicator.backgroundColor = UIColor(white:0, alpha:0.2)
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        indicator.isUserInteractionEnabled = false
+        let indicator:HistogramIndicatorView = HistogramIndicatorView()
         self.indicator = indicator
         self.addSubview(indicator)
     }
@@ -65,12 +78,17 @@ class HistogramMonthView:UIView {
         self.addSubview(borderRight)
     }
     
+    private func makeBackground() {
+        let background:HistograBackgroundView = HistograBackgroundView()
+        background.alpha = 0
+        self.background = background
+        self.addSubview(background)
+    }
+    
     private func layoutIndicator() {
         self.indicator.centerXAnchor.constraint(equalTo:self.centerXAnchor).isActive = true
-        self.indicator.heightAnchor.constraint(equalToConstant:Constants.indicator).isActive = true
-        self.indicator.widthAnchor.constraint(equalToConstant:Constants.indicator).isActive = true
-        self.layoutIndicatorBottom = self.indicator.bottomAnchor.constraint(equalTo:self.bottomAnchor)
-        self.layoutIndicatorBottom.isActive = true
+        self.indicator.layoutY = self.indicator.centerYAnchor.constraint(equalTo:self.bottomAnchor)
+        self.indicator.layoutY.isActive = true
     }
     
     private func layoutBorderLeft() {
@@ -86,10 +104,16 @@ class HistogramMonthView:UIView {
         self.borderRight.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
         self.borderRight.widthAnchor.constraint(equalToConstant:Constants.border).isActive = true
     }
+    
+    private func layoutBackground() {
+        self.background.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
+        self.background.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        self.background.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
+        self.background.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+    }
 }
 
 private struct Constants {
-    static let animationDuration:TimeInterval = 0.3
-    static let indicator:CGFloat = 2
+    static let animationDuration:TimeInterval = 0.4
     static let border:CGFloat = 0.5
 }
