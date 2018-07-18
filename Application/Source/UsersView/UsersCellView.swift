@@ -1,6 +1,6 @@
 import UIKit
 
-class UsersCell:UICollectionViewCell {
+class UsersCellView:UICollectionViewCell {
     weak var name:UILabel!
     weak var value:UILabel!
     weak var border:UIView!

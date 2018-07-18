@@ -1,7 +1,7 @@
 import UIKit
 
-class Histogram:UIView {
-    var months:[HistogramMonth]
+class HistogramView:UIView {
+    var months:[HistogramMonthView]
     
     init() {
         self.months = []
@@ -23,7 +23,7 @@ class Histogram:UIView {
         let multiplier:CGFloat = 1.0 / CGFloat(Constants.months)
         var rightAnchor:NSLayoutXAxisAnchor = self.leftAnchor
         for _:Int in 0 ..< Constants.months {
-            let month:HistogramMonth = HistogramMonth()
+            let month:HistogramMonthView = HistogramMonthView()
             self.months.append(month)
             self.addSubview(month)
             month.leftAnchor.constraint(equalTo:rightAnchor).isActive = true

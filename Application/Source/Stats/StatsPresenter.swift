@@ -13,7 +13,7 @@ class StatsPresenter:PresenterProtocol {
     }
     
     func deleteUser() {
-        let alert:DeleteUser = DeleteUser(title:nil, message:nil,
+        let alert:DeleteView = DeleteView(title:nil, message:nil,
                                                     preferredStyle:UIAlertController.Style.alert)
         alert.presenter = self
         alert.configureView()

@@ -1,6 +1,6 @@
 import UIKit
 
-class DeleteUser:UIAlertController {
+class DeleteView:UIAlertController {
     weak var presenter:StatsPresenter?
     
     func configureView() {

@@ -1,6 +1,6 @@
 import UIKit
 
-class StatsStreak:UIView {
+class StatsContributionsView:UIView {
     weak var amount:UILabel!
     weak var title:UILabel!
     
@@ -37,6 +37,7 @@ class StatsStreak:UIView {
         amount.backgroundColor = UIColor.clear
         amount.textColor = UIColor.black
         amount.font = UIFont.systemFont(ofSize:Constants.amountFontSize, weight:UIFont.Weight.light)
+        amount.textAlignment = NSTextAlignment.right
         self.amount = amount
         self.addSubview(amount)
     }
@@ -46,21 +47,22 @@ class StatsStreak:UIView {
         title.translatesAutoresizingMaskIntoConstraints = false
         title.backgroundColor = UIColor.clear
         title.textColor = UIColor(white:0, alpha:0.3)
+        title.textAlignment = NSTextAlignment.right
         title.font = UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.regular)
-        title.text = NSLocalizedString("StatsViewContent_StreakTitle", comment:String())
+        title.text = NSLocalizedString("StatsViewContent_ContributionsTitle", comment:String())
         self.title = title
         self.addSubview(title)
     }
     
     private func layoutAmount() {
-        self.amount.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
+        self.amount.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
         self.amount.bottomAnchor.constraint(equalTo:self.title.topAnchor).isActive = true
         self.amount.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         self.amount.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
     
     private func layoutTitle() {
-        self.title.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
+        self.title.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
         self.title.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
         self.title.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         self.title.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
@@ -68,6 +70,6 @@ class StatsStreak:UIView {
 }
 
 private struct Constants {
-    static let amountFontSize:CGFloat = 70
+    static let amountFontSize:CGFloat = 32
     static let titleFontSize:CGFloat = 14
 }

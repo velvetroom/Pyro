@@ -1,6 +1,6 @@
 import UIKit
 
-class UsersContent:UICollectionView {
+class UsersContentView:UICollectionView {
     init() {
         super.init(frame:CGRect.zero, collectionViewLayout:UICollectionViewFlowLayout())
         self.configureView()

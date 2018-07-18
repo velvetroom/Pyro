@@ -1,6 +1,6 @@
 import UIKit
 
-class CreateUser:UIAlertController, UITextFieldDelegate {
+class CreateView:UIAlertController, UITextFieldDelegate {
     weak var presenter:UsersPresenter?
     private weak var name:UITextField!
     private weak var url:UITextField!

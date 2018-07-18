@@ -1,9 +1,9 @@
 import UIKit
 
-class StatsContent:UIView {
-    weak var streak:StatsStreak!
-    weak var contributions:StatsContributions!
-    weak var histogram:Histogram!
+class StatsContentView:UIView {
+    weak var streak:StatsStreakView!
+    weak var contributions:StatsContributionsView!
+    weak var histogram:HistogramView!
     
     init() {
         super.init(frame:CGRect.zero)
@@ -33,19 +33,19 @@ class StatsContent:UIView {
     }
     
     private func makeStreak() {
-        let viewStreak:StatsStreak = StatsStreak()
+        let viewStreak:StatsStreakView = StatsStreakView()
         self.streak = viewStreak
         self.addSubview(viewStreak)
     }
     
     private func makeContributions() {
-        let viewContributions:StatsContributions = StatsContributions()
+        let viewContributions:StatsContributionsView = StatsContributionsView()
         self.contributions = viewContributions
         self.addSubview(viewContributions)
     }
     
     private func makeHistogram() {
-        let histogram:Histogram = Histogram()
+        let histogram:HistogramView = HistogramView()
         self.histogram = histogram
         self.addSubview(histogram)
     }

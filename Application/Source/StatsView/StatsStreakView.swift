@@ -1,6 +1,6 @@
 import UIKit
 
-class StatsContributions:UIView {
+class StatsStreakView:UIView {
     weak var amount:UILabel!
     weak var title:UILabel!
     
@@ -37,7 +37,6 @@ class StatsContributions:UIView {
         amount.backgroundColor = UIColor.clear
         amount.textColor = UIColor.black
         amount.font = UIFont.systemFont(ofSize:Constants.amountFontSize, weight:UIFont.Weight.light)
-        amount.textAlignment = NSTextAlignment.right
         self.amount = amount
         self.addSubview(amount)
     }
@@ -47,22 +46,21 @@ class StatsContributions:UIView {
         title.translatesAutoresizingMaskIntoConstraints = false
         title.backgroundColor = UIColor.clear
         title.textColor = UIColor(white:0, alpha:0.3)
-        title.textAlignment = NSTextAlignment.right
         title.font = UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.regular)
-        title.text = NSLocalizedString("StatsViewContent_ContributionsTitle", comment:String())
+        title.text = NSLocalizedString("StatsViewContent_StreakTitle", comment:String())
         self.title = title
         self.addSubview(title)
     }
     
     private func layoutAmount() {
-        self.amount.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+        self.amount.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.amount.bottomAnchor.constraint(equalTo:self.title.topAnchor).isActive = true
         self.amount.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         self.amount.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
     }
     
     private func layoutTitle() {
-        self.title.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+        self.title.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.title.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
         self.title.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         self.title.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
@@ -70,6 +68,6 @@ class StatsContributions:UIView {
 }
 
 private struct Constants {
-    static let amountFontSize:CGFloat = 32
+    static let amountFontSize:CGFloat = 70
     static let titleFontSize:CGFloat = 14
 }

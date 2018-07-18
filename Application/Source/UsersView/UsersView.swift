@@ -1,7 +1,7 @@
 import UIKit
 import CleanArchitecture
 
-class UsersView:View<UsersPresenter, UsersContent>, UICollectionViewDelegate, UICollectionViewDataSource,
+class UsersView:View<UsersPresenter, UsersContentView>, UICollectionViewDelegate, UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout {
     var users:[UsersItem]
     
@@ -28,8 +28,8 @@ UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_:UICollectionView, cellForItemAt index:IndexPath) -> UICollectionViewCell {
-        let cell:UsersCell = self.content.dequeueReusableCell(
-            withReuseIdentifier:String(describing:UsersCell.self), for:index) as! UsersCell
+        let cell:UsersCellView = self.content.dequeueReusableCell(
+            withReuseIdentifier:String(describing:UsersCellView.self), for:index) as! UsersCellView
         cell.name.attributedText = self.users[index.item].name
         cell.value.attributedText = self.users[index.item].value
         return cell
