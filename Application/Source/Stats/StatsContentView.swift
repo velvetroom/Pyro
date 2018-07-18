@@ -22,12 +22,14 @@ class StatsContentView:UIView {
     
     private func makeOutlets() {
         self.makeHistogram()
+        self.makeYears()
         self.makeAmount()
     }
     
     private func layoutOutlets() {
         self.layoutHistogram()
         self.layoutAmount()
+        self.layoutYears()
     }
     
     private func makeAmount() {
@@ -40,6 +42,12 @@ class StatsContentView:UIView {
         let histogram:HistogramView = HistogramView()
         self.histogram = histogram
         self.addSubview(histogram)
+    }
+    
+    private func makeYears() {
+        let years:YearsView = YearsView()
+        self.years = years
+        self.addSubview(years)
     }
     
     private func layoutAmount() {
@@ -62,6 +70,13 @@ class StatsContentView:UIView {
         } else {
             self.histogram.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
         }
+    }
+    
+    private func layoutYears() {
+        self.years.topAnchor.constraint(equalTo:self.amount.bottomAnchor).isActive = true
+        self.years.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
+        self.years.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+        self.years.heightAnchor.constraint(equalToConstant:Constants.yearsHeight).isActive = true
     }
 }
 

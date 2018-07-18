@@ -2,9 +2,10 @@ import UIKit
 
 extension StatsView {
     func configureView() {
-        self.configureTitle()
         self.configureNavigation()
         self.configureToolbar()
+        self.content.years.delegate = self
+        self.content.years.dataSource = self
         self.content.amount.streak.text = "56"
         self.content.amount.contributions.text = "13,456"
         if #available(iOS 11.0, *) {
@@ -19,28 +20,15 @@ extension StatsView {
         }
     }
     
-    private func configureTitle() {
-        let string:NSMutableAttributedString = NSMutableAttributedString()
-        string.append(NSAttributedString(string:self.presenter.interactor.user.name,
-                                         attributes:[NSAttributedString.Key.font: UIFont.systemFont(
-                                            ofSize:Constants.titleFontSize, weight:UIFont.Weight.regular)]))
-        string.append(NSAttributedString(string:"\n\(self.presenter.interactor.user.url)",
-                                         attributes:[NSAttributedString.Key.font: UIFont.systemFont(
-                                            ofSize:Constants.subtitleFontSize, weight:UIFont.Weight.light)]))
-        let label:UILabel = UILabel(frame:CGRect(x:0, y:0, width:Constants.titleWidth, height:Constants.titleHeight))
-        label.numberOfLines = 0
-        label.attributedText = string
-        label.textColor = UIColor.black
-        label.backgroundColor = UIColor.clear
-        self.navigationItem.titleView = label
-    }
-    
     private func configureNavigation() {
+        let title:StatsTitleView = StatsTitleView()
+        title.configure(user:self.presenter.interactor.user)
         let buttonDelete:UIBarButtonItem = UIBarButtonItem(
             title:NSLocalizedString("StatsView_Delete", comment:String()),
             style:UIBarButtonItem.Style.plain, target:self, action:#selector(self.selectorDelete))
         self.delete = buttonDelete
         self.navigationItem.rightBarButtonItem = buttonDelete
+        self.navigationItem.titleView = title
     }
     
     private func configureToolbar() {
@@ -50,11 +38,4 @@ extension StatsView {
         self.synch = buttonSynch
         self.setToolbarItems([buttonSynch], animated:false)
     }
-}
-
-private struct Constants {
-    static let titleWidth:CGFloat = 1500
-    static let titleHeight:CGFloat = 44
-    static let titleFontSize:CGFloat = 14
-    static let subtitleFontSize:CGFloat = 10
 }

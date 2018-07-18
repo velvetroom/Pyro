@@ -39,7 +39,7 @@ UICollectionViewDelegateFlowLayout {
         self.presenter.select(item:self.users[index.item])
     }
     
-    func collectionView(_:UICollectionView, numberOfItemsInSection section:Int) -> Int { return self.users.count }
+    func collectionView(_:UICollectionView, numberOfItemsInSection:Int) -> Int { return self.users.count }
     
     override func willTransition(to newCollection:UITraitCollection,
                                  with coordinator:UIViewControllerTransitionCoordinator) {
