@@ -49,7 +49,7 @@ UICollectionViewDelegateFlowLayout {
     }
     
     @objc func selectorSynch() {
-        
+        self.presenter.synchronize()
     }
     
     @objc func selectorRefresh() {
