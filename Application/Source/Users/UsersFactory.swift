@@ -3,9 +3,11 @@ import Pyro
 
 class UsersFactory {
     private let numberFormatter:NumberFormatter
+    private var unknown:NSAttributedString!
     
     init() {
         self.numberFormatter = NumberFormatter()
+        self.unknown = self.makeUnknown()
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
     }
     
@@ -21,30 +23,34 @@ class UsersFactory {
     }
     
     func byContributions(pyro:Pyro) -> UsersViewModel {
-        var viewModel:UsersViewModel = UsersViewModel()/*
+        var viewModel:UsersViewModel = UsersViewModel()
         for user:User in self.usersByContributions(pyro:pyro) {
             var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
-//            if user.stats.timestamp != nil {
-//                item.value = self.makeValue(value:user.stats.contributions.count)
-//            }
+            if let metrics:Metrics = user.metrics {
+                item.value = self.makeValue(value:metrics.contributions.count)
+            } else {
+                item.value = self.unknown
+            }
             viewModel.users.append(item)
-        }*/
+        }
         return viewModel
     }
     
     func byStreak(pyro:Pyro) -> UsersViewModel {
-        var viewModel:UsersViewModel = UsersViewModel()/*
+        var viewModel:UsersViewModel = UsersViewModel()
         for user:User in self.usersByStreak(pyro:pyro) {
             var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
-//            if user.stats.timestamp != nil {
-//                item.value = self.makeValue(value:user.stats.streak.max)
-//            }
+            if let metrics:Metrics = user.metrics {
+                item.value = self.makeValue(value:metrics.streak.max)
+            } else {
+                item.value = self.unknown
+            }
             viewModel.users.append(item)
-        }*/
+        }
         return viewModel
     }
     
@@ -59,30 +65,34 @@ class UsersFactory {
         string.append(url)
         return string
     }
-    /*
+    
     private func usersByContributions(pyro:Pyro) -> [User] {
         return pyro.users.sorted { (userA:User, userB:User) -> Bool in
-            if userA.stats.timestamp == nil {
-                return false
-            } else if userB.stats.timestamp == nil {
-                return true
+            if let metricsA:Metrics = userA.metrics {
+                if let metricsB:Metrics = userB.metrics {
+                    return metricsA.contributions.count > metricsB.contributions.count
+                } else {
+                    return true
+                }
             } else {
-                return userA.stats.contributions.count > userB.stats.contributions.count
+                return false
             }
         }
-    }*/
-    /*
+    }
+    
     private func usersByStreak(pyro:Pyro) -> [User] {
         return pyro.users.sorted { (userA:User, userB:User) -> Bool in
-            if userA.stats.timestamp == nil {
-                return false
-            } else if userB.stats.timestamp == nil {
-                return true
+            if let metricsA:Metrics = userA.metrics {
+                if let metricsB:Metrics = userB.metrics {
+                    return metricsA.streak.max > metricsB.streak.max
+                } else {
+                    return true
+                }
             } else {
-                return userA.stats.streak.max > userB.stats.streak.max
+                return false
             }
         }
-    }*/
+    }
     
     private func makeValue(value:Int) -> NSAttributedString {
         let stringValue:String = self.numberFormatter.string(from:NSNumber(value:value))!
@@ -91,10 +101,20 @@ class UsersFactory {
                 UIFont.systemFont(ofSize:Constants.valueFontSize, weight:UIFont.Weight.ultraLight)])
         return string
     }
+    
+    private func makeUnknown() -> NSAttributedString {
+        let string:NSAttributedString = NSAttributedString(string:
+            NSLocalizedString("UsersFactory_Unknown", comment:String()), attributes:
+            [NSAttributedString.Key.font :
+                UIFont.systemFont(ofSize:Constants.valueFontSize, weight:UIFont.Weight.ultraLight),
+             NSAttributedString.Key.foregroundColor : UIColor(white:0, alpha:0.4)])
+        return string
+    }
 }
 
 private struct Constants {
     static let titleFontSize:CGFloat = 16
     static let subtitleFontSize:CGFloat = 12
     static let valueFontSize:CGFloat = 13
+    static let unknownFontSize:CGFloat = 10
 }
