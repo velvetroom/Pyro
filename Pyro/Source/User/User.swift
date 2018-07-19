@@ -10,6 +10,5 @@ public class User:Codable {
         self.identifier = String()
         self.name = String()
         self.url = String()
-        self.metrics = Metrics()
     }
 }

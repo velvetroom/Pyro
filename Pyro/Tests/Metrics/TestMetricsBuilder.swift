@@ -1,7 +1,7 @@
 import XCTest
 @testable import Pyro
 
-class TestStatsBuilder:XCTestCase {
+class TestMetricsBuilder:XCTestCase {
     private var builder:MetricsBuilder!
     
     override func setUp() {

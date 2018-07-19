@@ -11,7 +11,7 @@
 		DA01228220F49A1C00B9C5EF /* TestScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228120F49A1C00B9C5EF /* TestScraper.swift */; };
 		DA01228420F49AB700B9C5EF /* ScraperItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228320F49AB700B9C5EF /* ScraperItem.swift */; };
 		DA20629820F4F910001B58A1 /* MetricsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629720F4F910001B58A1 /* MetricsBuilder.swift */; };
-		DA20629B20F4F93F001B58A1 /* TestStatsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629A20F4F93F001B58A1 /* TestStatsBuilder.swift */; };
+		DA20629B20F4F93F001B58A1 /* TestMetricsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629A20F4F93F001B58A1 /* TestMetricsBuilder.swift */; };
 		DA20629D20F4FA2F001B58A1 /* MetricsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629C20F4FA2F001B58A1 /* MetricsConstants.swift */; };
 		DA20629F20F50098001B58A1 /* MetricsCommandProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629E20F50098001B58A1 /* MetricsCommandProtocol.swift */; };
 		DA2062A120F502A3001B58A1 /* MetricsCommandComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A020F502A3001B58A1 /* MetricsCommandComposite.swift */; };
@@ -39,7 +39,7 @@
 		DA28087320F5DE5000BCDA13 /* MockReportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087220F5DE5000BCDA13 /* MockReportProtocol.swift */; };
 		DA28087520F5DE6C00BCDA13 /* TestReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087420F5DE6C00BCDA13 /* TestReport.swift */; };
 		DA28087720F5DF5E00BCDA13 /* MetricsBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087620F5DF5E00BCDA13 /* MetricsBuilderProtocol.swift */; };
-		DA28087920F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087820F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift */; };
+		DA28087920F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087820F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift */; };
 		DA28087B20F5E1A800BCDA13 /* ReportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087A20F5E1A800BCDA13 /* ReportDelegate.swift */; };
 		DA28087D20F5E1DF00BCDA13 /* MockReportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087C20F5E1DF00BCDA13 /* MockReportDelegate.swift */; };
 		DA28087F20F5E4FD00BCDA13 /* ReportConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087E20F5E4FD00BCDA13 /* ReportConstants.swift */; };
@@ -93,7 +93,7 @@
 		DA01228120F49A1C00B9C5EF /* TestScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScraper.swift; sourceTree = "<group>"; };
 		DA01228320F49AB700B9C5EF /* ScraperItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperItem.swift; sourceTree = "<group>"; };
 		DA20629720F4F910001B58A1 /* MetricsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsBuilder.swift; sourceTree = "<group>"; };
-		DA20629A20F4F93F001B58A1 /* TestStatsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStatsBuilder.swift; sourceTree = "<group>"; };
+		DA20629A20F4F93F001B58A1 /* TestMetricsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMetricsBuilder.swift; sourceTree = "<group>"; };
 		DA20629C20F4FA2F001B58A1 /* MetricsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsConstants.swift; sourceTree = "<group>"; };
 		DA20629E20F50098001B58A1 /* MetricsCommandProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCommandProtocol.swift; sourceTree = "<group>"; };
 		DA2062A020F502A3001B58A1 /* MetricsCommandComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCommandComposite.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		DA28087220F5DE5000BCDA13 /* MockReportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportProtocol.swift; sourceTree = "<group>"; };
 		DA28087420F5DE6C00BCDA13 /* TestReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReport.swift; sourceTree = "<group>"; };
 		DA28087620F5DF5E00BCDA13 /* MetricsBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsBuilderProtocol.swift; sourceTree = "<group>"; };
-		DA28087820F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStatsBuilderProtocol.swift; sourceTree = "<group>"; };
+		DA28087820F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMetricsBuilderProtocol.swift; sourceTree = "<group>"; };
 		DA28087A20F5E1A800BCDA13 /* ReportDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDelegate.swift; sourceTree = "<group>"; };
 		DA28087C20F5E1DF00BCDA13 /* MockReportDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportDelegate.swift; sourceTree = "<group>"; };
 		DA28087E20F5E4FD00BCDA13 /* ReportConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportConstants.swift; sourceTree = "<group>"; };
@@ -203,13 +203,13 @@
 			path = Scraper;
 			sourceTree = "<group>";
 		};
-		DA20629920F4F932001B58A1 /* Stats */ = {
+		DA20629920F4F932001B58A1 /* Metrics */ = {
 			isa = PBXGroup;
 			children = (
-				DA20629A20F4F93F001B58A1 /* TestStatsBuilder.swift */,
-				DA28087820F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift */,
+				DA20629A20F4F93F001B58A1 /* TestMetricsBuilder.swift */,
+				DA28087820F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift */,
 			);
-			path = Stats;
+			path = Metrics;
 			sourceTree = "<group>";
 		};
 		DA2062AC20F51A6A001B58A1 /* Request */ = {
@@ -301,7 +301,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DAA00E3320F493E1009386CE /* Stats */ = {
+		DAA00E3320F493E1009386CE /* Metrics */ = {
 			isa = PBXGroup;
 			children = (
 				DAA00E3420F4940A009386CE /* Metrics.swift */,
@@ -321,7 +321,7 @@
 				DA2062AA20F50416001B58A1 /* MetricsCommandCurrentStreak.swift */,
 				DA20629C20F4FA2F001B58A1 /* MetricsConstants.swift */,
 			);
-			path = Stats;
+			path = Metrics;
 			sourceTree = "<group>";
 		};
 		DAE4861820F47084003BF78A /* Tests */ = {
@@ -329,7 +329,7 @@
 			children = (
 				DAE9E93020F78FA800B5492C /* Pyro */,
 				DA28087120F5DE4200BCDA13 /* Report */,
-				DA20629920F4F932001B58A1 /* Stats */,
+				DA20629920F4F932001B58A1 /* Metrics */,
 				DA2062BA20F5248A001B58A1 /* Load */,
 				DAE4861920F47084003BF78A /* Storage */,
 				DA01228020F49A0A00B9C5EF /* Scraper */,
@@ -366,7 +366,7 @@
 				DA54042B21005BF900E6F448 /* Contributions */,
 				DAE9E92B20F78CB800B5492C /* Pyro */,
 				DA28086B20F5DD5A00BCDA13 /* Report */,
-				DAA00E3320F493E1009386CE /* Stats */,
+				DAA00E3320F493E1009386CE /* Metrics */,
 				DAE4862020F4708E003BF78A /* User */,
 				DA2062AC20F51A6A001B58A1 /* Request */,
 				DA2062BD20F527B2001B58A1 /* Load */,
@@ -594,12 +594,12 @@
 				DA2062BC20F5249A001B58A1 /* MockRequestProtocol.swift in Sources */,
 				DA28087320F5DE5000BCDA13 /* MockReportProtocol.swift in Sources */,
 				DA01228220F49A1C00B9C5EF /* TestScraper.swift in Sources */,
-				DA28087920F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift in Sources */,
+				DA28087920F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift in Sources */,
 				DA2062C520F529F2001B58A1 /* MockLoadDelegate.swift in Sources */,
 				DA28087D20F5E1DF00BCDA13 /* MockReportDelegate.swift in Sources */,
 				DA28086A20F5DC6200BCDA13 /* MockLoadProtocol.swift in Sources */,
 				DA28087520F5DE6C00BCDA13 /* TestReport.swift in Sources */,
-				DA20629B20F4F93F001B58A1 /* TestStatsBuilder.swift in Sources */,
+				DA20629B20F4F93F001B58A1 /* TestMetricsBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
