@@ -55,4 +55,20 @@ class TestMetricsBuilder_Max:XCTestCase {
             }
         }
     }
+    
+    func testMaxStreakNotRepeat() {
+        var itemA:ScraperItem = ScraperItem()
+        itemA.count = 1
+        itemA.date = "2000-01-01"
+        var itemB:ScraperItem = ScraperItem()
+        itemB.count = 3
+        itemB.date = "2000-01-02"
+        var itemC:ScraperItem = ScraperItem()
+        itemC.count = 1
+        itemC.date = "2000-01-01"
+        let statsA:Metrics = self.builder.build(items:[itemA, itemB])
+        let statsB:Metrics = self.builder.build(items:[itemC])
+        XCTAssertEqual(statsA.streak.max, 2, "Invalid streak")
+        XCTAssertEqual(statsB.streak.max, 1, "Invalid streak")
+    }
 }
