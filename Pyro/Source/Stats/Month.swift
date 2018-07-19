@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ContributionsMonth:Codable {
+public struct Month:Codable {
     public var contributions:Int
     public var value:Int
     

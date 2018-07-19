@@ -1,6 +1,6 @@
 import Foundation
 
-class StatsCommandMaxStreak:StatsCommandProtocol {
+class MetricsCommandMaxStreak:MetricsCommandProtocol {
     private var maxStreak:Int
     private var currentStreak:Int
     
@@ -18,7 +18,7 @@ class StatsCommandMaxStreak:StatsCommandProtocol {
         }
     }
     
-    func print(stats:inout Stats) {
+    func print(stats:inout Metrics) {
         stats.streak.max = max(self.currentStreak, self.maxStreak)
     }
 }

@@ -20,7 +20,7 @@ class TestScraper:XCTestCase {
         super.setUp()
         self.scraper = Scraper()
         self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = StatsConstants.dateFormat
+        self.dateFormatter.dateFormat = MetricsConstants.dateFormat
         let urlMin:URL = Bundle(for:type(of:self)).url(forResource:"StatsMin", withExtension:"stub")!
         let urlDuplicates:URL = Bundle(for:type(of:self)).url(forResource:"StatsDuplicates", withExtension:"stub")!
         let urlFuture:URL = Bundle(for:type(of:self)).url(forResource:"StatsFuture", withExtension:"stub")!

@@ -1,6 +1,6 @@
 import Foundation
 
-class StatsCommandLastContribution:StatsCommandProtocol {
+class MetricsCommandLastContribution:MetricsCommandProtocol {
     private var date:String?
     
     func evaluate(item:ScraperItem) {
@@ -9,10 +9,10 @@ class StatsCommandLastContribution:StatsCommandProtocol {
         }
     }
     
-    func print(stats:inout Stats) {
+    func print(stats:inout Metrics) {
         if let date:String = self.date {
             let formatter:DateFormatter = DateFormatter()
-            formatter.dateFormat = StatsConstants.dateFormat
+            formatter.dateFormat = MetricsConstants.dateFormat
             stats.contributions.last = formatter.date(from:date)!
         }
     }

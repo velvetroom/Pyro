@@ -1,11 +1,11 @@
 import Foundation
 @testable import Pyro
 
-class MockStatsBuilderProtocol:StatsBuilderProtocol {
+class MockStatsBuilderProtocol:MetricsBuilderProtocol {
     var onBuild:(() -> Void)?
     
-    func build(items:[ScraperItem]) -> Stats {
+    func build(items:[ScraperItem]) -> Metrics {
         self.onBuild?()
-        return Stats()
+        return Metrics()
     }
 }

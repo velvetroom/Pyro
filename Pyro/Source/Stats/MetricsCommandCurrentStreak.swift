@@ -1,6 +1,6 @@
 import Foundation
 
-class StatsCommandCurrentStreak:StatsCommandProtocol {
+class MetricsCommandCurrentStreak:MetricsCommandProtocol {
     private var streak:Int
     
     init() {
@@ -15,7 +15,7 @@ class StatsCommandCurrentStreak:StatsCommandProtocol {
         }
     }
     
-    func print(stats:inout Stats) {
+    func print(stats:inout Metrics) {
         stats.streak.current = self.streak
     }
 }

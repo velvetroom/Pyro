@@ -1,5 +1,5 @@
 import Foundation
 
-struct StatsConstants {
+struct MetricsConstants {
     static let dateFormat:String = "yyyy-MM-dd"
 }

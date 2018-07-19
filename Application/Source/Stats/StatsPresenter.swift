@@ -32,10 +32,10 @@ class StatsPresenter:PresenterProtocol {
     }
     
     func didLoad() {
-        self.viewModel.update(property:self.factory.makeContent(stats:self.interactor.user.stats))
+//        self.viewModel.update(property:self.factory.makeContent(stats:self.interactor.user.stats))
     }
     
     func didAppear() {
-        self.viewModel.update(property:self.factory.makeYears(stats:self.interactor.user.stats))
+//        self.viewModel.update(property:self.factory.makeYears(stats:self.interactor.user.stats))
     }
 }

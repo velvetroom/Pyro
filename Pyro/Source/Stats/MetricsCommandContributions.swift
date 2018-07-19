@@ -1,6 +1,6 @@
 import Foundation
 
-class StatsCommandContributions:StatsCommandProtocol {
+class MetricsCommandContributions:MetricsCommandProtocol {
     private var contributions:Int
     
     init() {
@@ -11,7 +11,7 @@ class StatsCommandContributions:StatsCommandProtocol {
         self.contributions += item.count
     }
     
-    func print(stats:inout Stats) {
+    func print(stats:inout Metrics) {
         stats.contributions.count = self.contributions
     }
 }

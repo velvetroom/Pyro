@@ -1,7 +1,7 @@
 import Foundation
 
-public struct ContributionsYear:Codable {
-    public var months:[ContributionsMonth]
+public struct Year:Codable {
+    public var months:[Month]
     public var contributions:Int
     public var value:Int
     

@@ -21,30 +21,30 @@ class UsersFactory {
     }
     
     func byContributions(pyro:Pyro) -> UsersViewModel {
-        var viewModel:UsersViewModel = UsersViewModel()
+        var viewModel:UsersViewModel = UsersViewModel()/*
         for user:User in self.usersByContributions(pyro:pyro) {
             var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
-            if user.stats.timestamp != nil {
-                item.value = self.makeValue(value:user.stats.contributions.count)
-            }
+//            if user.stats.timestamp != nil {
+//                item.value = self.makeValue(value:user.stats.contributions.count)
+//            }
             viewModel.users.append(item)
-        }
+        }*/
         return viewModel
     }
     
     func byStreak(pyro:Pyro) -> UsersViewModel {
-        var viewModel:UsersViewModel = UsersViewModel()
+        var viewModel:UsersViewModel = UsersViewModel()/*
         for user:User in self.usersByStreak(pyro:pyro) {
             var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
-            if user.stats.timestamp != nil {
-                item.value = self.makeValue(value:user.stats.streak.max)
-            }
+//            if user.stats.timestamp != nil {
+//                item.value = self.makeValue(value:user.stats.streak.max)
+//            }
             viewModel.users.append(item)
-        }
+        }*/
         return viewModel
     }
     
@@ -59,7 +59,7 @@ class UsersFactory {
         string.append(url)
         return string
     }
-    
+    /*
     private func usersByContributions(pyro:Pyro) -> [User] {
         return pyro.users.sorted { (userA:User, userB:User) -> Bool in
             if userA.stats.timestamp == nil {
@@ -70,8 +70,8 @@ class UsersFactory {
                 return userA.stats.contributions.count > userB.stats.contributions.count
             }
         }
-    }
-    
+    }*/
+    /*
     private func usersByStreak(pyro:Pyro) -> [User] {
         return pyro.users.sorted { (userA:User, userB:User) -> Bool in
             if userA.stats.timestamp == nil {
@@ -82,7 +82,7 @@ class UsersFactory {
                 return userA.stats.streak.max > userB.stats.streak.max
             }
         }
-    }
+    }*/
     
     private func makeValue(value:Int) -> NSAttributedString {
         let stringValue:String = self.numberFormatter.string(from:NSNumber(value:value))!

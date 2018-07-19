@@ -10,7 +10,7 @@ class Scraper:ScraperProtocol {
         self.repository = ScraperItems()
         self.today = Date()
         self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = StatsConstants.dateFormat
+        self.dateFormatter.dateFormat = MetricsConstants.dateFormat
     }
     
     func makeItems(data:Data) throws {

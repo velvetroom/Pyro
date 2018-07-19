@@ -2,11 +2,11 @@ import XCTest
 @testable import Pyro
 
 class TestStatsBuilder:XCTestCase {
-    private var builder:StatsBuilder!
+    private var builder:MetricsBuilder!
     
     override func setUp() {
         super.setUp()
-        self.builder = StatsBuilder()
+        self.builder = MetricsBuilder()
     }
     
     func testMakesFirstContribution() {
@@ -18,9 +18,9 @@ class TestStatsBuilder:XCTestCase {
         var itemC:ScraperItem = ScraperItem()
         itemC.date = "2001-11-07"
         let dateFormatter:DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = StatsConstants.dateFormat
+        dateFormatter.dateFormat = MetricsConstants.dateFormat
         let expectedDate:Date = dateFormatter.date(from:itemB.date)!
-        let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
+        let stats:Metrics = self.builder.build(items:[itemA, itemB, itemC])
         XCTAssertEqual(stats.contributions.first, expectedDate, "Invalid stats")
     }
     
@@ -33,9 +33,9 @@ class TestStatsBuilder:XCTestCase {
         var itemC:ScraperItem = ScraperItem()
         itemC.date = "2001-11-07"
         let dateFormatter:DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = StatsConstants.dateFormat
+        dateFormatter.dateFormat = MetricsConstants.dateFormat
         let expectedDate:Date = dateFormatter.date(from:itemB.date)!
-        let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
+        let stats:Metrics = self.builder.build(items:[itemA, itemB, itemC])
         XCTAssertEqual(stats.contributions.last, expectedDate, "Invalid stats")
     }
     
@@ -50,7 +50,7 @@ class TestStatsBuilder:XCTestCase {
         itemC.count = 5
         itemC.date = "2000-01-01"
         let expectedCount:Int = itemA.count + itemB.count + itemC.count
-        let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
+        let stats:Metrics = self.builder.build(items:[itemA, itemB, itemC])
         XCTAssertEqual(stats.contributions.count, expectedCount, "Invalid stats")
     }
     
@@ -77,7 +77,7 @@ class TestStatsBuilder:XCTestCase {
         var itemH:ScraperItem = ScraperItem()
         itemH.count = 56
         itemH.date = "2000-01-01"
-        let stats:Stats = self.builder.build(items:[itemA, itemB, itemC, itemD, itemE, itemF, itemG, itemH])
+        let stats:Metrics = self.builder.build(items:[itemA, itemB, itemC, itemD, itemE, itemF, itemG, itemH])
         XCTAssertEqual(stats.streak.max, 3, "Invalid stats")
     }
     
@@ -91,12 +91,12 @@ class TestStatsBuilder:XCTestCase {
         var itemC:ScraperItem = ScraperItem()
         itemC.count = 5
         itemC.date = "2000-01-01"
-        let stats:Stats = self.builder.build(items:[itemA, itemB, itemC])
+        let stats:Metrics = self.builder.build(items:[itemA, itemB, itemC])
         XCTAssertEqual(stats.streak.current, 2, "Invalid stats")
     }
     
     func testAddTimestamp() {
-        let stats:Stats = self.builder.build(items:[])
+        let stats:Metrics = self.builder.build(items:[])
         XCTAssertNotNil(stats.timestamp, "Timestamp not added")
     }
 }

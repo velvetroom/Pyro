@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Stats:Codable {
+public struct Metrics:Codable {
     public var timestamp:Date
     public var contributions:Contributions
     public var streak:Streak
