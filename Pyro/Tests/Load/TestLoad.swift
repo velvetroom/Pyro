@@ -34,6 +34,20 @@ class TestLoad:XCTestCase {
         XCTAssertTrue(received, "Not received")
     }
     
+    func testReleasesScraperOnSuccess() {
+        XCTAssertNotNil(self.load.scraper, "Should initially be not nil")
+        self.request.data = Data()
+        self.load.start(user:User())
+        XCTAssertNil(self.load.scraper, "Should finally be nil")
+    }
+    
+    func testReleasesErrorOnSuccess() {
+        XCTAssertNotNil(self.load.scraper, "Should initially be not nil")
+        self.request.error = RequestError.emptyResponse
+        self.load.start(user:User())
+        XCTAssertNil(self.load.scraper, "Should finally be nil")
+    }
+    
     func testRequestAllYears() {
         let receiveStartingYear:XCTestExpectation = self.expectation(description:"Starting year missing")
         let receiveEndingYear:XCTestExpectation = self.expectation(description:"Ending year missing")

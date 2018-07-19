@@ -2,8 +2,8 @@ import Foundation
 
 class Load:LoadProtocol {
     weak var delegate:LoadDelegate?
+    var scraper:ScraperProtocol?
     var request:RequestProtocol
-    var scraper:ScraperProtocol
     private var user:User!
     
     init() {
@@ -27,19 +27,23 @@ class Load:LoadProtocol {
     private func load(year:Int) {
         self.request.make(user:self.user, year:year, onCompletion: { [weak self] (data:Data) in
             do {
-                try self?.scraper.makeItems(data:data)
+                try self?.scraper?.makeItems(data:data)
             } catch {
                 self?.finished()
                 return
             }
             self?.next(year:year + 1)
         }, onError: { [weak self] (error:Error) in
+            self?.scraper = nil
             self?.delegate?.loadFailed(error:error)
         })
     }
     
     private func finished() {
-        self.delegate?.loadCompleted(items:self.scraper.items)
+        if let items:[ScraperItem] = self.scraper?.items {
+            self.delegate?.loadCompleted(items:items)
+        }
+        self.scraper = nil
     }
 }
 
