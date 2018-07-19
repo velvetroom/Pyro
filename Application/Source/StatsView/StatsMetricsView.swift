@@ -1,7 +1,6 @@
 import UIKit
 
-class StatsContentView:UIView {
-    weak var month:HistogramMonthView?
+class StatsMetricsView:UIView {
     weak var amount:StatsAmountView!
     weak var years:YearsView!
     weak var histogram:HistogramView!
@@ -9,16 +8,12 @@ class StatsContentView:UIView {
     
     init() {
         super.init(frame:CGRect.zero)
-        self.backgroundColor = UIColor.white
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.makeOutlets()
         self.layoutOutlets()
     }
     
     required init?(coder:NSCoder) { return nil }
-    override func touchesBegan(_ touches:Set<UITouch>, with:UIEvent?) { self.touching(touch:touches.first!) }
-    override func touchesMoved(_ touches:Set<UITouch>, with:UIEvent?) { self.touching(touch:touches.first!) }
-    override func touchesEnded(_:Set<UITouch>, with:UIEvent?) { self.touchEnded() }
-    override func touchesCancelled(_:Set<UITouch>, with:UIEvent?) { self.touchEnded() }
     
     private func makeOutlets() {
         self.makeHistogram()
