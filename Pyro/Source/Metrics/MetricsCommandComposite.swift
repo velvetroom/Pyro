@@ -9,7 +9,8 @@ class MetricsCommandComposite:MetricsCommandProtocol {
             MetricsCommandLastContribution(),
             MetricsCommandContributions(),
             MetricsCommandMaxStreak(),
-            MetricsCommandCurrentStreak()]
+            MetricsCommandCurrentStreak(),
+            MetricsCommandYears()]
     }
     
     func evaluate(item:ScraperItem) {
