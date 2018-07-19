@@ -4,11 +4,15 @@ class MetricsCommandYears:MetricsCommandProtocol {
     private var items:[Year]
     private var year:Year
     private var month:Month
+    private var maxYear:Int
+    private var maxMonth:Int
     
     init() {
         self.items = []
         self.year = Year()
         self.month = Month()
+        self.maxYear = 0
+        self.maxMonth = 0
     }
     
     func evaluate(item:ScraperItem) {
@@ -17,9 +21,10 @@ class MetricsCommandYears:MetricsCommandProtocol {
     }
     
     func print(stats:inout Metrics) {
-        self.year.months.append(self.month)
-        self.items.append(self.year)
+        self.storeYear()
         stats.contributions.years = self.items
+        stats.contributions.max.year = self.maxYear
+        stats.contributions.max.month = self.maxMonth
     }
     
     private func evaluateYear(item:ScraperItem) {
@@ -35,14 +40,17 @@ class MetricsCommandYears:MetricsCommandProtocol {
     
     private func evaluateMonth(item:ScraperItem) {
         if self.month.value != item.month {
-            self.year.months.append(month)
+            self.storeMonth()
             self.newMonth(item:item)
         }
         self.month.contributions += item.count
     }
     
     private func storeYear() {
-        self.year.months.append(self.month)
+        if self.year.contributions > self.maxYear {
+            self.maxYear = self.year.contributions
+        }
+        self.storeMonth()
         self.items.append(self.year)
     }
     
@@ -56,5 +64,12 @@ class MetricsCommandYears:MetricsCommandProtocol {
     private func newMonth(item:ScraperItem) {
         self.month = Month()
         self.month.value = item.month
+    }
+    
+    private func storeMonth() {
+        if self.month.contributions > self.maxMonth {
+            self.maxMonth = self.month.contributions
+        }
+        self.year.months.append(self.month)
     }
 }
