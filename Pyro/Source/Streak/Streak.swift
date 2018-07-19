@@ -1,6 +1,6 @@
 import Foundation
 
-public struct StatsStreak:Codable {
+public struct Streak:Codable {
     public var max:Int
     public var current:Int
     

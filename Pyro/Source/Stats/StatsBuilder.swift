@@ -9,7 +9,6 @@ class StatsBuilder:StatsBuilderProtocol {
     
     func build(items:[ScraperItem]) -> Stats {
         var stats:Stats = Stats()
-        stats.timestamp = Date()
         for item:ScraperItem in items {
             self.command.evaluate(item:item)
         }

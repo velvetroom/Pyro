@@ -1,14 +1,13 @@
 import Foundation
 
 public struct Stats:Codable {
-    public var timestamp:Date?
-    public var contributions:StatsContributions
-    public var streak:StatsStreak
-    public var histogram:StatsHistogram
+    public var timestamp:Date
+    public var contributions:Contributions
+    public var streak:Streak
     
     public init() {
-        self.contributions = StatsContributions()
-        self.streak = StatsStreak()
-        self.histogram = StatsHistogram()
+        self.timestamp = Date()
+        self.contributions = Contributions()
+        self.streak = Streak()
     }
 }
