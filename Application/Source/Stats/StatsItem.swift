@@ -1,7 +1,7 @@
 import Foundation
 
-struct Year {
-    var months:[Month]
+struct StatsItem {
+    var months:[StatsItemMonth]
     var value:Int
     
     init() {

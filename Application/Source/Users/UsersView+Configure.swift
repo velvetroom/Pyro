@@ -38,20 +38,10 @@ extension UsersView {
     }
     
     private func updated(property:UsersViewModel) {
-        let removeIndexes:[IndexPath] = self.indexesFor(count:self.users.count)
-        let addIndexes:[IndexPath] = self.indexesFor(count:property.users.count)
         self.content.performBatchUpdates({ [weak self] in
-            self?.content.deleteItems(at:removeIndexes)
-            self?.content.insertItems(at:addIndexes)
+            self?.content.deleteSections(IndexSet(integer:0))
+            self?.content.insertSections(IndexSet(integer:0))
             self?.users = property.users
         })
-    }
-    
-    private func indexesFor(count:Int) -> [IndexPath] {
-        var indexes:[IndexPath] = []
-        for index:Int in 0 ..< count {
-            indexes.append(IndexPath(item:index, section:0))
-        }
-        return indexes
     }
 }

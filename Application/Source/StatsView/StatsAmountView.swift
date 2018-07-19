@@ -66,6 +66,6 @@ class StatsAmountView:UIView {
 }
 
 private struct Constants {
-    static let margin:CGFloat = 20
-    static let height:CGFloat = 110
+    static let margin:CGFloat = 10
+    static let height:CGFloat = 92
 }

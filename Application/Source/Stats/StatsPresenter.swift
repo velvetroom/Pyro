@@ -1,5 +1,6 @@
 import UIKit
 import CleanArchitecture
+import Pyro
 
 class StatsPresenter:PresenterProtocol {
     var interactor:StatsInteractor!
@@ -11,6 +12,7 @@ class StatsPresenter:PresenterProtocol {
     }
     
     func synchronize() {
+        self.viewModel.update(property:self.factory.makeStateLoading())
         self.interactor.synchStats()
     }
     
@@ -25,17 +27,28 @@ class StatsPresenter:PresenterProtocol {
         self.interactor.delete()
     }
     
-    func select(year:Year) {
+    func select(item:StatsItem) {
         var property:StatsMonthsViewModel = StatsMonthsViewModel()
-        property.items = year.months
+        property.items = item.months
         self.viewModel.update(property:property)
     }
     
     func didLoad() {
-//        self.viewModel.update(property:self.factory.makeContent(stats:self.interactor.user.stats))
+        self.updateState()
+        self.updateContent()
     }
     
-    func didAppear() {
-//        self.viewModel.update(property:self.factory.makeYears(stats:self.interactor.user.stats))
+    func shouldUpdate() {
+        self.updateState()
+        self.updateContent()
+    }
+    
+    private func updateState() {
+        self.viewModel.update(property:self.factory.makeState(user:self.interactor.user))
+    }
+    
+    private func updateContent() {
+        guard let metrics:Metrics = self.interactor.user.metrics else { return }
+        self.viewModel.update(property:self.factory.makeContent(metrics:metrics))
     }
 }

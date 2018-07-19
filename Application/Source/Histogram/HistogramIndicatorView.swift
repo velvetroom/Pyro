@@ -3,9 +3,13 @@ import UIKit
 class HistogramIndicatorView:UIView {
     weak var layoutY:NSLayoutConstraint!
     private var indicatorSize:CGSize
+    private let sizeHighlight:CGSize
+    private let sizeUnhighlight:CGSize
     
     init() {
-        self.indicatorSize = CGSize(width:Constants.small, height:Constants.small)
+        self.sizeHighlight = CGSize(width:Constants.highlightSize, height:Constants.highlightSize)
+        self.sizeUnhighlight = CGSize(width:Constants.unhighlightSize, height:Constants.unhighlightSize)
+        self.indicatorSize = self.sizeUnhighlight
         super.init(frame:CGRect.zero)
         self.configureView()
     }
@@ -14,16 +18,14 @@ class HistogramIndicatorView:UIView {
     override var intrinsicContentSize:CGSize { get { return self.indicatorSize } }
     
     func highlight() {
-        self.indicatorSize = CGSize(width:Constants.big, height:Constants.big)
+        self.indicatorSize = self.sizeHighlight
         self.alpha = Constants.alphaOn
-        self.layer.cornerRadius = Constants.big / 2.0
         self.invalidateIntrinsicContentSize()
     }
     
     func unhighlight() {
-        self.indicatorSize = CGSize(width:Constants.small, height:Constants.small)
+        self.indicatorSize = self.sizeUnhighlight
         self.alpha = Constants.alphaOff
-        self.layer.cornerRadius = 0
         self.invalidateIntrinsicContentSize()
     }
     
@@ -37,8 +39,8 @@ class HistogramIndicatorView:UIView {
 }
 
 private struct Constants {
-    static let small:CGFloat = 2
-    static let big:CGFloat = 12
+    static let unhighlightSize:CGFloat = 12
+    static let highlightSize:CGFloat = 6
     static let alphaOn:CGFloat = 1
-    static let alphaOff:CGFloat = 0.4
+    static let alphaOff:CGFloat = 0.04
 }

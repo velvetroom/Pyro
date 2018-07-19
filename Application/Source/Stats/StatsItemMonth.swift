@@ -1,6 +1,6 @@
 import UIKit
 
-struct Month {
+struct StatsItemMonth {
     var ratio:CGFloat
     var contributions:NSAttributedString
     

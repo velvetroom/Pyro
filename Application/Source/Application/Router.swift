@@ -10,7 +10,14 @@ class Router:UINavigationController {
     
     required init?(coder:NSCoder) { return nil }
     
-    func routeToUsers(pyro:Pyro, user:User) {
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(animated)
+        if let gesture:UIGestureRecognizer = self.interactivePopGestureRecognizer {
+            self.view.removeGestureRecognizer(gesture)
+        }
+    }
+    
+    func routeToStats(pyro:Pyro, user:User) {
         let view:StatsView = StatsView()
         view.presenter.interactor.pyro = pyro
         view.presenter.interactor.user = user

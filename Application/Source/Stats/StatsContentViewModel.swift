@@ -2,13 +2,13 @@ import Foundation
 import CleanArchitecture
 
 struct StatsContentViewModel:ViewModelProtocol {
+    var items:[StatsItem]
     var streak:NSAttributedString
     var contributions:NSAttributedString
-    var actionsEnabled:Bool
     
     init() {
+        self.items = []
         self.streak = NSAttributedString()
         self.contributions = NSAttributedString()
-        self.actionsEnabled = false
     }
 }

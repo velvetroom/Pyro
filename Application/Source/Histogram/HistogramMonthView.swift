@@ -10,6 +10,7 @@ class HistogramMonthView:UIView {
     init() {
         self.contributions = NSAttributedString()
         super.init(frame:CGRect.zero)
+        self.isUserInteractionEnabled = false
         self.translatesAutoresizingMaskIntoConstraints = false
         self.makeOutlets()
         self.layoutOutlets()
@@ -114,6 +115,6 @@ class HistogramMonthView:UIView {
 }
 
 private struct Constants {
-    static let animationDuration:TimeInterval = 0.4
+    static let animationDuration:TimeInterval = 0.3
     static let border:CGFloat = 0.5
 }

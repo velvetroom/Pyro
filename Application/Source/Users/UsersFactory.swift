@@ -8,7 +8,8 @@ class UsersFactory {
     init() {
         self.numberFormatter = NumberFormatter()
         self.unknown = self.makeUnknown()
-        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        self.numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        self.numberFormatter.groupingSeparator = NSLocalizedString("Grouping_Separator", comment:String())
     }
     
     func byName(pyro:Pyro) -> UsersViewModel {

@@ -22,6 +22,7 @@ class StatsTitleView:UILabel {
         self.numberOfLines = 0
         self.textColor = UIColor.black
         self.backgroundColor = UIColor.clear
+        self.isUserInteractionEnabled = false
     }
 }
 
