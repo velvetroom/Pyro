@@ -36,14 +36,21 @@ class Request:RequestProtocol {
     private func request(user:User, year:Int) -> URLRequest? {
         guard
             let userPath:String = user.url.addingPercentEncoding(withAllowedCharacters:CharacterSet.urlPathAllowed),
-            let url:URL = URL(string:RequestConstants.urlPrefix + userPath + RequestConstants.urlMiddle +
-                String(year) + RequestConstants.urlSuffix)
+            let url:URL = URL(string:Constants.urlPrefix + userPath + Constants.urlMiddle + String(year) +
+                Constants.urlSuffix)
         else { return nil }
-        var request:URLRequest = URLRequest(url:url,
-                                            cachePolicy:URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData,
-                                            timeoutInterval:RequestConstants.timeout)
-        request.httpMethod = RequestConstants.method
+        var request:URLRequest = URLRequest(url:url, cachePolicy:
+            URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData, timeoutInterval:Constants.timeout)
+        request.httpMethod = Constants.method
         request.allowsCellularAccess = true
         return request
     }
+}
+
+private struct Constants {
+    static let method:String = "GET"
+    static let urlPrefix:String = "https://github.com/users/"
+    static let urlMiddle:String = "/contributions?from="
+    static let urlSuffix:String = "-01-01"
+    static let timeout:TimeInterval = 15
 }

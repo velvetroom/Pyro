@@ -17,13 +17,13 @@ class Scraper:ScraperProtocol {
         let string:String = String(data:data, encoding:String.Encoding.utf8)!
         let items:[String] = self.makeComponents(string:string)
         for item:String in items {
-            let components:[String] = item.components(separatedBy:ScraperConstants.prefixDate)
+            let components:[String] = item.components(separatedBy:Constants.prefixDate)
             try self.makeItemWith(components:components)
         }
     }
     
     private func makeComponents(string:String) -> [String] {
-        var components:[String] = string.components(separatedBy:ScraperConstants.prefixCount)
+        var components:[String] = string.components(separatedBy:Constants.prefixCount)
         if components.count > 0 {
             components.removeFirst()
         }
@@ -42,7 +42,7 @@ class Scraper:ScraperProtocol {
     }
     
     private func date(components:[String]) -> String  {
-        return String(components[1].prefix(ScraperConstants.dateLength))
+        return String(components[1].prefix(Constants.dateLength))
     }
     
     private func valid(date:String) throws -> Bool {
@@ -63,4 +63,11 @@ class Scraper:ScraperProtocol {
         else { return 0 }
         return countInt
     }
+}
+
+private struct Constants {
+    static let prefixCount:String = "data-count=\""
+    static let prefixDate:String = "\" data-date=\""
+    static let dateSeparator:String = "-"
+    static let dateLength:Int = 10
 }

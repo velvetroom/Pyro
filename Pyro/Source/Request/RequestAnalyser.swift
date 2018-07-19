@@ -31,10 +31,16 @@ class RequestAnalyser {
     
     private func analyse(data:Data, statusCode:Int) {
         switch statusCode {
-        case RequestConstants.codeSuccess: self.onCompletion?(data)
-        case RequestConstants.codeBanned: self.onError?(RequestError.banned)
-        case RequestConstants.codeFourZeroFour: self.onError?(RequestError.fourZeroFour)
+        case Constants.success: self.onCompletion?(data)
+        case Constants.banned: self.onError?(RequestError.banned)
+        case Constants.fourZeroFour: self.onError?(RequestError.fourZeroFour)
         default: self.onError?(RequestError.unknown)
         }
     }
+}
+
+private struct Constants {
+    static let success:Int = 200
+    static let fourZeroFour:Int = 404
+    static let banned:Int = 429
 }

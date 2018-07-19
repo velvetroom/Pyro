@@ -10,7 +10,7 @@ class Report:ReportProtocol, LoadDelegate {
     init() {
         self.load = Load()
         self.builder = MetricsBuilder()
-        self.dispatch = DispatchQueue(label:ReportConstants.identifier, qos:DispatchQoS.background,
+        self.dispatch = DispatchQueue(label:Constants.identifier, qos:DispatchQoS.background,
                                       attributes:DispatchQueue.Attributes.concurrent,
                                       autoreleaseFrequency:DispatchQueue.AutoreleaseFrequency.inherit,
                                       target:DispatchQueue.global(qos:DispatchQoS.QoSClass.background))
@@ -36,4 +36,8 @@ class Report:ReportProtocol, LoadDelegate {
             self?.delegate?.reportFailed(error:error)
         }
     }
+}
+
+private struct Constants {
+    static let identifier:String = "pyro.report"
 }

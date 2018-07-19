@@ -73,4 +73,9 @@ class TestScraper:XCTestCase {
     func testThrowIfItemsInTheFuture() {
         XCTAssertThrowsError(try self.scraper.makeItems(data:self.dataFuture), "Not throwing")
     }
+    
+    func testParseYear() {
+        XCTAssertNoThrow(try self.scraper.makeItems(data:self.dataMin), "Failed to scrap")
+        XCTAssertEqual(2018, self.scraper.items.first?.year, "Invalid year")
+    }
 }

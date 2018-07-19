@@ -13,11 +13,11 @@ class Load:LoadProtocol {
     
     func start(user:User) {
         self.user = user
-        self.next(year:LoadConstants.startingYear)
+        self.next(year:Constants.startingYear)
     }
     
     private func next(year:Int) {
-        if year <= LoadConstants.endingYear {
+        if year <= Constants.endingYear {
             self.load(year:year)
         } else {
             self.finished()
@@ -41,4 +41,9 @@ class Load:LoadProtocol {
     private func finished() {
         self.delegate?.loadCompleted(items:self.scraper.items)
     }
+}
+
+private struct Constants {
+    static let startingYear:Int = 2007
+    static let endingYear:Int = 2020
 }
