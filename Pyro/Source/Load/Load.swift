@@ -8,11 +8,11 @@ class Load:LoadProtocol {
     
     init() {
         self.request = Request()
-        self.scraper = Scraper()
     }
     
     func start(user:User) {
         self.user = user
+        self.scraper = Scraper()
         self.next(year:Constants.startingYear)
     }
     
