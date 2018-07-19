@@ -39,9 +39,9 @@ class TestLoad:XCTestCase {
         let receiveEndingYear:XCTestExpectation = self.expectation(description:"Ending year missing")
         self.request.data = Data()
         self.request.onReceived = { (year:Int) in
-            if year == LoadConstants.startingYear {
+            if year == 2007 {
                 receiveStartingYear.fulfill()
-            } else if year == LoadConstants.endingYear {
+            } else if year == 2020 {
                 receiveEndingYear.fulfill()
             }
         }

@@ -36,6 +36,8 @@ class Scraper:ScraperProtocol {
             var item:ScraperItem = ScraperItem()
             item.date = date
             item.count = self.count(components:components)
+            item.year = self.year(date:date)
+            item.month = self.month(date:date)
             self.repository.checklist[date] = true
             self.repository.items.append(item)
         }
@@ -62,6 +64,23 @@ class Scraper:ScraperProtocol {
             let countInt:Int = Int(countString)
         else { return 0 }
         return countInt
+    }
+    
+    private func year(date:String) -> Int {
+        guard
+            let yearString:String = date.components(separatedBy:Constants.dateSeparator).first,
+            let year:Int = Int(yearString)
+        else { return 0 }
+        return year
+    }
+    
+    private func month(date:String) -> Int {
+        let components:[String] = date.components(separatedBy:Constants.dateSeparator)
+        guard
+            components.count > 1,
+            let month:Int = Int(components[1])
+        else { return 0 }
+        return month
     }
 }
 

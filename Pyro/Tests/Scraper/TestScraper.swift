@@ -78,4 +78,9 @@ class TestScraper:XCTestCase {
         XCTAssertNoThrow(try self.scraper.makeItems(data:self.dataMin), "Failed to scrap")
         XCTAssertEqual(2018, self.scraper.items.first?.year, "Invalid year")
     }
+    
+    func testParseMonth() {
+        XCTAssertNoThrow(try self.scraper.makeItems(data:self.dataMin), "Failed to scrap")
+        XCTAssertEqual(6, self.scraper.items.first?.month, "Invalid month")
+    }
 }
