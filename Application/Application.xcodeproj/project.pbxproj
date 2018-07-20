@@ -18,6 +18,7 @@
 		DA8A8F1B20FF2715002EEFAE /* StatsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F1A20FF2715002EEFAE /* StatsItem.swift */; };
 		DA8A8F1F20FF27E6002EEFAE /* StatsItemMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F1E20FF27E6002EEFAE /* StatsItemMonth.swift */; };
 		DA8A8F2120FF2D68002EEFAE /* StatsTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F2020FF2D68002EEFAE /* StatsTitleView.swift */; };
+		DA9784182101CCA50090A086 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACEB85920F6484D0018DE79 /* brand.xcassets */; };
 		DAA00E2D20F48ADD009386CE /* StatsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2C20F48ADD009386CE /* StatsContentViewModel.swift */; };
 		DABD000A20FC666A00BC5818 /* UsersSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD000920FC666A00BC5818 /* UsersSort.swift */; };
 		DAC0C9FE20FF3E0E00B5E98B /* StatsMonthsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0C9FD20FF3E0E00B5E98B /* StatsMonthsViewModel.swift */; };
@@ -31,7 +32,6 @@
 		DAC6C3FF2100A21800DC5B77 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6C3FE2100A21800DC5B77 /* StatsView.swift */; };
 		DAC6C4022100A3D000DC5B77 /* StatsMetricsTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6C4012100A3D000DC5B77 /* StatsMetricsTouchView.swift */; };
 		DAC6C4042100AA5400DC5B77 /* StatsSynchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6C4032100AA5400DC5B77 /* StatsSynchView.swift */; };
-		DACEB85A20F6484D0018DE79 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACEB85920F6484D0018DE79 /* brand.xcassets */; };
 		DAD6F4A920FE33E100548A2D /* HistogramMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD6F4A820FE33E100548A2D /* HistogramMonthView.swift */; };
 		DAD88E6420FDEABA0059F447 /* StatsAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD88E6320FDEABA0059F447 /* StatsAmountView.swift */; };
 		DAE4860420F47060003BF78A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE485E820F47060003BF78A /* Localizable.strings */; };
@@ -357,7 +357,7 @@
 			files = (
 				DAE4860420F47060003BF78A /* Localizable.strings in Resources */,
 				DAE4860520F47060003BF78A /* LaunchScreen.storyboard in Resources */,
-				DACEB85A20F6484D0018DE79 /* brand.xcassets in Resources */,
+				DA9784182101CCA50090A086 /* brand.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
