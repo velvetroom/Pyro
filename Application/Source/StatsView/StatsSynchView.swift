@@ -25,7 +25,7 @@ class StatsSynchView:UIView {
         label.isUserInteractionEnabled = false
         label.font = UIFont.systemFont(ofSize:Constants.fontSize, weight:UIFont.Weight.light)
         label.numberOfLines = 0
-        label.textColor = UIColor(white:0, alpha:0.35)
+        label.textColor = UIColor(white:0, alpha:0.45)
         self.label = label
         self.addSubview(label)
     }

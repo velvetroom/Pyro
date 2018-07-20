@@ -49,6 +49,12 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
     
     func collectionView(_:UICollectionView, numberOfItemsInSection:Int) -> Int { return self.items.count }
     
+    override func willTransition(to newCollection:UITraitCollection,
+                                 with coordinator:UIViewControllerTransitionCoordinator) {
+        super.willTransition(to:newCollection, with:coordinator)
+        self.collection.collectionViewLayout.invalidateLayout()
+    }
+    
     private func showLastYear() {
         guard self.items.count > 0 else { return }
         self.collection.selectItem(at:IndexPath(item:self.items.count - 1, section:0), animated:true,
@@ -58,5 +64,5 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
 }
 
 private struct Constants {
-    static let showDelay:TimeInterval = 0.5
+    static let showDelay:TimeInterval = 0.3
 }

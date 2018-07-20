@@ -5,6 +5,7 @@ class StatsMetricsView:UIView {
     weak var years:YearsView!
     weak var histogram:HistogramView!
     weak var detail:StatsDetailView!
+    weak var border:UIView!
     
     init() {
         super.init(frame:CGRect.zero)
@@ -16,6 +17,7 @@ class StatsMetricsView:UIView {
     required init?(coder:NSCoder) { return nil }
     
     private func makeOutlets() {
+        self.makeBorder()
         self.makeHistogram()
         self.makeYears()
         self.makeAmount()
@@ -27,6 +29,7 @@ class StatsMetricsView:UIView {
         self.layoutAmount()
         self.layoutYears()
         self.layoutDetail()
+        self.layoutBorder()
     }
     
     private func makeAmount() {
@@ -51,6 +54,15 @@ class StatsMetricsView:UIView {
         let detail:StatsDetailView = StatsDetailView()
         self.detail = detail
         self.addSubview(detail)
+    }
+    
+    private func makeBorder() {
+        let border:UIView = UIView()
+        border.backgroundColor = UIColor(white:0, alpha:0.1)
+        border.translatesAutoresizingMaskIntoConstraints = false
+        border.isUserInteractionEnabled = false
+        self.border = border
+        self.addSubview(border)
     }
     
     private func layoutAmount() {
@@ -84,4 +96,17 @@ class StatsMetricsView:UIView {
         self.detail.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.detail.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
     }
+    
+    private func layoutBorder() {
+        self.border.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
+        self.border.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+        self.border.bottomAnchor.constraint(equalTo:self.years.bottomAnchor,
+                                            constant:Constants.borderBottom).isActive = true
+        self.border.heightAnchor.constraint(equalToConstant:Constants.border).isActive = true
+    }
+}
+
+private struct Constants {
+    static let border:CGFloat = 1
+    static let borderBottom:CGFloat = -27
 }

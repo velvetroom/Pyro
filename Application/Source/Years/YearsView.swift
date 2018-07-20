@@ -15,7 +15,7 @@ class YearsView:UICollectionView {
         self.backgroundColor = UIColor.clear
         self.translatesAutoresizingMaskIntoConstraints = false
         self.clipsToBounds = true
-        self.showsVerticalScrollIndicator = true
+        self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
         self.alwaysBounceVertical = false
         self.alwaysBounceHorizontal = true

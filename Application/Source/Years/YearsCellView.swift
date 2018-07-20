@@ -2,11 +2,12 @@ import UIKit
 
 class YearsCellView:UICollectionViewCell {
     static let identifier:String = String(describing:self)
-    static let width:CGFloat = 55
+    static let width:CGFloat = 45
     weak var label:UILabel!
     
     override init(frame:CGRect) {
         super.init(frame:frame)
+        self.backgroundColor = UIColor.clear
         self.makeOutlets()
         self.layoutOutlets()
         self.configureView()
@@ -17,7 +18,6 @@ class YearsCellView:UICollectionViewCell {
     override var isHighlighted:Bool { didSet { self.configureView() } }
     
     private func configureView() {
-        self.backgroundColor = UIColor.clear
         if self.isSelected || self.isHighlighted {
             self.label.alpha = Constants.alphaOn
         } else {
@@ -32,7 +32,7 @@ class YearsCellView:UICollectionViewCell {
         label.backgroundColor = UIColor.clear
         label.isUserInteractionEnabled = false
         label.textColor = UIColor.black
-        label.font = UIFont.systemFont(ofSize:Constants.fontSize, weight:UIFont.Weight.medium)
+        label.font = UIFont.systemFont(ofSize:Constants.fontSize, weight:UIFont.Weight.bold)
         self.label = label
         self.addSubview(label)
     }
@@ -46,7 +46,7 @@ class YearsCellView:UICollectionViewCell {
 }
 
 private struct Constants {
-    static let fontSize:CGFloat = 14
+    static let fontSize:CGFloat = 12
     static let alphaOn:CGFloat = 1
     static let alphaOff:CGFloat = 0.1
 }
