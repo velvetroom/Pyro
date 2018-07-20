@@ -48,7 +48,10 @@ class StatsPresenter:PresenterProtocol {
     }
     
     private func updateContent() {
-        guard let metrics:Metrics = self.interactor.user.metrics else { return }
-        self.viewModel.update(property:self.factory.makeContent(metrics:metrics))
+        if let error:Error = self.interactor.error {
+            self.viewModel.update(property:self.factory.makeState(error:error))
+        } else if let metrics:Metrics = self.interactor.user.metrics {
+            self.viewModel.update(property:self.factory.makeContent(metrics:metrics))
+        }
     }
 }

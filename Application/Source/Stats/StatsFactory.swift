@@ -37,17 +37,29 @@ class StatsFactory {
         var viewModel:StatsStateViewModel = StatsStateViewModel()
         viewModel.sync = NSLocalizedString("StatsFactory_Loading", comment:String())
         viewModel.metricsHidden = true
-        viewModel.needsSynchHidden = true
+        viewModel.messageHidden = true
         viewModel.loadingHidden = false
         viewModel.actionsEnabled = false
+        return viewModel
+    }
+    
+    func makeState(error:Error) -> StatsStateViewModel {
+        var viewModel:StatsStateViewModel = StatsStateViewModel()
+        viewModel.sync = NSLocalizedString("StatsFactory_Error", comment:String())
+        viewModel.message = error.localizedDescription
+        viewModel.metricsHidden = true
+        viewModel.messageHidden = false
+        viewModel.loadingHidden = true
+        viewModel.actionsEnabled = true
         return viewModel
     }
     
     private func makeStateNeedsSynch() -> StatsStateViewModel {
         var viewModel:StatsStateViewModel = StatsStateViewModel()
         viewModel.sync = NSLocalizedString("StatsFactory_NeedsSync", comment:String())
+        viewModel.message = NSLocalizedString("StatsNeedsSyncView_Label", comment:String())
         viewModel.metricsHidden = true
-        viewModel.needsSynchHidden = false
+        viewModel.messageHidden = false
         viewModel.loadingHidden = true
         viewModel.actionsEnabled = true
         return viewModel
@@ -58,7 +70,7 @@ class StatsFactory {
         viewModel.sync = NSLocalizedString("StatsFactory_Metrics", comment:String())
         viewModel.sync += self.dateFormatter.string(from:metrics.timestamp)
         viewModel.metricsHidden = false
-        viewModel.needsSynchHidden = true
+        viewModel.messageHidden = true
         viewModel.loadingHidden = true
         viewModel.actionsEnabled = true
         return viewModel

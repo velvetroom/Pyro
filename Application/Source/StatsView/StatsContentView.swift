@@ -2,7 +2,7 @@ import UIKit
 
 class StatsContentView:UIView {
     weak var metrics:StatsMetricsTouchView!
-    weak var needsSync:StatsNeedsSyncView!
+    weak var message:StatsMessageView!
     weak var loading:LoadingView!
     
     init() {
@@ -16,13 +16,13 @@ class StatsContentView:UIView {
     
     private func makeOutlets() {
         self.makeMetrics()
-        self.makeNeedsSync()
+        self.makeMessage()
         self.makeLoading()
     }
     
     private func layoutOutlets() {
         self.layoutMetrics()
-        self.layoutNeedsSync()
+        self.layoutMessage()
         self.layoutLoading()
     }
     
@@ -32,10 +32,10 @@ class StatsContentView:UIView {
         self.addSubview(metrics)
     }
     
-    private func makeNeedsSync() {
-        let needsSync:StatsNeedsSyncView = StatsNeedsSyncView()
-        self.needsSync = needsSync
-        self.addSubview(needsSync)
+    private func makeMessage() {
+        let message:StatsMessageView = StatsMessageView()
+        self.message = message
+        self.addSubview(message)
     }
     
     private func makeLoading() {
@@ -52,11 +52,11 @@ class StatsContentView:UIView {
         self.metrics.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
     }
     
-    private func layoutNeedsSync() {
-        self.needsSync.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
-        self.needsSync.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
-        self.needsSync.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
-        self.needsSync.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+    private func layoutMessage() {
+        self.message.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
+        self.message.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        self.message.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
+        self.message.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
     }
     
     private func layoutLoading() {

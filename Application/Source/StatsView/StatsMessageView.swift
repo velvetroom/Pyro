@@ -1,6 +1,6 @@
 import UIKit
 
-class StatsNeedsSyncView:UIView {
+class StatsMessageView:UIView {
     weak var label:UILabel!
     
     init() {
@@ -24,7 +24,6 @@ class StatsNeedsSyncView:UIView {
         label.isUserInteractionEnabled = false
         label.textColor = UIColor(white:0.5, alpha:1)
         label.font = UIFont.systemFont(ofSize:Constants.fontSize, weight:UIFont.Weight.light)
-        label.text = NSLocalizedString("StatsNeedsSyncView_Label", comment:String())
         label.numberOfLines = 0
         self.label = label
         self.addSubview(label)
@@ -32,7 +31,7 @@ class StatsNeedsSyncView:UIView {
     
     private func layoutOutlets() {
         self.label.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
-        self.label.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.label.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
         self.label.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         if #available(iOS 11.0, *) {
             self.label.topAnchor.constraint(equalTo:self.safeAreaLayoutGuide.topAnchor,

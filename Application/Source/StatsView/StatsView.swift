@@ -20,8 +20,9 @@ class StatsView:StatsCollectionView {
     
     private func updated(property:StatsStateViewModel) {
         self.synch.label.text = property.sync
+        self.content.message.label.text = property.message
         self.content.metrics.isHidden = property.metricsHidden
-        self.content.needsSync.isHidden = property.needsSynchHidden
+        self.content.message.isHidden = property.messageHidden
         self.content.loading.isHidden = property.loadingHidden
         self.deleteButton.isEnabled = property.actionsEnabled
         self.synchButton.isEnabled = property.actionsEnabled

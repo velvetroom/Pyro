@@ -10,6 +10,7 @@ UsersView_Segmented_1="Contributions";
 UsersView_Segmented_2="Streak";
 UsersFactory_Unknown="-";
 StatsFactory_NeedsSync="Needs sync";
+StatsFactory_Error="There was an error\ntry again in a few minutes.";
 StatsFactory_Loading="Synching,\ncould take a few minutes.";
 StatsFactory_Metrics="Last synched\n";
 StatsNeedsSyncView_Label="New user,\nsynch to get metrics from Github.";
