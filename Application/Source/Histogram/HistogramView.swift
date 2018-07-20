@@ -7,8 +7,7 @@ class HistogramView:UIView {
     init() {
         self.months = []
         super.init(frame:CGRect.zero)
-        self.isUserInteractionEnabled = false
-        self.translatesAutoresizingMaskIntoConstraints = false
+        self.configureView()
         self.makeOutlets()
         self.layoutOutlets()
     }
@@ -21,13 +20,18 @@ class HistogramView:UIView {
         for index:Int in 0 ..< self.months.count {
             let month:HistogramMonthView = self.months[index]
             if index < items.count {
-                month.update(amount:Constants.height * items[index].ratio)
+                month.update(amount:Constants.ratioHeight * items[index].ratio)
                 month.contributions = items[index].contributions
             } else {
                 month.update(amount:0)
                 month.contributions = NSAttributedString()
             }
         }
+    }
+    
+    private func configureView() {
+        self.isUserInteractionEnabled = false
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func makeOutlets() {
@@ -73,7 +77,8 @@ class HistogramView:UIView {
 }
 
 private struct Constants {
-    static let height:CGFloat = 300
+    static let height:CGFloat = 400
+    static let ratioHeight:CGFloat = 280
     static let months:Int = 12
     static let monthWidthMultiplier:CGFloat = 1.0 / CGFloat(Constants.months)
 }

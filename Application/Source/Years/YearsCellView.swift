@@ -47,6 +47,6 @@ class YearsCellView:UICollectionViewCell {
 
 private struct Constants {
     static let fontSize:CGFloat = 14
-    static let alphaOn:CGFloat = 0.5
+    static let alphaOn:CGFloat = 1
     static let alphaOff:CGFloat = 0.1
 }

@@ -19,28 +19,25 @@ class HistogramIndicatorView:UIView {
     
     func highlight() {
         self.indicatorSize = self.sizeHighlight
-        self.alpha = Constants.alphaOn
+        self.backgroundColor = UIColor(red:0.4, green:0.7, blue:0.9, alpha:1)
         self.invalidateIntrinsicContentSize()
     }
     
     func unhighlight() {
         self.indicatorSize = self.sizeUnhighlight
-        self.alpha = Constants.alphaOff
+        self.backgroundColor = UIColor(white:0, alpha:0.04)
         self.invalidateIntrinsicContentSize()
     }
     
     private func configureView() {
-        self.backgroundColor = UIColor.black
         self.translatesAutoresizingMaskIntoConstraints = false
         self.isUserInteractionEnabled = false
         self.clipsToBounds = true
-        self.alpha = Constants.alphaOff
+        self.unhighlight()
     }
 }
 
 private struct Constants {
     static let unhighlightSize:CGFloat = 12
     static let highlightSize:CGFloat = 6
-    static let alphaOn:CGFloat = 1
-    static let alphaOff:CGFloat = 0.04
 }

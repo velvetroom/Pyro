@@ -4,7 +4,7 @@ class HistogramMonthView:UIView {
     weak var indicator:HistogramIndicatorView!
     weak var borderLeft:UIView!
     weak var borderRight:UIView!
-    weak var background:HistograBackgroundView!
+    weak var background:HistogramMonthBackgroundView!
     var contributions:NSAttributedString
     
     init() {
@@ -80,7 +80,7 @@ class HistogramMonthView:UIView {
     }
     
     private func makeBackground() {
-        let background:HistograBackgroundView = HistograBackgroundView()
+        let background:HistogramMonthBackgroundView = HistogramMonthBackgroundView()
         background.alpha = 0
         self.background = background
         self.addSubview(background)
