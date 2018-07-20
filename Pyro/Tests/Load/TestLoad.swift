@@ -70,7 +70,8 @@ class TestLoad:XCTestCase {
             expect?.fulfill()
             expect = nil
         }
-        self.load.start(user:User())
+        self.load.user = User()
+        self.load.next(year:1990)
         self.waitForExpectations(timeout:0.1, handler:nil)
     }
     
@@ -88,7 +89,8 @@ class TestLoad:XCTestCase {
         }
         self.scraper.error = ScraperError.dateInTheFuture
         self.delegate.onCompleted = { completed.fulfill() }
-        self.load.start(user:User())
+        self.load.user = User()
+        self.load.next(year:1990)
         self.waitForExpectations(timeout:0.3, handler:nil)
         XCTAssertEqual(timesRequested, 1, "Requested more than expected")
     }

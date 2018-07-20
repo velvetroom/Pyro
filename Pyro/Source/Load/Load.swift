@@ -4,7 +4,7 @@ class Load:LoadProtocol {
     weak var delegate:LoadDelegate?
     var scraper:ScraperProtocol?
     var request:RequestProtocol
-    private var user:User!
+    var user:User!
     
     init() {
         self.request = Request()
@@ -16,7 +16,7 @@ class Load:LoadProtocol {
         self.next(year:Constants.startingYear)
     }
     
-    private func next(year:Int) {
+    func next(year:Int) {
         if year <= Constants.endingYear {
             self.load(year:year)
         } else {
