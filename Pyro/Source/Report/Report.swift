@@ -3,14 +3,14 @@ import Foundation
 class Report:ReportProtocol, LoadDelegate {
     weak var delegate:ReportDelegate?
     var load:LoadProtocol
-    var builder:StatsBuilderProtocol
+    var builder:MetricsBuilderProtocol
     weak var user:User?
     private let dispatch:DispatchQueue
     
     init() {
         self.load = Load()
-        self.builder = StatsBuilder()
-        self.dispatch = DispatchQueue(label:ReportConstants.identifier, qos:DispatchQoS.background,
+        self.builder = MetricsBuilder()
+        self.dispatch = DispatchQueue(label:Constants.identifier, qos:DispatchQoS.background,
                                       attributes:DispatchQueue.Attributes.concurrent,
                                       autoreleaseFrequency:DispatchQueue.AutoreleaseFrequency.inherit,
                                       target:DispatchQueue.global(qos:DispatchQoS.QoSClass.background))
@@ -25,7 +25,7 @@ class Report:ReportProtocol, LoadDelegate {
     }
     
     func loadCompleted(items:[ScraperItem]) {
-        self.user?.stats = self.builder.build(items:items)
+        self.user?.metrics = self.builder.build(items:items)
         DispatchQueue.main.async { [weak self] in
             self?.delegate?.reportCompleted()
         }
@@ -36,4 +36,8 @@ class Report:ReportProtocol, LoadDelegate {
             self?.delegate?.reportFailed(error:error)
         }
     }
+}
+
+private struct Constants {
+    static let identifier:String = "pyro.report"
 }

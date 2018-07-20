@@ -10,18 +10,17 @@
 		DA01227F20F499AC00B9C5EF /* Scraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01227E20F499AC00B9C5EF /* Scraper.swift */; };
 		DA01228220F49A1C00B9C5EF /* TestScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228120F49A1C00B9C5EF /* TestScraper.swift */; };
 		DA01228420F49AB700B9C5EF /* ScraperItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01228320F49AB700B9C5EF /* ScraperItem.swift */; };
-		DA20629820F4F910001B58A1 /* StatsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629720F4F910001B58A1 /* StatsBuilder.swift */; };
-		DA20629B20F4F93F001B58A1 /* TestStatsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629A20F4F93F001B58A1 /* TestStatsBuilder.swift */; };
-		DA20629D20F4FA2F001B58A1 /* StatsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629C20F4FA2F001B58A1 /* StatsConstants.swift */; };
-		DA20629F20F50098001B58A1 /* StatsCommandProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629E20F50098001B58A1 /* StatsCommandProtocol.swift */; };
-		DA2062A120F502A3001B58A1 /* StatsCommandComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A020F502A3001B58A1 /* StatsCommandComposite.swift */; };
-		DA2062A320F503B2001B58A1 /* StatsCommandFirstContribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A220F503B2001B58A1 /* StatsCommandFirstContribution.swift */; };
-		DA2062A520F503E8001B58A1 /* StatsCommandLastContribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A420F503E8001B58A1 /* StatsCommandLastContribution.swift */; };
-		DA2062A720F503F8001B58A1 /* StatsCommandContributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A620F503F8001B58A1 /* StatsCommandContributions.swift */; };
-		DA2062A920F5040D001B58A1 /* StatsCommandMaxStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A820F5040D001B58A1 /* StatsCommandMaxStreak.swift */; };
-		DA2062AB20F50416001B58A1 /* StatsCommandCurrentStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062AA20F50416001B58A1 /* StatsCommandCurrentStreak.swift */; };
+		DA20629820F4F910001B58A1 /* MetricsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629720F4F910001B58A1 /* MetricsBuilder.swift */; };
+		DA20629B20F4F93F001B58A1 /* TestMetricsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629A20F4F93F001B58A1 /* TestMetricsBuilder.swift */; };
+		DA20629D20F4FA2F001B58A1 /* MetricsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629C20F4FA2F001B58A1 /* MetricsConstants.swift */; };
+		DA20629F20F50098001B58A1 /* MetricsCommandProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20629E20F50098001B58A1 /* MetricsCommandProtocol.swift */; };
+		DA2062A120F502A3001B58A1 /* MetricsCommandComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A020F502A3001B58A1 /* MetricsCommandComposite.swift */; };
+		DA2062A320F503B2001B58A1 /* MetricsCommandFirstContribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A220F503B2001B58A1 /* MetricsCommandFirstContribution.swift */; };
+		DA2062A520F503E8001B58A1 /* MetricsCommandLastContribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A420F503E8001B58A1 /* MetricsCommandLastContribution.swift */; };
+		DA2062A720F503F8001B58A1 /* MetricsCommandContributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A620F503F8001B58A1 /* MetricsCommandContributions.swift */; };
+		DA2062A920F5040D001B58A1 /* MetricsCommandMaxStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062A820F5040D001B58A1 /* MetricsCommandMaxStreak.swift */; };
+		DA2062AB20F50416001B58A1 /* MetricsCommandCurrentStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062AA20F50416001B58A1 /* MetricsCommandCurrentStreak.swift */; };
 		DA2062AE20F51A83001B58A1 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062AD20F51A83001B58A1 /* Request.swift */; };
-		DA2062B220F51B1E001B58A1 /* RequestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062B120F51B1E001B58A1 /* RequestConstants.swift */; };
 		DA2062B420F5216A001B58A1 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062B320F5216A001B58A1 /* RequestError.swift */; };
 		DA2062B720F5227B001B58A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA2062B520F5227B001B58A1 /* Localizable.strings */; };
 		DA2062B920F5242B001B58A1 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062B820F5242B001B58A1 /* RequestProtocol.swift */; };
@@ -30,7 +29,6 @@
 		DA2062C120F527FA001B58A1 /* TestLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062C020F527FA001B58A1 /* TestLoad.swift */; };
 		DA2062C320F5286B001B58A1 /* LoadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062C220F5286B001B58A1 /* LoadDelegate.swift */; };
 		DA2062C520F529F2001B58A1 /* MockLoadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2062C420F529F2001B58A1 /* MockLoadDelegate.swift */; };
-		DA28085E20F5D1EA00BCDA13 /* LoadConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28085D20F5D1EA00BCDA13 /* LoadConstants.swift */; };
 		DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086120F5D78300BCDA13 /* ScraperProtocol.swift */; };
 		DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086520F5D8C300BCDA13 /* MockScraperProtocol.swift */; };
 		DA28086820F5DC3200BCDA13 /* LoadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086720F5DC3200BCDA13 /* LoadProtocol.swift */; };
@@ -38,40 +36,41 @@
 		DA28087020F5DE2F00BCDA13 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28086F20F5DE2F00BCDA13 /* Report.swift */; };
 		DA28087320F5DE5000BCDA13 /* MockReportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087220F5DE5000BCDA13 /* MockReportProtocol.swift */; };
 		DA28087520F5DE6C00BCDA13 /* TestReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087420F5DE6C00BCDA13 /* TestReport.swift */; };
-		DA28087720F5DF5E00BCDA13 /* StatsBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087620F5DF5E00BCDA13 /* StatsBuilderProtocol.swift */; };
-		DA28087920F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087820F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift */; };
+		DA28087720F5DF5E00BCDA13 /* MetricsBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087620F5DF5E00BCDA13 /* MetricsBuilderProtocol.swift */; };
+		DA28087920F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087820F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift */; };
 		DA28087B20F5E1A800BCDA13 /* ReportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087A20F5E1A800BCDA13 /* ReportDelegate.swift */; };
 		DA28087D20F5E1DF00BCDA13 /* MockReportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087C20F5E1DF00BCDA13 /* MockReportDelegate.swift */; };
-		DA28087F20F5E4FD00BCDA13 /* ReportConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087E20F5E4FD00BCDA13 /* ReportConstants.swift */; };
 		DA28088320F5EB2000BCDA13 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088220F5EB1F00BCDA13 /* StorageProtocol.swift */; };
 		DA28088520F5EB8E00BCDA13 /* MockStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088420F5EB8E00BCDA13 /* MockStorageProtocol.swift */; };
-		DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */; };
 		DA455BA420F72256000EBE10 /* UserBase.json in Resources */ = {isa = PBXBuildFile; fileRef = DA455BA320F72256000EBE10 /* UserBase.json */; };
 		DA455BA620F72375000EBE10 /* UserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA455BA520F72375000EBE10 /* UserBase.swift */; };
 		DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49406020F87D27002F0C1F /* UserFactory.swift */; };
+		DA54042A21005AC500E6F448 /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54042921005AC500E6F448 /* Year.swift */; };
+		DA54042E21005FEA00E6F448 /* Max.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54042D21005FEA00E6F448 /* Max.swift */; };
+		DA540436210066C100E6F448 /* TestMetricsBuilder_Years.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA540435210066C100E6F448 /* TestMetricsBuilder_Years.swift */; };
+		DA5404382100679900E6F448 /* MetricsCommandYears.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5404372100679900E6F448 /* MetricsCommandYears.swift */; };
+		DA54043A21007A3C00E6F448 /* TestMetricsBuilder_Max.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54043921007A3C00E6F448 /* TestMetricsBuilder_Max.swift */; };
 		DA59160B20F46DBA00B6AEDC /* Pyro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5915F720F46D8B00B6AEDC /* Pyro.framework */; };
 		DA5E6D4320F9ECEF00120292 /* ScraperItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4220F9ECEF00120292 /* ScraperItems.swift */; };
 		DA5E6D4620F9F56600120292 /* StatsDuplicates.stub in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */; };
 		DA5E6D4920F9FB6B00120292 /* StatsFuture.stub in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6D4720F9FB0A00120292 /* StatsFuture.stub */; };
 		DA5E6D4B20F9FEF200120292 /* ScraperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4A20F9FEF200120292 /* ScraperError.swift */; };
-		DA5E6D4D20FA083A00120292 /* StatsContributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4C20FA083A00120292 /* StatsContributions.swift */; };
-		DA5E6D4F20FA088A00120292 /* StatsStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4E20FA088A00120292 /* StatsStreak.swift */; };
-		DA5E6D5120FA0A2900120292 /* StatsHistogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5020FA0A2900120292 /* StatsHistogram.swift */; };
-		DA5E6D5320FA0A7C00120292 /* StatsHistogramMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5220FA0A7C00120292 /* StatsHistogramMonth.swift */; };
+		DA5E6D4D20FA083A00120292 /* Contributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4C20FA083A00120292 /* Contributions.swift */; };
+		DA5E6D4F20FA088A00120292 /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4E20FA088A00120292 /* Streak.swift */; };
+		DA5E6D5320FA0A7C00120292 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5220FA0A7C00120292 /* Month.swift */; };
 		DA5E6D5520FA0DBA00120292 /* PyroDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5420FA0DBA00120292 /* PyroDelegate.swift */; };
 		DA5E6D5720FA0ECE00120292 /* PyroDelegate+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5620FA0ECE00120292 /* PyroDelegate+Default.swift */; };
 		DA5E6D5920FA10F300120292 /* MockPyroDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5820FA10F300120292 /* MockPyroDelegate.swift */; };
 		DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */; };
 		DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8220F6158B00E6F38E /* StorageFile.swift */; };
 		DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */; };
-		DAA00E3520F4940A009386CE /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3420F4940A009386CE /* Stats.swift */; };
+		DAA00E3520F4940A009386CE /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3420F4940A009386CE /* Metrics.swift */; };
 		DAA00E3720F496AF009386CE /* StatsMin.stub in Resources */ = {isa = PBXBuildFile; fileRef = DAA00E3620F496AF009386CE /* StatsMin.stub */; };
 		DAB840EE20F8EC8D00CA3A45 /* ReportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB840ED20F8EC8D00CA3A45 /* ReportProtocol.swift */; };
 		DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861A20F47084003BF78A /* MockStorageFileProtocol.swift */; };
 		DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861B20F47084003BF78A /* TestStorage.swift */; };
 		DAE4862620F4708E003BF78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862120F4708E003BF78A /* User.swift */; };
 		DAE4862720F4708E003BF78A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862320F4708E003BF78A /* Storage.swift */; };
-		DAE4862820F4708E003BF78A /* StorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862420F4708E003BF78A /* StorageConstants.swift */; };
 		DAE4862920F4708E003BF78A /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862520F4708E003BF78A /* StorageError.swift */; };
 		DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9E92E20F78CD300B5492C /* Pyro.swift */; };
 		DAE9E93220F78FB500B5492C /* TestPyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9E93120F78FB500B5492C /* TestPyro.swift */; };
@@ -91,18 +90,17 @@
 		DA01227E20F499AC00B9C5EF /* Scraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scraper.swift; sourceTree = "<group>"; };
 		DA01228120F49A1C00B9C5EF /* TestScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScraper.swift; sourceTree = "<group>"; };
 		DA01228320F49AB700B9C5EF /* ScraperItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperItem.swift; sourceTree = "<group>"; };
-		DA20629720F4F910001B58A1 /* StatsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBuilder.swift; sourceTree = "<group>"; };
-		DA20629A20F4F93F001B58A1 /* TestStatsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStatsBuilder.swift; sourceTree = "<group>"; };
-		DA20629C20F4FA2F001B58A1 /* StatsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsConstants.swift; sourceTree = "<group>"; };
-		DA20629E20F50098001B58A1 /* StatsCommandProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCommandProtocol.swift; sourceTree = "<group>"; };
-		DA2062A020F502A3001B58A1 /* StatsCommandComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCommandComposite.swift; sourceTree = "<group>"; };
-		DA2062A220F503B2001B58A1 /* StatsCommandFirstContribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCommandFirstContribution.swift; sourceTree = "<group>"; };
-		DA2062A420F503E8001B58A1 /* StatsCommandLastContribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCommandLastContribution.swift; sourceTree = "<group>"; };
-		DA2062A620F503F8001B58A1 /* StatsCommandContributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCommandContributions.swift; sourceTree = "<group>"; };
-		DA2062A820F5040D001B58A1 /* StatsCommandMaxStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCommandMaxStreak.swift; sourceTree = "<group>"; };
-		DA2062AA20F50416001B58A1 /* StatsCommandCurrentStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCommandCurrentStreak.swift; sourceTree = "<group>"; };
+		DA20629720F4F910001B58A1 /* MetricsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsBuilder.swift; sourceTree = "<group>"; };
+		DA20629A20F4F93F001B58A1 /* TestMetricsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMetricsBuilder.swift; sourceTree = "<group>"; };
+		DA20629C20F4FA2F001B58A1 /* MetricsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsConstants.swift; sourceTree = "<group>"; };
+		DA20629E20F50098001B58A1 /* MetricsCommandProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCommandProtocol.swift; sourceTree = "<group>"; };
+		DA2062A020F502A3001B58A1 /* MetricsCommandComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCommandComposite.swift; sourceTree = "<group>"; };
+		DA2062A220F503B2001B58A1 /* MetricsCommandFirstContribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCommandFirstContribution.swift; sourceTree = "<group>"; };
+		DA2062A420F503E8001B58A1 /* MetricsCommandLastContribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCommandLastContribution.swift; sourceTree = "<group>"; };
+		DA2062A620F503F8001B58A1 /* MetricsCommandContributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCommandContributions.swift; sourceTree = "<group>"; };
+		DA2062A820F5040D001B58A1 /* MetricsCommandMaxStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCommandMaxStreak.swift; sourceTree = "<group>"; };
+		DA2062AA20F50416001B58A1 /* MetricsCommandCurrentStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCommandCurrentStreak.swift; sourceTree = "<group>"; };
 		DA2062AD20F51A83001B58A1 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		DA2062B120F51B1E001B58A1 /* RequestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConstants.swift; sourceTree = "<group>"; };
 		DA2062B320F5216A001B58A1 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		DA2062B620F5227B001B58A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA2062B820F5242B001B58A1 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 		DA2062C020F527FA001B58A1 /* TestLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoad.swift; sourceTree = "<group>"; };
 		DA2062C220F5286B001B58A1 /* LoadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDelegate.swift; sourceTree = "<group>"; };
 		DA2062C420F529F2001B58A1 /* MockLoadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoadDelegate.swift; sourceTree = "<group>"; };
-		DA28085D20F5D1EA00BCDA13 /* LoadConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadConstants.swift; sourceTree = "<group>"; };
 		DA28086120F5D78300BCDA13 /* ScraperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperProtocol.swift; sourceTree = "<group>"; };
 		DA28086520F5D8C300BCDA13 /* MockScraperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockScraperProtocol.swift; sourceTree = "<group>"; };
 		DA28086720F5DC3200BCDA13 /* LoadProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProtocol.swift; sourceTree = "<group>"; };
@@ -119,34 +116,36 @@
 		DA28086F20F5DE2F00BCDA13 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		DA28087220F5DE5000BCDA13 /* MockReportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportProtocol.swift; sourceTree = "<group>"; };
 		DA28087420F5DE6C00BCDA13 /* TestReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReport.swift; sourceTree = "<group>"; };
-		DA28087620F5DF5E00BCDA13 /* StatsBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBuilderProtocol.swift; sourceTree = "<group>"; };
-		DA28087820F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStatsBuilderProtocol.swift; sourceTree = "<group>"; };
+		DA28087620F5DF5E00BCDA13 /* MetricsBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsBuilderProtocol.swift; sourceTree = "<group>"; };
+		DA28087820F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMetricsBuilderProtocol.swift; sourceTree = "<group>"; };
 		DA28087A20F5E1A800BCDA13 /* ReportDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDelegate.swift; sourceTree = "<group>"; };
 		DA28087C20F5E1DF00BCDA13 /* MockReportDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportDelegate.swift; sourceTree = "<group>"; };
-		DA28087E20F5E4FD00BCDA13 /* ReportConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportConstants.swift; sourceTree = "<group>"; };
 		DA28088220F5EB1F00BCDA13 /* StorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
 		DA28088420F5EB8E00BCDA13 /* MockStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageProtocol.swift; sourceTree = "<group>"; };
-		DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperConstants.swift; sourceTree = "<group>"; };
 		DA455BA320F72256000EBE10 /* UserBase.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserBase.json; sourceTree = "<group>"; };
 		DA455BA520F72375000EBE10 /* UserBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBase.swift; sourceTree = "<group>"; };
 		DA49406020F87D27002F0C1F /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
+		DA54042921005AC500E6F448 /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
+		DA54042D21005FEA00E6F448 /* Max.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Max.swift; sourceTree = "<group>"; };
+		DA540435210066C100E6F448 /* TestMetricsBuilder_Years.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMetricsBuilder_Years.swift; sourceTree = "<group>"; };
+		DA5404372100679900E6F448 /* MetricsCommandYears.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCommandYears.swift; sourceTree = "<group>"; };
+		DA54043921007A3C00E6F448 /* TestMetricsBuilder_Max.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMetricsBuilder_Max.swift; sourceTree = "<group>"; };
 		DA5915F720F46D8B00B6AEDC /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA59160620F46DBA00B6AEDC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5E6D4220F9ECEF00120292 /* ScraperItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperItems.swift; sourceTree = "<group>"; };
 		DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsDuplicates.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DA5E6D4720F9FB0A00120292 /* StatsFuture.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsFuture.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DA5E6D4A20F9FEF200120292 /* ScraperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperError.swift; sourceTree = "<group>"; };
-		DA5E6D4C20FA083A00120292 /* StatsContributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContributions.swift; sourceTree = "<group>"; };
-		DA5E6D4E20FA088A00120292 /* StatsStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStreak.swift; sourceTree = "<group>"; };
-		DA5E6D5020FA0A2900120292 /* StatsHistogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHistogram.swift; sourceTree = "<group>"; };
-		DA5E6D5220FA0A7C00120292 /* StatsHistogramMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHistogramMonth.swift; sourceTree = "<group>"; };
+		DA5E6D4C20FA083A00120292 /* Contributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributions.swift; sourceTree = "<group>"; };
+		DA5E6D4E20FA088A00120292 /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
+		DA5E6D5220FA0A7C00120292 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		DA5E6D5420FA0DBA00120292 /* PyroDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyroDelegate.swift; sourceTree = "<group>"; };
 		DA5E6D5620FA0ECE00120292 /* PyroDelegate+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PyroDelegate+Default.swift"; sourceTree = "<group>"; };
 		DA5E6D5820FA10F300120292 /* MockPyroDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPyroDelegate.swift; sourceTree = "<group>"; };
 		DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnalyser.swift; sourceTree = "<group>"; };
 		DA7E6E8220F6158B00E6F38E /* StorageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFile.swift; sourceTree = "<group>"; };
 		DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFileProtocol.swift; sourceTree = "<group>"; };
-		DAA00E3420F4940A009386CE /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		DAA00E3420F4940A009386CE /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		DAA00E3620F496AF009386CE /* StatsMin.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsMin.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DAB840ED20F8EC8D00CA3A45 /* ReportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProtocol.swift; sourceTree = "<group>"; };
 		DAE4861720F4707A003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
@@ -154,7 +153,6 @@
 		DAE4861B20F47084003BF78A /* TestStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
 		DAE4862120F4708E003BF78A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DAE4862320F4708E003BF78A /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		DAE4862420F4708E003BF78A /* StorageConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageConstants.swift; sourceTree = "<group>"; };
 		DAE4862520F4708E003BF78A /* StorageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
 		DAE9E92E20F78CD300B5492C /* Pyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pyro.swift; sourceTree = "<group>"; };
 		DAE9E93120F78FB500B5492C /* TestPyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyro.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				DA01227E20F499AC00B9C5EF /* Scraper.swift */,
 				DA5E6D4220F9ECEF00120292 /* ScraperItems.swift */,
 				DA01228320F49AB700B9C5EF /* ScraperItem.swift */,
-				DA32CCFE20F4E7CF00F75BE5 /* ScraperConstants.swift */,
 				DA5E6D4A20F9FEF200120292 /* ScraperError.swift */,
 			);
 			path = Scraper;
@@ -201,13 +198,15 @@
 			path = Scraper;
 			sourceTree = "<group>";
 		};
-		DA20629920F4F932001B58A1 /* Stats */ = {
+		DA20629920F4F932001B58A1 /* Metrics */ = {
 			isa = PBXGroup;
 			children = (
-				DA20629A20F4F93F001B58A1 /* TestStatsBuilder.swift */,
-				DA28087820F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift */,
+				DA20629A20F4F93F001B58A1 /* TestMetricsBuilder.swift */,
+				DA540435210066C100E6F448 /* TestMetricsBuilder_Years.swift */,
+				DA54043921007A3C00E6F448 /* TestMetricsBuilder_Max.swift */,
+				DA28087820F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift */,
 			);
-			path = Stats;
+			path = Metrics;
 			sourceTree = "<group>";
 		};
 		DA2062AC20F51A6A001B58A1 /* Request */ = {
@@ -216,7 +215,6 @@
 				DA2062B820F5242B001B58A1 /* RequestProtocol.swift */,
 				DA2062AD20F51A83001B58A1 /* Request.swift */,
 				DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */,
-				DA2062B120F51B1E001B58A1 /* RequestConstants.swift */,
 				DA2062B320F5216A001B58A1 /* RequestError.swift */,
 			);
 			path = Request;
@@ -239,7 +237,6 @@
 				DA28086720F5DC3200BCDA13 /* LoadProtocol.swift */,
 				DA2062BE20F527C3001B58A1 /* Load.swift */,
 				DA2062C220F5286B001B58A1 /* LoadDelegate.swift */,
-				DA28085D20F5D1EA00BCDA13 /* LoadConstants.swift */,
 			);
 			path = Load;
 			sourceTree = "<group>";
@@ -250,7 +247,6 @@
 				DAB840ED20F8EC8D00CA3A45 /* ReportProtocol.swift */,
 				DA28087A20F5E1A800BCDA13 /* ReportDelegate.swift */,
 				DA28086F20F5DE2F00BCDA13 /* Report.swift */,
-				DA28087E20F5E4FD00BCDA13 /* ReportConstants.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -285,26 +281,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DAA00E3320F493E1009386CE /* Stats */ = {
+		DAA00E3320F493E1009386CE /* Metrics */ = {
 			isa = PBXGroup;
 			children = (
-				DAA00E3420F4940A009386CE /* Stats.swift */,
-				DA5E6D4C20FA083A00120292 /* StatsContributions.swift */,
-				DA5E6D4E20FA088A00120292 /* StatsStreak.swift */,
-				DA5E6D5020FA0A2900120292 /* StatsHistogram.swift */,
-				DA5E6D5220FA0A7C00120292 /* StatsHistogramMonth.swift */,
-				DA28087620F5DF5E00BCDA13 /* StatsBuilderProtocol.swift */,
-				DA20629720F4F910001B58A1 /* StatsBuilder.swift */,
-				DA20629E20F50098001B58A1 /* StatsCommandProtocol.swift */,
-				DA2062A020F502A3001B58A1 /* StatsCommandComposite.swift */,
-				DA2062A220F503B2001B58A1 /* StatsCommandFirstContribution.swift */,
-				DA2062A420F503E8001B58A1 /* StatsCommandLastContribution.swift */,
-				DA2062A620F503F8001B58A1 /* StatsCommandContributions.swift */,
-				DA2062A820F5040D001B58A1 /* StatsCommandMaxStreak.swift */,
-				DA2062AA20F50416001B58A1 /* StatsCommandCurrentStreak.swift */,
-				DA20629C20F4FA2F001B58A1 /* StatsConstants.swift */,
+				DAA00E3420F4940A009386CE /* Metrics.swift */,
+				DA5E6D4E20FA088A00120292 /* Streak.swift */,
+				DA5E6D4C20FA083A00120292 /* Contributions.swift */,
+				DA54042D21005FEA00E6F448 /* Max.swift */,
+				DA54042921005AC500E6F448 /* Year.swift */,
+				DA5E6D5220FA0A7C00120292 /* Month.swift */,
+				DA28087620F5DF5E00BCDA13 /* MetricsBuilderProtocol.swift */,
+				DA20629720F4F910001B58A1 /* MetricsBuilder.swift */,
+				DA20629E20F50098001B58A1 /* MetricsCommandProtocol.swift */,
+				DA2062A020F502A3001B58A1 /* MetricsCommandComposite.swift */,
+				DA2062A220F503B2001B58A1 /* MetricsCommandFirstContribution.swift */,
+				DA2062A420F503E8001B58A1 /* MetricsCommandLastContribution.swift */,
+				DA2062A620F503F8001B58A1 /* MetricsCommandContributions.swift */,
+				DA2062A820F5040D001B58A1 /* MetricsCommandMaxStreak.swift */,
+				DA2062AA20F50416001B58A1 /* MetricsCommandCurrentStreak.swift */,
+				DA5404372100679900E6F448 /* MetricsCommandYears.swift */,
+				DA20629C20F4FA2F001B58A1 /* MetricsConstants.swift */,
 			);
-			path = Stats;
+			path = Metrics;
 			sourceTree = "<group>";
 		};
 		DAE4861820F47084003BF78A /* Tests */ = {
@@ -312,7 +310,7 @@
 			children = (
 				DAE9E93020F78FA800B5492C /* Pyro */,
 				DA28087120F5DE4200BCDA13 /* Report */,
-				DA20629920F4F932001B58A1 /* Stats */,
+				DA20629920F4F932001B58A1 /* Metrics */,
 				DA2062BA20F5248A001B58A1 /* Load */,
 				DAE4861920F47084003BF78A /* Storage */,
 				DA01228020F49A0A00B9C5EF /* Scraper */,
@@ -347,7 +345,7 @@
 			children = (
 				DAE9E92B20F78CB800B5492C /* Pyro */,
 				DA28086B20F5DD5A00BCDA13 /* Report */,
-				DAA00E3320F493E1009386CE /* Stats */,
+				DAA00E3320F493E1009386CE /* Metrics */,
 				DAE4862020F4708E003BF78A /* User */,
 				DA2062AC20F51A6A001B58A1 /* Request */,
 				DA2062BD20F527B2001B58A1 /* Load */,
@@ -374,7 +372,6 @@
 				DAE4862320F4708E003BF78A /* Storage.swift */,
 				DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */,
 				DA7E6E8220F6158B00E6F38E /* StorageFile.swift */,
-				DAE4862420F4708E003BF78A /* StorageConstants.swift */,
 				DAE4862520F4708E003BF78A /* StorageError.swift */,
 			);
 			path = Storage;
@@ -511,51 +508,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA20629D20F4FA2F001B58A1 /* StatsConstants.swift in Sources */,
+				DA20629D20F4FA2F001B58A1 /* MetricsConstants.swift in Sources */,
 				DA28088320F5EB2000BCDA13 /* StorageProtocol.swift in Sources */,
+				DA54042A21005AC500E6F448 /* Year.swift in Sources */,
 				DAE4862920F4708E003BF78A /* StorageError.swift in Sources */,
 				DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */,
 				DA5E6D5720FA0ECE00120292 /* PyroDelegate+Default.swift in Sources */,
-				DAA00E3520F4940A009386CE /* Stats.swift in Sources */,
-				DA28085E20F5D1EA00BCDA13 /* LoadConstants.swift in Sources */,
+				DAA00E3520F4940A009386CE /* Metrics.swift in Sources */,
 				DA01227F20F499AC00B9C5EF /* Scraper.swift in Sources */,
 				DA28087B20F5E1A800BCDA13 /* ReportDelegate.swift in Sources */,
 				DA01228420F49AB700B9C5EF /* ScraperItem.swift in Sources */,
-				DA5E6D5120FA0A2900120292 /* StatsHistogram.swift in Sources */,
-				DA20629F20F50098001B58A1 /* StatsCommandProtocol.swift in Sources */,
-				DA28087F20F5E4FD00BCDA13 /* ReportConstants.swift in Sources */,
-				DA5E6D4F20FA088A00120292 /* StatsStreak.swift in Sources */,
-				DA2062A320F503B2001B58A1 /* StatsCommandFirstContribution.swift in Sources */,
+				DA20629F20F50098001B58A1 /* MetricsCommandProtocol.swift in Sources */,
+				DA5E6D4F20FA088A00120292 /* Streak.swift in Sources */,
+				DA2062A320F503B2001B58A1 /* MetricsCommandFirstContribution.swift in Sources */,
 				DAE4862620F4708E003BF78A /* User.swift in Sources */,
-				DA2062A120F502A3001B58A1 /* StatsCommandComposite.swift in Sources */,
+				DA2062A120F502A3001B58A1 /* MetricsCommandComposite.swift in Sources */,
 				DA5E6D4320F9ECEF00120292 /* ScraperItems.swift in Sources */,
 				DA455BA620F72375000EBE10 /* UserBase.swift in Sources */,
 				DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */,
 				DA28087020F5DE2F00BCDA13 /* Report.swift in Sources */,
-				DA2062AB20F50416001B58A1 /* StatsCommandCurrentStreak.swift in Sources */,
+				DA2062AB20F50416001B58A1 /* MetricsCommandCurrentStreak.swift in Sources */,
 				DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */,
 				DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */,
-				DA5E6D5320FA0A7C00120292 /* StatsHistogramMonth.swift in Sources */,
+				DA5E6D5320FA0A7C00120292 /* Month.swift in Sources */,
 				DA2062BF20F527C3001B58A1 /* Load.swift in Sources */,
-				DA20629820F4F910001B58A1 /* StatsBuilder.swift in Sources */,
+				DA20629820F4F910001B58A1 /* MetricsBuilder.swift in Sources */,
 				DA2062AE20F51A83001B58A1 /* Request.swift in Sources */,
-				DA2062A720F503F8001B58A1 /* StatsCommandContributions.swift in Sources */,
+				DA2062A720F503F8001B58A1 /* MetricsCommandContributions.swift in Sources */,
 				DA2062B420F5216A001B58A1 /* RequestError.swift in Sources */,
-				DA2062B220F51B1E001B58A1 /* RequestConstants.swift in Sources */,
-				DAE4862820F4708E003BF78A /* StorageConstants.swift in Sources */,
+				DA5404382100679900E6F448 /* MetricsCommandYears.swift in Sources */,
 				DA2062C320F5286B001B58A1 /* LoadDelegate.swift in Sources */,
 				DAB840EE20F8EC8D00CA3A45 /* ReportProtocol.swift in Sources */,
-				DA32CCFF20F4E7CF00F75BE5 /* ScraperConstants.swift in Sources */,
 				DA5E6D4B20F9FEF200120292 /* ScraperError.swift in Sources */,
 				DA2062B920F5242B001B58A1 /* RequestProtocol.swift in Sources */,
-				DA5E6D4D20FA083A00120292 /* StatsContributions.swift in Sources */,
-				DA28087720F5DF5E00BCDA13 /* StatsBuilderProtocol.swift in Sources */,
-				DA2062A920F5040D001B58A1 /* StatsCommandMaxStreak.swift in Sources */,
+				DA5E6D4D20FA083A00120292 /* Contributions.swift in Sources */,
+				DA28087720F5DF5E00BCDA13 /* MetricsBuilderProtocol.swift in Sources */,
+				DA54042E21005FEA00E6F448 /* Max.swift in Sources */,
+				DA2062A920F5040D001B58A1 /* MetricsCommandMaxStreak.swift in Sources */,
 				DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */,
 				DA5E6D5520FA0DBA00120292 /* PyroDelegate.swift in Sources */,
 				DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
-				DA2062A520F503E8001B58A1 /* StatsCommandLastContribution.swift in Sources */,
+				DA2062A520F503E8001B58A1 /* MetricsCommandLastContribution.swift in Sources */,
 				DA28086820F5DC3200BCDA13 /* LoadProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,9 +558,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA540436210066C100E6F448 /* TestMetricsBuilder_Years.swift in Sources */,
 				DA5E6D5920FA10F300120292 /* MockPyroDelegate.swift in Sources */,
 				DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */,
 				DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */,
+				DA54043A21007A3C00E6F448 /* TestMetricsBuilder_Max.swift in Sources */,
 				DAE9E93220F78FB500B5492C /* TestPyro.swift in Sources */,
 				DA2062C120F527FA001B58A1 /* TestLoad.swift in Sources */,
 				DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */,
@@ -574,12 +570,12 @@
 				DA2062BC20F5249A001B58A1 /* MockRequestProtocol.swift in Sources */,
 				DA28087320F5DE5000BCDA13 /* MockReportProtocol.swift in Sources */,
 				DA01228220F49A1C00B9C5EF /* TestScraper.swift in Sources */,
-				DA28087920F5DFCA00BCDA13 /* MockStatsBuilderProtocol.swift in Sources */,
+				DA28087920F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift in Sources */,
 				DA2062C520F529F2001B58A1 /* MockLoadDelegate.swift in Sources */,
 				DA28087D20F5E1DF00BCDA13 /* MockReportDelegate.swift in Sources */,
 				DA28086A20F5DC6200BCDA13 /* MockLoadProtocol.swift in Sources */,
 				DA28087520F5DE6C00BCDA13 /* TestReport.swift in Sources */,
-				DA20629B20F4F93F001B58A1 /* TestStatsBuilder.swift in Sources */,
+				DA20629B20F4F93F001B58A1 /* TestMetricsBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

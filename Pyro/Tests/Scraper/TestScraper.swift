@@ -20,7 +20,7 @@ class TestScraper:XCTestCase {
         super.setUp()
         self.scraper = Scraper()
         self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = StatsConstants.dateFormat
+        self.dateFormatter.dateFormat = MetricsConstants.dateFormat
         let urlMin:URL = Bundle(for:type(of:self)).url(forResource:"StatsMin", withExtension:"stub")!
         let urlDuplicates:URL = Bundle(for:type(of:self)).url(forResource:"StatsDuplicates", withExtension:"stub")!
         let urlFuture:URL = Bundle(for:type(of:self)).url(forResource:"StatsFuture", withExtension:"stub")!
@@ -72,5 +72,15 @@ class TestScraper:XCTestCase {
     
     func testThrowIfItemsInTheFuture() {
         XCTAssertThrowsError(try self.scraper.makeItems(data:self.dataFuture), "Not throwing")
+    }
+    
+    func testParseYear() {
+        XCTAssertNoThrow(try self.scraper.makeItems(data:self.dataMin), "Failed to scrap")
+        XCTAssertEqual(2018, self.scraper.items.first?.year, "Invalid year")
+    }
+    
+    func testParseMonth() {
+        XCTAssertNoThrow(try self.scraper.makeItems(data:self.dataMin), "Failed to scrap")
+        XCTAssertEqual(6, self.scraper.items.first?.month, "Invalid month")
     }
 }

@@ -34,14 +34,28 @@ class TestLoad:XCTestCase {
         XCTAssertTrue(received, "Not received")
     }
     
+    func testReleasesScraperOnSuccess() {
+        XCTAssertNotNil(self.load.scraper, "Should initially be not nil")
+        self.request.data = Data()
+        self.load.start(user:User())
+        XCTAssertNil(self.load.scraper, "Should finally be nil")
+    }
+    
+    func testReleasesErrorOnSuccess() {
+        XCTAssertNotNil(self.load.scraper, "Should initially be not nil")
+        self.request.error = RequestError.emptyResponse
+        self.load.start(user:User())
+        XCTAssertNil(self.load.scraper, "Should finally be nil")
+    }
+    
     func testRequestAllYears() {
         let receiveStartingYear:XCTestExpectation = self.expectation(description:"Starting year missing")
         let receiveEndingYear:XCTestExpectation = self.expectation(description:"Ending year missing")
         self.request.data = Data()
         self.request.onReceived = { (year:Int) in
-            if year == LoadConstants.startingYear {
+            if year == 1999 {
                 receiveStartingYear.fulfill()
-            } else if year == LoadConstants.endingYear {
+            } else if year == 2020 {
                 receiveEndingYear.fulfill()
             }
         }
@@ -56,7 +70,8 @@ class TestLoad:XCTestCase {
             expect?.fulfill()
             expect = nil
         }
-        self.load.start(user:User())
+        self.load.user = User()
+        self.load.next(year:1990)
         self.waitForExpectations(timeout:0.1, handler:nil)
     }
     
@@ -74,7 +89,8 @@ class TestLoad:XCTestCase {
         }
         self.scraper.error = ScraperError.dateInTheFuture
         self.delegate.onCompleted = { completed.fulfill() }
-        self.load.start(user:User())
+        self.load.user = User()
+        self.load.next(year:1990)
         self.waitForExpectations(timeout:0.3, handler:nil)
         XCTAssertEqual(timesRequested, 1, "Requested more than expected")
     }

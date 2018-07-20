@@ -6,7 +6,7 @@ class StorageFile:StorageFileProtocol {
     init() {
         let app:URL = FileManager.default.urls(for:FileManager.SearchPathDirectory.documentDirectory,
                                                in:FileManager.SearchPathDomainMask.userDomainMask).last!
-        self.url = app.appendingPathComponent(StorageConstants.storeFile)
+        self.url = app.appendingPathComponent(Constants.storeFile)
     }
     
     func load() throws -> Data {
@@ -24,4 +24,8 @@ class StorageFile:StorageFileProtocol {
             try FileManager.default.removeItem(at:self.url)
         }
     }
+}
+
+private struct Constants {
+    static let storeFile:String = "Store.json"
 }

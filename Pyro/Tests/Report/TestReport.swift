@@ -5,7 +5,7 @@ class TestReport:XCTestCase {
     private var report:Report!
     private var delegate:MockReportDelegate!
     private var load:MockLoadProtocol!
-    private var builder:MockStatsBuilderProtocol!
+    private var builder:MockMetricsBuilderProtocol!
     private var user:User!
     
     override func setUp() {
@@ -13,7 +13,7 @@ class TestReport:XCTestCase {
         self.report = Report()
         self.delegate = MockReportDelegate()
         self.load = MockLoadProtocol()
-        self.builder = MockStatsBuilderProtocol()
+        self.builder = MockMetricsBuilderProtocol()
         self.user = User()
         self.report.user = self.user
         self.report.delegate = self.delegate

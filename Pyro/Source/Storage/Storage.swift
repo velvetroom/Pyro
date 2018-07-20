@@ -6,7 +6,7 @@ class Storage:StorageProtocol {
     
     init() {
         self.file = StorageFile()
-        self.dispatch = DispatchQueue(label:StorageConstants.identifier, qos:DispatchQoS.background,
+        self.dispatch = DispatchQueue(label:Constants.identifier, qos:DispatchQoS.background,
                                       attributes:DispatchQueue.Attributes.concurrent,
                                       autoreleaseFrequency:DispatchQueue.AutoreleaseFrequency.inherit,
                                       target:DispatchQueue.global(qos:DispatchQoS.QoSClass.background))
@@ -47,7 +47,7 @@ class Storage:StorageProtocol {
     }
     
     private func loadUserBase() throws -> [User] {
-        let url:URL = Bundle(for:type(of:self)).url(forResource:StorageConstants.userBaseFile, withExtension:nil)!
+        let url:URL = Bundle(for:type(of:self)).url(forResource:Constants.userBaseFile, withExtension:nil)!
         let data:Data = try Data(contentsOf:url, options:Data.ReadingOptions.uncached)
         let userBase:[UserBase] = try JSONDecoder().decode([UserBase].self, from:data)
         let users:[User] = self.createUsersFrom(userBase:userBase)
@@ -65,4 +65,9 @@ class Storage:StorageProtocol {
         }
         return users
     }
+}
+
+private struct Constants {
+    static let identifier:String = "pyro.storage"
+    static let userBaseFile:String = "UserBase.json"
 }
