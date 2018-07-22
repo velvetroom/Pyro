@@ -1,6 +1,7 @@
 import Foundation
 import CleanArchitecture
 import Pyro
+import StoreKit
 
 class StatsInteractor:InteractorProtocol, PyroDelegate {
     weak var router:Router?
@@ -29,5 +30,13 @@ class StatsInteractor:InteractorProtocol, PyroDelegate {
     func pyroFailed(error:Error) {
         self.error = error
         self.presenter?.shouldUpdate()
+    }
+    
+    func didLoad() {
+        if self.pyro.shouldRate() {
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            }
+        }
     }
 }

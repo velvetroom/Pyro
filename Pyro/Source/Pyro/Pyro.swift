@@ -37,6 +37,16 @@ public class Pyro:ReportDelegate {
         self.saveUsers()
     }
     
+    public func shouldRate() -> Bool {
+        guard
+            self.session.rates.isEmpty,
+            self.session.reports == Constants.reportsToRate
+        else { return false }
+        self.session.rates.append(Date())
+        self.saveSession()
+        return true
+    }
+    
     public func loadSession() { self.storage.load { [weak self] (session:Session) in self?.session = session } }
     public func makeReport(user:User) { self.report.make(user:user) }
     func saveUsers() { self.storage.save(users:self.users) }
@@ -56,4 +66,8 @@ public class Pyro:ReportDelegate {
             return userA.name.caseInsensitiveCompare(userB.name) == ComparisonResult.orderedAscending
         }
     }
+}
+
+private struct Constants {
+    static let reportsToRate:Int = 2
 }
