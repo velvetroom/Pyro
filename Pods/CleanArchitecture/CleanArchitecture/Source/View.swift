@@ -18,9 +18,7 @@ open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController {
         self.postInit()
     }
     
-    public required init?(coder:NSCoder) {
-        return nil
-    }
+    public required init?(coder:NSCoder) { return nil }
     
     open override func loadView() {
         self.view = self.content
@@ -40,11 +38,6 @@ open class View<Presenter:PresenterProtocol, Content:UIView>:UIViewController {
     open override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
         self.presenter.didAppear()
-    }
-    
-    open override func viewWillTransition(to size:CGSize, with coordinator:UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to:size, with:coordinator)
-        self.presenter.orientationChanged()
     }
     
     private func postInit() {

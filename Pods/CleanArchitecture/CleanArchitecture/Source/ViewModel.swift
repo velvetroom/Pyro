@@ -8,23 +8,23 @@ public class ViewModel {
     }
     
     public func update<Property:ViewModelProtocol>(property:Property) {
-        var item:ViewModelItem<Property> = ViewModelItem<Property>()
+        var item:Item<Property> = Item<Property>()
         item.property = property
         item.observer = self.item().observer
         self.items[ObjectIdentifier(Property.self)] = item
-        item.observer?(property)
+        DispatchQueue.main.async { item.observer?(property) }
     }
     
     public func observe<Property:ViewModelProtocol>(observer:@escaping((Property) -> Void)) {
-        var item:ViewModelItem<Property> = self.item()
+        var item:Item<Property> = self.item()
         item.observer = observer
         self.items[ObjectIdentifier(Property.self)] = item
     }
     
-    private func item<Property:ViewModelProtocol>() -> ViewModelItem<Property> {
+    private func item<Property:ViewModelProtocol>() -> Item<Property> {
         guard
-            let item:ViewModelItem<Property> = self.items[ObjectIdentifier(Property.self)] as? ViewModelItem<Property>
-        else { return ViewModelItem<Property>() }
+            let item:Item<Property> = self.items[ObjectIdentifier(Property.self)] as? Item<Property>
+        else { return Item<Property>() }
         return item
     }
 }
@@ -33,7 +33,7 @@ public protocol ViewModelProtocol {
     init()
 }
 
-private struct ViewModelItem<Property:ViewModelProtocol> {
+private struct Item<Property:ViewModelProtocol> {
     var property:Property
     var observer:((Property) -> Void)?
     
