@@ -4,7 +4,7 @@ import Pyro
 
 class UsersInteractor:InteractorProtocol, PyroDelegate {
     weak var router:Router?
-    weak var presenter:InteractorDelegateProtocol?
+    weak var presenter:InteractorDelegate?
     var pyro:Pyro
     
     required init() {

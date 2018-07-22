@@ -4,7 +4,7 @@ import Pyro
 
 class StatsInteractor:InteractorProtocol, PyroDelegate {
     weak var router:Router?
-    weak var presenter:InteractorDelegateProtocol?
+    weak var presenter:InteractorDelegate?
     weak var pyro:Pyro!
     weak var user:User!
     var error:Error?
