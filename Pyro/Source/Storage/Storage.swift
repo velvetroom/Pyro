@@ -30,13 +30,8 @@ class Storage:StorageProtocol {
         }
     }
     
-    func save(users:[User]) {
-        self.save(model:users, name:Constants.storeFile)
-    }
-    
-    func save(session:Session) {
-        self.save(model:session, name:Constants.sessionFile)
-    }
+    func save(users:[User]) { self.save(model:users, name:Constants.storeFile) }
+    func save(session:Session) { self.save(model:session, name:Constants.sessionFile) }
     
     private func loadUsers() -> [User] {
         var users:[User] = []
@@ -60,7 +55,7 @@ class Storage:StorageProtocol {
     }
     
     private func load<Model:Decodable>(name:String) throws -> Model {
-        return try self.decode(data:try self.file.load(name:Constants.storeFile))
+        return try self.decode(data:try self.file.load(name:name))
     }
     
     private func loadUserBase() throws -> [User] {

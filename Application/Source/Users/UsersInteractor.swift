@@ -29,4 +29,8 @@ class UsersInteractor:InteractorProtocol, PyroDelegate {
     func pyroUpdated() {
         self.presenter?.shouldUpdate()
     }
+    
+    func didLoad() {
+        self.pyro.loadSession()
+    }
 }
