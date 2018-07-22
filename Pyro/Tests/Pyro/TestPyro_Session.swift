@@ -46,29 +46,29 @@ class TestPyro_Session:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testShouldRateIfReportsMatches2AndNotPreviousRate() {
-        self.pyro.session.reports = 2
+    func testShouldRateIfReportsMatches3AndNotPreviousRate() {
+        self.pyro.session.reports = 3
         XCTAssertTrue(self.pyro.shouldRate(), "Failed to accept app rating")
     }
     
     func testShouldNotRateIfPreviousRate() {
-        self.pyro.session.reports = 2
+        self.pyro.session.reports = 3
         self.pyro.session.rates = [Date()]
         XCTAssertFalse(self.pyro.shouldRate(), "Failed to deny app rating")
     }
     
-    func testShouldNotRateIfReportsLowerThan2() {
-        self.pyro.session.reports = 1
+    func testShouldNotRateIfReportsLowerThan3() {
+        self.pyro.session.reports = 2
         XCTAssertFalse(self.pyro.shouldRate(), "Failed to deny app rating")
     }
     
-    func testShouldNotRateIfReportsGreaterThan2() {
-        self.pyro.session.reports = 3
+    func testShouldNotRateIfReportsGreaterThan3() {
+        self.pyro.session.reports = 4
         XCTAssertFalse(self.pyro.shouldRate(), "Failed to deny app rating")
     }
     
     func testIfRateSuccessAddRateDate() {
-        self.pyro.session.reports = 2
+        self.pyro.session.reports = 3
         XCTAssertTrue(self.pyro.shouldRate(), "Failed to accept")
         XCTAssertFalse(self.pyro.session.rates.isEmpty, "Is not adding rate date")
         XCTAssertFalse(self.pyro.shouldRate(), "Should fail")
@@ -82,7 +82,7 @@ class TestPyro_Session:XCTestCase {
     func testRateSuccessSaves() {
         let expect:XCTestExpectation = self.expectation(description:"Storage not called")
         self.storage.onSaveSession = { expect.fulfill() }
-        self.pyro.session.reports = 2
+        self.pyro.session.reports = 3
         XCTAssertTrue(self.pyro.shouldRate(), "Failed to accept")
         self.waitForExpectations(timeout:0.3, handler:nil)
     }

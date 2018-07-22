@@ -69,5 +69,5 @@ public class Pyro:ReportDelegate {
 }
 
 private struct Constants {
-    static let reportsToRate:Int = 2
+    static let reportsToRate:Int = 3
 }
