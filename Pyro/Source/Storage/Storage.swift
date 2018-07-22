@@ -14,60 +14,76 @@ class Storage:StorageProtocol {
     
     func load(onCompletion:@escaping(([User]) -> Void)) {
         self.dispatch.async { [weak self] in
-            guard let users:[User] = self?.load() else { return }
+            guard let users:[User] = self?.loadUsers() else { return }
             DispatchQueue.main.async {
                 onCompletion(users)
             }
         }
     }
     
-    func save(users:[User]) {
+    func load(onCompletion:@escaping((Session) -> Void)) {
         self.dispatch.async { [weak self] in
-            let data:Data
-            do {
-                try data = JSONEncoder().encode(users)
-                try self?.file.save(data:data)
-            } catch { }
+            guard let session:Session = self?.loadSession() else { return }
+            DispatchQueue.main.async {
+                onCompletion(session)
+            }
         }
     }
     
-    private func load() -> [User] {
+    func save(users:[User]) {
+        self.save(model:users, name:Constants.storeFile)
+    }
+    
+    func save(session:Session) {
+        self.save(model:session, name:Constants.sessionFile)
+    }
+    
+    private func loadUsers() -> [User] {
         var users:[User] = []
         do {
-            try users = self.loadFile()
+            try users = self.load(name:Constants.storeFile)
         } catch {
             do { try users = self.loadUserBase() } catch { }
         }
         return users
     }
     
-    private func loadFile() throws -> [User] {
-        let data:Data = try self.file.load()
-        return try JSONDecoder().decode([User].self, from:data)
+    private func loadSession() -> Session {
+        let session:Session
+        do {
+            try session = self.load(name:Constants.sessionFile)
+        } catch {
+            session = Session()
+            self.save(session:session)
+        }
+        return session
+    }
+    
+    private func load<Model:Decodable>(name:String) throws -> Model {
+        return try self.decode(data:try self.file.load(name:Constants.storeFile))
     }
     
     private func loadUserBase() throws -> [User] {
-        let url:URL = Bundle(for:type(of:self)).url(forResource:Constants.userBaseFile, withExtension:nil)!
-        let data:Data = try Data(contentsOf:url, options:Data.ReadingOptions.uncached)
-        let userBase:[UserBase] = try JSONDecoder().decode([UserBase].self, from:data)
-        let users:[User] = self.createUsersFrom(userBase:userBase)
+        let userBase:[UserBase] = try self.decode(data:try self.file.loadFromBundle(name:Constants.userBaseFile))
+        let users:[User] = UserFactory.makeFrom(userBase:userBase)
         self.save(users:users)
         return users
     }
     
-    private func createUsersFrom(userBase:[UserBase]) -> [User] {
-        var users:[User] = []
-        for base:UserBase in userBase {
-            let user:User = UserFactory.make()
-            user.name = base.name
-            user.url = base.url
-            users.append(user)
+    private func save<Model:Encodable>(model:Model, name:String) {
+        self.dispatch.async { [weak self] in
+            do { try self?.file.save(data:try JSONEncoder().encode(model), name:name) } catch { }
         }
-        return users
+    }
+    
+    private func decode<Model:Decodable>(data:Data) throws -> Model {
+        return try JSONDecoder().decode(Model.self, from:data)
     }
 }
 
 private struct Constants {
     static let identifier:String = "pyro.storage"
     static let userBaseFile:String = "UserBase.json"
+    static let storeFile:String = "Store.json"
+    static let sessionFile:String = "Session.json"
 }

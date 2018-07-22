@@ -13,7 +13,7 @@ class UsersInteractor:InteractorProtocol, PyroDelegate {
     
     func load() {
         self.pyro.delegate = self
-        self.pyro.load()
+        self.pyro.loadUsers()
     }
     
     func select(user:User) {

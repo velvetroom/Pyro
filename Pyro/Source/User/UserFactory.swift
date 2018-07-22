@@ -7,5 +7,16 @@ class UserFactory {
         return user
     }
     
+    class func makeFrom(userBase:[UserBase]) -> [User] {
+        var users:[User] = []
+        for base:UserBase in userBase {
+            let user:User = make()
+            user.name = base.name
+            user.url = base.url
+            users.append(user)
+        }
+        return users
+    }
+    
     private init() { }
 }

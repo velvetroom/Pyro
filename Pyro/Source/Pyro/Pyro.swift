@@ -5,15 +5,17 @@ public class Pyro:ReportDelegate {
     public weak var delegate:PyroDelegate?
     var storage:StorageProtocol
     var report:ReportProtocol
+    var session:Session
     
     public init() {
         self.users = []
+        self.session = Session()
         self.storage = Storage()
         self.report = Report()
         self.report.delegate = self
     }
     
-    public func load() {
+    public func loadUsers() {
         self.storage.load { [weak self] (users:[User]) in
             self?.users = users
             self?.delegate?.pyroUpdated()
@@ -25,31 +27,27 @@ public class Pyro:ReportDelegate {
         user.name = name
         user.url = url
         self.add(user:user)
-        self.save()
+        self.saveUsers()
         self.delegate?.pyroUpdated()
         return user
     }
     
-    public func makeReport(user:User) {
-        self.report.make(user:user)
-    }
-    
     public func delete(user:User) {
         self.users.removeAll { (listedUser:User) -> Bool in return listedUser === user }
-        self.save()
+        self.saveUsers()
     }
     
-    func save() {
-        self.storage.save(users:self.users)
-    }
+    public func loadSession() { self.storage.load { [weak self] (session:Session) in self?.session = session } }
+    public func makeReport(user:User) { self.report.make(user:user) }
+    func saveUsers() { self.storage.save(users:self.users) }
+    func saveSession() { self.storage.save(session:self.session) }
+    func reportFailed(error:Error) { self.delegate?.pyroFailed(error:error) }
     
     func reportCompleted() {
-        self.save()
+        self.session.reports += 1
+        self.saveSession()
+        self.saveUsers()
         self.delegate?.pyroUpdated()
-    }
-    
-    func reportFailed(error:Error) {
-        self.delegate?.pyroFailed(error:error)
     }
     
     private func add(user:User) {

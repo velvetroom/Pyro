@@ -27,17 +27,17 @@ class TestPyro:XCTestCase {
         user.name = invalidName
         self.pyro.users.append(user)
         
-        self.storage.onLoad = { expectStorage.fulfill() }
+        self.storage.onLoadUsers = { expectStorage.fulfill() }
         self.delegate.onUpdated = { expectDelegate.fulfill() }
-        self.pyro.load()
+        self.pyro.loadUsers()
         self.waitForExpectations(timeout:0.3, handler:nil)
         XCTAssertTrue(self.pyro.users.isEmpty, "Failed to replace users")
     }
     
-    func testSaveCallsStorage() {
+    func testSaveUsersCallsStorage() {
         let expect:XCTestExpectation = self.expectation(description:"Storage not called")
-        self.storage.onSave = { expect.fulfill() }
-        self.pyro.save()
+        self.storage.onSaveUsers = { expect.fulfill() }
+        self.pyro.saveUsers()
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
@@ -70,7 +70,7 @@ class TestPyro:XCTestCase {
     func testAddUserSaves() {
         let expectStorage:XCTestExpectation = self.expectation(description:"Storage not called")
         let expectDelegate:XCTestExpectation = self.expectation(description:"Delegate not notified")
-        self.storage.onSave = { expectStorage.fulfill() }
+        self.storage.onSaveUsers = { expectStorage.fulfill() }
         self.delegate.onUpdated = { expectDelegate.fulfill() }
         self.pyro.addUser(name:String(), url:String())
         self.waitForExpectations(timeout:0.3, handler:nil)
@@ -92,13 +92,13 @@ class TestPyro:XCTestCase {
     
     func testReportCompletedSaves() {
         let expect:XCTestExpectation = self.expectation(description:"Not saved")
-        self.storage.onSave = { expect.fulfill() }
+        self.storage.onSaveUsers = { expect.fulfill() }
         self.pyro.reportCompleted()
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
     func testReportFailedNotSaving() {
-        self.storage.onSave = { XCTFail("Should not save") }
+        self.storage.onSaveUsers = { XCTFail("Should not save") }
         self.pyro.reportFailed(error:RequestError.banned)
     }
     
@@ -118,7 +118,7 @@ class TestPyro:XCTestCase {
     
     func testDeleteSaves() {
         let expect:XCTestExpectation = self.expectation(description:"Not saved")
-        self.storage.onSave = { expect.fulfill() }
+        self.storage.onSaveUsers = { expect.fulfill() }
         self.pyro.delete(user:User())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
