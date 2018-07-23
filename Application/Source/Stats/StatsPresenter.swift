@@ -5,11 +5,8 @@ import Pyro
 class StatsPresenter:PresenterProtocol {
     var interactor:StatsInteractor!
     var viewModel:ViewModel!
-    private var factory:StatsFactory
     
-    required init() {
-        self.factory = StatsFactory()
-    }
+    required init() { }
     
     func synchronize() {
         self.interactor.synchStats()
@@ -34,15 +31,10 @@ class StatsPresenter:PresenterProtocol {
     
     func didLoad() {
         self.interactor.checkState()
-        self.updateViewModel()
+        self.interactor.state.update(viewModel:self.viewModel)
     }
     
     func shouldUpdate() {
-        self.updateViewModel()
-    }
-    
-    func updateViewModel() {
-        self.viewModel.update(property:self.interactor.state.makeViewModel(factory:self.factory))
-        self.viewModel.update(property:self.factory.makeContent(state:self.interactor.state))
+        self.interactor.state.update(viewModel:self.viewModel)
     }
 }

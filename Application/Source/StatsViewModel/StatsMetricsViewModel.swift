@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct StatsContentViewModel:ViewModelProtocol {
+struct StatsMetricsViewModel:ViewModelProtocol {
     var items:[StatsItem]
     var streak:NSAttributedString
     var contributions:NSAttributedString

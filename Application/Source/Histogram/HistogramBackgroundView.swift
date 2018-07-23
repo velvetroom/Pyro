@@ -22,6 +22,6 @@ class HistograBackgroundView:UIView {
         gradientLayer.startPoint = CGPoint(x:0.5, y:0)
         gradientLayer.endPoint = CGPoint(x:0.5, y:1)
         gradientLayer.locations = [0, 1]
-        gradientLayer.colors = [UIColor.clear.cgColor, UIColor(white:0, alpha:0.1).cgColor]
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor(white:0, alpha:0.07).cgColor]
     }
 }

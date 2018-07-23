@@ -1,12 +1,46 @@
 import UIKit
+import CleanArchitecture
 import Pyro
 
-class StatsFactory {
+class StatsStateReady:StatsStateProtocol {
+    let metrics:Metrics
     private let numberFormatter:NumberFormatter
     private let dateFormatter:DateFormatter
     private let paragraph:NSMutableParagraphStyle
     
-    init() {
+    private var stateProperty:StatsContentViewModel {
+        get {
+            var property:StatsContentViewModel = StatsContentViewModel()
+            property.sync = NSLocalizedString("StatsStateReady_Sync", comment:String())
+            property.sync += self.dateFormatter.string(from:metrics.timestamp)
+            property.metricsHidden = false
+            property.messageHidden = true
+            property.loadingHidden = true
+            property.actionsEnabled = true
+            return property
+        }
+    }
+    
+    private var metricsProperty:StatsMetricsViewModel {
+        get {
+            var property:StatsMetricsViewModel = StatsMetricsViewModel()
+            property.items = self.makeItems(contributions:self.metrics.contributions)
+            property.streak = self.make(streak:self.metrics.streak)
+            property.contributions = self.make(contributions:self.metrics.contributions)
+            return property
+        }
+    }
+    
+    private var loadingProperty:StatsLoadingViewModel {
+        get {
+            var property:StatsLoadingViewModel = StatsLoadingViewModel()
+            property.progress = Constants.loading
+            return property
+        }
+    }
+    
+    init(metrics:Metrics) {
+        self.metrics = metrics
         self.numberFormatter = NumberFormatter()
         self.numberFormatter.numberStyle = NumberFormatter.Style.decimal
         self.numberFormatter.groupingSeparator = NSLocalizedString("Grouping_Separator", comment:String())
@@ -17,58 +51,10 @@ class StatsFactory {
         paragraph.paragraphSpacing = Constants.streakSpacing
     }
     
-    func makeContent(state:StatsStateProtocol) -> StatsContentViewModel {
-        var property:StatsContentViewModel = StatsContentViewModel()
-        if let state:StatsStateReady = state as? StatsStateReady {
-            property.items = self.makeItems(contributions:state.metrics.contributions)
-            property.streak = self.make(streak:state.metrics.streak)
-            property.contributions = self.make(contributions:state.metrics.contributions)
-        }
-        return property
-    }
-    
-    func make(state:StatsStateReady) -> StatsStateViewModel {
-        var viewModel:StatsStateViewModel = StatsStateViewModel()
-        viewModel.sync = NSLocalizedString("StatsFactory_Metrics", comment:String())
-        viewModel.sync += self.dateFormatter.string(from:state.metrics.timestamp)
-        viewModel.metricsHidden = false
-        viewModel.messageHidden = true
-        viewModel.loadingHidden = true
-        viewModel.actionsEnabled = true
-        return viewModel
-    }
-    
-    func make(state:StatsStateNeedsSync) -> StatsStateViewModel {
-        var viewModel:StatsStateViewModel = StatsStateViewModel()
-        viewModel.sync = NSLocalizedString("StatsFactory_NeedsSync", comment:String())
-        viewModel.message = NSLocalizedString("StatsNeedsSyncView_Label", comment:String())
-        viewModel.metricsHidden = true
-        viewModel.messageHidden = false
-        viewModel.loadingHidden = true
-        viewModel.actionsEnabled = true
-        return viewModel
-    }
-    
-    func make(state:StatsStateLoading) -> StatsStateViewModel {
-        var viewModel:StatsStateViewModel = StatsStateViewModel()
-        viewModel.sync = NSLocalizedString("StatsFactory_Loading", comment:String())
-        viewModel.metricsHidden = true
-        viewModel.messageHidden = true
-        viewModel.loadingHidden = false
-        viewModel.actionsEnabled = false
-        viewModel.progress = state.progress
-        return viewModel
-    }
-    
-    func make(state:StatsStateError) -> StatsStateViewModel {
-        var viewModel:StatsStateViewModel = StatsStateViewModel()
-        viewModel.sync = NSLocalizedString("StatsFactory_Error", comment:String())
-        viewModel.message = state.error.localizedDescription
-        viewModel.metricsHidden = true
-        viewModel.messageHidden = false
-        viewModel.loadingHidden = true
-        viewModel.actionsEnabled = true
-        return viewModel
+    func update(viewModel:ViewModel) {
+        viewModel.update(property:self.stateProperty)
+        viewModel.update(property:self.metricsProperty)
+        viewModel.update(property:self.loadingProperty)
     }
     
     private func make(streak:Streak) -> NSAttributedString {
@@ -126,9 +112,9 @@ class StatsFactory {
     }
     
     private func titleWith(string:String) -> NSAttributedString {
-        return NSAttributedString(string:"\n\(string)", attributes:[NSAttributedString.Key.font :
-            UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.light),
-            NSAttributedString.Key.foregroundColor : UIColor(white:0, alpha:0.5)])
+        return NSAttributedString(string:"\n\(string)", attributes:
+            [NSAttributedString.Key.font:UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.light),
+             NSAttributedString.Key.foregroundColor:UIColor(white:0, alpha:0.5)])
     }
 }
 
@@ -138,6 +124,7 @@ private struct Constants {
     static let contributionsFontSize:CGFloat = 34
     static let monthsFontSize:CGFloat = 28
     static let titleFontSize:CGFloat = 12
+    static let loading:Float = 1
     static let minContributions:Int = 1
     static let months:Int = 12
 }
