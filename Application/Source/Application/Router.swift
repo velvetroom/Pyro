@@ -17,7 +17,7 @@ class Router:UINavigationController {
         }
     }
     
-    func routeToStats(pyro:Pyro, user:User) {
+    func routeToStats(pyro:Pyro, user:User_v1) {
         let view:StatsView = StatsView()
         view.presenter.interactor.pyro = pyro
         view.presenter.interactor.user = user

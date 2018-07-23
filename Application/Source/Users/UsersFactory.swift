@@ -14,7 +14,7 @@ class UsersFactory {
     
     func byName(pyro:Pyro) -> UsersViewModel {
         var viewModel:UsersViewModel = UsersViewModel()
-        for user:User in pyro.users {
+        for user:User_v1 in pyro.users {
             var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
@@ -25,7 +25,7 @@ class UsersFactory {
     
     func byContributions(pyro:Pyro) -> UsersViewModel {
         var viewModel:UsersViewModel = UsersViewModel()
-        for user:User in self.usersByContributions(pyro:pyro) {
+        for user:User_v1 in self.usersByContributions(pyro:pyro) {
             var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
@@ -41,7 +41,7 @@ class UsersFactory {
     
     func byStreak(pyro:Pyro) -> UsersViewModel {
         var viewModel:UsersViewModel = UsersViewModel()
-        for user:User in self.usersByStreak(pyro:pyro) {
+        for user:User_v1 in self.usersByStreak(pyro:pyro) {
             var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
@@ -55,7 +55,7 @@ class UsersFactory {
         return viewModel
     }
     
-    private func makeName(user:User) -> NSAttributedString {
+    private func makeName(user:User_v1) -> NSAttributedString {
         let string:NSMutableAttributedString = NSMutableAttributedString()
         let name:NSAttributedString = NSAttributedString(string:user.name, attributes:[NSAttributedString.Key.font:
             UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.regular)])
@@ -67,8 +67,8 @@ class UsersFactory {
         return string
     }
     
-    private func usersByContributions(pyro:Pyro) -> [User] {
-        return pyro.users.sorted { (userA:User, userB:User) -> Bool in
+    private func usersByContributions(pyro:Pyro) -> [User_v1] {
+        return pyro.users.sorted { (userA:User_v1, userB:User_v1) -> Bool in
             if let metricsA:Metrics = userA.metrics {
                 if let metricsB:Metrics = userB.metrics {
                     return metricsA.contributions.count > metricsB.contributions.count
@@ -81,8 +81,8 @@ class UsersFactory {
         }
     }
     
-    private func usersByStreak(pyro:Pyro) -> [User] {
-        return pyro.users.sorted { (userA:User, userB:User) -> Bool in
+    private func usersByStreak(pyro:Pyro) -> [User_v1] {
+        return pyro.users.sorted { (userA:User_v1, userB:User_v1) -> Bool in
             if let metricsA:Metrics = userA.metrics {
                 if let metricsB:Metrics = userB.metrics {
                     return metricsA.streak.max > metricsB.streak.max

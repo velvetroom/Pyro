@@ -4,7 +4,7 @@ class Report:ReportProtocol, LoadDelegate {
     weak var delegate:ReportDelegate?
     var load:LoadProtocol
     var builder:MetricsBuilderProtocol
-    weak var user:User?
+    weak var user:User_v1?
     private let dispatch:DispatchQueue
     
     init() {
@@ -17,7 +17,7 @@ class Report:ReportProtocol, LoadDelegate {
         self.load.delegate = self
     }
     
-    func make(user:User) {
+    func make(user:User_v1) {
         self.user = user
         self.dispatch.async { [weak self] in
             self?.load.start(user:user)

@@ -23,7 +23,7 @@ class TestPyro:XCTestCase {
         let expectDelegate:XCTestExpectation = self.expectation(description:"Delegate not notified")
         
         let invalidName:String = "invalid"
-        let user:User = User()
+        let user:User_v1 = User_v1()
         user.name = invalidName
         self.pyro.users.append(user)
         
@@ -46,7 +46,7 @@ class TestPyro:XCTestCase {
         let url:String = "lorem ipsum"
         self.pyro.addUser(name:name, url:url)
         XCTAssertFalse(self.pyro.users.isEmpty, "Failed to add")
-        guard let user:User = self.pyro.users.first else { return }
+        guard let user:User_v1 = self.pyro.users.first else { return }
         XCTAssertEqual(user.name, name, "Not assigned")
         XCTAssertEqual(user.url, url, "Not assigned")
         XCTAssertFalse(user.identifier.isEmpty, "Not assigned")
@@ -105,12 +105,12 @@ class TestPyro:XCTestCase {
     func testMakeReportCallsReporter() {
         let expect:XCTestExpectation = self.expectation(description:"Not reported")
         self.report.onReport = { expect.fulfill() }
-        self.pyro.makeReport(user:User())
+        self.pyro.makeReport(user:User_v1())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
     func testDeleteRemovesUser() {
-        let user:User = UserFactory.make()
+        let user:User_v1 = UserFactory.make()
         self.pyro.users.append(user)
         self.pyro.delete(user:user)
         XCTAssertTrue(self.pyro.users.isEmpty, "Failed to remove user")
@@ -119,7 +119,7 @@ class TestPyro:XCTestCase {
     func testDeleteSaves() {
         let expect:XCTestExpectation = self.expectation(description:"Not saved")
         self.storage.onSaveUsers = { expect.fulfill() }
-        self.pyro.delete(user:User())
+        self.pyro.delete(user:User_v1())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
 }

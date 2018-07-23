@@ -7,7 +7,7 @@ class StatsInteractor:InteractorProtocol, PyroDelegate {
     weak var router:Router?
     weak var presenter:InteractorDelegate?
     weak var pyro:Pyro!
-    weak var user:User!
+    weak var user:User_v1!
     var state:StatsStateProtocol
     
     required init() {

@@ -13,7 +13,7 @@ class Request:RequestProtocol {
         self.session = URLSession(configuration:configuration, delegate:nil, delegateQueue:OperationQueue())
     }
     
-    func make(user:User, year:Int, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
+    func make(user:User_v1, year:Int, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
         guard
             let request:URLRequest = self.request(user:user, year:year)
         else {
@@ -33,7 +33,7 @@ class Request:RequestProtocol {
         self.task?.resume()
     }
     
-    private func request(user:User, year:Int) -> URLRequest? {
+    private func request(user:User_v1, year:Int) -> URLRequest? {
         guard
             let userPath:String = user.url.addingPercentEncoding(withAllowedCharacters:CharacterSet.urlPathAllowed),
             let url:URL = URL(string:Constants.urlPrefix + userPath + Constants.urlMiddle + String(year) +

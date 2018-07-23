@@ -1,6 +1,6 @@
 import Foundation
 
-public class User:Codable {
+public class User_v1:Codable {
     public var name:String
     public var url:String
     public var metrics:Metrics?

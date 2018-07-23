@@ -7,7 +7,7 @@ class MockStorageProtocol:StorageProtocol {
     var onSaveUsers:(() -> Void)?
     var onSaveSession:(() -> Void)?
     
-    func load(onCompletion:@escaping(([User]) -> Void)) {
+    func load(onCompletion:@escaping(([User_v1]) -> Void)) {
         self.onLoadUsers?()
         onCompletion([])
     }
@@ -17,7 +17,7 @@ class MockStorageProtocol:StorageProtocol {
         onCompletion(Session())
     }
     
-    func save(users:[User]) {
+    func save(users:[User_v1]) {
         self.onSaveUsers?()
     }
     

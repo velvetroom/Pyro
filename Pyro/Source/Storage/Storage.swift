@@ -12,9 +12,9 @@ class Storage:StorageProtocol {
                                       target:DispatchQueue.global(qos:DispatchQoS.QoSClass.background))
     }
     
-    func load(onCompletion:@escaping(([User]) -> Void)) {
+    func load(onCompletion:@escaping(([User_v1]) -> Void)) {
         self.dispatch.async { [weak self] in
-            guard let users:[User] = self?.loadUsers() else { return }
+            guard let users:[User_v1] = self?.loadUsers() else { return }
             DispatchQueue.main.async {
                 onCompletion(users)
             }
@@ -30,11 +30,11 @@ class Storage:StorageProtocol {
         }
     }
     
-    func save(users:[User]) { self.save(model:users, name:Constants.storeFile) }
+    func save(users:[User_v1]) { self.save(model:users, name:Constants.storeFile) }
     func save(session:Session) { self.save(model:session, name:Constants.sessionFile) }
     
-    private func loadUsers() -> [User] {
-        var users:[User] = []
+    private func loadUsers() -> [User_v1] {
+        var users:[User_v1] = []
         do {
             try users = self.load(name:Constants.storeFile)
         } catch {
@@ -58,9 +58,9 @@ class Storage:StorageProtocol {
         return try self.decode(data:try self.file.load(name:name))
     }
     
-    private func loadUserBase() throws -> [User] {
+    private func loadUserBase() throws -> [User_v1] {
         let userBase:[UserBase] = try self.decode(data:try self.file.loadFromBundle(name:Constants.userBaseFile))
-        let users:[User] = UserFactory.makeFrom(userBase:userBase)
+        let users:[User_v1] = UserFactory.makeFrom(userBase:userBase)
         self.save(users:users)
         return users
     }

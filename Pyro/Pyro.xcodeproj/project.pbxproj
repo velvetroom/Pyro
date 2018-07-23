@@ -70,7 +70,7 @@
 		DAE187FB2104A03C00927A28 /* TestPyro_Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE187FA2104A03C00927A28 /* TestPyro_Session.swift */; };
 		DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861A20F47084003BF78A /* MockStorageFileProtocol.swift */; };
 		DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861B20F47084003BF78A /* TestStorage.swift */; };
-		DAE4862620F4708E003BF78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862120F4708E003BF78A /* User.swift */; };
+		DAE4862620F4708E003BF78A /* User_v1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862120F4708E003BF78A /* User_v1.swift */; };
 		DAE4862720F4708E003BF78A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862320F4708E003BF78A /* Storage.swift */; };
 		DAE4862920F4708E003BF78A /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862520F4708E003BF78A /* StorageError.swift */; };
 		DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9E92E20F78CD300B5492C /* Pyro.swift */; };
@@ -153,7 +153,7 @@
 		DAE4861720F4707A003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DAE4861A20F47084003BF78A /* MockStorageFileProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockStorageFileProtocol.swift; sourceTree = "<group>"; };
 		DAE4861B20F47084003BF78A /* TestStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
-		DAE4862120F4708E003BF78A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DAE4862120F4708E003BF78A /* User_v1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User_v1.swift; sourceTree = "<group>"; };
 		DAE4862320F4708E003BF78A /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DAE4862520F4708E003BF78A /* StorageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
 		DAE9E92E20F78CD300B5492C /* Pyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pyro.swift; sourceTree = "<group>"; };
@@ -369,7 +369,7 @@
 		DAE4862020F4708E003BF78A /* User */ = {
 			isa = PBXGroup;
 			children = (
-				DAE4862120F4708E003BF78A /* User.swift */,
+				DAE4862120F4708E003BF78A /* User_v1.swift */,
 				DA455BA520F72375000EBE10 /* UserBase.swift */,
 				DA49406020F87D27002F0C1F /* UserFactory.swift */,
 			);
@@ -532,7 +532,7 @@
 				DA20629F20F50098001B58A1 /* MetricsCommandProtocol.swift in Sources */,
 				DA5E6D4F20FA088A00120292 /* Streak.swift in Sources */,
 				DA2062A320F503B2001B58A1 /* MetricsCommandFirstContribution.swift in Sources */,
-				DAE4862620F4708E003BF78A /* User.swift in Sources */,
+				DAE4862620F4708E003BF78A /* User_v1.swift in Sources */,
 				DA2062A120F502A3001B58A1 /* MetricsCommandComposite.swift in Sources */,
 				DA5E6D4320F9ECEF00120292 /* ScraperItems.swift in Sources */,
 				DA455BA620F72375000EBE10 /* UserBase.swift in Sources */,

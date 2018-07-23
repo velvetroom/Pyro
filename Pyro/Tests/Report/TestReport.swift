@@ -6,7 +6,7 @@ class TestReport:XCTestCase {
     private var delegate:MockReportDelegate!
     private var load:MockLoadProtocol!
     private var builder:MockMetricsBuilderProtocol!
-    private var user:User!
+    private var user:User_v1!
     
     override func setUp() {
         super.setUp()
@@ -14,7 +14,7 @@ class TestReport:XCTestCase {
         self.delegate = MockReportDelegate()
         self.load = MockLoadProtocol()
         self.builder = MockMetricsBuilderProtocol()
-        self.user = User()
+        self.user = User_v1()
         self.report.user = self.user
         self.report.delegate = self.delegate
         self.report.load = self.load
@@ -36,7 +36,7 @@ class TestReport:XCTestCase {
             XCTAssertEqual(Thread.current, Thread.main, "Should be on main thread")
             expectDelegateReturns.fulfill()
         }
-        self.report.make(user:User())
+        self.report.make(user:User_v1())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
@@ -47,7 +47,7 @@ class TestReport:XCTestCase {
             XCTAssertEqual(Thread.current, Thread.main, "Should be on main thread")
             expect.fulfill()
         }
-        self.report.make(user:User())
+        self.report.make(user:User_v1())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
