@@ -2,7 +2,7 @@ import Foundation
 import Pyro
 
 struct UsersItem {
-    weak var user:User_v1!
+    weak var user:UserProtocol!
     var name:NSAttributedString
     var value:NSAttributedString
     

@@ -3,5 +3,5 @@ import Foundation
 protocol ReportProtocol {
     var delegate:ReportDelegate? { get set }
     
-    func make(user:User_v1)
+    func make(user:UserProtocol)
 }

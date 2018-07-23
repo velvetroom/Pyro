@@ -1,13 +1,13 @@
 import Foundation
 
-public class User_v1:Codable {
-    public var name:String
-    public var url:String
-    public var metrics:Metrics?
-    var identifier:String
+class User_v1:UserProtocol, Codable {
+    var name:String
+    var url:String
+    var metrics:Metrics?
+    let identifier:String
     
-    init() {
-        self.identifier = String()
+    public required init() {
+        self.identifier = UUID().uuidString
         self.name = String()
         self.url = String()
     }

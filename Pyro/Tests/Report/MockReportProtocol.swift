@@ -5,7 +5,7 @@ class MockReportProtocol:ReportProtocol {
     var onReport:(() -> Void)?
     weak var delegate:ReportDelegate?
     
-    func make(user:User_v1) {
+    func make(user:UserProtocol) {
         self.onReport?()
     }
 }

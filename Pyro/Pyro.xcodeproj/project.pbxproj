@@ -61,13 +61,15 @@
 		DA5E6D5520FA0DBA00120292 /* PyroDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5420FA0DBA00120292 /* PyroDelegate.swift */; };
 		DA5E6D5920FA10F300120292 /* MockPyroDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5820FA10F300120292 /* MockPyroDelegate.swift */; };
 		DA7BF72021060B94002DD1C7 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BF71F21060B94002DD1C7 /* UserProtocol.swift */; };
+		DA7BF72221060C6A002DD1C7 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BF72121060C6A002DD1C7 /* Configuration.swift */; };
+		DA7BF72421060EB2002DD1C7 /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BF72321060EB2002DD1C7 /* SessionProtocol.swift */; };
 		DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */; };
 		DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8220F6158B00E6F38E /* StorageFile.swift */; };
 		DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */; };
 		DAA00E3520F4940A009386CE /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3420F4940A009386CE /* Metrics.swift */; };
 		DAA00E3720F496AF009386CE /* StatsMin.stub in Resources */ = {isa = PBXBuildFile; fileRef = DAA00E3620F496AF009386CE /* StatsMin.stub */; };
 		DAB840EE20F8EC8D00CA3A45 /* ReportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB840ED20F8EC8D00CA3A45 /* ReportProtocol.swift */; };
-		DAE187F92104938700927A28 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE187F82104938700927A28 /* Session.swift */; };
+		DAE187F92104938700927A28 /* Session_v1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE187F82104938700927A28 /* Session_v1.swift */; };
 		DAE187FB2104A03C00927A28 /* TestPyro_Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE187FA2104A03C00927A28 /* TestPyro_Session.swift */; };
 		DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861A20F47084003BF78A /* MockStorageFileProtocol.swift */; };
 		DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861B20F47084003BF78A /* TestStorage.swift */; };
@@ -144,13 +146,15 @@
 		DA5E6D5420FA0DBA00120292 /* PyroDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyroDelegate.swift; sourceTree = "<group>"; };
 		DA5E6D5820FA10F300120292 /* MockPyroDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPyroDelegate.swift; sourceTree = "<group>"; };
 		DA7BF71F21060B94002DD1C7 /* UserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
+		DA7BF72121060C6A002DD1C7 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		DA7BF72321060EB2002DD1C7 /* SessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProtocol.swift; sourceTree = "<group>"; };
 		DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnalyser.swift; sourceTree = "<group>"; };
 		DA7E6E8220F6158B00E6F38E /* StorageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFile.swift; sourceTree = "<group>"; };
 		DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFileProtocol.swift; sourceTree = "<group>"; };
 		DAA00E3420F4940A009386CE /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		DAA00E3620F496AF009386CE /* StatsMin.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsMin.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DAB840ED20F8EC8D00CA3A45 /* ReportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProtocol.swift; sourceTree = "<group>"; };
-		DAE187F82104938700927A28 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		DAE187F82104938700927A28 /* Session_v1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session_v1.swift; sourceTree = "<group>"; };
 		DAE187FA2104A03C00927A28 /* TestPyro_Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyro_Session.swift; sourceTree = "<group>"; };
 		DAE4861720F4707A003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DAE4861A20F47084003BF78A /* MockStorageFileProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockStorageFileProtocol.swift; sourceTree = "<group>"; };
@@ -312,7 +316,8 @@
 		DAE187F3210491C300927A28 /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				DAE187F82104938700927A28 /* Session.swift */,
+				DA7BF72321060EB2002DD1C7 /* SessionProtocol.swift */,
+				DAE187F82104938700927A28 /* Session_v1.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 			children = (
 				DAE9E92E20F78CD300B5492C /* Pyro.swift */,
 				DA5E6D5420FA0DBA00120292 /* PyroDelegate.swift */,
+				DA7BF72121060C6A002DD1C7 /* Configuration.swift */,
 			);
 			path = Pyro;
 			sourceTree = "<group>";
@@ -529,7 +535,7 @@
 				DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */,
 				DAA00E3520F4940A009386CE /* Metrics.swift in Sources */,
 				DA01227F20F499AC00B9C5EF /* Scraper.swift in Sources */,
-				DAE187F92104938700927A28 /* Session.swift in Sources */,
+				DAE187F92104938700927A28 /* Session_v1.swift in Sources */,
 				DA28087B20F5E1A800BCDA13 /* ReportDelegate.swift in Sources */,
 				DA01228420F49AB700B9C5EF /* ScraperItem.swift in Sources */,
 				DA20629F20F50098001B58A1 /* MetricsCommandProtocol.swift in Sources */,
@@ -543,10 +549,12 @@
 				DA28087020F5DE2F00BCDA13 /* Report.swift in Sources */,
 				DA2062AB20F50416001B58A1 /* MetricsCommandCurrentStreak.swift in Sources */,
 				DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */,
+				DA7BF72221060C6A002DD1C7 /* Configuration.swift in Sources */,
 				DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */,
 				DA7BF72021060B94002DD1C7 /* UserProtocol.swift in Sources */,
 				DA5E6D5320FA0A7C00120292 /* Month.swift in Sources */,
 				DA2062BF20F527C3001B58A1 /* Load.swift in Sources */,
+				DA7BF72421060EB2002DD1C7 /* SessionProtocol.swift in Sources */,
 				DA20629820F4F910001B58A1 /* MetricsBuilder.swift in Sources */,
 				DA2062AE20F51A83001B58A1 /* Request.swift in Sources */,
 				DA2062A720F503F8001B58A1 /* MetricsCommandContributions.swift in Sources */,

@@ -9,7 +9,7 @@ class StatsTitleView:UILabel {
     
     required init?(coder:NSCoder) { return nil }
     
-    func configure(user:User_v1) {
+    func configure(user:UserProtocol) {
         let string:NSMutableAttributedString = NSMutableAttributedString()
         string.append(NSAttributedString(string:user.name, attributes:[NSAttributedString.Key.font:
             UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.regular)]))

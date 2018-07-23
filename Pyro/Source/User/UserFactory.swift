@@ -1,16 +1,10 @@
 import Foundation
 
 class UserFactory {
-    class func make() -> User_v1 {
-        let user:User_v1 = User_v1()
-        user.identifier = UUID().uuidString
-        return user
-    }
-    
-    class func make(userBase:[UserBase]) -> [User_v1] {
-        var users:[User_v1] = []
+    class func make(userBase:[UserBase]) -> [UserProtocol] {
+        var users:[UserProtocol] = []
         for base:UserBase in userBase {
-            let user:User_v1 = make()
+            let user:UserProtocol = Configuration.User()
             user.name = base.name
             user.url = base.url
             users.append(user)

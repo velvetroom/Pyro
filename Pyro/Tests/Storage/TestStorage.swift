@@ -17,7 +17,7 @@ class TestStorage:XCTestCase {
         let expectLoadingFromBundle:XCTestExpectation = self.expectation(description:"Not loading from bundle")
         self.file.onLoadFromBundle = { expectLoadingFromBundle.fulfill() }
         self.file.error = StorageError.fileNotFound
-        self.storage.load { (users:[User_v1]) in
+        self.storage.load { (users:[UserProtocol]) in
             XCTAssertEqual(Thread.current, Thread.main, "Should be main thread")
             expectLoadingUsers.fulfill()
         }
@@ -33,7 +33,7 @@ class TestStorage:XCTestCase {
     
     func testLoadUsersFromFile() {
         let expectLoad:XCTestExpectation = self.expectation(description:"Failed to load users")
-        self.storage.load { (users:[User_v1]) in
+        self.storage.load { (users:[UserProtocol]) in
             expectLoad.fulfill()
         }
         self.waitForExpectations(timeout:0.3, handler:nil)
@@ -44,7 +44,7 @@ class TestStorage:XCTestCase {
         let expectSave:XCTestExpectation = self.expectation(description:"Not saving")
         self.file.onSave = { expectSave.fulfill() }
         self.file.error = StorageError.fileNotFound
-        self.storage.load { (session:Session) in
+        self.storage.load { (session:SessionProtocol) in
             XCTAssertEqual(Thread.current, Thread.main, "Should be main thread")
             expectLoading.fulfill()
         }
@@ -54,13 +54,13 @@ class TestStorage:XCTestCase {
     func testSaveSessionSendsToFile() {
         let expectSave:XCTestExpectation = self.expectation(description:"Failed to save")
         self.file.onSave = { expectSave.fulfill() }
-        self.storage.save(session:Session())
+        self.storage.save(session:Session_v1())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
     func testLoadSessionFromFile() {
         let expectLoad:XCTestExpectation = self.expectation(description:"Failed to load")
-        self.storage.load { (session:Session) in
+        self.storage.load { (session:SessionProtocol) in
             expectLoad.fulfill()
         }
         self.waitForExpectations(timeout:0.3, handler:nil)

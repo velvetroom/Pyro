@@ -7,7 +7,7 @@ class MockLoadProtocol:LoadProtocol {
     var error:Error?
     weak var delegate:LoadDelegate?
     
-    func start(user:User_v1) {
+    func start(user:UserProtocol) {
         self.onStart?()
         if let error:Error = self.error {
             self.delegate?.loadFailed(error:error)

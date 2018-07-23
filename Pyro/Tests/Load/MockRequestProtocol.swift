@@ -6,7 +6,7 @@ class MockRequestProtocol:RequestProtocol {
     var data:Data?
     var error:Error?
     
-    func make(user:User_v1, year:Int, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
+    func make(user:UserProtocol, year:Int, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
         self.onReceived?(year)
         if let error:Error = self.error {
             onError(error)

@@ -1,6 +1,6 @@
 import Foundation
 
-struct Session:Codable {
+struct Session_v1:SessionProtocol, Codable {
     var rates:[Date]
     var reports:Int
     

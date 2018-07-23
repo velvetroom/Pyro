@@ -12,43 +12,49 @@ class Storage:StorageProtocol {
                                       target:DispatchQueue.global(qos:DispatchQoS.QoSClass.background))
     }
     
-    func load(onCompletion:@escaping(([User_v1]) -> Void)) {
+    func load(onCompletion:@escaping(([UserProtocol]) -> Void)) {
         self.dispatch.async { [weak self] in
-            guard let users:[User_v1] = self?.loadUsers() else { return }
+            guard let users:[UserProtocol] = self?.loadUsers() else { return }
             DispatchQueue.main.async {
                 onCompletion(users)
             }
         }
     }
     
-    func load(onCompletion:@escaping((Session) -> Void)) {
+    func load(onCompletion:@escaping((SessionProtocol) -> Void)) {
         self.dispatch.async { [weak self] in
-            guard let session:Session = self?.loadSession() else { return }
+            guard let session:SessionProtocol = self?.loadSession() else { return }
             DispatchQueue.main.async {
                 onCompletion(session)
             }
         }
     }
     
-    func save(users:[User_v1]) { self.save(model:users, name:Constants.storeFile) }
-    func save(session:Session) { self.save(model:session, name:Constants.sessionFile) }
+    func save(users:[UserProtocol]) {
+        self.save(model:users as! [Configuration.User], name:Constants.storeFile)
+    }
+    func save(session:SessionProtocol) {
+        self.save(model:session as! Configuration.Session, name:Constants.sessionFile)
+    }
     
-    private func loadUsers() -> [User_v1] {
-        var users:[User_v1] = []
+    private func loadUsers() -> [UserProtocol] {
+        var users:[UserProtocol] = []
         do {
-            try users = self.load(name:Constants.storeFile)
+            let saved:[Configuration.User] = try self.load(name:Constants.storeFile)
+            users = saved
         } catch {
             do { try users = self.loadUserBase() } catch { }
         }
         return users
     }
     
-    private func loadSession() -> Session {
-        let session:Session
+    private func loadSession() -> SessionProtocol {
+        let session:SessionProtocol
         do {
-            try session = self.load(name:Constants.sessionFile)
+            let saved:Configuration.Session = try self.load(name:Constants.sessionFile)
+            session = saved
         } catch {
-            session = Session()
+            session = Configuration.Session()
             self.save(session:session)
         }
         return session
@@ -58,9 +64,9 @@ class Storage:StorageProtocol {
         return try self.decode(data:try self.file.load(name:name))
     }
     
-    private func loadUserBase() throws -> [User_v1] {
+    private func loadUserBase() throws -> [UserProtocol] {
         let userBase:[UserBase] = try self.decode(data:try self.file.loadFromBundle(name:Constants.userBaseFile))
-        let users:[User_v1] = UserFactory.make(userBase:userBase)
+        let users:[UserProtocol] = UserFactory.make(userBase:userBase)
         self.save(users:users)
         return users
     }

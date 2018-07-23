@@ -16,13 +16,13 @@ class UsersInteractor:InteractorProtocol, PyroDelegate {
         self.pyro.loadUsers()
     }
     
-    func select(user:User_v1) {
+    func select(user:UserProtocol) {
         self.router?.routeToStats(pyro:self.pyro, user:user)
     }
     
     func add(name:String, url:String) {
         self.pyro.delegate = self
-        let user:User_v1 = self.pyro.addUser(name:name, url:url)
+        let user:UserProtocol = self.pyro.addUser(name:name, url:url)
         self.select(user:user)
     }
     
