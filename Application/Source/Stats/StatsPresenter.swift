@@ -12,7 +12,6 @@ class StatsPresenter:PresenterProtocol {
     }
     
     func synchronize() {
-        self.viewModel.update(property:self.factory.makeStateLoading())
         self.interactor.synchStats()
     }
     
@@ -34,24 +33,16 @@ class StatsPresenter:PresenterProtocol {
     }
     
     func didLoad() {
-        self.updateState()
-        self.updateContent()
+        self.interactor.checkState()
+        self.updateViewModel()
     }
     
     func shouldUpdate() {
-        self.updateState()
-        self.updateContent()
+        self.updateViewModel()
     }
     
-    private func updateState() {
-        self.viewModel.update(property:self.factory.makeState(user:self.interactor.user))
-    }
-    
-    private func updateContent() {
-        if let error:Error = self.interactor.error {
-            self.viewModel.update(property:self.factory.makeState(error:error))
-        } else if let metrics:Metrics = self.interactor.user.metrics {
-            self.viewModel.update(property:self.factory.makeContent(metrics:metrics))
-        }
+    func updateViewModel() {
+        self.viewModel.update(property:self.interactor.state.makeViewModel(factory:self.factory))
+        self.viewModel.update(property:self.factory.makeContent(state:self.interactor.state))
     }
 }

@@ -25,7 +25,7 @@ class StatsSynchView:UIView {
         label.isUserInteractionEnabled = false
         label.font = UIFont.systemFont(ofSize:Constants.fontSize, weight:UIFont.Weight.light)
         label.numberOfLines = 0
-        label.textColor = UIColor(white:0, alpha:0.45)
+        label.textColor = UIColor(white:0, alpha:0.5)
         self.label = label
         self.addSubview(label)
     }
@@ -42,5 +42,5 @@ private struct Constants {
     static let left:CGFloat = 5
     static let width:CGFloat = 300
     static let height:CGFloat = 34
-    static let fontSize:CGFloat = 12
+    static let fontSize:CGFloat = 11
 }

@@ -17,44 +17,28 @@ class StatsFactory {
         paragraph.paragraphSpacing = Constants.streakSpacing
     }
     
-    func makeState(user:User) -> StatsStateViewModel {
-        if let metrics:Metrics = user.metrics {
-            return self.makeStateMetrics(metrics:metrics)
-        } else {
-            return self.makeStateNeedsSynch()
-        }
-    }
-    
-    func makeContent(metrics:Metrics) -> StatsContentViewModel {
+    func makeContent(state:StatsStateProtocol) -> StatsContentViewModel {
         var property:StatsContentViewModel = StatsContentViewModel()
-        property.items = self.makeItems(contributions:metrics.contributions)
-        property.streak = self.make(streak:metrics.streak)
-        property.contributions = self.make(contributions:metrics.contributions)
+        if let state:StatsStateReady = state as? StatsStateReady {
+            property.items = self.makeItems(contributions:state.metrics.contributions)
+            property.streak = self.make(streak:state.metrics.streak)
+            property.contributions = self.make(contributions:state.metrics.contributions)
+        }
         return property
     }
     
-    func makeStateLoading() -> StatsStateViewModel {
+    func make(state:StatsStateReady) -> StatsStateViewModel {
         var viewModel:StatsStateViewModel = StatsStateViewModel()
-        viewModel.sync = NSLocalizedString("StatsFactory_Loading", comment:String())
-        viewModel.metricsHidden = true
+        viewModel.sync = NSLocalizedString("StatsFactory_Metrics", comment:String())
+        viewModel.sync += self.dateFormatter.string(from:state.metrics.timestamp)
+        viewModel.metricsHidden = false
         viewModel.messageHidden = true
-        viewModel.loadingHidden = false
-        viewModel.actionsEnabled = false
-        return viewModel
-    }
-    
-    func makeState(error:Error) -> StatsStateViewModel {
-        var viewModel:StatsStateViewModel = StatsStateViewModel()
-        viewModel.sync = NSLocalizedString("StatsFactory_Error", comment:String())
-        viewModel.message = error.localizedDescription
-        viewModel.metricsHidden = true
-        viewModel.messageHidden = false
         viewModel.loadingHidden = true
         viewModel.actionsEnabled = true
         return viewModel
     }
     
-    private func makeStateNeedsSynch() -> StatsStateViewModel {
+    func make(state:StatsStateNeedsSync) -> StatsStateViewModel {
         var viewModel:StatsStateViewModel = StatsStateViewModel()
         viewModel.sync = NSLocalizedString("StatsFactory_NeedsSync", comment:String())
         viewModel.message = NSLocalizedString("StatsNeedsSyncView_Label", comment:String())
@@ -65,12 +49,23 @@ class StatsFactory {
         return viewModel
     }
     
-    private func makeStateMetrics(metrics:Metrics) -> StatsStateViewModel {
+    func make(state:StatsStateLoading) -> StatsStateViewModel {
         var viewModel:StatsStateViewModel = StatsStateViewModel()
-        viewModel.sync = NSLocalizedString("StatsFactory_Metrics", comment:String())
-        viewModel.sync += self.dateFormatter.string(from:metrics.timestamp)
-        viewModel.metricsHidden = false
+        viewModel.sync = NSLocalizedString("StatsFactory_Loading", comment:String())
+        viewModel.metricsHidden = true
         viewModel.messageHidden = true
+        viewModel.loadingHidden = false
+        viewModel.actionsEnabled = false
+        viewModel.progress = state.progress
+        return viewModel
+    }
+    
+    func make(state:StatsStateError) -> StatsStateViewModel {
+        var viewModel:StatsStateViewModel = StatsStateViewModel()
+        viewModel.sync = NSLocalizedString("StatsFactory_Error", comment:String())
+        viewModel.message = state.error.localizedDescription
+        viewModel.metricsHidden = true
+        viewModel.messageHidden = false
         viewModel.loadingHidden = true
         viewModel.actionsEnabled = true
         return viewModel
@@ -96,6 +91,7 @@ class StatsFactory {
         var items:[StatsItem] = []
         let maxContribution:CGFloat = -CGFloat(max(contributions.max.month, Constants.minContributions))
         for year:Year in contributions.years {
+            guard year.months.count == Constants.months else { continue }
             var item:StatsItem = StatsItem()
             item.value = year.value
             item.months = self.makeMonths(year:year, max:maxContribution)
@@ -143,4 +139,5 @@ private struct Constants {
     static let monthsFontSize:CGFloat = 28
     static let titleFontSize:CGFloat = 12
     static let minContributions:Int = 1
+    static let months:Int = 12
 }

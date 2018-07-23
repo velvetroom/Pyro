@@ -24,6 +24,7 @@ class StatsView:StatsCollectionView {
         self.content.metrics.isHidden = property.metricsHidden
         self.content.message.isHidden = property.messageHidden
         self.content.loading.isHidden = property.loadingHidden
+        self.content.progress.progress = property.progress
         self.deleteButton.isEnabled = property.actionsEnabled
         self.synchButton.isEnabled = property.actionsEnabled
     }

@@ -43,7 +43,7 @@ class StatsContentView:UIView {
     
     private func makeLoading() {
         let loading:LoadingView = LoadingView()
-        loading.tintColor = UIColor.black
+        loading.tintColor = UIColor.sharedBlue
         self.loading = loading
         self.addSubview(loading)
     }

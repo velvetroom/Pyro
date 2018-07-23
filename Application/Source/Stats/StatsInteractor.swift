@@ -8,9 +8,19 @@ class StatsInteractor:InteractorProtocol, PyroDelegate {
     weak var presenter:InteractorDelegate?
     weak var pyro:Pyro!
     weak var user:User!
-    var error:Error?
+    var state:StatsStateProtocol
     
-    required init() { }
+    required init() {
+        self.state = StatsStateNeedsSync()
+    }
+    
+    func checkState() {
+        if let metrics:Metrics = self.user.metrics {
+            self.state = StatsStateReady(metrics:metrics)
+        } else {
+            self.state = StatsStateNeedsSync()
+        }
+    }
     
     func synchStats() {
         self.pyro.delegate = self
@@ -22,13 +32,18 @@ class StatsInteractor:InteractorProtocol, PyroDelegate {
         self.router?.popViewController(animated:true)
     }
     
+    func pyroReport(progress:Float) {
+        self.state = StatsStateLoading(progress:progress)
+        self.presenter?.shouldUpdate()
+    }
+    
     func pyroUpdated() {
-        self.error = nil
+        self.checkState()
         self.presenter?.shouldUpdate()
     }
     
     func pyroFailed(error:Error) {
-        self.error = error
+        self.state = StatsStateError(error:error)
         self.presenter?.shouldUpdate()
     }
     

@@ -58,7 +58,7 @@ class TestLoad:XCTestCase {
             expectProgress = nil
         }
         self.request.onReceived = { (year:Int) in
-            if year == 2007 {
+            if year == 2008 {
                 receiveStartingYear.fulfill()
             } else if year == 2020 {
                 receiveEndingYear.fulfill()
