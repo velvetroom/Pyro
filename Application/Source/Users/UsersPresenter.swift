@@ -27,7 +27,7 @@ class UsersPresenter:PresenterProtocol {
         self.interactor.add(name:name, url:url)
     }
     
-    func didAppear() {
+    func willAppear() {
         self.interactor.load()
     }
     

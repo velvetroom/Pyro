@@ -19,13 +19,13 @@ class HistogramIndicatorView:UIView {
     
     func highlight() {
         self.indicatorSize = self.sizeHighlight
-        self.backgroundColor = UIColor(red:0.4, green:0.7, blue:0.9, alpha:1)
+        self.backgroundColor = UIColor.sharedBlue
         self.invalidateIntrinsicContentSize()
     }
     
     func unhighlight() {
         self.indicatorSize = self.sizeUnhighlight
-        self.backgroundColor = UIColor(white:0, alpha:0.04)
+        self.backgroundColor = UIColor(white:0, alpha:0.15)
         self.invalidateIntrinsicContentSize()
     }
     
