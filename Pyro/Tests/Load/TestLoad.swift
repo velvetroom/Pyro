@@ -51,7 +51,12 @@ class TestLoad:XCTestCase {
     func testRequestAllYears() {
         let receiveStartingYear:XCTestExpectation = self.expectation(description:"Starting year missing")
         let receiveEndingYear:XCTestExpectation = self.expectation(description:"Ending year missing")
+        var expectProgress:XCTestExpectation? = self.expectation(description:"Progress not received")
         self.request.data = Data()
+        self.delegate.onProgress = {
+            expectProgress?.fulfill()
+            expectProgress = nil
+        }
         self.request.onReceived = { (year:Int) in
             if year == 2007 {
                 receiveStartingYear.fulfill()

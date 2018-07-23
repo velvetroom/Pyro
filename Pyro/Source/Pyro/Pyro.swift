@@ -52,6 +52,7 @@ public class Pyro:ReportDelegate {
     func saveUsers() { self.storage.save(users:self.users) }
     func saveSession() { self.storage.save(session:self.session) }
     func reportFailed(error:Error) { self.delegate?.pyroFailed(error:error) }
+    func report(progress:Float) { self.delegate?.pyroReport(progress:progress) }
     
     func reportCompleted() {
         self.session.reports += 1

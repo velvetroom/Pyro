@@ -17,6 +17,7 @@ class Load:LoadProtocol {
     }
     
     func next(year:Int) {
+        self.delegate?.load(progress:Float(year - Constants.startingYear) / Float(Constants.totalYears))
         if year <= Constants.endingYear {
             self.load(year:year)
         } else {
@@ -50,4 +51,5 @@ class Load:LoadProtocol {
 private struct Constants {
     static let startingYear:Int = 2007
     static let endingYear:Int = 2020
+    static let totalYears:Int = endingYear - startingYear
 }

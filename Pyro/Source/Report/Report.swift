@@ -24,6 +24,12 @@ class Report:ReportProtocol, LoadDelegate {
         }
     }
     
+    func load(progress:Float) {
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.report(progress:progress)
+        }
+    }
+    
     func loadCompleted(items:[ScraperItem]) {
         self.user?.metrics = self.builder.build(items:items)
         DispatchQueue.main.async { [weak self] in
