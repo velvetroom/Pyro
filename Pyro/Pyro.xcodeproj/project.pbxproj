@@ -60,6 +60,7 @@
 		DA5E6D5320FA0A7C00120292 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5220FA0A7C00120292 /* Month.swift */; };
 		DA5E6D5520FA0DBA00120292 /* PyroDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5420FA0DBA00120292 /* PyroDelegate.swift */; };
 		DA5E6D5920FA10F300120292 /* MockPyroDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D5820FA10F300120292 /* MockPyroDelegate.swift */; };
+		DA7BF72021060B94002DD1C7 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BF71F21060B94002DD1C7 /* UserProtocol.swift */; };
 		DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */; };
 		DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8220F6158B00E6F38E /* StorageFile.swift */; };
 		DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */; };
@@ -142,6 +143,7 @@
 		DA5E6D5220FA0A7C00120292 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		DA5E6D5420FA0DBA00120292 /* PyroDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyroDelegate.swift; sourceTree = "<group>"; };
 		DA5E6D5820FA10F300120292 /* MockPyroDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPyroDelegate.swift; sourceTree = "<group>"; };
+		DA7BF71F21060B94002DD1C7 /* UserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
 		DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnalyser.swift; sourceTree = "<group>"; };
 		DA7E6E8220F6158B00E6F38E /* StorageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFile.swift; sourceTree = "<group>"; };
 		DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFileProtocol.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 		DAE4862020F4708E003BF78A /* User */ = {
 			isa = PBXGroup;
 			children = (
+				DA7BF71F21060B94002DD1C7 /* UserProtocol.swift */,
 				DAE4862120F4708E003BF78A /* User_v1.swift */,
 				DA455BA520F72375000EBE10 /* UserBase.swift */,
 				DA49406020F87D27002F0C1F /* UserFactory.swift */,
@@ -541,6 +544,7 @@
 				DA2062AB20F50416001B58A1 /* MetricsCommandCurrentStreak.swift in Sources */,
 				DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */,
 				DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */,
+				DA7BF72021060B94002DD1C7 /* UserProtocol.swift in Sources */,
 				DA5E6D5320FA0A7C00120292 /* Month.swift in Sources */,
 				DA2062BF20F527C3001B58A1 /* Load.swift in Sources */,
 				DA20629820F4F910001B58A1 /* MetricsBuilder.swift in Sources */,

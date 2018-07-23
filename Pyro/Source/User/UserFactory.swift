@@ -7,7 +7,7 @@ class UserFactory {
         return user
     }
     
-    class func makeFrom(userBase:[UserBase]) -> [User_v1] {
+    class func make(userBase:[UserBase]) -> [User_v1] {
         var users:[User_v1] = []
         for base:UserBase in userBase {
             let user:User_v1 = make()

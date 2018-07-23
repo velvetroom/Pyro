@@ -60,7 +60,7 @@ class Storage:StorageProtocol {
     
     private func loadUserBase() throws -> [User_v1] {
         let userBase:[UserBase] = try self.decode(data:try self.file.loadFromBundle(name:Constants.userBaseFile))
-        let users:[User_v1] = UserFactory.makeFrom(userBase:userBase)
+        let users:[User_v1] = UserFactory.make(userBase:userBase)
         self.save(users:users)
         return users
     }
