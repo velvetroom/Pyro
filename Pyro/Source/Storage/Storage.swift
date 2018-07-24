@@ -37,13 +37,26 @@ class Storage:StorageProtocol {
         self.save(model:session as! Configuration.Session, name:Constants.sessionFile)
     }
     
-    private func loadUsers() -> [UserProtocol] {
+    func loadUsers() -> [UserProtocol] {
         var users:[UserProtocol] = []
         do {
-            let saved:[Configuration.User] = try self.load(name:Constants.storeFile)
-            users = saved
+            try users = self.loadStoredUsers()
         } catch {
             do { try users = self.loadUserBase() } catch { }
+        }
+        return users
+    }
+    
+    func loadStoredUsers() throws -> [UserProtocol] {
+        var users:[UserProtocol] = []
+        do {
+            let current:[Configuration.User] = try self.load(name:Constants.storeFile)
+            users = current
+        } catch {
+            let previous:[User_v1] = try self.load(name:Constants.storeFile)
+            for oldUser:User_v1 in previous {
+                users.append(UserFactory.migrate(user:oldUser))
+            }
         }
         return users
     }

@@ -6,6 +6,11 @@ class MockStorageFileProtocol:StorageFileProtocol {
     var onLoad:(() -> Void)?
     var onLoadFromBundle:(() -> Void)?
     var error:Error?
+    var data:Data
+    
+    init() {
+        self.data = Data()
+    }
     
     func load(name:String) throws -> Data {
         self.onLoad?()
@@ -13,7 +18,7 @@ class MockStorageFileProtocol:StorageFileProtocol {
             self.error = nil
             throw error
         } else {
-            return Data()
+            return self.data
         }
     }
     
@@ -23,7 +28,7 @@ class MockStorageFileProtocol:StorageFileProtocol {
             self.error = nil
             throw error
         } else {
-            return Data()
+            return self.data
         }
     }
     

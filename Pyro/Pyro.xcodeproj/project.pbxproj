@@ -48,6 +48,7 @@
 		DA536F452106F58B00F1E106 /* SessionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F442106F58B00F1E106 /* SessionFactory.swift */; };
 		DA536F472106F65D00F1E106 /* User_v2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F462106F65D00F1E106 /* User_v2.swift */; };
 		DA536F4A2106F97A00F1E106 /* TestUserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F492106F97A00F1E106 /* TestUserFactory.swift */; };
+		DA536F4C2107001300F1E106 /* TestStorage_Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F4B2107001300F1E106 /* TestStorage_Migration.swift */; };
 		DA54042A21005AC500E6F448 /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54042921005AC500E6F448 /* Year.swift */; };
 		DA54042E21005FEA00E6F448 /* Max.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54042D21005FEA00E6F448 /* Max.swift */; };
 		DA540436210066C100E6F448 /* TestMetricsBuilder_Years.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA540435210066C100E6F448 /* TestMetricsBuilder_Years.swift */; };
@@ -135,6 +136,7 @@
 		DA536F442106F58B00F1E106 /* SessionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFactory.swift; sourceTree = "<group>"; };
 		DA536F462106F65D00F1E106 /* User_v2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User_v2.swift; sourceTree = "<group>"; };
 		DA536F492106F97A00F1E106 /* TestUserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserFactory.swift; sourceTree = "<group>"; };
+		DA536F4B2107001300F1E106 /* TestStorage_Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStorage_Migration.swift; sourceTree = "<group>"; };
 		DA54042921005AC500E6F448 /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		DA54042D21005FEA00E6F448 /* Max.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Max.swift; sourceTree = "<group>"; };
 		DA540435210066C100E6F448 /* TestMetricsBuilder_Years.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMetricsBuilder_Years.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE4861B20F47084003BF78A /* TestStorage.swift */,
+				DA536F4B2107001300F1E106 /* TestStorage_Migration.swift */,
 				DA28088420F5EB8E00BCDA13 /* MockStorageProtocol.swift */,
 				DAE4861A20F47084003BF78A /* MockStorageFileProtocol.swift */,
 			);
@@ -600,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA536F4C2107001300F1E106 /* TestStorage_Migration.swift in Sources */,
 				DA540436210066C100E6F448 /* TestMetricsBuilder_Years.swift in Sources */,
 				DA5E6D5920FA10F300120292 /* MockPyroDelegate.swift in Sources */,
 				DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */,
