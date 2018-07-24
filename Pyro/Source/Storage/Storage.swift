@@ -57,6 +57,7 @@ class Storage:StorageProtocol {
             for oldUser:User_v1 in previous {
                 users.append(UserFactory.migrate(user:oldUser))
             }
+            self.save(users:users)
         }
         return users
     }

@@ -13,6 +13,8 @@ class TestStorage_Migration:XCTestCase {
     }
     
     func testLoadUsersFromV1() {
+        let expect:XCTestExpectation = self.expectation(description:"Save after migration")
+        self.file.onSave = { expect.fulfill() }
         let userA:User_v1 = User_v1()
         let userB:User_v1 = User_v1()
         userA.name = "lorem ipsum"
@@ -27,5 +29,6 @@ class TestStorage_Migration:XCTestCase {
         if loaded!.count != 2 { return }
         XCTAssertEqual(loaded![0].name, userA.name, "Invalid user")
         XCTAssertEqual(loaded![1].name, userB.name, "Invalid user")
+        self.waitForExpectations(timeout:0.3, handler:nil)
     }
 }
