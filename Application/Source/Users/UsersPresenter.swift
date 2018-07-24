@@ -17,10 +17,7 @@ class UsersPresenter:PresenterProtocol {
     }
     
     func createUser() {
-        let alert:CreateView = CreateView(title:nil, message:nil, preferredStyle:UIAlertController.Style.alert)
-        alert.presenter = self
-        alert.configureView()
-        self.interactor.router?.present(alert, animated:true, completion:nil)
+        self.interactor.createUser()
     }
     
     func add(name:String, url:String) {

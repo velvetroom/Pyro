@@ -1,15 +1,9 @@
 UsersView_Title="Users";
-UsersViewNew_Title="Add new user";
-UsersViewNew_Message="Enter Name and Github User";
-UsersViewNew_Name="Name";
-UsersViewNew_Url="Github user";
-UsersViewNew_Add="Add";
-UsersViewNew_Cancel="Cancel";
 UsersView_Segmented_0="Name";
 UsersView_Segmented_1="Contributions";
 UsersView_Segmented_2="Streak";
 UsersFactory_Unknown="-";
-
+CreateView_Title="New user";
 StatsStateError_Sync="There was an error,\ntry again in a few minutes.";
 StatsStateLoading_Sync="Synching,\ncould take a few minutes.";
 StatsStateReady_Sync="Last synched\n";

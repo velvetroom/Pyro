@@ -25,6 +25,16 @@ class Router:UINavigationController {
         self.pushViewController(view, animated:true)
     }
     
+    func routeToCreate(pyro:Pyro) {
+        let view:CreateView = CreateView()
+        view.presenter.interactor.router = self
+        self.pushViewController(view, animated:true)
+    }
+    
+    func routeBack() {
+        self.popViewController(animated:true)
+    }
+    
     private func configureNavigation() {
         self.navigationBar.barTintColor = UIColor.white
         self.navigationBar.tintColor = UIColor.black
