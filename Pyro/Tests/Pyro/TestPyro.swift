@@ -136,4 +136,13 @@ class TestPyro:XCTestCase {
         self.pyro.validateFailed(error:NSError())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
+    
+    func testValidateRemovesDelegate() {
+        let validate:MockValidateProtocol = MockValidateProtocol()
+        let delegate:MockValidateDelegate = MockValidateDelegate()
+        validate.delegate = delegate
+        self.pyro.validate = validate
+        self.pyro.validate(url:String())
+        XCTAssertNil(validate.delegate, "Not removed")
+    }
 }

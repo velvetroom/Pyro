@@ -20,6 +20,20 @@ class Request:RequestProtocol {
             onError(RequestError.userNotValid)
             return
         }
+        self.make(request:request, onCompletion:onCompletion, onError:onError)
+    }
+    
+    func validate(url:String, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
+        guard
+            let request:URLRequest = self.request(user:url)
+        else {
+            onError(RequestError.userNotValid)
+            return
+        }
+        self.make(request:request, onCompletion:onCompletion, onError:onError)
+    }
+    
+    func make(request:URLRequest, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
         self.task?.cancel()
         self.task = self.session.dataTask(with:request) { (data:Data?, response:URLResponse?, error:Error?) in
             let analyser:RequestAnalyser = RequestAnalyser()
@@ -33,8 +47,12 @@ class Request:RequestProtocol {
         self.task?.resume()
     }
     
-    func validate(url: String, onCompletion: @escaping (() -> Void), onError: @escaping ((Error) -> Void)) {
-        
+    private func request(user:String) -> URLRequest? {
+        guard
+            let userPath:String = user.addingPercentEncoding(withAllowedCharacters:CharacterSet.urlPathAllowed),
+            let url:URL = URL(string:Constants.urlPrefix + userPath + Constants.urlMiddle)
+        else { return nil }
+        return self.request(url:url)
     }
     
     private func request(user:UserProtocol, year:Int) -> URLRequest? {
@@ -43,6 +61,10 @@ class Request:RequestProtocol {
             let url:URL = URL(string:Constants.urlPrefix + userPath + Constants.urlMiddle + String(year) +
                 Constants.urlSuffix)
         else { return nil }
+        return self.request(url:url)
+    }
+    
+    private func request(url:URL) -> URLRequest {
         var request:URLRequest = URLRequest(url:url, cachePolicy:
             URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData, timeoutInterval:Constants.timeout)
         request.httpMethod = Constants.method

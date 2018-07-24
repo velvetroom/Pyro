@@ -44,6 +44,9 @@ class CreateView:View<CreatePresenter, CreateContentView>, UITextFieldDelegate {
     private func configureViewModel() {
         self.presenter.viewModel.observe { [weak self] (property:CreateContentViewModel) in
             self?.navigationItem.rightBarButtonItem?.isEnabled = property.saveEnabled
+            self?.content.message.text = property.message
+            self?.content.icon.image = property.icon
+            self?.content.loading.isHidden = property.loadingHidden
         }
     }
     

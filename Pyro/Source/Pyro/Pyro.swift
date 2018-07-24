@@ -6,22 +6,20 @@ public class Pyro:ReportDelegate, ValidateDelegate {
     var storage:StorageProtocol
     var report:ReportProtocol
     var session:SessionProtocol
-    var validate:ValidateProtocol
+    var validate:ValidateProtocol?
     
     public init() {
         self.users = []
         self.session = SessionFactory.make()
         self.storage = Storage()
         self.report = Report()
-        self.validate = Validate<Request>()
         self.report.delegate = self
-        self.validate.delegate = self
     }
     
     public func loadUsers() {
         self.storage.load { [weak self] (users:[UserProtocol]) in
             self?.users = users
-            self?.delegate?.pyroUpdated()
+            self?.delegate?.pyroSuccess()
         }
     }
     
@@ -31,7 +29,7 @@ public class Pyro:ReportDelegate, ValidateDelegate {
         user.url = url
         self.add(user:user)
         self.saveUsers()
-        self.delegate?.pyroUpdated()
+        self.delegate?.pyroSuccess()
         return user
     }
     
@@ -50,21 +48,27 @@ public class Pyro:ReportDelegate, ValidateDelegate {
         return true
     }
     
+    public func validate(url:String) {
+        self.validate?.delegate = nil
+        self.validate = Validate<Request>()
+        self.validate?.delegate = self
+        self.validate?.validate(pyro:self, url:url)
+    }
+    
     public func loadSession() { self.storage.load { [weak self] (session:SessionProtocol) in self?.session = session } }
     public func makeReport(user:UserProtocol) { self.report.make(user:user) }
-    public func validate(url:String) { self.validate.validate(pyro:self, url:url) }
     func saveUsers() { self.storage.save(users:self.users) }
     func saveSession() { self.storage.save(session:self.session) }
     func reportFailed(error:Error) { self.delegate?.pyroFailed(error:error) }
     func report(progress:Float) { self.delegate?.pyroReport(progress:progress) }
-    func validateSuccess() { self.delegate?.pyroUpdated() }
+    func validateSuccess() { self.delegate?.pyroSuccess() }
     func validateFailed(error:Error) { self.delegate?.pyroFailed(error:error) }
     
     func reportCompleted() {
         self.session.reports += 1
         self.saveSession()
         self.saveUsers()
-        self.delegate?.pyroUpdated()
+        self.delegate?.pyroSuccess()
     }
     
     private func add(user:UserProtocol) {

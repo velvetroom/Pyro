@@ -6,11 +6,11 @@ class MockValidateRequest:RequestProtocol {
     
     required init() { }
     
-    func validate(url:String, onCompletion:@escaping(() -> Void), onError:@escaping((Error) -> Void)) {
+    func validate(url:String, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
         if let error:Error = MockValidateRequest.error {
             onError(error)
         } else {
-            onCompletion()
+            onCompletion(Data())
         }
     }
     

@@ -5,6 +5,7 @@ class CreateContentView:UIView {
     weak var icon:UIImageView!
     weak var border:UIView!
     weak var message:UILabel!
+    weak var loading:LoadingView!
     
     init() {
         super.init(frame:CGRect.zero)
@@ -22,6 +23,7 @@ class CreateContentView:UIView {
         self.makeBorder()
         self.makeIcon()
         self.makeMessage()
+        self.makeLoading()
     }
     
     private func layoutOutlets() {
@@ -29,6 +31,7 @@ class CreateContentView:UIView {
         self.layoutBorder()
         self.layoutIcon()
         self.layoutMessage()
+        self.layoutLoading()
     }
     
     private func makeField() {
@@ -68,6 +71,13 @@ class CreateContentView:UIView {
         self.addSubview(message)
     }
     
+    private func makeLoading() {
+        let loading:LoadingView = LoadingView()
+        loading.tintColor = UIColor.sharedBlue
+        self.loading = loading
+        self.addSubview(loading)
+    }
+    
     private func layoutField() {
         self.field.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
         if #available(iOS 11.0, *) {
@@ -88,21 +98,28 @@ class CreateContentView:UIView {
     private func layoutIcon() {
         self.icon.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         self.icon.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
-        self.icon.leftAnchor.constraint(equalTo:self.field.rightAnchor, constant:Constants.margin).isActive = true
-        self.icon.centerYAnchor.constraint(equalTo:self.field.centerYAnchor).isActive = true
+        self.icon.centerXAnchor.constraint(equalTo:self.field.rightAnchor, constant:Constants.iconLeft).isActive = true
+        self.icon.centerYAnchor.constraint(equalTo:self.border.centerYAnchor).isActive = true
     }
     
     private func layoutMessage() {
         self.message.leftAnchor.constraint(equalTo:self.field.leftAnchor).isActive = true
         self.message.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
         self.message.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
-        self.message.topAnchor.constraint(equalTo:self.field.bottomAnchor, constant:Constants.margin).isActive = true
+        self.message.topAnchor.constraint(equalTo:self.field.bottomAnchor,
+                                          constant:Constants.messageTop).isActive = true
+    }
+    
+    private func layoutLoading() {
+        self.loading.centerXAnchor.constraint(equalTo:self.icon.centerXAnchor).isActive = true
+        self.loading.centerYAnchor.constraint(equalTo:self.icon.centerYAnchor).isActive = true
     }
 }
 
 private struct Constants {
-    static let messageTop:CGFloat = 5
     static let margin:CGFloat = 20
     static let border:CGFloat = 1
     static let messageFontSize:CGFloat = 16
+    static let iconLeft:CGFloat = 60
+    static let messageTop:CGFloat = 30
 }

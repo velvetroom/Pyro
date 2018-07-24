@@ -30,7 +30,7 @@ class UsersInteractor:InteractorProtocol, PyroDelegate {
         self.select(user:user)
     }
     
-    func pyroUpdated() {
+    func pyroSuccess() {
         self.presenter?.shouldUpdate()
     }
     

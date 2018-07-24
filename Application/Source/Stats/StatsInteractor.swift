@@ -37,7 +37,7 @@ class StatsInteractor:InteractorProtocol, PyroDelegate {
         self.presenter?.shouldUpdate()
     }
     
-    func pyroUpdated() {
+    func pyroSuccess() {
         self.checkState()
         self.presenter?.shouldUpdate()
     }

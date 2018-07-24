@@ -5,7 +5,7 @@ class MockPyroDelegate:PyroDelegate {
     var onUpdated:(() -> Void)?
     var onError:(() -> Void)?
     
-    func pyroUpdated() {
+    func pyroSuccess() {
         self.onUpdated?()
     }
     

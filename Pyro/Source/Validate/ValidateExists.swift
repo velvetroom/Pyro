@@ -6,10 +6,10 @@ class ValidateExists<RequestType:RequestProtocol>:ValidateProtocol {
     required init() { }
     
     func validate(pyro:Pyro, url:String) {
-        RequestType().validate(url:url, onCompletion: { [weak self] in
-            self?.delegate?.validateSuccess()
-        }, onError: { [weak self] (error:Error) in
-            self?.delegate?.validateFailed(error:error)
+        RequestType().validate(url:url, onCompletion: { (data:Data) in
+            self.delegate?.validateSuccess()
+        }, onError: { (error:Error) in
+            self.delegate?.validateFailed(error:error)
         })
     }
 }

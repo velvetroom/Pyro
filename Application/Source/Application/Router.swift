@@ -27,6 +27,7 @@ class Router:UINavigationController {
     
     func routeToCreate(pyro:Pyro) {
         let view:CreateView = CreateView()
+        view.presenter.interactor.pyro = pyro
         view.presenter.interactor.router = self
         self.pushViewController(view, animated:true)
     }
