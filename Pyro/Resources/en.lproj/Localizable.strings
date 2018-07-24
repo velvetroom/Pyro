@@ -6,3 +6,7 @@ RequestError_emptyResponse="Request error: Server returned empty response.";
 RequestError_banned="Server error: Too many requests sent to server.\nWait a few minutes and try again.";
 RequestError_fourZeroFour="Error: User does not exist.";
 RequestError_unknown="Unknown server error, wait for a few minutes and try again.";
+ValidateError_empty="Error: User name cannot be empty.";
+ValidateError_first="Error: First character should be a letter.";
+ValidateError_character="Error: User name can only contain letters, numbers and -.";
+ValidateError_unique="Error: You are already following this user.";

@@ -46,7 +46,7 @@ class TestPyro:XCTestCase {
         let url:String = "lorem ipsum"
         self.pyro.addUser(name:name, url:url)
         XCTAssertFalse(self.pyro.users.isEmpty, "Failed to add")
-        guard let user:Configuration.User = self.pyro.users.first as? Configuration.User else { return }
+        guard let user:Configuration.UserType = self.pyro.users.first as? Configuration.UserType else { return }
         XCTAssertEqual(user.name, name, "Not assigned")
         XCTAssertEqual(user.url, url, "Not assigned")
         XCTAssertFalse(user.identifier.isEmpty, "Not assigned")
@@ -120,6 +120,20 @@ class TestPyro:XCTestCase {
         let expect:XCTestExpectation = self.expectation(description:"Not saved")
         self.storage.onSaveUsers = { expect.fulfill() }
         self.pyro.delete(user:UserFactory.make())
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testValidatedUpdatesDelegate() {
+        let expect:XCTestExpectation = self.expectation(description:"Delegate not notified")
+        self.delegate.onUpdated = { expect.fulfill() }
+        self.pyro.validateSuccess()
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testValidateErrorNotifiesDelegate() {
+        let expect:XCTestExpectation = self.expectation(description:"Delegate not notified")
+        self.delegate.onError = { expect.fulfill() }
+        self.pyro.validateFailed(error:NSError())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
 }

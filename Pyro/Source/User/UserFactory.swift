@@ -2,7 +2,7 @@ import Foundation
 
 class UserFactory {
     class func make() -> UserProtocol {
-        let user:Configuration.User =  Configuration.User()
+        let user:Configuration.UserType =  Configuration.UserType()
         user.identifier = UUID().uuidString
         return user
     }
@@ -19,7 +19,7 @@ class UserFactory {
     }
     
     class func migrate(user:User_v1) -> UserProtocol {
-        let migrated:Configuration.User = Configuration.User()
+        let migrated:Configuration.UserType = Configuration.UserType()
         migrated.identifier = user.identifier
         migrated.name = user.name
         migrated.url = user.url

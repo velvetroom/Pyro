@@ -31,10 +31,10 @@ class Storage:StorageProtocol {
     }
     
     func save(users:[UserProtocol]) {
-        self.save(model:users as! [Configuration.User], name:Constants.storeFile)
+        self.save(model:users as! [Configuration.UserType], name:Constants.storeFile)
     }
     func save(session:SessionProtocol) {
-        self.save(model:session as! Configuration.Session, name:Constants.sessionFile)
+        self.save(model:session as! Configuration.SessionType, name:Constants.sessionFile)
     }
     
     func loadUsers() -> [UserProtocol] {
@@ -50,7 +50,7 @@ class Storage:StorageProtocol {
     func loadStoredUsers() throws -> [UserProtocol] {
         var users:[UserProtocol] = []
         do {
-            let current:[Configuration.User] = try self.load(name:Constants.storeFile)
+            let current:[Configuration.UserType] = try self.load(name:Constants.storeFile)
             users = current
         } catch {
             let previous:[User_v1] = try self.load(name:Constants.storeFile)
@@ -65,7 +65,7 @@ class Storage:StorageProtocol {
     private func loadSession() -> SessionProtocol {
         let session:SessionProtocol
         do {
-            let saved:Configuration.Session = try self.load(name:Constants.sessionFile)
+            let saved:Configuration.SessionType = try self.load(name:Constants.sessionFile)
             session = saved
         } catch {
             session = SessionFactory.make()

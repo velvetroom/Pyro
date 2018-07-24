@@ -6,6 +6,8 @@ class MockRequestProtocol:RequestProtocol {
     var data:Data?
     var error:Error?
     
+    required init() { }
+    
     func make(user:UserProtocol, year:Int, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
         self.onReceived?(year)
         if let error:Error = self.error {
@@ -14,4 +16,6 @@ class MockRequestProtocol:RequestProtocol {
             onCompletion(data)
         }
     }
+    
+    func validate(url:String, onCompletion:@escaping(() -> Void), onError:@escaping((Error) -> Void)) { }
 }

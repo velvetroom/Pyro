@@ -4,7 +4,7 @@ class Request:RequestProtocol {
     private let session:URLSession
     private weak var task:URLSessionDataTask?
     
-    init() {
+    required init() {
         let configuration:URLSessionConfiguration = URLSessionConfiguration.ephemeral
         configuration.allowsCellularAccess = true
         configuration.isDiscretionary = true
@@ -31,6 +31,10 @@ class Request:RequestProtocol {
             analyser.analyse()
         }
         self.task?.resume()
+    }
+    
+    func validate(url: String, onCompletion: @escaping (() -> Void), onError: @escaping ((Error) -> Void)) {
+        
     }
     
     private func request(user:UserProtocol, year:Int) -> URLRequest? {

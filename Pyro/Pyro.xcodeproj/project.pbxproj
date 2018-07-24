@@ -70,6 +70,17 @@
 		DA7E6E7F20F6063C00E6F38E /* RequestAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */; };
 		DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8220F6158B00E6F38E /* StorageFile.swift */; };
 		DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */; };
+		DA8FD9F021071A8D00DBA125 /* ValidateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FD9EF21071A8D00DBA125 /* ValidateProtocol.swift */; };
+		DA8FD9F221071AB900DBA125 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FD9F121071AB900DBA125 /* Validate.swift */; };
+		DA8FD9F921071B8300DBA125 /* TestValidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FD9F821071B8300DBA125 /* TestValidate.swift */; };
+		DA8FD9FB21071DD600DBA125 /* ValidateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FD9FA21071DD600DBA125 /* ValidateDelegate.swift */; };
+		DA8FD9FD21073B4200DBA125 /* MockValidateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FD9FC21073B4200DBA125 /* MockValidateProtocol.swift */; };
+		DA8FD9FF21073C9E00DBA125 /* MockValidateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FD9FE21073C9E00DBA125 /* MockValidateDelegate.swift */; };
+		DA8FDA03210748EF00DBA125 /* ValidateEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FDA02210748EF00DBA125 /* ValidateEmpty.swift */; };
+		DA8FDA052107498000DBA125 /* ValidateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FDA042107498000DBA125 /* ValidateError.swift */; };
+		DA8FDA0721074A6200DBA125 /* ValidateFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FDA0621074A6200DBA125 /* ValidateFirst.swift */; };
+		DA8FDA0921074F4E00DBA125 /* ValidateCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FDA0821074F4E00DBA125 /* ValidateCharacters.swift */; };
+		DA8FDA0B21075BA000DBA125 /* ValidateUnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FDA0A21075BA000DBA125 /* ValidateUnique.swift */; };
 		DAA00E3520F4940A009386CE /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3420F4940A009386CE /* Metrics.swift */; };
 		DAA00E3720F496AF009386CE /* StatsMin.stub in Resources */ = {isa = PBXBuildFile; fileRef = DAA00E3620F496AF009386CE /* StatsMin.stub */; };
 		DAB840EE20F8EC8D00CA3A45 /* ReportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB840ED20F8EC8D00CA3A45 /* ReportProtocol.swift */; };
@@ -82,6 +93,8 @@
 		DAE4862920F4708E003BF78A /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862520F4708E003BF78A /* StorageError.swift */; };
 		DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9E92E20F78CD300B5492C /* Pyro.swift */; };
 		DAE9E93220F78FB500B5492C /* TestPyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9E93120F78FB500B5492C /* TestPyro.swift */; };
+		DAFD36AE2107638200C52721 /* MockValidateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD36AD2107638200C52721 /* MockValidateRequest.swift */; };
+		DAFD36B3210767C200C52721 /* ValidateExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD36AF2107666500C52721 /* ValidateExists.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +172,17 @@
 		DA7E6E7E20F6063C00E6F38E /* RequestAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnalyser.swift; sourceTree = "<group>"; };
 		DA7E6E8220F6158B00E6F38E /* StorageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFile.swift; sourceTree = "<group>"; };
 		DA7E6E8420F615A000E6F38E /* StorageFileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFileProtocol.swift; sourceTree = "<group>"; };
+		DA8FD9EF21071A8D00DBA125 /* ValidateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateProtocol.swift; sourceTree = "<group>"; };
+		DA8FD9F121071AB900DBA125 /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
+		DA8FD9F821071B8300DBA125 /* TestValidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestValidate.swift; sourceTree = "<group>"; };
+		DA8FD9FA21071DD600DBA125 /* ValidateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateDelegate.swift; sourceTree = "<group>"; };
+		DA8FD9FC21073B4200DBA125 /* MockValidateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockValidateProtocol.swift; sourceTree = "<group>"; };
+		DA8FD9FE21073C9E00DBA125 /* MockValidateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockValidateDelegate.swift; sourceTree = "<group>"; };
+		DA8FDA02210748EF00DBA125 /* ValidateEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmpty.swift; sourceTree = "<group>"; };
+		DA8FDA042107498000DBA125 /* ValidateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateError.swift; sourceTree = "<group>"; };
+		DA8FDA0621074A6200DBA125 /* ValidateFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFirst.swift; sourceTree = "<group>"; };
+		DA8FDA0821074F4E00DBA125 /* ValidateCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCharacters.swift; sourceTree = "<group>"; };
+		DA8FDA0A21075BA000DBA125 /* ValidateUnique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUnique.swift; sourceTree = "<group>"; };
 		DAA00E3420F4940A009386CE /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		DAA00E3620F496AF009386CE /* StatsMin.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsMin.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DAB840ED20F8EC8D00CA3A45 /* ReportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProtocol.swift; sourceTree = "<group>"; };
@@ -172,6 +196,8 @@
 		DAE4862520F4708E003BF78A /* StorageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
 		DAE9E92E20F78CD300B5492C /* Pyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pyro.swift; sourceTree = "<group>"; };
 		DAE9E93120F78FB500B5492C /* TestPyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyro.swift; sourceTree = "<group>"; };
+		DAFD36AD2107638200C52721 /* MockValidateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockValidateRequest.swift; sourceTree = "<group>"; };
+		DAFD36AF2107666500C52721 /* ValidateExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateExists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +331,33 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DA8FD9EE21071A3000DBA125 /* Validate */ = {
+			isa = PBXGroup;
+			children = (
+				DA8FD9EF21071A8D00DBA125 /* ValidateProtocol.swift */,
+				DA8FD9FA21071DD600DBA125 /* ValidateDelegate.swift */,
+				DA8FD9F121071AB900DBA125 /* Validate.swift */,
+				DA8FDA02210748EF00DBA125 /* ValidateEmpty.swift */,
+				DA8FDA0621074A6200DBA125 /* ValidateFirst.swift */,
+				DA8FDA0821074F4E00DBA125 /* ValidateCharacters.swift */,
+				DA8FDA0A21075BA000DBA125 /* ValidateUnique.swift */,
+				DAFD36AF2107666500C52721 /* ValidateExists.swift */,
+				DA8FDA042107498000DBA125 /* ValidateError.swift */,
+			);
+			path = Validate;
+			sourceTree = "<group>";
+		};
+		DA8FD9F521071B5900DBA125 /* Validate */ = {
+			isa = PBXGroup;
+			children = (
+				DA8FD9F821071B8300DBA125 /* TestValidate.swift */,
+				DAFD36AD2107638200C52721 /* MockValidateRequest.swift */,
+				DA8FD9FC21073B4200DBA125 /* MockValidateProtocol.swift */,
+				DA8FD9FE21073C9E00DBA125 /* MockValidateDelegate.swift */,
+			);
+			path = Validate;
+			sourceTree = "<group>";
+		};
 		DAA00E3320F493E1009386CE /* Metrics */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE9E93020F78FA800B5492C /* Pyro */,
+				DA8FD9F521071B5900DBA125 /* Validate */,
 				DA536F482106F96700F1E106 /* User */,
 				DA28087120F5DE4200BCDA13 /* Report */,
 				DA20629920F4F932001B58A1 /* Metrics */,
@@ -380,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE9E92B20F78CB800B5492C /* Pyro */,
+				DA8FD9EE21071A3000DBA125 /* Validate */,
 				DAE187F3210491C300927A28 /* Session */,
 				DA28086B20F5DD5A00BCDA13 /* Report */,
 				DAA00E3320F493E1009386CE /* Metrics */,
@@ -557,30 +612,38 @@
 				DA01227F20F499AC00B9C5EF /* Scraper.swift in Sources */,
 				DAE187F92104938700927A28 /* Session_v1.swift in Sources */,
 				DA28087B20F5E1A800BCDA13 /* ReportDelegate.swift in Sources */,
+				DA8FD9F021071A8D00DBA125 /* ValidateProtocol.swift in Sources */,
 				DA01228420F49AB700B9C5EF /* ScraperItem.swift in Sources */,
+				DA8FDA03210748EF00DBA125 /* ValidateEmpty.swift in Sources */,
 				DA20629F20F50098001B58A1 /* MetricsCommandProtocol.swift in Sources */,
 				DA5E6D4F20FA088A00120292 /* Streak.swift in Sources */,
 				DA2062A320F503B2001B58A1 /* MetricsCommandFirstContribution.swift in Sources */,
 				DAE4862620F4708E003BF78A /* User_v1.swift in Sources */,
+				DA8FDA0B21075BA000DBA125 /* ValidateUnique.swift in Sources */,
 				DA2062A120F502A3001B58A1 /* MetricsCommandComposite.swift in Sources */,
 				DA5E6D4320F9ECEF00120292 /* ScraperItems.swift in Sources */,
 				DA455BA620F72375000EBE10 /* UserBase.swift in Sources */,
 				DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */,
+				DAFD36B3210767C200C52721 /* ValidateExists.swift in Sources */,
 				DA28087020F5DE2F00BCDA13 /* Report.swift in Sources */,
 				DA2062AB20F50416001B58A1 /* MetricsCommandCurrentStreak.swift in Sources */,
 				DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */,
 				DA7BF72221060C6A002DD1C7 /* Configuration.swift in Sources */,
 				DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */,
 				DA7BF72021060B94002DD1C7 /* UserProtocol.swift in Sources */,
+				DA8FDA0921074F4E00DBA125 /* ValidateCharacters.swift in Sources */,
 				DA5E6D5320FA0A7C00120292 /* Month.swift in Sources */,
 				DA2062BF20F527C3001B58A1 /* Load.swift in Sources */,
+				DA8FDA0721074A6200DBA125 /* ValidateFirst.swift in Sources */,
 				DA7BF72421060EB2002DD1C7 /* SessionProtocol.swift in Sources */,
 				DA20629820F4F910001B58A1 /* MetricsBuilder.swift in Sources */,
 				DA2062AE20F51A83001B58A1 /* Request.swift in Sources */,
+				DA8FDA052107498000DBA125 /* ValidateError.swift in Sources */,
 				DA2062A720F503F8001B58A1 /* MetricsCommandContributions.swift in Sources */,
 				DA2062B420F5216A001B58A1 /* RequestError.swift in Sources */,
 				DA5404382100679900E6F448 /* MetricsCommandYears.swift in Sources */,
 				DA2062C320F5286B001B58A1 /* LoadDelegate.swift in Sources */,
+				DA8FD9FB21071DD600DBA125 /* ValidateDelegate.swift in Sources */,
 				DAB840EE20F8EC8D00CA3A45 /* ReportProtocol.swift in Sources */,
 				DA5E6D4B20F9FEF200120292 /* ScraperError.swift in Sources */,
 				DA2062B920F5242B001B58A1 /* RequestProtocol.swift in Sources */,
@@ -590,6 +653,7 @@
 				DA2062A920F5040D001B58A1 /* MetricsCommandMaxStreak.swift in Sources */,
 				DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */,
 				DA536F452106F58B00F1E106 /* SessionFactory.swift in Sources */,
+				DA8FD9F221071AB900DBA125 /* Validate.swift in Sources */,
 				DA5E6D5520FA0DBA00120292 /* PyroDelegate.swift in Sources */,
 				DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
@@ -605,20 +669,24 @@
 			files = (
 				DA536F4C2107001300F1E106 /* TestStorage_Migration.swift in Sources */,
 				DA540436210066C100E6F448 /* TestMetricsBuilder_Years.swift in Sources */,
+				DAFD36AE2107638200C52721 /* MockValidateRequest.swift in Sources */,
 				DA5E6D5920FA10F300120292 /* MockPyroDelegate.swift in Sources */,
 				DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */,
 				DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */,
 				DA54043A21007A3C00E6F448 /* TestMetricsBuilder_Max.swift in Sources */,
+				DA8FD9FF21073C9E00DBA125 /* MockValidateDelegate.swift in Sources */,
 				DAE9E93220F78FB500B5492C /* TestPyro.swift in Sources */,
 				DA2062C120F527FA001B58A1 /* TestLoad.swift in Sources */,
 				DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */,
 				DA28088520F5EB8E00BCDA13 /* MockStorageProtocol.swift in Sources */,
 				DAE187FB2104A03C00927A28 /* TestPyro_Session.swift in Sources */,
+				DA8FD9FD21073B4200DBA125 /* MockValidateProtocol.swift in Sources */,
 				DA2062BC20F5249A001B58A1 /* MockRequestProtocol.swift in Sources */,
 				DA28087320F5DE5000BCDA13 /* MockReportProtocol.swift in Sources */,
 				DA01228220F49A1C00B9C5EF /* TestScraper.swift in Sources */,
 				DA28087920F5DFCA00BCDA13 /* MockMetricsBuilderProtocol.swift in Sources */,
 				DA2062C520F529F2001B58A1 /* MockLoadDelegate.swift in Sources */,
+				DA8FD9F921071B8300DBA125 /* TestValidate.swift in Sources */,
 				DA28087D20F5E1DF00BCDA13 /* MockReportDelegate.swift in Sources */,
 				DA28086A20F5DC6200BCDA13 /* MockLoadProtocol.swift in Sources */,
 				DA28087520F5DE6C00BCDA13 /* TestReport.swift in Sources */,

@@ -1,18 +1,21 @@
 import Foundation
 
-public class Pyro:ReportDelegate {
+public class Pyro:ReportDelegate, ValidateDelegate {
     public var users:[UserProtocol]
     public weak var delegate:PyroDelegate?
     var storage:StorageProtocol
     var report:ReportProtocol
     var session:SessionProtocol
+    var validate:ValidateProtocol
     
     public init() {
         self.users = []
         self.session = SessionFactory.make()
         self.storage = Storage()
         self.report = Report()
+        self.validate = Validate<Request>()
         self.report.delegate = self
+        self.validate.delegate = self
     }
     
     public func loadUsers() {
@@ -49,10 +52,13 @@ public class Pyro:ReportDelegate {
     
     public func loadSession() { self.storage.load { [weak self] (session:SessionProtocol) in self?.session = session } }
     public func makeReport(user:UserProtocol) { self.report.make(user:user) }
+    public func validate(url:String) { self.validate.validate(pyro:self, url:url) }
     func saveUsers() { self.storage.save(users:self.users) }
     func saveSession() { self.storage.save(session:self.session) }
     func reportFailed(error:Error) { self.delegate?.pyroFailed(error:error) }
     func report(progress:Float) { self.delegate?.pyroReport(progress:progress) }
+    func validateSuccess() { self.delegate?.pyroUpdated() }
+    func validateFailed(error:Error) { self.delegate?.pyroFailed(error:error) }
     
     func reportCompleted() {
         self.session.reports += 1
