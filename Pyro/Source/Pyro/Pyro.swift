@@ -9,7 +9,7 @@ public class Pyro:ReportDelegate {
     
     public init() {
         self.users = []
-        self.session = Configuration.Session()
+        self.session = SessionFactory.make()
         self.storage = Storage()
         self.report = Report()
         self.report.delegate = self
@@ -23,7 +23,7 @@ public class Pyro:ReportDelegate {
     }
     
     @discardableResult public func addUser(name:String, url:String) -> UserProtocol {
-        let user:UserProtocol = Configuration.User()
+        let user:UserProtocol = UserFactory.make()
         user.name = name
         user.url = url
         self.add(user:user)

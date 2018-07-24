@@ -54,7 +54,7 @@ class Storage:StorageProtocol {
             let saved:Configuration.Session = try self.load(name:Constants.sessionFile)
             session = saved
         } catch {
-            session = Configuration.Session()
+            session = SessionFactory.make()
             self.save(session:session)
         }
         return session

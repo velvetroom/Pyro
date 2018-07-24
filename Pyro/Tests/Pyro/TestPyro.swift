@@ -23,7 +23,7 @@ class TestPyro:XCTestCase {
         let expectDelegate:XCTestExpectation = self.expectation(description:"Delegate not notified")
         
         let invalidName:String = "invalid"
-        let user:UserProtocol = Configuration.User()
+        let user:UserProtocol = UserFactory.make()
         user.name = invalidName
         self.pyro.users.append(user)
         
@@ -110,7 +110,7 @@ class TestPyro:XCTestCase {
     }
     
     func testDeleteRemovesUser() {
-        let user:UserProtocol = Configuration.User()
+        let user:UserProtocol = UserFactory.make()
         self.pyro.users.append(user)
         self.pyro.delete(user:user)
         XCTAssertTrue(self.pyro.users.isEmpty, "Failed to remove user")

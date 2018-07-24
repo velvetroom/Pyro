@@ -45,6 +45,7 @@
 		DA455BA420F72256000EBE10 /* UserBase.json in Resources */ = {isa = PBXBuildFile; fileRef = DA455BA320F72256000EBE10 /* UserBase.json */; };
 		DA455BA620F72375000EBE10 /* UserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA455BA520F72375000EBE10 /* UserBase.swift */; };
 		DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49406020F87D27002F0C1F /* UserFactory.swift */; };
+		DA536F452106F58B00F1E106 /* SessionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F442106F58B00F1E106 /* SessionFactory.swift */; };
 		DA54042A21005AC500E6F448 /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54042921005AC500E6F448 /* Year.swift */; };
 		DA54042E21005FEA00E6F448 /* Max.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54042D21005FEA00E6F448 /* Max.swift */; };
 		DA540436210066C100E6F448 /* TestMetricsBuilder_Years.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA540435210066C100E6F448 /* TestMetricsBuilder_Years.swift */; };
@@ -129,6 +130,7 @@
 		DA455BA320F72256000EBE10 /* UserBase.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserBase.json; sourceTree = "<group>"; };
 		DA455BA520F72375000EBE10 /* UserBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBase.swift; sourceTree = "<group>"; };
 		DA49406020F87D27002F0C1F /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
+		DA536F442106F58B00F1E106 /* SessionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFactory.swift; sourceTree = "<group>"; };
 		DA54042921005AC500E6F448 /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		DA54042D21005FEA00E6F448 /* Max.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Max.swift; sourceTree = "<group>"; };
 		DA540435210066C100E6F448 /* TestMetricsBuilder_Years.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMetricsBuilder_Years.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			children = (
 				DA7BF72321060EB2002DD1C7 /* SessionProtocol.swift */,
 				DAE187F82104938700927A28 /* Session_v1.swift */,
+				DA536F442106F58B00F1E106 /* SessionFactory.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				DA54042E21005FEA00E6F448 /* Max.swift in Sources */,
 				DA2062A920F5040D001B58A1 /* MetricsCommandMaxStreak.swift in Sources */,
 				DA7E6E8520F615A000E6F38E /* StorageFileProtocol.swift in Sources */,
+				DA536F452106F58B00F1E106 /* SessionFactory.swift in Sources */,
 				DA5E6D5520FA0DBA00120292 /* PyroDelegate.swift in Sources */,
 				DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
