@@ -105,7 +105,7 @@ class TestPyro:XCTestCase {
     func testMakeReportCallsReporter() {
         let expect:XCTestExpectation = self.expectation(description:"Not reported")
         self.report.onReport = { expect.fulfill() }
-        self.pyro.makeReport(user:User_v1())
+        self.pyro.makeReport(user:UserFactory.make())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
@@ -119,7 +119,7 @@ class TestPyro:XCTestCase {
     func testDeleteSaves() {
         let expect:XCTestExpectation = self.expectation(description:"Not saved")
         self.storage.onSaveUsers = { expect.fulfill() }
-        self.pyro.delete(user:User_v1())
+        self.pyro.delete(user:UserFactory.make())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
 }

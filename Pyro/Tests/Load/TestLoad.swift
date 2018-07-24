@@ -22,7 +22,7 @@ class TestLoad:XCTestCase {
         var received:Bool = false
         self.request.data = Data()
         self.delegate.onCompleted = { received = true }
-        self.load.start(user:User_v1())
+        self.load.start(user:UserFactory.make())
         XCTAssertTrue(received, "Not received")
     }
     
@@ -30,21 +30,21 @@ class TestLoad:XCTestCase {
         var received:Bool = false
         self.request.error = RequestError.emptyResponse
         self.delegate.onError = { received = true }
-        self.load.start(user:User_v1())
+        self.load.start(user:UserFactory.make())
         XCTAssertTrue(received, "Not received")
     }
     
     func testReleasesScraperOnSuccess() {
         XCTAssertNotNil(self.load.scraper, "Should initially be not nil")
         self.request.data = Data()
-        self.load.start(user:User_v1())
+        self.load.start(user:UserFactory.make())
         XCTAssertNil(self.load.scraper, "Should finally be nil")
     }
     
     func testReleasesErrorOnSuccess() {
         XCTAssertNotNil(self.load.scraper, "Should initially be not nil")
         self.request.error = RequestError.emptyResponse
-        self.load.start(user:User_v1())
+        self.load.start(user:UserFactory.make())
         XCTAssertNil(self.load.scraper, "Should finally be nil")
     }
     
@@ -64,7 +64,7 @@ class TestLoad:XCTestCase {
                 receiveEndingYear.fulfill()
             }
         }
-        self.load.start(user:User_v1())
+        self.load.start(user:UserFactory.make())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
@@ -75,7 +75,7 @@ class TestLoad:XCTestCase {
             expect?.fulfill()
             expect = nil
         }
-        self.load.user = User_v1()
+        self.load.user = UserFactory.make()
         self.load.next(year:1990)
         self.waitForExpectations(timeout:0.1, handler:nil)
     }
@@ -94,7 +94,7 @@ class TestLoad:XCTestCase {
         }
         self.scraper.error = ScraperError.dateInTheFuture
         self.delegate.onCompleted = { completed.fulfill() }
-        self.load.user = User_v1()
+        self.load.user = UserFactory.make()
         self.load.next(year:1990)
         self.waitForExpectations(timeout:0.3, handler:nil)
         XCTAssertEqual(timesRequested, 1, "Requested more than expected")

@@ -46,6 +46,8 @@
 		DA455BA620F72375000EBE10 /* UserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA455BA520F72375000EBE10 /* UserBase.swift */; };
 		DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49406020F87D27002F0C1F /* UserFactory.swift */; };
 		DA536F452106F58B00F1E106 /* SessionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F442106F58B00F1E106 /* SessionFactory.swift */; };
+		DA536F472106F65D00F1E106 /* User_v2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F462106F65D00F1E106 /* User_v2.swift */; };
+		DA536F4A2106F97A00F1E106 /* TestUserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F492106F97A00F1E106 /* TestUserFactory.swift */; };
 		DA54042A21005AC500E6F448 /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54042921005AC500E6F448 /* Year.swift */; };
 		DA54042E21005FEA00E6F448 /* Max.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54042D21005FEA00E6F448 /* Max.swift */; };
 		DA540436210066C100E6F448 /* TestMetricsBuilder_Years.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA540435210066C100E6F448 /* TestMetricsBuilder_Years.swift */; };
@@ -131,6 +133,8 @@
 		DA455BA520F72375000EBE10 /* UserBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBase.swift; sourceTree = "<group>"; };
 		DA49406020F87D27002F0C1F /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		DA536F442106F58B00F1E106 /* SessionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFactory.swift; sourceTree = "<group>"; };
+		DA536F462106F65D00F1E106 /* User_v2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User_v2.swift; sourceTree = "<group>"; };
+		DA536F492106F97A00F1E106 /* TestUserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserFactory.swift; sourceTree = "<group>"; };
 		DA54042921005AC500E6F448 /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		DA54042D21005FEA00E6F448 /* Max.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Max.swift; sourceTree = "<group>"; };
 		DA540435210066C100E6F448 /* TestMetricsBuilder_Years.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMetricsBuilder_Years.swift; sourceTree = "<group>"; };
@@ -271,6 +275,14 @@
 			path = Report;
 			sourceTree = "<group>";
 		};
+		DA536F482106F96700F1E106 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DA536F492106F97A00F1E106 /* TestUserFactory.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		DA5915ED20F46D8B00B6AEDC = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE9E93020F78FA800B5492C /* Pyro */,
+				DA536F482106F96700F1E106 /* User */,
 				DA28087120F5DE4200BCDA13 /* Report */,
 				DA20629920F4F932001B58A1 /* Metrics */,
 				DA2062BA20F5248A001B58A1 /* Load */,
@@ -381,6 +394,7 @@
 			children = (
 				DA7BF71F21060B94002DD1C7 /* UserProtocol.swift */,
 				DAE4862120F4708E003BF78A /* User_v1.swift */,
+				DA536F462106F65D00F1E106 /* User_v2.swift */,
 				DA455BA520F72375000EBE10 /* UserBase.swift */,
 				DA49406020F87D27002F0C1F /* UserFactory.swift */,
 			);
@@ -577,6 +591,7 @@
 				DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */,
 				DAE4862720F4708E003BF78A /* Storage.swift in Sources */,
 				DA2062A520F503E8001B58A1 /* MetricsCommandLastContribution.swift in Sources */,
+				DA536F472106F65D00F1E106 /* User_v2.swift in Sources */,
 				DA28086820F5DC3200BCDA13 /* LoadProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,6 +619,7 @@
 				DA28086A20F5DC6200BCDA13 /* MockLoadProtocol.swift in Sources */,
 				DA28087520F5DE6C00BCDA13 /* TestReport.swift in Sources */,
 				DA20629B20F4F93F001B58A1 /* TestMetricsBuilder.swift in Sources */,
+				DA536F4A2106F97A00F1E106 /* TestUserFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
