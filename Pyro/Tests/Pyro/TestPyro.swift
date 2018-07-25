@@ -135,12 +135,11 @@ class TestPyro:XCTestCase {
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testValidateRemovesDelegate() {
-        let validate:MockValidateProtocol = MockValidateProtocol()
-        let delegate:MockValidateDelegate = MockValidateDelegate()
-        validate.delegate = delegate
-        self.pyro.validate = validate
-        self.pyro.validate(url:String())
-        XCTAssertNil(validate.delegate, "Not removed")
+    func testValidateRemovesComposite() {
+        let composite:ValidateComposite<MockValidateRequest> = ValidateComposite<MockValidateRequest>()
+        let validate:Validate<MockValidateRequest> = Validate<MockValidateRequest>()
+        validate.composite = composite
+        validate.validate(pyro:self.pyro, url:String())
+        XCTAssertFalse(validate.composite === composite, "Not removed")
     }
 }

@@ -6,14 +6,16 @@ public class Pyro:ReportDelegate, ValidateDelegate {
     var storage:StorageProtocol
     var report:ReportProtocol
     var session:SessionProtocol
-    var validate:ValidateProtocol?
+    var validate:ValidateProtocol
     
     public init() {
         self.users = []
         self.session = SessionFactory.make()
         self.storage = Storage()
         self.report = Report()
+        self.validate = Validate<Request>()
         self.report.delegate = self
+        self.validate.delegate = self
     }
     
     public func loadUsers() {
@@ -48,10 +50,7 @@ public class Pyro:ReportDelegate, ValidateDelegate {
     }
     
     public func validate(url:String) {
-        self.validate?.delegate = nil
-        self.validate = Validate<Request>()
-        self.validate?.delegate = self
-        self.validate?.validate(pyro:self, url:url)
+        self.validate.validate(pyro:self, url:url)
     }
     
     public func loadSession() { self.storage.load { [weak self] (session:SessionProtocol) in self?.session = session } }

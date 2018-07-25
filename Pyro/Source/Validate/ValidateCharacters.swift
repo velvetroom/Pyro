@@ -1,7 +1,7 @@
 import Foundation
 
 class ValidateCharacters:ValidateProtocol {
-    var delegate:ValidateDelegate?
+    weak var delegate:ValidateDelegate?
     
     required init() { }
     

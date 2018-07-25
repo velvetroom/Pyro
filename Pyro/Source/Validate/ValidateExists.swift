@@ -1,7 +1,7 @@
 import Foundation
 
 class ValidateExists<RequestType:RequestProtocol>:ValidateProtocol {
-    var delegate:ValidateDelegate?
+    weak var delegate:ValidateDelegate?
     
     required init() { }
     

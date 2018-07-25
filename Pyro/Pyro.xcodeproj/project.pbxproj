@@ -84,6 +84,7 @@
 		DAA00E3520F4940A009386CE /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E3420F4940A009386CE /* Metrics.swift */; };
 		DAA00E3720F496AF009386CE /* StatsMin.stub in Resources */ = {isa = PBXBuildFile; fileRef = DAA00E3620F496AF009386CE /* StatsMin.stub */; };
 		DAB840EE20F8EC8D00CA3A45 /* ReportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB840ED20F8EC8D00CA3A45 /* ReportProtocol.swift */; };
+		DAC847F52108BDAB00B8B977 /* ValidateComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC847F42108BDAB00B8B977 /* ValidateComposite.swift */; };
 		DAE187F92104938700927A28 /* Session_v1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE187F82104938700927A28 /* Session_v1.swift */; };
 		DAE187FB2104A03C00927A28 /* TestPyro_Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE187FA2104A03C00927A28 /* TestPyro_Session.swift */; };
 		DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4861A20F47084003BF78A /* MockStorageFileProtocol.swift */; };
@@ -186,6 +187,7 @@
 		DAA00E3420F4940A009386CE /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		DAA00E3620F496AF009386CE /* StatsMin.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsMin.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DAB840ED20F8EC8D00CA3A45 /* ReportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProtocol.swift; sourceTree = "<group>"; };
+		DAC847F42108BDAB00B8B977 /* ValidateComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateComposite.swift; sourceTree = "<group>"; };
 		DAE187F82104938700927A28 /* Session_v1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session_v1.swift; sourceTree = "<group>"; };
 		DAE187FA2104A03C00927A28 /* TestPyro_Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyro_Session.swift; sourceTree = "<group>"; };
 		DAE4861720F4707A003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				DA8FD9EF21071A8D00DBA125 /* ValidateProtocol.swift */,
 				DA8FD9FA21071DD600DBA125 /* ValidateDelegate.swift */,
 				DA8FD9F121071AB900DBA125 /* Validate.swift */,
+				DAC847F42108BDAB00B8B977 /* ValidateComposite.swift */,
 				DA8FDA02210748EF00DBA125 /* ValidateEmpty.swift */,
 				DA8FDA0621074A6200DBA125 /* ValidateFirst.swift */,
 				DA8FDA0821074F4E00DBA125 /* ValidateCharacters.swift */,
@@ -604,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA20629D20F4FA2F001B58A1 /* MetricsConstants.swift in Sources */,
+				DAC847F52108BDAB00B8B977 /* ValidateComposite.swift in Sources */,
 				DA28088320F5EB2000BCDA13 /* StorageProtocol.swift in Sources */,
 				DA54042A21005AC500E6F448 /* Year.swift in Sources */,
 				DAE4862920F4708E003BF78A /* StorageError.swift in Sources */,

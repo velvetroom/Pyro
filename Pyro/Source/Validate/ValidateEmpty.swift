@@ -1,7 +1,7 @@
 import Foundation
 
 class ValidateEmpty:ValidateProtocol {
-    var delegate:ValidateDelegate?
+    weak var delegate:ValidateDelegate?
     
     required init() { }
     
