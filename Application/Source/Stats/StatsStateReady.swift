@@ -46,7 +46,9 @@ class StatsStateReady:StatsStateProtocol {
         var items:[StatsItem] = []
         let maxContribution:CGFloat = -CGFloat(max(contributions.max.month, Constants.minContributions))
         for year:Year in contributions.years {
-            guard year.months.count == Constants.months else { continue }
+            if let firstMonth:Month = year.months.first {
+                if firstMonth.value > Constants.firstMonth { continue }
+            }
             var item:StatsItem = StatsItem()
             item.value = year.value
             item.months = self.makeMonths(year:year, max:maxContribution)
@@ -121,4 +123,5 @@ private struct Constants {
     static let loading:Float = 1
     static let minContributions:Int = 1
     static let months:Int = 12
+    static let firstMonth:Int = 1
 }
