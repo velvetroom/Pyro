@@ -23,6 +23,7 @@ class UsersPresenter:Presenter {
     
     func createUser() {
         let view:CreateView = CreateView()
+        view.presenter.interactor.pyro = self.interactor.pyro
         Application.router.pushViewController(view, animated:true)
     }
     
@@ -61,9 +62,9 @@ class UsersPresenter:Presenter {
     private func makeName(user:UserProtocol) -> NSAttributedString {
         let string:NSMutableAttributedString = NSMutableAttributedString()
         let name:NSAttributedString = NSAttributedString(string:user.name, attributes:[NSAttributedString.Key.font:
-            UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.regular)])
+            UIFont.systemFont(ofSize:Constants.title, weight:UIFont.Weight.regular)])
         let url:NSAttributedString = NSAttributedString(string:"\n\(user.url)",
-            attributes:[NSAttributedString.Key.font:UIFont.systemFont(ofSize:Constants.subtitleFontSize,
+            attributes:[NSAttributedString.Key.font:UIFont.systemFont(ofSize:Constants.subtitle,
                                                                       weight:UIFont.Weight.ultraLight)])
         string.append(name)
         string.append(url)
@@ -86,6 +87,6 @@ class UsersPresenter:Presenter {
 }
 
 private struct Constants {
-    static let titleFontSize:CGFloat = 16
-    static let subtitleFontSize:CGFloat = 12
+    static let title:CGFloat = 16
+    static let subtitle:CGFloat = 12
 }

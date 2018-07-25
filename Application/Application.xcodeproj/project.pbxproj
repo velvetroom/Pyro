@@ -16,15 +16,13 @@
 		DA536F512107067200F1E106 /* CreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F502107067200F1E106 /* CreateInteractor.swift */; };
 		DA536F532107067900F1E106 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F522107067900F1E106 /* CreatePresenter.swift */; };
 		DA536F552107068100F1E106 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F542107068100F1E106 /* CreateView.swift */; };
-		DA5758B6210706A5007FB777 /* CreateContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5758B5210706A5007FB777 /* CreateContentView.swift */; };
 		DA8A8F1420FF1030002EEFAE /* HistogramBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F1320FF1030002EEFAE /* HistogramBackgroundView.swift */; };
 		DA8A8F1720FF198D002EEFAE /* YearsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F1620FF198D002EEFAE /* YearsView.swift */; };
 		DA8A8F1920FF19A6002EEFAE /* YearsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F1820FF19A6002EEFAE /* YearsCellView.swift */; };
 		DA8A8F1B20FF2715002EEFAE /* StatsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F1A20FF2715002EEFAE /* StatsItem.swift */; };
 		DA8A8F1F20FF27E6002EEFAE /* StatsItemMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F1E20FF27E6002EEFAE /* StatsItemMonth.swift */; };
 		DA8A8F2120FF2D68002EEFAE /* StatsTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F2020FF2D68002EEFAE /* StatsTitleView.swift */; };
-		DA8FD9EB21070F8E00DBA125 /* CreateContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FD9EA21070F8E00DBA125 /* CreateContentViewModel.swift */; };
-		DA8FD9ED210711A700DBA125 /* CreateFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FD9EC210711A700DBA125 /* CreateFieldView.swift */; };
+		DA8FD9EB21070F8E00DBA125 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FD9EA21070F8E00DBA125 /* CreateViewModel.swift */; };
 		DA9784182101CCA50090A086 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACEB85920F6484D0018DE79 /* brand.xcassets */; };
 		DAA00E2D20F48ADD009386CE /* StatsMetricsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA00E2C20F48ADD009386CE /* StatsMetricsViewModel.swift */; };
 		DAC0C9FE20FF3E0E00B5E98B /* StatsMonthsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0C9FD20FF3E0E00B5E98B /* StatsMonthsViewModel.swift */; };
@@ -88,7 +86,6 @@
 		DA536F502107067200F1E106 /* CreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInteractor.swift; sourceTree = "<group>"; };
 		DA536F522107067900F1E106 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
 		DA536F542107068100F1E106 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
-		DA5758B5210706A5007FB777 /* CreateContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateContentView.swift; sourceTree = "<group>"; };
 		DA5915D820F46D1E00B6AEDC /* Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8A8F1320FF1030002EEFAE /* HistogramBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramBackgroundView.swift; sourceTree = "<group>"; };
 		DA8A8F1620FF198D002EEFAE /* YearsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsView.swift; sourceTree = "<group>"; };
@@ -96,8 +93,7 @@
 		DA8A8F1A20FF2715002EEFAE /* StatsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsItem.swift; sourceTree = "<group>"; };
 		DA8A8F1E20FF27E6002EEFAE /* StatsItemMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsItemMonth.swift; sourceTree = "<group>"; };
 		DA8A8F2020FF2D68002EEFAE /* StatsTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTitleView.swift; sourceTree = "<group>"; };
-		DA8FD9EA21070F8E00DBA125 /* CreateContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContentViewModel.swift; sourceTree = "<group>"; };
-		DA8FD9EC210711A700DBA125 /* CreateFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFieldView.swift; sourceTree = "<group>"; };
+		DA8FD9EA21070F8E00DBA125 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		DAA00E2C20F48ADD009386CE /* StatsMetricsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsMetricsViewModel.swift; sourceTree = "<group>"; };
 		DAC0C9FD20FF3E0E00B5E98B /* StatsMonthsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsMonthsViewModel.swift; sourceTree = "<group>"; };
 		DAC0CA1120FF6F4900B5E98B /* StatsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDetailView.swift; sourceTree = "<group>"; };
@@ -218,10 +214,8 @@
 			children = (
 				DA536F502107067200F1E106 /* CreateInteractor.swift */,
 				DA536F522107067900F1E106 /* CreatePresenter.swift */,
-				DA8FD9EA21070F8E00DBA125 /* CreateContentViewModel.swift */,
+				DA8FD9EA21070F8E00DBA125 /* CreateViewModel.swift */,
 				DA536F542107068100F1E106 /* CreateView.swift */,
-				DA5758B5210706A5007FB777 /* CreateContentView.swift */,
-				DA8FD9EC210711A700DBA125 /* CreateFieldView.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -448,12 +442,11 @@
 				DAC0CA1420FF73E600B5E98B /* HistogramIndicatorView.swift in Sources */,
 				DA8A8F1420FF1030002EEFAE /* HistogramBackgroundView.swift in Sources */,
 				DAE4861120F47060003BF78A /* StatsParentView.swift in Sources */,
-				DA8FD9EB21070F8E00DBA125 /* CreateContentViewModel.swift in Sources */,
+				DA8FD9EB21070F8E00DBA125 /* CreateViewModel.swift in Sources */,
 				DAC82FE82105B15200495233 /* StatsStateNeedsSync.swift in Sources */,
 				DAC82FE62105AD5B00495233 /* StatsStateError.swift in Sources */,
 				DA02C8FC2105F1C000AEBD71 /* StatsLoadingViewModel.swift in Sources */,
 				DA48D1B82101B0C800B909B0 /* HistogramMonthBackgroundView.swift in Sources */,
-				DA8FD9ED210711A700DBA125 /* CreateFieldView.swift in Sources */,
 				DA8A8F1920FF19A6002EEFAE /* YearsCellView.swift in Sources */,
 				DAC0CA1220FF6F4900B5E98B /* StatsDetailView.swift in Sources */,
 				DA4F5D8E20FCDFAD00D3AA4A /* LoadingView.swift in Sources */,
@@ -475,7 +468,6 @@
 				DAE4861520F47060003BF78A /* StatsInteractor.swift in Sources */,
 				DA536F512107067200F1E106 /* CreateInteractor.swift in Sources */,
 				DAE4860C20F47060003BF78A /* StatsPresenter.swift in Sources */,
-				DA5758B6210706A5007FB777 /* CreateContentView.swift in Sources */,
 				DAE4861620F47060003BF78A /* UsersInteractor.swift in Sources */,
 				DAE4861420F47060003BF78A /* Application.swift in Sources */,
 				DAA00E2D20F48ADD009386CE /* StatsMetricsViewModel.swift in Sources */,

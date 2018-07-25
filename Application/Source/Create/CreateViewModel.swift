@@ -1,7 +1,7 @@
 import UIKit
 import CleanArchitecture
 
-struct CreateContentViewModel:ViewModel {
+struct CreateViewModel:ViewModel {
     var icon:UIImage?
     var message:String
     var saveEnabled:Bool

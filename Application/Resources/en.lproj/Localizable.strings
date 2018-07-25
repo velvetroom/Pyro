@@ -3,6 +3,9 @@ UsersView.segmented.0="Name";
 UsersView.segmented.1="Streak";
 UsersPresenter.unknown="Needs sync";
 Grouping.separator=",";
+CreateView.title="New user";
+
+
 
 
 
@@ -10,7 +13,7 @@ Grouping.separator=",";
 
 
 UsersFactory_Unknown="-";
-CreateView_Title="New user";
+
 StatsStateError_Sync="There was an error,\ntry again in a few minutes.";
 StatsStateLoading_Sync="Synching,\ncould take a few minutes.";
 StatsStateReady_Sync="Last synched\n";

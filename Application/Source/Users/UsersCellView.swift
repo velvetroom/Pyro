@@ -40,7 +40,7 @@ class UsersCellView:UICollectionViewCell {
         streak.numberOfLines = 0
         streak.textColor = UIColor.black
         streak.textAlignment = NSTextAlignment.right
-        streak.font = UIFont.systemFont(ofSize:Constants.streakFontSize, weight:UIFont.Weight.light)
+        streak.font = UIFont.systemFont(ofSize:Constants.streakFont, weight:UIFont.Weight.light)
         self.streak = streak
         self.contentView.addSubview(streak)
         
@@ -73,5 +73,5 @@ class UsersCellView:UICollectionViewCell {
 private struct Constants {
     static let margin:CGFloat = 18
     static let border:CGFloat = 1
-    static let streakFontSize:CGFloat = 12
+    static let streakFont:CGFloat = 12
 }
