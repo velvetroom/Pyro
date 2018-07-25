@@ -70,7 +70,7 @@ The highest level policy is your application domain or in other words the busine
 
 The lowest level policy is your user interface, i.e. labels, buttons, images, etc.
 
-<img src="https://raw.githubusercontent.com/velvetroom/clean-architecture/master/Design/dependencies.png" width="750" alt="Structure" />
+<img src="https://raw.githubusercontent.com/velvetroom/clean-architecture/master/Design/dependencies.png" width="1000" alt="Structure" />
 
 ## Implementation
 
@@ -106,19 +106,17 @@ In a new file import Clean Architecture
 import CleanArchitecture
 ```
 
-Create a class that implements InteractorProtocol and add the required boiler plate:
+Create a class that implements Interactor and add the required boiler plate:
 
 ```
-class Interactor:InteractorProtocol {
-    weak var router:UINavigationController?
-    weak var presenter:InteractorDelegateProtocol?
+class MyInteractor:Interactor {
+    weak var delegate:InteractorDelegate?
 
     required init() { }
 }
 ```
 
-- `router` A weak reference to the object in charge of presenting views in you Application, the Navigation Controller for example.
-- `presenter` A weak reference to the InteractorDelegate; this is the only communication going from the Interactor to the Presenter, the Interactor notifies the Presenter when it should update the presentation.
+- `delegate` A weak reference to the InteractorDelegate; this is the only communication going from the Interactor to the Presenter, the Interactor notifies the Presenter when it should update the presentation.
 - `required init` Initialize any property that you need or leave it empty if none.
 
 ### Presenter
@@ -135,18 +133,18 @@ In a new file import Clean Architecture
 import CleanArchitecture
 ```
 
-Create a class that implements PresenterProtocol and add the required boiler plate:
+Create a class that implements Presenter and add the required boiler plate:
 
 ```
-class Presenter:PresenterProtocol {
-    var viewModel:ViewModel!
-    var interactor:Interactor!
+class MyPresenter:PresenterProtocol {
+    var viewModels:ViewModels!
+    var interactor:MyInteractor!
 
     required init() { }
 }
 ```
 
-- `viewModel` The object defining how the view should look and what content to display. Presenter edits ViewModel and View gets notifified of a change, then View can update the change accordingly for the user.
+- `viewModels` A container for your view models. Presenter edits ViewModels and View gets notifified of a change, then View can display the change to the user.
 - `interactor` Presenter is the owner of the interactor.
 - `required init` Initialize any property if needed.
 
@@ -158,11 +156,11 @@ Should know everything about Presenter, ideally only interact with it and no oth
 
 Applications in iOS usually consist of transitions between view controllers and most of the time there is only one of these active.
 
-When your View is instantiated it creates instances of your Presenter, Interactor and a ViewModel, connects them accordingly and assigns them their responsibilities.
+When your View is instantiated it creates instances of your Presenter, Interactor and ViewModels, connects them accordingly and assigns them their responsibilities.
 
 If your View gets released also your Presenter, Interactor and ViewModel will be released.
 
-You can abstract each View as a section or screen in your application. You should create a View for each section, each View will have their own ViewModel, ideally they will also have their own specific Presenter. Interactors can be shared or could also be specific for each section.
+You can abstract each View as a section or screen in your application. You should create a View for each section, each View will have their own ViewModels ideally they will also have their own specific Presenter. Interactors can be shared or could also be specific for each section.
 
 View inherits from UIViewController.
 
@@ -174,24 +172,23 @@ import CleanArchitecture
 
 Create a new class that inherits from View.
 
-View is a Generic class that needs to be specialized with a class conforming to PresenterProtocol and a UIView.
+View is a Generic class that needs to be specialized with a class conforming to Presenter.
 
 ```
-class DemoView:View<Presenter, UIView> { }
+class MyView:View<MyPresenter> { }
 ```
 
-- `Presenter` Your class conforming to PresenterProtocol
-- `UIView` You can define what UIView should be used in the UIViewController, you could pass the default UIView or create your own subclass. Whatever class you assign here will be available as `content` property on your View.
+- `MyPresenter` Your class conforming to Presenter
 
-### ViewModel
+### ViewModels
 
 The structure of information that will be presented to the user.
 
-You don't create a ViewModel, Presenter has a ViewModel already and you rather create as many 'properties' as your View needs. A property is an structure conforming to the ViewModelProtocol.
+You don't create a ViewModels object, Presenter has a ViewModels object already and you rather create as many ViewModel structs as your View needs.
 
-Presenter is in charge of updating the properties whenever it is needed. Every property can have an observer which will be notified via a closure when the property changes; ideally this observer would be your View.
+Presenter is in charge of updating the ViewModel whenever it is needed. Every ViewModel can have an observer which will be notified via a closure when the property changes; ideally this observer would be your View.
 
-You can define anything that you need in a property from basic types like Bool or String, to more complex ones like UIColor or UIImage or even your own structures.
+You can define anything that you need in a ViewModel from basic types like Bool or String, to more complex ones like UIColor or UIImage or even your own structures.
 
 You can also decide if your properties are optional or not.
 
@@ -201,10 +198,10 @@ In a new file import Clean Architecture
 import CleanArchitecture
 ```
 
-Create a new structure that implements ViewModelProtocol.
+Create a new structure that implements ViewModel.
 
 ```
-struct ContentViewModel:ViewModelProtocol {
+struct MyViewModel:ViewModel {
     var userName:String
     var buttonEnabled:Bool
     var buttonColor:UIColor?
@@ -225,13 +222,13 @@ In your Presenter class
 
 ```
 func update(userName:String) {
-    var property:ContentViewModel = ContentViewModel()
-    property.userName = userName
-    self.viewModel.update(property:property)
+    var viewModel:MyViewModel = MyViewModel()
+    viewModel.userName = userName
+    self.viewModels.update(viewModel:viewModel)
 }
 ```
 
-And that's it, ViewModel will take care of updating the listener if there is any.
+And that's it, ViewModels will take care of updating the listener if there is any.
 
 #### Listening for ViewModel updates
 
@@ -243,8 +240,8 @@ In your DemoView class
 
 ```
 func listenToUpdates() {
-    self.presenter.viewModel.observe { [weak self] (property:ContentViewModel) in
-        self?.title = property.userName
+    self.presenter.viewModels.observe { [weak self] (viewModel:MyViewModel) in
+        self?.title = viewModel.userName
     }
 }
 ```
