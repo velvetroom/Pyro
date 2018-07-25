@@ -4,6 +4,7 @@ import CleanArchitecture
 class UsersView:View<UsersPresenter>, UICollectionViewDelegate, UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout {
     var users:[UsersItem]
+    weak var segmented:UISegmentedControl!
     
     required init() {
         self.users = []
@@ -20,7 +21,7 @@ UICollectionViewDelegateFlowLayout {
         let cell:UsersCellView = collection.dequeueReusableCell(withReuseIdentifier:UsersCellView.identifier,
                                                                 for:index) as! UsersCellView
         cell.name.attributedText = self.users[index.item].name
-        cell.value.attributedText = self.users[index.item].value
+        cell.streak.text = self.users[index.item].value
         return cell
     }
     
@@ -69,14 +70,14 @@ UICollectionViewDelegateFlowLayout {
         
         let segmented:UISegmentedControl = UISegmentedControl(items:[
             NSLocalizedString("UsersView.segmented.0", comment:String()),
-            NSLocalizedString("UsersView.segmented.1", comment:String()),
-            NSLocalizedString("UsersView.segmented.2", comment:String())])
+            NSLocalizedString("UsersView.segmented.1", comment:String())])
         segmented.selectedSegmentIndex = 0
-        segmented.addTarget(self, action:#selector(self.selectorSort(segmented:)), for:UIControl.Event.valueChanged)
+        segmented.addTarget(self, action:#selector(self.selectorSort), for:UIControl.Event.valueChanged)
+        self.segmented = segmented
         let flexSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonItem.SystemItem.flexibleSpace,
                                                         target:nil, action:nil)
         let barSegmented:UIBarButtonItem = UIBarButtonItem(customView:segmented)
-        self.setToolbarItems([barSegmented, flexSpace], animated:false)
+        self.setToolbarItems([flexSpace, barSegmented], animated:false)
     }
     
     override func viewWillAppear(_ animated:Bool) {
@@ -100,8 +101,8 @@ UICollectionViewDelegateFlowLayout {
     
     @objc private func selectorAdd() { self.presenter.createUser() }
     
-    @objc private func selectorSort(segmented:UISegmentedControl) {
-        self.presenter.sort = UsersSort(rawValue:segmented.selectedSegmentIndex)!
+    @objc private func selectorSort() {
+        self.presenter.selectedSort = self.segmented.selectedSegmentIndex
         self.presenter.shouldUpdate()
     }
 }

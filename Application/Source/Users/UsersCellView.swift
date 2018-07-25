@@ -3,7 +3,7 @@ import UIKit
 class UsersCellView:UICollectionViewCell {
     static let identifier:String = String(describing:self)
     weak var name:UILabel!
-    weak var value:UILabel!
+    weak var streak:UILabel!
     weak var border:UIView!
     
     override init(frame:CGRect) {
@@ -34,14 +34,15 @@ class UsersCellView:UICollectionViewCell {
         self.name = name
         self.contentView.addSubview(name)
         
-        let value:UILabel = UILabel()
-        value.translatesAutoresizingMaskIntoConstraints = false
-        value.isUserInteractionEnabled = false
-        value.numberOfLines = 0
-        value.textColor = UIColor.black
-        value.textAlignment = NSTextAlignment.right
-        self.value = value
-        self.contentView.addSubview(value)
+        let streak:UILabel = UILabel()
+        streak.translatesAutoresizingMaskIntoConstraints = false
+        streak.isUserInteractionEnabled = false
+        streak.numberOfLines = 0
+        streak.textColor = UIColor.black
+        streak.textAlignment = NSTextAlignment.right
+        streak.font = UIFont.systemFont(ofSize:Constants.streakFontSize, weight:UIFont.Weight.light)
+        self.streak = streak
+        self.contentView.addSubview(streak)
         
         let border:UIView = UIView()
         border.translatesAutoresizingMaskIntoConstraints = false
@@ -57,10 +58,10 @@ class UsersCellView:UICollectionViewCell {
         self.name.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
         self.name.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
         
-        self.value.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
-        self.value.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
-        self.value.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
-        self.value.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
+        self.streak.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
+        self.streak.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        self.streak.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
+        self.streak.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
         
         self.border.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.border.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
@@ -72,4 +73,5 @@ class UsersCellView:UICollectionViewCell {
 private struct Constants {
     static let margin:CGFloat = 18
     static let border:CGFloat = 1
+    static let streakFontSize:CGFloat = 12
 }

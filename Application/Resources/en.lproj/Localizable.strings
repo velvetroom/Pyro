@@ -1,9 +1,8 @@
 UsersView.title="Users";
 UsersView.segmented.0="Name";
-UsersView.segmented.1="Contributions";
-UsersView.segmented.2="Streak";
-
-
+UsersView.segmented.1="Streak";
+UsersPresenter.unknown="Needs sync";
+Grouping.separator=",";
 
 
 
@@ -24,7 +23,7 @@ StatsViewDelete_Delete="Delete";
 StatsViewDelete_Cancel="Cancel";
 StatsViewContent_StreakTitle="Streak";
 StatsViewContent_ContributionsTitle="Contributions";
-Grouping_Separator=",";
+
 Month_1="January";
 Month_2="February";
 Month_3="March";
