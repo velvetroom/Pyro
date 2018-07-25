@@ -14,7 +14,7 @@ class CreateInteractor:Interactor, PyroDelegate {
         self.pyro.validate(url:url)
     }
     
-    func pyroSuccess() {
+    func pyroValidated() {
         self.error = nil
         self.delegate?.shouldUpdate()
     }

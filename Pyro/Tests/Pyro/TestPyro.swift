@@ -69,9 +69,7 @@ class TestPyro:XCTestCase {
     
     func testAddUserSaves() {
         let expectStorage:XCTestExpectation = self.expectation(description:"Storage not called")
-        let expectDelegate:XCTestExpectation = self.expectation(description:"Delegate not notified")
         self.storage.onSaveUsers = { expectStorage.fulfill() }
-        self.delegate.onUpdated = { expectDelegate.fulfill() }
         self.pyro.addUser(name:String(), url:String())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }

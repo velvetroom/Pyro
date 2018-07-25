@@ -30,13 +30,13 @@ class StatsInteractor:Interactor, PyroDelegate {
         self.pyro.delete(user:self.user)
     }
     
-    func pyroReport(progress:Float) {
-        self.state = StatsStateLoading(progress:progress)
+    func pyroReportReady() {
+        self.checkState()
         self.delegate?.shouldUpdate()
     }
     
-    func pyroSuccess() {
-        self.checkState()
+    func pyroReport(progress:Float) {
+        self.state = StatsStateLoading(progress:progress)
         self.delegate?.shouldUpdate()
     }
     
@@ -46,10 +46,6 @@ class StatsInteractor:Interactor, PyroDelegate {
     }
     
     func didLoad() {
-        if self.pyro.shouldRate() {
-            if #available(iOS 10.3, *) {
-                SKStoreReviewController.requestReview()
-            }
-        }
+        if self.pyro.shouldRate() { if #available(iOS 10.3, *) { SKStoreReviewController.requestReview() } }
     }
 }

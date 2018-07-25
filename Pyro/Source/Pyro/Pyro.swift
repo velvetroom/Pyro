@@ -19,7 +19,7 @@ public class Pyro:ReportDelegate, ValidateDelegate {
     public func loadUsers() {
         self.storage.load { [weak self] (users:[UserProtocol]) in
             self?.users = users
-            self?.delegate?.pyroSuccess()
+            self?.delegate?.pyroUsersLoaded()
         }
     }
     
@@ -29,7 +29,6 @@ public class Pyro:ReportDelegate, ValidateDelegate {
         user.url = url
         self.add(user:user)
         self.saveUsers()
-        self.delegate?.pyroSuccess()
         return user
     }
     
@@ -61,14 +60,14 @@ public class Pyro:ReportDelegate, ValidateDelegate {
     func saveSession() { self.storage.save(session:self.session) }
     func reportFailed(error:Error) { self.delegate?.pyroFailed(error:error) }
     func report(progress:Float) { self.delegate?.pyroReport(progress:progress) }
-    func validateSuccess() { self.delegate?.pyroSuccess() }
+    func validateSuccess() { self.delegate?.pyroValidated() }
     func validateFailed(error:Error) { self.delegate?.pyroFailed(error:error) }
     
     func reportCompleted() {
         self.session.reports += 1
         self.saveSession()
         self.saveUsers()
-        self.delegate?.pyroSuccess()
+        self.delegate?.pyroReportReady()
     }
     
     private func add(user:UserProtocol) {
