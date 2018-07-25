@@ -1,6 +1,6 @@
 import UIKit
 
-class YearsCellView:UICollectionViewCell {
+class StatsMetricsCellView:UICollectionViewCell {
     static let identifier:String = String(describing:self)
     static let width:CGFloat = 45
     weak var label:UILabel!
@@ -29,7 +29,6 @@ class YearsCellView:UICollectionViewCell {
         let label:UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = NSTextAlignment.center
-        label.backgroundColor = UIColor.clear
         label.isUserInteractionEnabled = false
         label.textColor = UIColor.black
         label.font = UIFont.systemFont(ofSize:Constants.fontSize, weight:UIFont.Weight.bold)

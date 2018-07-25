@@ -28,7 +28,6 @@ class StatsInteractor:Interactor, PyroDelegate {
     
     func delete() {
         self.pyro.delete(user:self.user)
-//        self.router?.popViewController(animated:true)
     }
     
     func pyroReport(progress:Float) {

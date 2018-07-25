@@ -39,6 +39,7 @@ class UsersPresenter:Presenter {
     
     private func router(user:UserProtocol) {
         let view:StatsView = StatsView()
+        view.presenter.interactor.pyro = self.interactor.pyro
         view.presenter.interactor.user = user
         Application.router.pushViewController(view, animated:true)
     }

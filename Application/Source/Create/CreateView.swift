@@ -47,9 +47,6 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
         self.navigationItem.rightBarButtonItem = saveButton
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem:UIBarButtonItem.SystemItem.cancel,
                                                                  target:self, action:#selector(self.selectorCancel))
-        if #available(iOS 11.0, *) {
-            self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.always
-        }
     }
     
     private func makeOutlets() {
@@ -90,7 +87,6 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
         
         let message:UILabel = UILabel()
         message.translatesAutoresizingMaskIntoConstraints = false
-        message.backgroundColor = UIColor.clear
         message.isUserInteractionEnabled = false
         message.font = UIFont.systemFont(ofSize:Constants.messageFont, weight:UIFont.Weight.light)
         message.numberOfLines = 0
@@ -108,12 +104,6 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
         self.field.leftAnchor.constraint(equalTo:self.view.leftAnchor, constant:Constants.margin).isActive = true
         self.field.widthAnchor.constraint(equalToConstant:Constants.fieldWidth).isActive = true
         self.field.heightAnchor.constraint(equalToConstant:Constants.fieldHeight).isActive = true
-        if #available(iOS 11.0, *) {
-            self.field.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor,
-                                            constant:Constants.margin).isActive = true
-        } else {
-            self.field.topAnchor.constraint(equalTo:self.view.topAnchor, constant:Constants.margin).isActive = true
-        }
         
         self.border.topAnchor.constraint(equalTo:self.field.bottomAnchor).isActive = true
         self.border.leftAnchor.constraint(equalTo:self.field.leftAnchor).isActive = true
@@ -133,6 +123,14 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
         
         self.loading.centerXAnchor.constraint(equalTo:self.icon.centerXAnchor).isActive = true
         self.loading.centerYAnchor.constraint(equalTo:self.icon.centerYAnchor).isActive = true
+        
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.always
+            self.field.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor,
+                                            constant:Constants.margin).isActive = true
+        } else {
+            self.field.topAnchor.constraint(equalTo:self.view.topAnchor, constant:Constants.margin).isActive = true
+        }
     }
     
     private func configureViewModel() {

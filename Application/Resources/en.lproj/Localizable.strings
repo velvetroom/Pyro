@@ -2,40 +2,36 @@ UsersView.title="Users";
 UsersView.segmented.0="Name";
 UsersView.segmented.1="Streak";
 UsersPresenter.unknown="Needs sync";
-Grouping.separator=",";
 CreateView.title="New user";
+StatsStateNeedsSync.message="New user,\nsynch to get metrics from Github.";
+StatsStateNeedsSync.sync="Needs sync";
+StatsView.synch="Synch";
+StatsView.delete="Delete";
+StatsStateReady.streak="Streak";
+StatsStateReady.contributions="Contributions";
+StatsStateReady.sync="Last synched\n";
+StatsStateReady.month.1="January";
+StatsStateReady.month.2="February";
+StatsStateReady.month.3="March";
+StatsStateReady.month.4="April";
+StatsStateReady.month.5="May";
+StatsStateReady.month.6="June";
+StatsStateReady.month.7="July";
+StatsStateReady.month.8="August";
+StatsStateReady.month.9="September";
+StatsStateReady.month.10="October";
+StatsStateReady.month.11="November";
+StatsStateReady.month.12="December";
+StatsStateLoading.sync="Synching,\ncould take a few minutes.";
+StatsStateError.sync="There was an error,\ntry again in a few minutes.";
+Grouping.separator=",";
 
 
 
 
 
-
-
-
-UsersFactory_Unknown="-";
-
-StatsStateError_Sync="There was an error,\ntry again in a few minutes.";
-StatsStateLoading_Sync="Synching,\ncould take a few minutes.";
-StatsStateReady_Sync="Last synched\n";
-StatsStateNeedsSync_Message="New user,\nsynch to get metrics from Github.";
-StatsStateNeedsSync_Sync="Needs sync";
-StatsBaseView_Synch="Synch";
-StatsBaseView_Delete="Delete";
 StatsViewDelete_Title="Do you want to delete this user?";
 StatsViewDelete_Delete="Delete";
 StatsViewDelete_Cancel="Cancel";
-StatsViewContent_StreakTitle="Streak";
-StatsViewContent_ContributionsTitle="Contributions";
 
-Month_1="January";
-Month_2="February";
-Month_3="March";
-Month_4="April";
-Month_5="May";
-Month_6="June";
-Month_7="July";
-Month_8="August";
-Month_9="September";
-Month_10="October";
-Month_11="November";
-Month_12="December";
+StatsViewContent_ContributionsTitle="Contributions";

@@ -3,47 +3,16 @@ import CleanArchitecture
 import Pyro
 
 class StatsStateReady:StatsStateProtocol {
-    let metrics:Metrics
+    private let metrics:Metrics
     private let numberFormatter:NumberFormatter
     private let dateFormatter:DateFormatter
     private let paragraph:NSMutableParagraphStyle
-    
-    private var stateProperty:StatsContentViewModel {
-        get {
-            var property:StatsContentViewModel = StatsContentViewModel()
-            property.sync = NSLocalizedString("StatsStateReady_Sync", comment:String())
-            property.sync += self.dateFormatter.string(from:metrics.timestamp)
-            property.metricsHidden = false
-            property.messageHidden = true
-            property.loadingHidden = true
-            property.actionsEnabled = true
-            return property
-        }
-    }
-    
-    private var metricsProperty:StatsMetricsViewModel {
-        get {
-            var property:StatsMetricsViewModel = StatsMetricsViewModel()
-            property.items = self.makeItems(contributions:self.metrics.contributions)
-            property.streak = self.make(streak:self.metrics.streak)
-            property.contributions = self.make(contributions:self.metrics.contributions)
-            return property
-        }
-    }
-    
-    private var loadingProperty:StatsLoadingViewModel {
-        get {
-            var property:StatsLoadingViewModel = StatsLoadingViewModel()
-            property.progress = Constants.loading
-            return property
-        }
-    }
     
     init(metrics:Metrics) {
         self.metrics = metrics
         self.numberFormatter = NumberFormatter()
         self.numberFormatter.numberStyle = NumberFormatter.Style.decimal
-        self.numberFormatter.groupingSeparator = NSLocalizedString("Grouping_Separator", comment:String())
+        self.numberFormatter.groupingSeparator = NSLocalizedString("Grouping.separator", comment:String())
         self.dateFormatter = DateFormatter()
         self.dateFormatter.dateStyle = DateFormatter.Style.long
         self.dateFormatter.timeStyle = DateFormatter.Style.short
@@ -52,15 +21,15 @@ class StatsStateReady:StatsStateProtocol {
     }
     
     func update(viewModels:ViewModels) {
-//        viewModels.update(viewModel:self.stateProperty)
-//        viewModels.update(viewModel:self.metricsProperty)
-//        viewModels.update(viewModel:self.loadingProperty)
+        viewModels.update(viewModel:self.state)
+        viewModels.update(viewModel:self.stats)
+        viewModels.update(viewModel:self.loading)
     }
     
     private func make(streak:Streak) -> NSAttributedString {
         let string:NSMutableAttributedString = NSMutableAttributedString()
-        string.append(self.valueWith(value:streak.max, fontSize:Constants.streakFontSize))
-        string.append(self.titleWith(string:NSLocalizedString("StatsViewContent_StreakTitle", comment:String())))
+        string.append(self.valueWith(value:streak.max, fontSize:Constants.streakFont))
+        string.append(self.titleWith(string:NSLocalizedString("StatsStateReady.streak", comment:String())))
         string.addAttribute(NSAttributedString.Key.paragraphStyle, value:self.paragraph, range:
             NSRange(location:0, length:string.string.count))
         return string
@@ -68,8 +37,8 @@ class StatsStateReady:StatsStateProtocol {
     
     private func make(contributions:Contributions) -> NSAttributedString {
         let string:NSMutableAttributedString = NSMutableAttributedString()
-        string.append(self.valueWith(value:contributions.count, fontSize:Constants.contributionsFontSize))
-        string.append(self.titleWith(string:NSLocalizedString("StatsViewContent_ContributionsTitle", comment:String())))
+        string.append(self.valueWith(value:contributions.count, fontSize:Constants.contributionsFont))
+        string.append(self.titleWith(string:NSLocalizedString("StatsStateReady.contributions", comment:String())))
         return string
     }
     
@@ -99,9 +68,9 @@ class StatsStateReady:StatsStateProtocol {
     
     private func makeMonthContributions(month:Month) -> NSAttributedString {
         let string:NSMutableAttributedString = NSMutableAttributedString()
-        string.append(self.valueWith(value:month.contributions, fontSize:Constants.monthsFontSize))
-        string.append(self.titleWith(string:NSLocalizedString("StatsViewContent_ContributionsTitle", comment:String())))
-        string.append(self.titleWith(string:NSLocalizedString("Month_\(month.value)", comment:String())))
+        string.append(self.valueWith(value:month.contributions, fontSize:Constants.monthsFont))
+        string.append(self.titleWith(
+            string:NSLocalizedString("StatsStateReady.month.\(month.value)", comment:String())))
         return string
     }
     
@@ -113,17 +82,42 @@ class StatsStateReady:StatsStateProtocol {
     
     private func titleWith(string:String) -> NSAttributedString {
         return NSAttributedString(string:"\n\(string)", attributes:
-            [NSAttributedString.Key.font:UIFont.systemFont(ofSize:Constants.titleFontSize, weight:UIFont.Weight.light),
+            [NSAttributedString.Key.font:UIFont.systemFont(ofSize:Constants.titleFont, weight:UIFont.Weight.light),
              NSAttributedString.Key.foregroundColor:UIColor(white:0, alpha:0.5)])
     }
+    
+    private var state:StatsContentViewModel { get {
+        var property:StatsContentViewModel = StatsContentViewModel()
+        property.sync = NSLocalizedString("StatsStateReady.sync", comment:String())
+        property.sync += self.dateFormatter.string(from:metrics.timestamp)
+        property.metricsHidden = false
+        property.messageHidden = true
+        property.loadingHidden = true
+        property.actionsEnabled = true
+        return property
+    }}
+    
+    private var stats:StatsMetricsViewModel { get {
+        var property:StatsMetricsViewModel = StatsMetricsViewModel()
+        property.items = self.makeItems(contributions:self.metrics.contributions)
+        property.streak = self.make(streak:self.metrics.streak)
+        property.contributions = self.make(contributions:self.metrics.contributions)
+        return property
+    } }
+    
+    private var loading:StatsLoadingViewModel { get {
+        var property:StatsLoadingViewModel = StatsLoadingViewModel()
+        property.progress = Constants.loading
+        return property
+    } }
 }
 
 private struct Constants {
     static let streakSpacing:CGFloat = -8
-    static let streakFontSize:CGFloat = 70
-    static let contributionsFontSize:CGFloat = 34
-    static let monthsFontSize:CGFloat = 28
-    static let titleFontSize:CGFloat = 12
+    static let streakFont:CGFloat = 70
+    static let contributionsFont:CGFloat = 34
+    static let monthsFont:CGFloat = 28
+    static let titleFont:CGFloat = 12
     static let loading:Float = 1
     static let minContributions:Int = 1
     static let months:Int = 12

@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 import CleanArchitecture
 import Pyro
 
@@ -16,25 +16,26 @@ class StatsPresenter:Presenter {
         let alert:DeleteView = DeleteView(title:nil, message:nil, preferredStyle:UIAlertController.Style.alert)
         alert.presenter = self
         alert.configureView()
-//        self.interactor.router?.present(alert, animated:true, completion:nil)
+        Application.router.present(alert, animated:true, completion:nil)
     }
     
     func confirmDelete() {
         self.interactor.delete()
+        Application.router.popViewController(animated:true)
     }
     
     func select(item:StatsItem) {
-//        var viewModel:StatsMonthsViewModel = StatsMonthsViewModel()
-//        viewModel.items = item.months
-//        self.viewModels.update(viewModel:viewModel)
+        var viewModel:StatsMonthsViewModel = StatsMonthsViewModel()
+        viewModel.items = item.months
+        self.viewModels.update(viewModel:viewModel)
     }
     
     func didLoad() {
-//        self.interactor.checkState()
-//        self.interactor.state.update(viewModel:self.viewModels)
+        self.interactor.checkState()
+        self.interactor.state.update(viewModels:self.viewModels)
     }
     
     func shouldUpdate() {
-//        self.interactor.state.update(viewModel:self.viewModels)
+        self.interactor.state.update(viewModels:self.viewModels)
     }
 }
