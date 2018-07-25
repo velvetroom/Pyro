@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct StatsContentViewModel:ViewModelProtocol {
+struct StatsContentViewModel:ViewModel {
     var sync:String
     var metricsHidden:Bool
     var messageHidden:Bool

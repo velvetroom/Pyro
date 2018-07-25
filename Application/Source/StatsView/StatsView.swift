@@ -7,7 +7,7 @@ class StatsView:StatsCollectionView {
     }
     
     private func configureViewModel() {
-        self.presenter.viewModel.observe { [weak self] (property:StatsContentViewModel) in
+        /*self.presenter.viewModel.observe { [weak self] (property:StatsContentViewModel) in
             self?.updated(property:property)
         }
         self.presenter.viewModel.observe { [weak self] (property:StatsMetricsViewModel) in
@@ -21,9 +21,9 @@ class StatsView:StatsCollectionView {
         }
         self.presenter.viewModel.observe { [weak self] (property:StatsMonthsViewModel) in
             self?.updated(property:property)
-        }
+        }*/
     }
-    
+    /*
     private func updated(property:StatsContentViewModel) {
         self.synch.label.text = property.sync
         self.content.metrics.isHidden = property.metricsHidden
@@ -46,7 +46,7 @@ class StatsView:StatsCollectionView {
     private func updated(property:StatsLoadingViewModel) {
         self.content.progress.setProgress(property.progress, animated:true)
     }
-    
+ 
     private func update(items:[StatsItem]) {
         self.items = items
         self.collection.reloadData()
@@ -55,5 +55,5 @@ class StatsView:StatsCollectionView {
     
     private func updated(property:StatsMonthsViewModel) {
         self.content.metrics.histogram.update(items:property.items)
-    }
+    }*/
 }

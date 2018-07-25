@@ -26,41 +26,23 @@ class UsersCellView:UICollectionViewCell {
     }
     
     private func makeOutlets() {
-        self.makeName()
-        self.makeValue()
-        self.makerBorder()
-    }
-    
-    private func layoutOutlets() {
-        self.layoutName()
-        self.layoutValue()
-        self.layoutBorder()
-    }
-    
-    private func makeName() {
-        let label:UILabel = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.isUserInteractionEnabled = false
-        label.backgroundColor = UIColor.clear
-        label.numberOfLines = 0
-        label.textColor = UIColor.black
-        self.name = label
-        self.contentView.addSubview(label)
-    }
-    
-    private func makeValue() {
-        let label:UILabel = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.isUserInteractionEnabled = false
-        label.backgroundColor = UIColor.clear
-        label.numberOfLines = 0
-        label.textColor = UIColor.black
-        label.textAlignment = NSTextAlignment.right
-        self.value = label
-        self.contentView.addSubview(label)
-    }
-    
-    private func makerBorder() {
+        let name:UILabel = UILabel()
+        name.translatesAutoresizingMaskIntoConstraints = false
+        name.isUserInteractionEnabled = false
+        name.numberOfLines = 0
+        name.textColor = UIColor.black
+        self.name = name
+        self.contentView.addSubview(name)
+        
+        let value:UILabel = UILabel()
+        value.translatesAutoresizingMaskIntoConstraints = false
+        value.isUserInteractionEnabled = false
+        value.numberOfLines = 0
+        value.textColor = UIColor.black
+        value.textAlignment = NSTextAlignment.right
+        self.value = value
+        self.contentView.addSubview(value)
+        
         let border:UIView = UIView()
         border.translatesAutoresizingMaskIntoConstraints = false
         border.backgroundColor = UIColor(white:0.92, alpha:1)
@@ -69,21 +51,17 @@ class UsersCellView:UICollectionViewCell {
         self.contentView.addSubview(border)
     }
     
-    private func layoutName() {
+    private func layoutOutlets() {
         self.name.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
         self.name.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
         self.name.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
         self.name.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
-    }
-    
-    private func layoutValue() {
+        
         self.value.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
         self.value.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
         self.value.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
         self.value.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
-    }
-    
-    private func layoutBorder() {
+        
         self.border.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.border.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
         self.border.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true

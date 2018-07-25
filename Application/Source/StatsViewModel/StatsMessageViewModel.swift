@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct StatsMessageViewModel:ViewModelProtocol {
+struct StatsMessageViewModel:ViewModel {
     var message:String
     
     init() {

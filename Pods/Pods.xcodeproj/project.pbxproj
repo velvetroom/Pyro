@@ -11,10 +11,12 @@
 		1E3EEA8120EB5D6BCC1C53DAE210008B /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184984FF7DF8D73D8B9E02171FFF6AA9 /* Interactor.swift */; };
 		2518F0FF59D3CC2804B30D8660D924B6 /* CleanArchitecture-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D76858B659225CE828DC6DAD69A4D222 /* CleanArchitecture-dummy.m */; };
 		7685B72CFDCB5BDAF146C4B87668E341 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB0D665DF7022E904AF4D106E86AE1 /* Presenter.swift */; };
+		A722650D4BEDB5CDC64AD2D8B0462736 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		B0AD51DFD9A0B87227AEFD8C5CAC62CC /* Pods-Application-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 073543814ADB25105D35A03FF9EC4039 /* Pods-Application-dummy.m */; };
 		BA56C761ACADB931FCBA07F7B5CACA20 /* CleanArchitecture-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98D269B4AB8660A169290D17ABB21BCE /* CleanArchitecture-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E76704B0A7435D296E99327522BA4D7D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D466E5B3DF60D55580FAC14079702 /* View.swift */; };
 		E7B25E13185F1056E0CB4697313E2D5A /* Pods-Application-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9BC12CA93E049B3040AD7928F49D72 /* Pods-Application-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F23BC292BB315626078B7A61482BC8D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 		30E8C460C3B8D7DDF3C6F70F7DF2A1FB /* Pods-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Application.debug.xcconfig"; sourceTree = "<group>"; };
 		33274D233B82B548B5056B75E4B14187 /* ViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = CleanArchitecture/Source/ViewModel.swift; sourceTree = "<group>"; };
 		578437831CFBFB67A443DDB443DDD0C7 /* Pods-Application-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Application-frameworks.sh"; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5D5A389EC279FA99E29AAE3F98982BE0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68DF769CB1AFF21320046D1ADA9C1FAF /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9BC12CA93E049B3040AD7928F49D72 /* Pods-Application-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Application-umbrella.h"; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A722650D4BEDB5CDC64AD2D8B0462736 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23BC292BB315626078B7A61482BC8D3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,10 +123,19 @@
 			path = "Target Support Files/Pods-Application";
 			sourceTree = "<group>";
 		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				0B803B3698BE7CBBB82E0A493DDCC808 /* Pods */,
 				2DDB55E7CC9BD515ED8B7A79A50BDC6B /* Products */,
 				A6CE7EE08DE42714849C8628CF9CF0C6 /* Targets Support Files */,
@@ -134,6 +148,14 @@
 				4D2B5595744BED2B8767A8675C162EF4 /* Pods-Application */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DD1F213ED027CEB0352B1341D10A4FE5 /* Support Files */ = {
@@ -335,10 +357,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02D5D67A2885BF3E3DE684DE6831671E /* CleanArchitecture.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -346,6 +370,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CleanArchitecture/CleanArchitecture-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CleanArchitecture/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CleanArchitecture/CleanArchitecture.modulemap";
 				PRODUCT_MODULE_NAME = CleanArchitecture;
@@ -368,12 +393,14 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Application/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Application/Pods-Application.modulemap";
@@ -400,12 +427,14 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Application/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Application/Pods-Application.modulemap";
@@ -427,10 +456,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02D5D67A2885BF3E3DE684DE6831671E /* CleanArchitecture.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -438,6 +469,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CleanArchitecture/CleanArchitecture-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CleanArchitecture/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CleanArchitecture/CleanArchitecture.modulemap";
 				PRODUCT_MODULE_NAME = CleanArchitecture;

@@ -1,9 +1,9 @@
 import Foundation
 import CleanArchitecture
 
-class CreatePresenter:PresenterProtocol {
+class CreatePresenter:Presenter {
     var interactor:CreateInteractor!
-    var viewModel:ViewModel!
+    var viewModels:ViewModels!
     
     required init() { }
     
@@ -13,15 +13,15 @@ class CreatePresenter:PresenterProtocol {
     }
     
     func save() {
-        self.interactor.router?.routeBack()
+//        self.interactor.router?.routeBack()
     }
     
     func cancel() {
-        self.interactor.router?.routeBack()
+//        self.interactor.router?.routeBack()
     }
     
     func didLoad() {
-        self.viewModel.update(property:CreateContentViewModel())
+        self.viewModels.update(viewModel:CreateContentViewModel())
     }
     
     func shouldUpdate() {
@@ -33,24 +33,24 @@ class CreatePresenter:PresenterProtocol {
     }
     
     private func updateLoading() {
-        var property:CreateContentViewModel = CreateContentViewModel()
-        property.saveEnabled = false
-        property.loadingHidden = false
-        self.viewModel.update(property:property)
+        var viewModel:CreateContentViewModel = CreateContentViewModel()
+        viewModel.saveEnabled = false
+        viewModel.loadingHidden = false
+        self.viewModels.update(viewModel:viewModel)
     }
     
     private func update(error:Error) {
-        var property:CreateContentViewModel = CreateContentViewModel()
-        property.icon = #imageLiteral(resourceName: "assetInvalid.pdf")
-        property.message = error.localizedDescription
-        property.saveEnabled = false
-        self.viewModel.update(property:property)
+        var viewModel:CreateContentViewModel = CreateContentViewModel()
+        viewModel.icon = #imageLiteral(resourceName: "assetInvalid.pdf")
+        viewModel.message = error.localizedDescription
+        viewModel.saveEnabled = false
+        self.viewModels.update(viewModel:viewModel)
     }
     
     private func updateSuccess() {
-        var property:CreateContentViewModel = CreateContentViewModel()
-        property.icon = #imageLiteral(resourceName: "assetValid.pdf")
-        property.saveEnabled = true
-        self.viewModel.update(property:property)
+        var viewModel:CreateContentViewModel = CreateContentViewModel()
+        viewModel.icon = #imageLiteral(resourceName: "assetValid.pdf")
+        viewModel.saveEnabled = true
+        self.viewModels.update(viewModel:viewModel)
     }
 }

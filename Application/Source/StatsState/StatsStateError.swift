@@ -28,9 +28,9 @@ class StatsStateError:StatsStateProtocol {
         self.error = error
     }
     
-    func update(viewModel:ViewModel) {
-        viewModel.update(property:self.stateProperty)
-        viewModel.update(property:self.messageProperty)
-        viewModel.update(property:StatsLoadingViewModel())
+    func update(viewModels:ViewModels) {
+//        viewModel.update(property:self.stateProperty)
+//        viewModel.update(property:self.messageProperty)
+//        viewModel.update(property:StatsLoadingViewModel())
     }
 }

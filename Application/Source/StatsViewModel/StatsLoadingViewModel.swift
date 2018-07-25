@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct StatsLoadingViewModel:ViewModelProtocol {
+struct StatsLoadingViewModel:ViewModel {
     var progress:Float
     
     init() {

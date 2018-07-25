@@ -1,10 +1,11 @@
 import UIKit
 import CleanArchitecture
+import Pyro
 
-class UsersPresenter:PresenterProtocol {
+class UsersPresenter:Presenter {
     var sort:UsersSort
     var interactor:UsersInteractor!
-    var viewModel:ViewModel!
+    var viewModels:ViewModels!
     private var factory:UsersFactory
     
     required init() {
@@ -13,20 +14,15 @@ class UsersPresenter:PresenterProtocol {
     }
     
     func select(item:UsersItem) {
-        self.interactor.select(user:item.user)
+        self.router(user:item.user)
     }
     
     func createUser() {
-        self.interactor.createUser()
+        let view:CreateView = CreateView()
+        Application.router.pushViewController(view, animated:true)
     }
     
-    func add(name:String, url:String) {
-        self.interactor.add(name:name, url:url)
-    }
-    
-    func willAppear() {
-        self.interactor.load()
-    }
+    func willAppear() { self.interactor.updateUsers() }
     
     func shouldUpdate() {
         let viewModel:UsersViewModel
@@ -35,6 +31,12 @@ class UsersPresenter:PresenterProtocol {
         case UsersSort.contributions: viewModel = self.factory.byContributions(pyro:self.interactor.pyro)
         case UsersSort.streak: viewModel = self.factory.byStreak(pyro:self.interactor.pyro)
         }
-        self.viewModel.update(property:viewModel)
+        self.viewModels.update(viewModel:viewModel)
+    }
+    
+    private func router(user:UserProtocol) {
+        let view:StatsView = StatsView()
+        view.presenter.interactor.user = user
+        Application.router.pushViewController(view, animated:true)
     }
 }

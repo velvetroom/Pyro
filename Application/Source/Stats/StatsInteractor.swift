@@ -3,9 +3,8 @@ import CleanArchitecture
 import Pyro
 import StoreKit
 
-class StatsInteractor:InteractorProtocol, PyroDelegate {
-    weak var router:Router?
-    weak var presenter:InteractorDelegate?
+class StatsInteractor:Interactor, PyroDelegate {
+    weak var delegate:InteractorDelegate?
     weak var pyro:Pyro!
     weak var user:UserProtocol!
     var state:StatsStateProtocol
@@ -29,22 +28,22 @@ class StatsInteractor:InteractorProtocol, PyroDelegate {
     
     func delete() {
         self.pyro.delete(user:self.user)
-        self.router?.popViewController(animated:true)
+//        self.router?.popViewController(animated:true)
     }
     
     func pyroReport(progress:Float) {
         self.state = StatsStateLoading(progress:progress)
-        self.presenter?.shouldUpdate()
+        self.delegate?.shouldUpdate()
     }
     
     func pyroSuccess() {
         self.checkState()
-        self.presenter?.shouldUpdate()
+        self.delegate?.shouldUpdate()
     }
     
     func pyroFailed(error:Error) {
         self.state = StatsStateError(error:error)
-        self.presenter?.shouldUpdate()
+        self.delegate?.shouldUpdate()
     }
     
     func didLoad() {

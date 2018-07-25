@@ -52,11 +52,9 @@
 		DAE4860820F47060003BF78A /* UsersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485EF20F47060003BF78A /* UsersFactory.swift */; };
 		DAE4860B20F47060003BF78A /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F420F47060003BF78A /* UsersPresenter.swift */; };
 		DAE4860C20F47060003BF78A /* StatsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F520F47060003BF78A /* StatsPresenter.swift */; };
-		DAE4860D20F47060003BF78A /* UsersContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F720F47060003BF78A /* UsersContentView.swift */; };
 		DAE4860E20F47060003BF78A /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485F820F47060003BF78A /* UsersView.swift */; };
 		DAE4861020F47060003BF78A /* UsersCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FA20F47060003BF78A /* UsersCellView.swift */; };
 		DAE4861120F47060003BF78A /* StatsParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FB20F47060003BF78A /* StatsParentView.swift */; };
-		DAE4861220F47060003BF78A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FD20F47060003BF78A /* Router.swift */; };
 		DAE4861420F47060003BF78A /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485FF20F47060003BF78A /* Application.swift */; };
 		DAE4861520F47060003BF78A /* StatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4860120F47060003BF78A /* StatsInteractor.swift */; };
 		DAE4861620F47060003BF78A /* UsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4860220F47060003BF78A /* UsersInteractor.swift */; };
@@ -64,7 +62,6 @@
 		DAE9E93A20F7918300B5492C /* Pyro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9E93720F7918100B5492C /* Pyro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAE9E93C20F7918900B5492C /* Pods_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9E93B20F7918900B5492C /* Pods_Application.framework */; };
 		DAF0E0C320FA1F4F0010C121 /* DeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF0E0C220FA1F4F0010C121 /* DeleteView.swift */; };
-		DAFBF9A720FB7D3200B81D19 /* UsersView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFBF9A620FB7D3200B81D19 /* UsersView+Configure.swift */; };
 		DAFD36B521076FBC00C52721 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAFD36B421076FBC00C52721 /* assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -132,11 +129,9 @@
 		DAE485EF20F47060003BF78A /* UsersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersFactory.swift; sourceTree = "<group>"; };
 		DAE485F420F47060003BF78A /* UsersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		DAE485F520F47060003BF78A /* StatsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsPresenter.swift; sourceTree = "<group>"; };
-		DAE485F720F47060003BF78A /* UsersContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersContentView.swift; sourceTree = "<group>"; };
 		DAE485F820F47060003BF78A /* UsersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		DAE485FA20F47060003BF78A /* UsersCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersCellView.swift; sourceTree = "<group>"; };
 		DAE485FB20F47060003BF78A /* StatsParentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsParentView.swift; sourceTree = "<group>"; };
-		DAE485FD20F47060003BF78A /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DAE485FF20F47060003BF78A /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		DAE4860120F47060003BF78A /* StatsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsInteractor.swift; sourceTree = "<group>"; };
 		DAE4860220F47060003BF78A /* UsersInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersInteractor.swift; sourceTree = "<group>"; };
@@ -144,7 +139,6 @@
 		DAE9E93720F7918100B5492C /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE9E93B20F7918900B5492C /* Pods_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF0E0C220FA1F4F0010C121 /* DeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteView.swift; sourceTree = "<group>"; };
-		DAFBF9A620FB7D3200B81D19 /* UsersView+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersView+Configure.swift"; sourceTree = "<group>"; };
 		DAFD36B421076FBC00C52721 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,8 +203,6 @@
 				DAE485F420F47060003BF78A /* UsersPresenter.swift */,
 				DAE485EE20F47060003BF78A /* UsersViewModel.swift */,
 				DAE485F820F47060003BF78A /* UsersView.swift */,
-				DAFBF9A620FB7D3200B81D19 /* UsersView+Configure.swift */,
-				DAE485F720F47060003BF78A /* UsersContentView.swift */,
 				DAE485FA20F47060003BF78A /* UsersCellView.swift */,
 				DAE485EF20F47060003BF78A /* UsersFactory.swift */,
 				DABD000920FC666A00BC5818 /* UsersSort.swift */,
@@ -315,7 +307,6 @@
 		DAE485EC20F47060003BF78A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DAE485FC20F47060003BF78A /* Application */,
 				DA07BB6A20FE290B0042175F /* Users */,
 				DA536F4D2107062400F1E106 /* Create */,
 				DA07BB6B20FE29100042175F /* Stats */,
@@ -332,20 +323,12 @@
 		DAE485F620F47060003BF78A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DAE485FF20F47060003BF78A /* Application.swift */,
 				DAF0E0C220FA1F4F0010C121 /* DeleteView.swift */,
 				DA4F5D8D20FCDFAD00D3AA4A /* LoadingView.swift */,
 				DAC82FDD2105A5D500495233 /* UIColor+Shared.swift */,
 			);
 			path = Shared;
-			sourceTree = "<group>";
-		};
-		DAE485FC20F47060003BF78A /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				DAE485FF20F47060003BF78A /* Application.swift */,
-				DAE485FD20F47060003BF78A /* Router.swift */,
-			);
-			path = Application;
 			sourceTree = "<group>";
 		};
 		DAE4860320F47060003BF78A /* Assets */ = {
@@ -368,8 +351,8 @@
 				DA5915D420F46D1E00B6AEDC /* Sources */,
 				DA5915D520F46D1E00B6AEDC /* Frameworks */,
 				DA5915D620F46D1E00B6AEDC /* Resources */,
-				8C51394B7484E984B88696E5 /* [CP] Embed Pods Frameworks */,
 				DAE4862D20F47214003BF78A /* Embed Frameworks */,
+				8C51394B7484E984B88696E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -487,7 +470,6 @@
 				DA8A8F2120FF2D68002EEFAE /* StatsTitleView.swift in Sources */,
 				DAC6C3F5210097CE00DC5B77 /* StatsContentViewModel.swift in Sources */,
 				DAC6C3FD2100A02E00DC5B77 /* StatsCollectionView.swift in Sources */,
-				DAE4860D20F47060003BF78A /* UsersContentView.swift in Sources */,
 				DAD6F4A920FE33E100548A2D /* HistogramMonthView.swift in Sources */,
 				DA8A8F1F20FF27E6002EEFAE /* StatsItemMonth.swift in Sources */,
 				DAE4860B20F47060003BF78A /* UsersPresenter.swift in Sources */,
@@ -495,10 +477,8 @@
 				DA536F552107068100F1E106 /* CreateView.swift in Sources */,
 				DA07BB6920FE28180042175F /* HistogramView.swift in Sources */,
 				DAC6C3F921009E0E00DC5B77 /* StatsMetricsView.swift in Sources */,
-				DAFBF9A720FB7D3200B81D19 /* UsersView+Configure.swift in Sources */,
 				DAC82FDE2105A5D500495233 /* UIColor+Shared.swift in Sources */,
 				DAC82FE02105AD3700495233 /* StatsStateProtocol.swift in Sources */,
-				DAE4861220F47060003BF78A /* Router.swift in Sources */,
 				DAF0E0C320FA1F4F0010C121 /* DeleteView.swift in Sources */,
 				DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */,
 				DA8A8F1720FF198D002EEFAE /* YearsView.swift in Sources */,
@@ -663,7 +643,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDAA37ACCC504D84A06FF955 /* Pods-Application.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
@@ -682,7 +661,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE51436FB12A4F09707B5BEC /* Pods-Application.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;

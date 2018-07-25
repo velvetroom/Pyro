@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct UsersViewModel:ViewModelProtocol {
+struct UsersViewModel:ViewModel {
     var users:[UsersItem]
     
     init() {

@@ -2,9 +2,8 @@ import Foundation
 import CleanArchitecture
 import Pyro
 
-class CreateInteractor:InteractorProtocol, PyroDelegate {
-    weak var router:Router?
-    weak var presenter:InteractorDelegate?
+class CreateInteractor:Interactor, PyroDelegate {
+    weak var delegate:InteractorDelegate?
     weak var pyro:Pyro!
     var error:Error?
     
@@ -17,11 +16,11 @@ class CreateInteractor:InteractorProtocol, PyroDelegate {
     
     func pyroSuccess() {
         self.error = nil
-        self.presenter?.shouldUpdate()
+        self.delegate?.shouldUpdate()
     }
     
     func pyroFailed(error:Error) {
         self.error = error
-        self.presenter?.shouldUpdate()
+        self.delegate?.shouldUpdate()
     }
 }

@@ -1,7 +1,15 @@
-UsersView_Title="Users";
-UsersView_Segmented_0="Name";
-UsersView_Segmented_1="Contributions";
-UsersView_Segmented_2="Streak";
+UsersView.title="Users";
+UsersView.segmented.0="Name";
+UsersView.segmented.1="Contributions";
+UsersView.segmented.2="Streak";
+
+
+
+
+
+
+
+
 UsersFactory_Unknown="-";
 CreateView_Title="New user";
 StatsStateError_Sync="There was an error,\ntry again in a few minutes.";

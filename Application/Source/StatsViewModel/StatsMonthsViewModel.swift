@@ -1,7 +1,7 @@
 import Foundation
 import CleanArchitecture
 
-struct StatsMonthsViewModel:ViewModelProtocol {
+struct StatsMonthsViewModel:ViewModel {
     var items:[StatsItemMonth]
     
     init() {

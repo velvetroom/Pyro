@@ -1,11 +1,25 @@
 import UIKit
-import Pyro
+
+@UIApplicationMain class Application:UIResponder, UIApplicationDelegate {
+    static var router:Router!
+    var window:UIWindow?
+    
+    func application(_:UIApplication, didFinishLaunchingWithOptions:[UIApplication.LaunchOptionsKey:Any]?) -> Bool {
+        Application.router = Router()
+        let window:UIWindow = UIWindow(frame:UIScreen.main.bounds)
+        window.backgroundColor = UIColor.white
+        window.makeKeyAndVisible()
+        window.rootViewController = Application.router
+        self.window = window
+        return true
+    }
+}
 
 class Router:UINavigationController {
-    init() {
+    fileprivate init() {
         super.init(nibName:nil, bundle:nil)
         self.configureNavigation()
-        self.navigateToUsers()
+        self.setViewControllers([UsersView()], animated:false)
     }
     
     required init?(coder:NSCoder) { return nil }
@@ -17,25 +31,6 @@ class Router:UINavigationController {
         }
     }
     
-    func routeToStats(pyro:Pyro, user:UserProtocol) {
-        let view:StatsView = StatsView()
-        view.presenter.interactor.pyro = pyro
-        view.presenter.interactor.user = user
-        view.presenter.interactor.router = self
-        self.pushViewController(view, animated:true)
-    }
-    
-    func routeToCreate(pyro:Pyro) {
-        let view:CreateView = CreateView()
-        view.presenter.interactor.pyro = pyro
-        view.presenter.interactor.router = self
-        self.pushViewController(view, animated:true)
-    }
-    
-    func routeBack() {
-        self.popViewController(animated:true)
-    }
-    
     private func configureNavigation() {
         self.navigationBar.barTintColor = UIColor.white
         self.navigationBar.tintColor = UIColor.black
@@ -45,11 +40,5 @@ class Router:UINavigationController {
             self.navigationBar.prefersLargeTitles = true
             self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.always
         }
-    }
-    
-    private func navigateToUsers() {
-        let users:UsersView = UsersView()
-        users.presenter.interactor.router = self
-        self.setViewControllers([users], animated:false)
     }
 }

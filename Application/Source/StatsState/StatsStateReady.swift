@@ -51,10 +51,10 @@ class StatsStateReady:StatsStateProtocol {
         paragraph.paragraphSpacing = Constants.streakSpacing
     }
     
-    func update(viewModel:ViewModel) {
-        viewModel.update(property:self.stateProperty)
-        viewModel.update(property:self.metricsProperty)
-        viewModel.update(property:self.loadingProperty)
+    func update(viewModels:ViewModels) {
+//        viewModels.update(viewModel:self.stateProperty)
+//        viewModels.update(viewModel:self.metricsProperty)
+//        viewModels.update(viewModel:self.loadingProperty)
     }
     
     private func make(streak:Streak) -> NSAttributedString {

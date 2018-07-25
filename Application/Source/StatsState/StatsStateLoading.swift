@@ -28,8 +28,8 @@ class StatsStateLoading:StatsStateProtocol {
         self.progress = progress
     }
     
-    func update(viewModel:ViewModel) {
-        viewModel.update(property:self.stateProperty)
-        viewModel.update(property:self.loadingProperty)
+    func update(viewModels:ViewModels) {
+//        viewModel.update(property:self.stateProperty)
+//        viewModel.update(property:self.loadingProperty)
     }
 }

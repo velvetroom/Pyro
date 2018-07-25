@@ -22,8 +22,8 @@ class StatsStateNeedsSync:StatsStateProtocol {
         }
     }
     
-    func update(viewModel:ViewModel) {
-        viewModel.update(property:self.stateProperty)
-        viewModel.update(property:self.messageProperty)
+    func update(viewModels:ViewModels) {
+//        viewModels.update(viewModel:self.stateProperty)
+//        viewModels.update(viewModel:self.messageProperty)
     }
 }

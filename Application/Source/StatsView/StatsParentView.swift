@@ -1,7 +1,7 @@
 import UIKit
 import CleanArchitecture
 
-class StatsParentView:View<StatsPresenter, StatsContentView> {
+class StatsParentView:View<StatsPresenter> {
     weak var deleteButton:UIBarButtonItem!
     weak var synchButton:UIBarButtonItem!
     weak var synch:StatsSynchView!

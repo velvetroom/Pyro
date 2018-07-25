@@ -2,9 +2,9 @@ import UIKit
 import CleanArchitecture
 import Pyro
 
-class StatsPresenter:PresenterProtocol {
+class StatsPresenter:Presenter {
     var interactor:StatsInteractor!
-    var viewModel:ViewModel!
+    var viewModels:ViewModels!
     
     required init() { }
     
@@ -16,7 +16,7 @@ class StatsPresenter:PresenterProtocol {
         let alert:DeleteView = DeleteView(title:nil, message:nil, preferredStyle:UIAlertController.Style.alert)
         alert.presenter = self
         alert.configureView()
-        self.interactor.router?.present(alert, animated:true, completion:nil)
+//        self.interactor.router?.present(alert, animated:true, completion:nil)
     }
     
     func confirmDelete() {
@@ -24,17 +24,17 @@ class StatsPresenter:PresenterProtocol {
     }
     
     func select(item:StatsItem) {
-        var property:StatsMonthsViewModel = StatsMonthsViewModel()
-        property.items = item.months
-        self.viewModel.update(property:property)
+//        var viewModel:StatsMonthsViewModel = StatsMonthsViewModel()
+//        viewModel.items = item.months
+//        self.viewModels.update(viewModel:viewModel)
     }
     
     func didLoad() {
-        self.interactor.checkState()
-        self.interactor.state.update(viewModel:self.viewModel)
+//        self.interactor.checkState()
+//        self.interactor.state.update(viewModel:self.viewModels)
     }
     
     func shouldUpdate() {
-        self.interactor.state.update(viewModel:self.viewModel)
+//        self.interactor.state.update(viewModel:self.viewModels)
     }
 }
