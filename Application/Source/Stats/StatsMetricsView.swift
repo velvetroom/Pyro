@@ -1,9 +1,9 @@
 import UIKit
 
 class StatsMetricsView:UIView {
-    weak var month:HistogramMonthView?
+    weak var month:StatsHistogramMonthView?
     weak var years:UICollectionView!
-    weak var histogram:HistogramView!
+    weak var histogram:StatsHistogramView!
     weak var detail:UILabel!
     weak var streak:UILabel!
     weak var contributions:UILabel!
@@ -30,7 +30,7 @@ class StatsMetricsView:UIView {
         self.border = border
         self.addSubview(border)
         
-        let histogram:HistogramView = HistogramView()
+        let histogram:StatsHistogramView = StatsHistogramView()
         self.histogram = histogram
         self.addSubview(histogram)
         
@@ -77,6 +77,7 @@ class StatsMetricsView:UIView {
     private func layoutOutlets() {
         self.histogram.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.histogram.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
+        self.histogram.heightAnchor.constraint(equalToConstant:Constants.histogramHeight).isActive = true
         
         self.streak.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
         self.streak.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
@@ -118,7 +119,7 @@ class StatsMetricsView:UIView {
     
     private func touching(touch:UITouch) {
         guard
-            let month:HistogramMonthView = self.monthAt(touch:touch)
+            let month:StatsHistogramMonthView = self.monthAt(touch:touch)
         else {
             self.touchEnded()
             return
@@ -134,9 +135,9 @@ class StatsMetricsView:UIView {
         self.month = nil
     }
     
-    private func monthAt(touch:UITouch) -> HistogramMonthView? {
+    private func monthAt(touch:UITouch) -> StatsHistogramMonthView? {
         let position:CGPoint = touch.location(in:self.histogram)
-        for month:HistogramMonthView in self.histogram.months {
+        for month:StatsHistogramMonthView in self.histogram.months {
             if month.frame.contains(position) {
                 return month
             }
@@ -144,7 +145,7 @@ class StatsMetricsView:UIView {
         return nil
     }
     
-    private func update(month:HistogramMonthView) {
+    private func update(month:StatsHistogramMonthView) {
         month.highlight()
         self.detail.attributedText = month.contributions
         self.month?.unhighlight()
@@ -158,5 +159,6 @@ private struct Constants {
     static let yearsHeight:CGFloat = 80
     static let streakHeight:CGFloat = 92
     static let detailHeight:CGFloat = 80
+    static let histogramHeight:CGFloat = 400
     static let margin:CGFloat = 10
 }

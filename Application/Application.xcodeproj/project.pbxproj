@@ -7,18 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA07BB6920FE28180042175F /* HistogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07BB6820FE28180042175F /* HistogramView.swift */; };
-		DA48D1B82101B0C800B909B0 /* HistogramMonthBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48D1B72101B0C800B909B0 /* HistogramMonthBackgroundView.swift */; };
+		DA07BB6920FE28180042175F /* StatsHistogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07BB6820FE28180042175F /* StatsHistogramView.swift */; };
 		DA4F5D8E20FCDFAD00D3AA4A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F5D8D20FCDFAD00D3AA4A /* LoadingView.swift */; };
 		DA536F512107067200F1E106 /* CreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F502107067200F1E106 /* CreateInteractor.swift */; };
 		DA536F532107067900F1E106 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F522107067900F1E106 /* CreatePresenter.swift */; };
 		DA536F552107068100F1E106 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA536F542107068100F1E106 /* CreateView.swift */; };
-		DA8A8F1420FF1030002EEFAE /* HistogramBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F1320FF1030002EEFAE /* HistogramBackgroundView.swift */; };
 		DA8A8F1920FF19A6002EEFAE /* StatsMetricsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F1820FF19A6002EEFAE /* StatsMetricsCellView.swift */; };
 		DA8A8F1B20FF2715002EEFAE /* StatsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A8F1A20FF2715002EEFAE /* StatsItem.swift */; };
 		DA8FD9EB21070F8E00DBA125 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FD9EA21070F8E00DBA125 /* CreateViewModel.swift */; };
 		DA9784182101CCA50090A086 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACEB85920F6484D0018DE79 /* brand.xcassets */; };
-		DAC0CA1420FF73E600B5E98B /* HistogramIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0CA1320FF73E600B5E98B /* HistogramIndicatorView.swift */; };
 		DAC6C3F5210097CE00DC5B77 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6C3F4210097CE00DC5B77 /* StatsViewModel.swift */; };
 		DAC6C3F921009E0E00DC5B77 /* StatsMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6C3F821009E0E00DC5B77 /* StatsMetricsView.swift */; };
 		DAC6C3FF2100A21800DC5B77 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6C3FE2100A21800DC5B77 /* StatsView.swift */; };
@@ -28,7 +25,7 @@
 		DAC82FE42105AD5200495233 /* StatsStateLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC82FE32105AD5200495233 /* StatsStateLoading.swift */; };
 		DAC82FE62105AD5B00495233 /* StatsStateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC82FE52105AD5B00495233 /* StatsStateError.swift */; };
 		DAC82FE82105B15200495233 /* StatsStateNeedsSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC82FE72105B15200495233 /* StatsStateNeedsSync.swift */; };
-		DAD6F4A920FE33E100548A2D /* HistogramMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD6F4A820FE33E100548A2D /* HistogramMonthView.swift */; };
+		DAD6F4A920FE33E100548A2D /* StatsHistogramMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD6F4A820FE33E100548A2D /* StatsHistogramMonthView.swift */; };
 		DAE4860420F47060003BF78A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE485E820F47060003BF78A /* Localizable.strings */; };
 		DAE4860520F47060003BF78A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */; };
 		DAE4860720F47060003BF78A /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE485EE20F47060003BF78A /* UsersViewModel.swift */; };
@@ -62,18 +59,15 @@
 /* Begin PBXFileReference section */
 		CDAA37ACCC504D84A06FF955 /* Pods-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Application/Pods-Application.debug.xcconfig"; sourceTree = "<group>"; };
 		CE51436FB12A4F09707B5BEC /* Pods-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Application/Pods-Application.release.xcconfig"; sourceTree = "<group>"; };
-		DA07BB6820FE28180042175F /* HistogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramView.swift; sourceTree = "<group>"; };
-		DA48D1B72101B0C800B909B0 /* HistogramMonthBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramMonthBackgroundView.swift; sourceTree = "<group>"; };
+		DA07BB6820FE28180042175F /* StatsHistogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHistogramView.swift; sourceTree = "<group>"; };
 		DA4F5D8D20FCDFAD00D3AA4A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		DA536F502107067200F1E106 /* CreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInteractor.swift; sourceTree = "<group>"; };
 		DA536F522107067900F1E106 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
 		DA536F542107068100F1E106 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		DA5915D820F46D1E00B6AEDC /* Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA8A8F1320FF1030002EEFAE /* HistogramBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramBackgroundView.swift; sourceTree = "<group>"; };
 		DA8A8F1820FF19A6002EEFAE /* StatsMetricsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsMetricsCellView.swift; sourceTree = "<group>"; };
 		DA8A8F1A20FF2715002EEFAE /* StatsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsItem.swift; sourceTree = "<group>"; };
 		DA8FD9EA21070F8E00DBA125 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
-		DAC0CA1320FF73E600B5E98B /* HistogramIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramIndicatorView.swift; sourceTree = "<group>"; };
 		DAC6C3F4210097CE00DC5B77 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		DAC6C3F821009E0E00DC5B77 /* StatsMetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsMetricsView.swift; sourceTree = "<group>"; };
 		DAC6C3FE2100A21800DC5B77 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
@@ -84,7 +78,7 @@
 		DAC82FE52105AD5B00495233 /* StatsStateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStateError.swift; sourceTree = "<group>"; };
 		DAC82FE72105B15200495233 /* StatsStateNeedsSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStateNeedsSync.swift; sourceTree = "<group>"; };
 		DACEB85920F6484D0018DE79 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
-		DAD6F4A820FE33E100548A2D /* HistogramMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramMonthView.swift; sourceTree = "<group>"; };
+		DAD6F4A820FE33E100548A2D /* StatsHistogramMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHistogramMonthView.swift; sourceTree = "<group>"; };
 		DAE485E620F47056003BF78A /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		DAE485E920F47060003BF78A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAE485EA20F47060003BF78A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -153,6 +147,8 @@
 				DAC6C3FE2100A21800DC5B77 /* StatsView.swift */,
 				DAC6C3F821009E0E00DC5B77 /* StatsMetricsView.swift */,
 				DA8A8F1820FF19A6002EEFAE /* StatsMetricsCellView.swift */,
+				DA07BB6820FE28180042175F /* StatsHistogramView.swift */,
+				DAD6F4A820FE33E100548A2D /* StatsHistogramMonthView.swift */,
 				DAC82FDF2105AD3700495233 /* StatsStateProtocol.swift */,
 				DAC82FE72105B15200495233 /* StatsStateNeedsSync.swift */,
 				DAC82FE12105AD4900495233 /* StatsStateReady.swift */,
@@ -195,18 +191,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DAD6F4AA20FE33EA00548A2D /* Histogram */ = {
-			isa = PBXGroup;
-			children = (
-				DA07BB6820FE28180042175F /* HistogramView.swift */,
-				DA8A8F1320FF1030002EEFAE /* HistogramBackgroundView.swift */,
-				DAD6F4A820FE33E100548A2D /* HistogramMonthView.swift */,
-				DA48D1B72101B0C800B909B0 /* HistogramMonthBackgroundView.swift */,
-				DAC0CA1320FF73E600B5E98B /* HistogramIndicatorView.swift */,
-			);
-			path = Histogram;
-			sourceTree = "<group>";
-		};
 		DAE485E720F47060003BF78A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +206,6 @@
 				DA07BB6A20FE290B0042175F /* Users */,
 				DA536F4D2107062400F1E106 /* Create */,
 				DA07BB6B20FE29100042175F /* Stats */,
-				DAD6F4AA20FE33EA00548A2D /* Histogram */,
 				DAE485F620F47060003BF78A /* Shared */,
 			);
 			path = Source;
@@ -362,19 +345,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC0CA1420FF73E600B5E98B /* HistogramIndicatorView.swift in Sources */,
-				DA8A8F1420FF1030002EEFAE /* HistogramBackgroundView.swift in Sources */,
 				DA8FD9EB21070F8E00DBA125 /* CreateViewModel.swift in Sources */,
 				DAC82FE82105B15200495233 /* StatsStateNeedsSync.swift in Sources */,
 				DAC82FE62105AD5B00495233 /* StatsStateError.swift in Sources */,
-				DA48D1B82101B0C800B909B0 /* HistogramMonthBackgroundView.swift in Sources */,
 				DA8A8F1920FF19A6002EEFAE /* StatsMetricsCellView.swift in Sources */,
 				DA4F5D8E20FCDFAD00D3AA4A /* LoadingView.swift in Sources */,
 				DAC6C3F5210097CE00DC5B77 /* StatsViewModel.swift in Sources */,
-				DAD6F4A920FE33E100548A2D /* HistogramMonthView.swift in Sources */,
+				DAD6F4A920FE33E100548A2D /* StatsHistogramMonthView.swift in Sources */,
 				DAE4860B20F47060003BF78A /* UsersPresenter.swift in Sources */,
 				DA536F552107068100F1E106 /* CreateView.swift in Sources */,
-				DA07BB6920FE28180042175F /* HistogramView.swift in Sources */,
+				DA07BB6920FE28180042175F /* StatsHistogramView.swift in Sources */,
 				DAC6C3F921009E0E00DC5B77 /* StatsMetricsView.swift in Sources */,
 				DAC82FDE2105A5D500495233 /* UIColor+Shared.swift in Sources */,
 				DAC82FE02105AD3700495233 /* StatsStateProtocol.swift in Sources */,
