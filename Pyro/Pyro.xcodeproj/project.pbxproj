@@ -42,6 +42,7 @@
 		DA28087D20F5E1DF00BCDA13 /* MockReportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28087C20F5E1DF00BCDA13 /* MockReportDelegate.swift */; };
 		DA28088320F5EB2000BCDA13 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088220F5EB1F00BCDA13 /* StorageProtocol.swift */; };
 		DA28088520F5EB8E00BCDA13 /* MockStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28088420F5EB8E00BCDA13 /* MockStorageProtocol.swift */; };
+		DA31111A2109B02600C2CC86 /* ProfileError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3111192109B02600C2CC86 /* ProfileError.swift */; };
 		DA455BA420F72256000EBE10 /* UserBase.json in Resources */ = {isa = PBXBuildFile; fileRef = DA455BA320F72256000EBE10 /* UserBase.json */; };
 		DA455BA620F72375000EBE10 /* UserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA455BA520F72375000EBE10 /* UserBase.swift */; };
 		DA49406120F87D27002F0C1F /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49406020F87D27002F0C1F /* UserFactory.swift */; };
@@ -56,6 +57,13 @@
 		DA54043A21007A3C00E6F448 /* TestMetricsBuilder_Max.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54043921007A3C00E6F448 /* TestMetricsBuilder_Max.swift */; };
 		DA59160B20F46DBA00B6AEDC /* Pyro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5915F720F46D8B00B6AEDC /* Pyro.framework */; };
 		DA5AD56921099500007BF762 /* ProfileMattt.html in Resources */ = {isa = PBXBuildFile; fileRef = DA5AD56821099500007BF762 /* ProfileMattt.html */; };
+		DA5AD56C2109A5D8007BF762 /* ProfilerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AD56B2109A5D8007BF762 /* ProfilerProtocol.swift */; };
+		DA5AD56E2109A5E8007BF762 /* Profiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AD56D2109A5E8007BF762 /* Profiler.swift */; };
+		DA5AD5702109A6E8007BF762 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AD56F2109A6E8007BF762 /* Profile.swift */; };
+		DA5AD5722109A7C5007BF762 /* ProfilerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AD5712109A7C5007BF762 /* ProfilerDelegate.swift */; };
+		DA5AD5752109A988007BF762 /* MockProfilerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AD5742109A988007BF762 /* MockProfilerProtocol.swift */; };
+		DA5AD5772109A991007BF762 /* MockProfilerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AD5762109A991007BF762 /* MockProfilerDelegate.swift */; };
+		DA5AD5792109A99A007BF762 /* TestProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AD5782109A99A007BF762 /* TestProfiler.swift */; };
 		DA5E6D4320F9ECEF00120292 /* ScraperItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4220F9ECEF00120292 /* ScraperItems.swift */; };
 		DA5E6D4620F9F56600120292 /* StatsDuplicates.stub in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */; };
 		DA5E6D4920F9FB6B00120292 /* StatsFuture.stub in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6D4720F9FB0A00120292 /* StatsFuture.stub */; };
@@ -144,6 +152,7 @@
 		DA28087C20F5E1DF00BCDA13 /* MockReportDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReportDelegate.swift; sourceTree = "<group>"; };
 		DA28088220F5EB1F00BCDA13 /* StorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
 		DA28088420F5EB8E00BCDA13 /* MockStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageProtocol.swift; sourceTree = "<group>"; };
+		DA3111192109B02600C2CC86 /* ProfileError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileError.swift; sourceTree = "<group>"; };
 		DA455BA320F72256000EBE10 /* UserBase.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserBase.json; sourceTree = "<group>"; };
 		DA455BA520F72375000EBE10 /* UserBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBase.swift; sourceTree = "<group>"; };
 		DA49406020F87D27002F0C1F /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
@@ -158,7 +167,14 @@
 		DA54043921007A3C00E6F448 /* TestMetricsBuilder_Max.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMetricsBuilder_Max.swift; sourceTree = "<group>"; };
 		DA5915F720F46D8B00B6AEDC /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA59160620F46DBA00B6AEDC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA5AD56821099500007BF762 /* ProfileMattt.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ProfileMattt.html; sourceTree = "<group>"; };
+		DA5AD56821099500007BF762 /* ProfileMattt.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ProfileMattt.html; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
+		DA5AD56B2109A5D8007BF762 /* ProfilerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilerProtocol.swift; sourceTree = "<group>"; };
+		DA5AD56D2109A5E8007BF762 /* Profiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiler.swift; sourceTree = "<group>"; };
+		DA5AD56F2109A6E8007BF762 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		DA5AD5712109A7C5007BF762 /* ProfilerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilerDelegate.swift; sourceTree = "<group>"; };
+		DA5AD5742109A988007BF762 /* MockProfilerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProfilerProtocol.swift; sourceTree = "<group>"; };
+		DA5AD5762109A991007BF762 /* MockProfilerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProfilerDelegate.swift; sourceTree = "<group>"; };
+		DA5AD5782109A99A007BF762 /* TestProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProfiler.swift; sourceTree = "<group>"; };
 		DA5E6D4220F9ECEF00120292 /* ScraperItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperItems.swift; sourceTree = "<group>"; };
 		DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsDuplicates.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DA5E6D4720F9FB0A00120292 /* StatsFuture.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsFuture.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
@@ -333,6 +349,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DA5AD56A2109A5C6007BF762 /* Profiler */ = {
+			isa = PBXGroup;
+			children = (
+				DA5AD56B2109A5D8007BF762 /* ProfilerProtocol.swift */,
+				DA5AD5712109A7C5007BF762 /* ProfilerDelegate.swift */,
+				DA5AD56D2109A5E8007BF762 /* Profiler.swift */,
+				DA5AD56F2109A6E8007BF762 /* Profile.swift */,
+				DA3111192109B02600C2CC86 /* ProfileError.swift */,
+			);
+			path = Profiler;
+			sourceTree = "<group>";
+		};
+		DA5AD5732109A976007BF762 /* Profiler */ = {
+			isa = PBXGroup;
+			children = (
+				DA5AD5782109A99A007BF762 /* TestProfiler.swift */,
+				DA5AD5742109A988007BF762 /* MockProfilerProtocol.swift */,
+				DA5AD5762109A991007BF762 /* MockProfilerDelegate.swift */,
+			);
+			path = Profiler;
+			sourceTree = "<group>";
+		};
 		DA8FD9EE21071A3000DBA125 /* Validate */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE9E93020F78FA800B5492C /* Pyro */,
+				DA5AD5732109A976007BF762 /* Profiler */,
 				DA8FD9F521071B5900DBA125 /* Validate */,
 				DA536F482106F96700F1E106 /* User */,
 				DA28087120F5DE4200BCDA13 /* Report */,
@@ -437,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE9E92B20F78CB800B5492C /* Pyro */,
+				DA5AD56A2109A5C6007BF762 /* Profiler */,
 				DA8FD9EE21071A3000DBA125 /* Validate */,
 				DAE187F3210491C300927A28 /* Session */,
 				DA28086B20F5DD5A00BCDA13 /* Report */,
@@ -624,12 +664,15 @@
 				DA5E6D4F20FA088A00120292 /* Streak.swift in Sources */,
 				DA2062A320F503B2001B58A1 /* MetricsCommandFirstContribution.swift in Sources */,
 				DAE4862620F4708E003BF78A /* User_v1.swift in Sources */,
+				DA5AD5702109A6E8007BF762 /* Profile.swift in Sources */,
 				DA8FDA0B21075BA000DBA125 /* ValidateUnique.swift in Sources */,
 				DA2062A120F502A3001B58A1 /* MetricsCommandComposite.swift in Sources */,
 				DA5E6D4320F9ECEF00120292 /* ScraperItems.swift in Sources */,
 				DA455BA620F72375000EBE10 /* UserBase.swift in Sources */,
 				DA7E6E8320F6158B00E6F38E /* StorageFile.swift in Sources */,
+				DA5AD56C2109A5D8007BF762 /* ProfilerProtocol.swift in Sources */,
 				DAFD36B3210767C200C52721 /* ValidateExists.swift in Sources */,
+				DA5AD56E2109A5E8007BF762 /* Profiler.swift in Sources */,
 				DA28087020F5DE2F00BCDA13 /* Report.swift in Sources */,
 				DA2062AB20F50416001B58A1 /* MetricsCommandCurrentStreak.swift in Sources */,
 				DA28086220F5D78300BCDA13 /* ScraperProtocol.swift in Sources */,
@@ -641,7 +684,9 @@
 				DA2062BF20F527C3001B58A1 /* Load.swift in Sources */,
 				DA8FDA0721074A6200DBA125 /* ValidateFirst.swift in Sources */,
 				DA7BF72421060EB2002DD1C7 /* SessionProtocol.swift in Sources */,
+				DA5AD5722109A7C5007BF762 /* ProfilerDelegate.swift in Sources */,
 				DA20629820F4F910001B58A1 /* MetricsBuilder.swift in Sources */,
+				DA31111A2109B02600C2CC86 /* ProfileError.swift in Sources */,
 				DA2062AE20F51A83001B58A1 /* Request.swift in Sources */,
 				DA8FDA052107498000DBA125 /* ValidateError.swift in Sources */,
 				DA2062A720F503F8001B58A1 /* MetricsCommandContributions.swift in Sources */,
@@ -677,8 +722,10 @@
 				DA5E6D5920FA10F300120292 /* MockPyroDelegate.swift in Sources */,
 				DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */,
 				DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */,
+				DA5AD5772109A991007BF762 /* MockProfilerDelegate.swift in Sources */,
 				DA54043A21007A3C00E6F448 /* TestMetricsBuilder_Max.swift in Sources */,
 				DA8FD9FF21073C9E00DBA125 /* MockValidateDelegate.swift in Sources */,
+				DA5AD5792109A99A007BF762 /* TestProfiler.swift in Sources */,
 				DAE9E93220F78FB500B5492C /* TestPyro.swift in Sources */,
 				DA2062C120F527FA001B58A1 /* TestLoad.swift in Sources */,
 				DAE4861D20F47084003BF78A /* TestStorage.swift in Sources */,
@@ -694,6 +741,7 @@
 				DA28087D20F5E1DF00BCDA13 /* MockReportDelegate.swift in Sources */,
 				DA28086A20F5DC6200BCDA13 /* MockLoadProtocol.swift in Sources */,
 				DA28087520F5DE6C00BCDA13 /* TestReport.swift in Sources */,
+				DA5AD5752109A988007BF762 /* MockProfilerProtocol.swift in Sources */,
 				DA20629B20F4F93F001B58A1 /* TestMetricsBuilder.swift in Sources */,
 				DA536F4A2106F97A00F1E106 /* TestUserFactory.swift in Sources */,
 			);

@@ -2,8 +2,8 @@ import Foundation
 
 class Request:RequestProtocol {
     private static let monostate:Request = Request()
-    private let session:URLSession
     private weak var task:URLSessionDataTask?
+    private let session:URLSession
     
     class func contributions(user:UserProtocol, year:Int,
                              onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
@@ -18,6 +18,11 @@ class Request:RequestProtocol {
         guard
             let url:URL = URL(string:Constants.domain + Constants.users + url + Constants.contributions)
         else { return onError(RequestError.userNotValid) }
+        Request.monostate.make(request:request(url:url), onCompletion:onCompletion, onError:onError)
+    }
+    
+    class func profile(url:String, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
+        guard let url:URL = URL(string:Constants.domain + url) else { return onError(RequestError.userNotValid) }
         Request.monostate.make(request:request(url:url), onCompletion:onCompletion, onError:onError)
     }
     

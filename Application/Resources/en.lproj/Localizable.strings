@@ -25,13 +25,6 @@ StatsStateReady.month.12="December";
 StatsStateLoading.sync="Synching,\ncould take a few minutes.";
 StatsStateError.sync="There was an error,\ntry again in a few minutes.";
 Grouping.separator=",";
-
-
-
-
-
 StatsViewDelete_Title="Do you want to delete this user?";
 StatsViewDelete_Delete="Delete";
 StatsViewDelete_Cancel="Cancel";
-
-StatsViewContent_ContributionsTitle="Contributions";

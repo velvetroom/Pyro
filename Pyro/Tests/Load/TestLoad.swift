@@ -18,10 +18,7 @@ class TestLoad:XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-        MockRequestProtocol.data = nil
-        MockRequestProtocol.error = nil
-        MockRequestProtocol.onContributions = nil
-        MockRequestProtocol.onValidate = nil
+        MockRequestProtocol.clear()
     }
 
     func testSendsLoadedItemsToDelegate() {

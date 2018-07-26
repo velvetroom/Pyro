@@ -10,3 +10,7 @@ ValidateError.empty="Error: User name cannot be empty.";
 ValidateError.first="Error: First character should be a letter.";
 ValidateError.character="Error: User name can only contain letters, numbers and -.";
 ValidateError.unique="Error: You are already following this user.";
+ProfileError.string="Error: Failed to read server response.";
+ProfileError.user="Error: Unable to find user identifier.";
+ProfileError.name="Error: Unable to find user name.";
+ProfileError.bio="Error: Unable to find user biography.";
