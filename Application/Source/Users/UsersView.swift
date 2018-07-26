@@ -22,6 +22,7 @@ UICollectionViewDelegateFlowLayout {
                                                                 for:index) as! UsersCellView
         cell.name.attributedText = self.users[index.item].name
         cell.streak.text = self.users[index.item].value
+        cell.avatar.load(user:self.users[index.item].avatar)
         return cell
     }
     

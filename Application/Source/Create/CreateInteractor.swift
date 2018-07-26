@@ -13,6 +13,11 @@ class CreateInteractor:Interactor, PyroDelegate {
         self.url = String()
     }
     
+    func save() {
+        guard let profile:Profile = self.profile else { return }
+        self.pyro.addUser(profile:profile)
+    }
+    
     func validate(url:String) {
         self.url = url
         self.error = nil

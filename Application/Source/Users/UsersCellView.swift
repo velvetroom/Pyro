@@ -5,6 +5,7 @@ class UsersCellView:UICollectionViewCell {
     weak var name:UILabel!
     weak var streak:UILabel!
     weak var border:UIView!
+    weak var avatar:Avatar!
     
     override init(frame:CGRect) {
         super.init(frame:CGRect.zero)
@@ -50,12 +51,16 @@ class UsersCellView:UICollectionViewCell {
         border.isUserInteractionEnabled = false
         self.border = border
         self.contentView.addSubview(border)
+        
+        let avatar:Avatar = Avatar()
+        self.avatar = avatar
+        self.addSubview(avatar)
     }
     
     private func layoutOutlets() {
         self.name.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
         self.name.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
-        self.name.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
+        self.name.leftAnchor.constraint(equalTo:self.avatar.rightAnchor, constant:Constants.avatarRight).isActive = true
         self.name.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
         
         self.streak.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
@@ -67,6 +72,11 @@ class UsersCellView:UICollectionViewCell {
         self.border.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
         self.border.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
         self.border.heightAnchor.constraint(equalToConstant:Constants.border).isActive = true
+        
+        self.avatar.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
+        self.avatar.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
+        self.avatar.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        self.avatar.widthAnchor.constraint(equalTo:self.avatar.heightAnchor).isActive = true
     }
 }
 
@@ -74,4 +84,5 @@ private struct Constants {
     static let margin:CGFloat = 18
     static let border:CGFloat = 1
     static let streakFont:CGFloat = 12
+    static let avatarRight:CGFloat = 8
 }

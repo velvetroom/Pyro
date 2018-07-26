@@ -50,6 +50,7 @@ class UsersPresenter:Presenter {
             var item:UsersItem = UsersItem()
             item.name = self.makeName(user:user)
             item.user = user
+            item.avatar = user.user
             if let metrics:Metrics = user.metrics {
                 item.value = self.numberFormatter.string(from:NSNumber(value:metrics.streak.max))!
             } else {

@@ -1,7 +1,10 @@
 import UIKit
 
 class Avatar:UIImageView {
+    private var user:String
+    
     init() {
+        self.user = String()
         super.init(frame:CGRect.zero)
         self.clipsToBounds = true
         self.contentMode = UIView.ContentMode.scaleAspectFill
@@ -12,11 +15,26 @@ class Avatar:UIImageView {
     required init?(coder:NSCoder) { return nil }
     
     func load(user:String) {
-        self.clear()
-        guard
-            !user.isEmpty,
-            let url:URL = URL(string:Constants.prefix + user + Constants.suffix)
-        else { return }
+        if user != self.user {
+            self.clear()
+            guard
+                !user.isEmpty,
+                let url:URL = URL(string:Constants.prefix + user + Constants.suffix)
+            else { return }
+            self.user = user
+            DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async { [weak self] in
+                self?.request(url:url)
+            }
+        }
+    }
+    
+    private func clear() {
+        self.user = String()
+        self.image = nil
+        self.alpha = 0
+    }
+    
+    private func request(url:URL) {
         URLSession.shared.dataTask(with:url) { (data:Data?, respose:URLResponse?, error:Error?) in
             guard
                 let data:Data = data,
@@ -24,11 +42,6 @@ class Avatar:UIImageView {
             else { return }
             DispatchQueue.main.async { [weak self] in self?.fadeIn(image:image) }
         }.resume()
-    }
-    
-    private func clear() {
-        self.image = nil
-        self.alpha = 0
     }
     
     private func fadeIn(image:UIImage) {

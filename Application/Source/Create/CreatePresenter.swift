@@ -14,7 +14,8 @@ class CreatePresenter:Presenter {
     }
     
     func save() {
-        Application.router.popViewController(animated:true)
+        self.interactor.save()
+        DispatchQueue.main.async { Application.router.popViewController(animated:true) }
     }
     
     func cancel() {

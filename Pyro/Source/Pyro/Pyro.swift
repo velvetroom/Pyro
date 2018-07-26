@@ -28,13 +28,14 @@ public class Pyro:ReportDelegate, ValidateDelegate, ProfilerDelegate {
         }
     }
     
-    @discardableResult public func addUser(name:String, url:String) -> UserProtocol {
+    public func addUser(profile:Profile) {
         let user:UserProtocol = UserFactory.make()
-        user.name = name
-        user.url = url
+        user.user = profile.user
+        user.url = profile.url
+        user.name = profile.name
+        user.bio = profile.bio
         self.add(user:user)
         self.saveUsers()
-        return user
     }
     
     public func delete(user:UserProtocol) {

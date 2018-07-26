@@ -48,35 +48,39 @@ class TestPyro:XCTestCase {
     }
     
     func testAddUserAssignsIdentifier() {
-        let name:String = "hello world"
-        let url:String = "lorem ipsum"
-        self.pyro.addUser(name:name, url:url)
+        var profile:Profile = Profile()
+        profile.name = "hello world"
+        profile.url = "lorem ipsum"
+        self.pyro.addUser(profile:profile)
         XCTAssertFalse(self.pyro.users.isEmpty, "Failed to add")
         guard let user:Configuration.UserType = self.pyro.users.first as? Configuration.UserType else { return }
-        XCTAssertEqual(user.name, name, "Not assigned")
-        XCTAssertEqual(user.url, url, "Not assigned")
+        XCTAssertEqual(user.name, profile.name, "Not assigned")
+        XCTAssertEqual(user.url, profile.url, "Not assigned")
         XCTAssertFalse(user.identifier.isEmpty, "Not assigned")
     }
     
     func testAddUserSortsUsersByName() {
-        let nameA:String = "abc"
-        let nameB:String = "fgh"
-        let nameC:String = "xyz"
-        self.pyro.addUser(name:nameB, url:String())
-        self.pyro.addUser(name:nameA, url:String())
-        self.pyro.addUser(name:nameC, url:String())
+        var profileA:Profile = Profile()
+        var profileB:Profile = Profile()
+        var profileC:Profile = Profile()
+        profileA.name = "abc"
+        profileB.name = "fgh"
+        profileC.name = "xyz"
+        self.pyro.addUser(profile:profileA)
+        self.pyro.addUser(profile:profileB)
+        self.pyro.addUser(profile:profileC)
         XCTAssertFalse(self.pyro.users.isEmpty, "Failed to add")
         if self.pyro.users.isEmpty { return }
         
-        XCTAssertEqual(self.pyro.users[0].name, nameA, "Not sorted")
-        XCTAssertEqual(self.pyro.users[1].name, nameB, "Not sorted")
-        XCTAssertEqual(self.pyro.users[2].name, nameC, "Not sorted")
+        XCTAssertEqual(self.pyro.users[0].name, profileA.name, "Not sorted")
+        XCTAssertEqual(self.pyro.users[1].name, profileB.name, "Not sorted")
+        XCTAssertEqual(self.pyro.users[2].name, profileC.name, "Not sorted")
     }
     
     func testAddUserSaves() {
         let expectStorage:XCTestExpectation = self.expectation(description:"Storage not called")
         self.storage.onSaveUsers = { expectStorage.fulfill() }
-        self.pyro.addUser(name:String(), url:String())
+        self.pyro.addUser(profile:Profile())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     

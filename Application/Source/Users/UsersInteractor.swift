@@ -15,10 +15,6 @@ class UsersInteractor:Interactor, PyroDelegate {
         self.pyro.loadUsers()
     }
     
-    func create(name:String, url:String) -> UserProtocol {
-        return self.pyro.addUser(name:name, url:url)
-    }
-    
     func pyroUsersLoaded() {
         self.delegate?.shouldUpdate()
     }

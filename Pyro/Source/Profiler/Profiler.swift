@@ -16,6 +16,7 @@ class Profiler:ProfilerProtocol {
     }
     
     func load(url:String) {
+        self.profile.url = url
         self.dispatch.async {
             Configuration.requestType.profile(url:url, onCompletion: { [weak self] (data:Data) in
                 self?.loaded(data:data)

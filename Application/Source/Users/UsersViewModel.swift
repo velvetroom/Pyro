@@ -14,9 +14,11 @@ struct UsersItem {
     weak var user:UserProtocol!
     var name:NSAttributedString
     var value:String
+    var avatar:String
     
     init() {
         self.name = NSAttributedString()
         self.value = String()
+        self.avatar = String()
     }
 }
