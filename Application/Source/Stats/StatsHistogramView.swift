@@ -8,7 +8,6 @@ class StatsHistogramView:UIView {
         super.init(frame:CGRect.zero)
         self.isUserInteractionEnabled = false
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = UIColor.clear
         self.makeOutlets()
     }
     

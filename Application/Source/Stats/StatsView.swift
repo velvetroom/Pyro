@@ -74,7 +74,6 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
         let title:UILabel = UILabel(frame:CGRect(x:0, y:0, width:Constants.titleWidth, height:Constants.titleHeight))
         title.numberOfLines = 0
         title.textColor = UIColor.black
-        title.backgroundColor = UIColor.clear
         title.isUserInteractionEnabled = false
         title.attributedText = string
         self.navigationItem.titleView = title

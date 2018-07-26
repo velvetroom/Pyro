@@ -6,6 +6,7 @@ public protocol PyroDelegate:AnyObject {
     func pyroValidated()
     func pyroReport(progress:Float)
     func pyroFailed(error:Error)
+    func pyroLoaded(profile:Profile)
 }
 
 public extension PyroDelegate {
@@ -14,4 +15,5 @@ public extension PyroDelegate {
     func pyroValidated() { }
     func pyroReport(progress:Float) { }
     func pyroFailed(error:Error) { }
+    func pyroLoaded(profile:Profile) { }
 }

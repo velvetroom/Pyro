@@ -21,6 +21,10 @@ class MockPyroDelegate:PyroDelegate {
         self.onUpdated?()
     }
     
+    func pyroLoaded(profile:Profile) {
+        self.onUpdated?()
+    }
+    
     func pyroFailed(error:Error) {
         self.onError?()
     }

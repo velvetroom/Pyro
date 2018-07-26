@@ -148,4 +148,18 @@ class TestPyro:XCTestCase {
         validate.validate(pyro:self.pyro, url:String())
         XCTAssertFalse(validate.composite === composite, "Not removed")
     }
+    
+    func testProfileUpdatesDelegate() {
+        let expect:XCTestExpectation = self.expectation(description:"Delegate not notified")
+        self.delegate.onUpdated = { expect.fulfill() }
+        self.pyro.profileLoaded(profile:Profile())
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testProfileErrorNotifiesDelegate() {
+        let expect:XCTestExpectation = self.expectation(description:"Delegate not notified")
+        self.delegate.onError = { expect.fulfill() }
+        self.pyro.profileFailed(error:NSError())
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
 }

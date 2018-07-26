@@ -35,7 +35,7 @@ class UsersPresenter:Presenter {
         }
     }
     
-    func willAppear() { self.interactor.updateUsers() }
+    func didAppear() { self.interactor.updateUsers() }
     
     private func router(user:UserProtocol) {
         let view:StatsView = StatsView()

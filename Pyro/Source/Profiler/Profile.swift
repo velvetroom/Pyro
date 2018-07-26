@@ -1,9 +1,9 @@
 import Foundation
 
-struct Profile {
-    var user:String
-    var name:String
-    var bio:String
+public struct Profile {
+    public var user:String
+    public var name:String
+    public var bio:String
     
     init() {
         self.user = String()

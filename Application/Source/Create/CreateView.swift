@@ -6,6 +6,7 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
     weak var icon:UIImageView!
     weak var border:UIView!
     weak var message:UILabel!
+    weak var bio:UILabel!
     weak var loading:LoadingView!
     weak var saveButton:UIBarButtonItem!
     
@@ -94,6 +95,14 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
         self.message = message
         self.view.addSubview(message)
         
+        let bio:UILabel = UILabel()
+        bio.translatesAutoresizingMaskIntoConstraints = false
+        bio.isUserInteractionEnabled = false
+        bio.numberOfLines = 0
+        bio.textColor = UIColor.black
+        self.bio = bio
+        self.view.addSubview(bio)
+        
         let loading:LoadingView = LoadingView()
         loading.tintColor = UIColor.sharedBlue
         self.loading = loading
@@ -121,6 +130,11 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
                                           constant:Constants.messageTop).isActive = true
         self.message.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         
+        self.bio.topAnchor.constraint(equalTo:self.message.bottomAnchor, constant:Constants.margin).isActive = true
+        self.bio.leftAnchor.constraint(equalTo:self.view.leftAnchor, constant:Constants.margin).isActive = true
+        self.bio.rightAnchor.constraint(equalTo:self.view.rightAnchor, constant:-Constants.margin).isActive = true
+        self.bio.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        
         self.loading.centerXAnchor.constraint(equalTo:self.icon.centerXAnchor).isActive = true
         self.loading.centerYAnchor.constraint(equalTo:self.icon.centerYAnchor).isActive = true
         
@@ -139,6 +153,7 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
             self?.message.text = viewModel.message
             self?.icon.image = viewModel.icon
             self?.loading.isHidden = viewModel.loadingHidden
+            self?.bio.attributedText = viewModel.bio
         }
     }
     

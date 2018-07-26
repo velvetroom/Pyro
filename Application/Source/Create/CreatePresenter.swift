@@ -1,5 +1,6 @@
-import Foundation
+import UIKit
 import CleanArchitecture
+import Pyro
 
 class CreatePresenter:Presenter {
     var interactor:CreateInteractor!
@@ -33,10 +34,25 @@ class CreatePresenter:Presenter {
             viewModel.icon = #imageLiteral(resourceName: "assetInvalid.pdf")
             viewModel.message = error.localizedDescription
             viewModel.saveEnabled = false
-        } else {
+        } else if let profile:Profile = self.interactor.profile {
             viewModel.icon = #imageLiteral(resourceName: "assetValid.pdf")
             viewModel.saveEnabled = true
+            viewModel.user = profile.user
+            viewModel.bio = self.bio(profile:profile)
         }
         self.viewModels.update(viewModel:viewModel)
     }
+    
+    private func bio(profile:Profile) -> NSAttributedString {
+        let mutable:NSMutableAttributedString = NSMutableAttributedString()
+        mutable.append(NSAttributedString(string:profile.name, attributes:
+            [NSAttributedString.Key.font:UIFont.systemFont(ofSize:Constants.bioFont, weight:UIFont.Weight.bold)]))
+        mutable.append(NSAttributedString(string:"\n\(profile.bio)", attributes:
+            [NSAttributedString.Key.font:UIFont.systemFont(ofSize:Constants.bioFont, weight:UIFont.Weight.ultraLight)]))
+        return mutable
+    }
+}
+
+private struct Constants {
+    static let bioFont:CGFloat = 16
 }

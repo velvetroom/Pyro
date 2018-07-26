@@ -21,7 +21,7 @@ class StatsPresenter:Presenter {
     
     func confirmDelete() {
         self.interactor.delete()
-        Application.router.popViewController(animated:true)
+        DispatchQueue.main.async { Application.router.popViewController(animated:true) }
     }
     
     func select(item:StatsItem) {
