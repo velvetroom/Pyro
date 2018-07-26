@@ -7,6 +7,7 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
     weak var border:UIView!
     weak var message:UILabel!
     weak var bio:UILabel!
+    weak var avatar:Avatar!
     weak var loading:LoadingView!
     weak var saveButton:UIBarButtonItem!
     
@@ -103,6 +104,10 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
         self.bio = bio
         self.view.addSubview(bio)
         
+        let avatar:Avatar = Avatar()
+        self.avatar = avatar
+        self.view.addSubview(avatar)
+        
         let loading:LoadingView = LoadingView()
         loading.tintColor = UIColor.sharedBlue
         self.loading = loading
@@ -130,8 +135,13 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
                                           constant:Constants.messageTop).isActive = true
         self.message.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         
-        self.bio.topAnchor.constraint(equalTo:self.message.bottomAnchor, constant:Constants.margin).isActive = true
-        self.bio.leftAnchor.constraint(equalTo:self.view.leftAnchor, constant:Constants.margin).isActive = true
+        self.avatar.topAnchor.constraint(equalTo:self.message.bottomAnchor, constant:Constants.margin).isActive = true
+        self.avatar.leftAnchor.constraint(equalTo:self.view.leftAnchor, constant:Constants.margin).isActive = true
+        self.avatar.widthAnchor.constraint(equalToConstant:Constants.avatarSize).isActive = true
+        self.avatar.heightAnchor.constraint(equalToConstant:Constants.avatarSize).isActive = true
+        
+        self.bio.topAnchor.constraint(equalTo:self.avatar.topAnchor).isActive = true
+        self.bio.leftAnchor.constraint(equalTo:self.avatar.rightAnchor, constant:Constants.avatarRight).isActive = true
         self.bio.rightAnchor.constraint(equalTo:self.view.rightAnchor, constant:-Constants.margin).isActive = true
         self.bio.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         
@@ -154,6 +164,7 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
             self?.icon.image = viewModel.icon
             self?.loading.isHidden = viewModel.loadingHidden
             self?.bio.attributedText = viewModel.bio
+            self?.avatar.load(user:viewModel.user)
         }
     }
     
@@ -169,6 +180,7 @@ class CreateView:View<CreatePresenter>, UITextFieldDelegate {
 }
 
 private struct Constants {
+    static let avatarRight:CGFloat = 10
     static let margin:CGFloat = 20
     static let border:CGFloat = 1
     static let messageFont:CGFloat = 15
@@ -177,4 +189,5 @@ private struct Constants {
     static let fieldFont:CGFloat = 26
     static let fieldWidth:CGFloat = 200
     static let fieldHeight:CGFloat = 40
+    static let avatarSize:CGFloat = 90
 }

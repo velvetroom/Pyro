@@ -9,11 +9,8 @@ class CreatePresenter:Presenter {
     required init() { }
     
     func validate(url:String) {
-        var viewModel:CreateViewModel = CreateViewModel()
-        viewModel.saveEnabled = false
-        viewModel.loadingHidden = false
-        self.viewModels.update(viewModel:viewModel)
         self.interactor.validate(url:url)
+        self.shouldUpdate()
     }
     
     func save() {
@@ -39,6 +36,9 @@ class CreatePresenter:Presenter {
             viewModel.saveEnabled = true
             viewModel.user = profile.user
             viewModel.bio = self.bio(profile:profile)
+        } else {
+            viewModel.saveEnabled = false
+            viewModel.loadingHidden = false
         }
         self.viewModels.update(viewModel:viewModel)
     }
@@ -54,5 +54,5 @@ class CreatePresenter:Presenter {
 }
 
 private struct Constants {
-    static let bioFont:CGFloat = 16
+    static let bioFont:CGFloat = 15
 }

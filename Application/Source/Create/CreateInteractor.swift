@@ -22,15 +22,20 @@ class CreateInteractor:Interactor, PyroDelegate {
     }
     
     func pyroValidated() {
+        self.error = nil
+        self.profile = nil
         self.pyro.loadProfile(url:self.url)
+        self.delegate?.shouldUpdate()
     }
     
     func pyroFailed(error:Error) {
+        self.profile = nil
         self.error = error
         self.delegate?.shouldUpdate()
     }
     
     func pyroLoaded(profile:Profile) {
+        self.error = nil
         self.profile = profile
         self.delegate?.shouldUpdate()
     }
