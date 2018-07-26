@@ -2,13 +2,14 @@ import XCTest
 @testable import Pyro
 
 class TestValidate:XCTestCase {
-    private var validate:Validate<MockValidateRequest>!
+    private var validate:Validate!
     private var delegate:MockValidateDelegate!
     private var pyro:Pyro!
     
     override func setUp() {
         super.setUp()
-        self.validate = Validate<MockValidateRequest>()
+        Configuration.requestType = MockRequestProtocol.self
+        self.validate = Validate()
         self.delegate = MockValidateDelegate()
         self.pyro = Pyro()
         self.validate.delegate = self.delegate
@@ -16,7 +17,10 @@ class TestValidate:XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-        MockValidateRequest.error = nil
+        MockRequestProtocol.data = nil
+        MockRequestProtocol.error = nil
+        MockRequestProtocol.onContributions = nil
+        MockRequestProtocol.onValidate = nil
     }
     
     func testValidatedUpdatesDelegate() {
@@ -64,6 +68,7 @@ class TestValidate:XCTestCase {
     
     func testAllowMinus() {
         let expect:XCTestExpectation = self.expectation(description:"Error not thrown")
+        MockRequestProtocol.data = Data()
         self.delegate.onValidateSuccess = { expect.fulfill() }
         self.validate.validate(pyro:self.pyro, url:"hello-world")
         self.waitForExpectations(timeout:0.3, handler:nil)
@@ -80,7 +85,7 @@ class TestValidate:XCTestCase {
     }
     
     func testValidateExists() {
-        MockValidateRequest.error = RequestError.userNotValid
+        MockRequestProtocol.error = RequestError.userNotValid
         let expect:XCTestExpectation = self.expectation(description:"Error not thrown")
         self.delegate.onValidateError = { expect.fulfill() }
         self.validate.validate(pyro:self.pyro, url:"velvetroom")

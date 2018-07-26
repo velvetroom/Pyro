@@ -13,7 +13,7 @@ public class Pyro:ReportDelegate, ValidateDelegate {
         self.session = SessionFactory.make()
         self.storage = Storage()
         self.report = Report()
-        self.validate = Validate<Request>()
+        self.validate = Validate()
         self.report.delegate = self
         self.validate.delegate = self
     }

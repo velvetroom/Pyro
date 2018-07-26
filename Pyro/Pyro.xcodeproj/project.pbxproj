@@ -55,6 +55,7 @@
 		DA5404382100679900E6F448 /* MetricsCommandYears.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5404372100679900E6F448 /* MetricsCommandYears.swift */; };
 		DA54043A21007A3C00E6F448 /* TestMetricsBuilder_Max.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54043921007A3C00E6F448 /* TestMetricsBuilder_Max.swift */; };
 		DA59160B20F46DBA00B6AEDC /* Pyro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5915F720F46D8B00B6AEDC /* Pyro.framework */; };
+		DA5AD56921099500007BF762 /* ProfileMattt.html in Resources */ = {isa = PBXBuildFile; fileRef = DA5AD56821099500007BF762 /* ProfileMattt.html */; };
 		DA5E6D4320F9ECEF00120292 /* ScraperItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6D4220F9ECEF00120292 /* ScraperItems.swift */; };
 		DA5E6D4620F9F56600120292 /* StatsDuplicates.stub in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */; };
 		DA5E6D4920F9FB6B00120292 /* StatsFuture.stub in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6D4720F9FB0A00120292 /* StatsFuture.stub */; };
@@ -94,7 +95,6 @@
 		DAE4862920F4708E003BF78A /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4862520F4708E003BF78A /* StorageError.swift */; };
 		DAE9E92F20F78CD300B5492C /* Pyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9E92E20F78CD300B5492C /* Pyro.swift */; };
 		DAE9E93220F78FB500B5492C /* TestPyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9E93120F78FB500B5492C /* TestPyro.swift */; };
-		DAFD36AE2107638200C52721 /* MockValidateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD36AD2107638200C52721 /* MockValidateRequest.swift */; };
 		DAFD36B3210767C200C52721 /* ValidateExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD36AF2107666500C52721 /* ValidateExists.swift */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +158,7 @@
 		DA54043921007A3C00E6F448 /* TestMetricsBuilder_Max.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMetricsBuilder_Max.swift; sourceTree = "<group>"; };
 		DA5915F720F46D8B00B6AEDC /* Pyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA59160620F46DBA00B6AEDC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5AD56821099500007BF762 /* ProfileMattt.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ProfileMattt.html; sourceTree = "<group>"; };
 		DA5E6D4220F9ECEF00120292 /* ScraperItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperItems.swift; sourceTree = "<group>"; };
 		DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsDuplicates.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		DA5E6D4720F9FB0A00120292 /* StatsFuture.stub */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatsFuture.stub; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
@@ -198,7 +199,6 @@
 		DAE4862520F4708E003BF78A /* StorageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
 		DAE9E92E20F78CD300B5492C /* Pyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pyro.swift; sourceTree = "<group>"; };
 		DAE9E93120F78FB500B5492C /* TestPyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyro.swift; sourceTree = "<group>"; };
-		DAFD36AD2107638200C52721 /* MockValidateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockValidateRequest.swift; sourceTree = "<group>"; };
 		DAFD36AF2107666500C52721 /* ValidateExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateExists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -354,7 +354,6 @@
 			isa = PBXGroup;
 			children = (
 				DA8FD9F821071B8300DBA125 /* TestValidate.swift */,
-				DAFD36AD2107638200C52721 /* MockValidateRequest.swift */,
 				DA8FD9FC21073B4200DBA125 /* MockValidateProtocol.swift */,
 				DA8FD9FE21073C9E00DBA125 /* MockValidateDelegate.swift */,
 			);
@@ -429,6 +428,7 @@
 				DAA00E3620F496AF009386CE /* StatsMin.stub */,
 				DA5E6D4420F9F56100120292 /* StatsDuplicates.stub */,
 				DA5E6D4720F9FB0A00120292 /* StatsFuture.stub */,
+				DA5AD56821099500007BF762 /* ProfileMattt.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -593,6 +593,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5AD56921099500007BF762 /* ProfileMattt.html in Resources */,
 				DAA00E3720F496AF009386CE /* StatsMin.stub in Resources */,
 				DA5E6D4620F9F56600120292 /* StatsDuplicates.stub in Resources */,
 				DA5E6D4920F9FB6B00120292 /* StatsFuture.stub in Resources */,
@@ -673,7 +674,6 @@
 			files = (
 				DA536F4C2107001300F1E106 /* TestStorage_Migration.swift in Sources */,
 				DA540436210066C100E6F448 /* TestMetricsBuilder_Years.swift in Sources */,
-				DAFD36AE2107638200C52721 /* MockValidateRequest.swift in Sources */,
 				DA5E6D5920FA10F300120292 /* MockPyroDelegate.swift in Sources */,
 				DAE4861C20F47084003BF78A /* MockStorageFileProtocol.swift in Sources */,
 				DA28086620F5D8C300BCDA13 /* MockScraperProtocol.swift in Sources */,

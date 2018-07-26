@@ -1,8 +1,8 @@
 import Foundation
 
-class Validate<RequestType:RequestProtocol>:ValidateProtocol, ValidateDelegate {
+class Validate:ValidateProtocol, ValidateDelegate {
     weak var delegate:ValidateDelegate?
-    var composite:ValidateComposite<RequestType>?
+    var composite:ValidateComposite?
     private let dispatch:DispatchQueue
     
     required init() {

@@ -1,6 +1,6 @@
 import Foundation
 
-class ValidateComposite<RequestType:RequestProtocol>:ValidateProtocol, ValidateDelegate {
+class ValidateComposite:ValidateProtocol, ValidateDelegate {
     weak var delegate:ValidateDelegate?
     private weak var pyro:Pyro!
     private var commands:[ValidateProtocol.Type]
@@ -12,7 +12,7 @@ class ValidateComposite<RequestType:RequestProtocol>:ValidateProtocol, ValidateD
             ValidateFirst.self,
             ValidateCharacters.self,
             ValidateUnique.self,
-            ValidateExists<RequestType>.self]
+            ValidateExists.self]
         self.commands.reverse()
         self.url = String()
     }

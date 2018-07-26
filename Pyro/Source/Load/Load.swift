@@ -3,12 +3,7 @@ import Foundation
 class Load:LoadProtocol {
     weak var delegate:LoadDelegate?
     var scraper:ScraperProtocol?
-    var request:RequestProtocol
     var user:UserProtocol!
-    
-    init() {
-        self.request = Request()
-    }
     
     func start(user:UserProtocol) {
         self.user = user
@@ -26,7 +21,7 @@ class Load:LoadProtocol {
     }
     
     private func load(year:Int) {
-        self.request.make(user:self.user, year:year, onCompletion: { [weak self] (data:Data) in
+        Configuration.requestType.contributions(user:self.user, year:year, onCompletion: { [weak self] (data:Data) in
             do {
                 try self?.scraper?.makeItems(data:data)
             } catch {

@@ -9,6 +9,7 @@ class TestPyro:XCTestCase {
     
     override func setUp() {
         super.setUp()
+        Configuration.requestType = MockRequestProtocol.self
         self.pyro = Pyro()
         self.storage = MockStorageProtocol()
         self.report = MockReportProtocol()
@@ -16,6 +17,14 @@ class TestPyro:XCTestCase {
         self.pyro.storage = self.storage
         self.pyro.report = self.report
         self.pyro.delegate = self.delegate
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        MockRequestProtocol.data = nil
+        MockRequestProtocol.error = nil
+        MockRequestProtocol.onContributions = nil
+        MockRequestProtocol.onValidate = nil
     }
     
     func testLoadUsersFromStorage() {
@@ -136,8 +145,8 @@ class TestPyro:XCTestCase {
     }
     
     func testValidateRemovesComposite() {
-        let composite:ValidateComposite<MockValidateRequest> = ValidateComposite<MockValidateRequest>()
-        let validate:Validate<MockValidateRequest> = Validate<MockValidateRequest>()
+        let composite:ValidateComposite = ValidateComposite()
+        let validate:Validate = Validate()
         validate.composite = composite
         validate.validate(pyro:self.pyro, url:String())
         XCTAssertFalse(validate.composite === composite, "Not removed")
