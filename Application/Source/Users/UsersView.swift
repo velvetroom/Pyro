@@ -109,6 +109,6 @@ UICollectionViewDelegateFlowLayout {
 }
 
 private struct Constants {
-    static let cellHeight:CGFloat = 52
+    static let cellHeight:CGFloat = 60
     static let interLine:CGFloat = -1
 }

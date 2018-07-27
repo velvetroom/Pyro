@@ -17,7 +17,7 @@ class StatsHistogramView:UIView {
         for index:Int in 0 ..< self.months.count {
             let month:StatsHistogramMonthView = self.months[index]
             if index < items.count {
-                month.update(amount:Constants.ratioHeight * items[index].ratio)
+                month.update(amount:items[index].ratio)
                 month.contributions = items[index].contributions
             } else {
                 month.update(amount:0)
@@ -44,7 +44,6 @@ class StatsHistogramView:UIView {
 }
 
 private struct Constants {
-    static let ratioHeight:CGFloat = 280
     static let months:Int = 12
     static let monthWidthMultiplier:CGFloat = 1.0 / CGFloat(Constants.months)
 }

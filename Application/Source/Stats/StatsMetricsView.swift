@@ -75,9 +75,9 @@ class StatsMetricsView:UIView {
     }
     
     private func layoutOutlets() {
+        self.histogram.topAnchor.constraint(equalTo:self.detail.topAnchor).isActive = true
         self.histogram.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.histogram.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
-        self.histogram.heightAnchor.constraint(equalToConstant:Constants.histogramHeight).isActive = true
         
         self.streak.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
         self.streak.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
@@ -92,10 +92,10 @@ class StatsMetricsView:UIView {
         self.years.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
         self.years.heightAnchor.constraint(equalToConstant:Constants.yearsHeight).isActive = true
         
-        self.detail.topAnchor.constraint(equalTo:self.years.bottomAnchor).isActive = true
+        self.detail.topAnchor.constraint(equalTo:self.years.bottomAnchor, constant:Constants.detailTop).isActive = true
         self.detail.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
         self.detail.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
-        self.detail.heightAnchor.constraint(equalToConstant:Constants.detailHeight).isActive = true
+        self.detail.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         
         self.border.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.border.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
@@ -158,7 +158,6 @@ private struct Constants {
     static let borderBottom:CGFloat = -27
     static let yearsHeight:CGFloat = 80
     static let streakHeight:CGFloat = 92
-    static let detailHeight:CGFloat = 80
-    static let histogramHeight:CGFloat = 400
+    static let detailTop:CGFloat = -20
     static let margin:CGFloat = 10
 }

@@ -51,7 +51,7 @@ class StatsHistogramMonthView:UIView {
         gradientLayer.startPoint = CGPoint(x:0.5, y:0.3)
         gradientLayer.endPoint = CGPoint(x:0.5, y:1)
         gradientLayer.locations = [0, 1]
-        gradientLayer.colors = [UIColor(white:1, alpha:0).cgColor, UIColor.sharedBlue.withAlphaComponent(0.3).cgColor]
+        gradientLayer.colors = [UIColor(white:1, alpha:0).cgColor, UIColor.sharedBlue.withAlphaComponent(0.2).cgColor]
         
         let borderLeft:UIView = UIView()
         borderLeft.isUserInteractionEnabled = false
@@ -102,5 +102,5 @@ private struct Constants {
     static let unhighlightSize:CGFloat = 6
     static let highlightSize:CGFloat = 12
     static let alphaHighlight:CGFloat = 1
-    static let alphaUnhighlight:CGFloat = 0.4
+    static let alphaUnhighlight:CGFloat = 0.5
 }
