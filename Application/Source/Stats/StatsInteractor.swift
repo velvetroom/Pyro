@@ -23,7 +23,9 @@ class StatsInteractor:Interactor, PyroDelegate {
     
     func synchStats() {
         self.pyro.delegate = self
-        self.pyro.makeReport(user:self.user)
+        self.pyro.loadProfile(url:self.user.url)
+        self.state = StatsStateLoading(progress:0)
+        self.delegate?.shouldUpdate()
     }
     
     func delete() {
@@ -38,6 +40,13 @@ class StatsInteractor:Interactor, PyroDelegate {
     func pyroReport(progress:Float) {
         self.state = StatsStateLoading(progress:progress)
         self.delegate?.shouldUpdate()
+    }
+    
+    func pyroLoaded(profile:Profile) {
+        self.user.user = profile.user
+        self.user.name = profile.name
+        self.user.bio = profile.bio
+        self.pyro.makeReport(user:self.user)
     }
     
     func pyroFailed(error:Error) {

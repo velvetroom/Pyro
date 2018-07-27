@@ -66,11 +66,14 @@ class Profiler:ProfilerProtocol {
     
     private func parse(prefix:String, limiter:String, error:Error) throws -> String {
         let components:[String] = self.string.components(separatedBy:prefix)
-        guard
-            components.count > 1,
-            let component:String = components[1].components(separatedBy:limiter).first
-        else { throw error }
-        return self.strip(html:component)
+        if components.count > 1 {
+            if let component:String = components[1].components(separatedBy:limiter).first {
+                return self.strip(html:component)
+            } else {
+                throw error
+            }
+        }
+        return String()
     }
     
     private func strip(html:String) -> String {
