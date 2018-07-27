@@ -14,10 +14,10 @@ class StatsInteractor:Interactor, PyroDelegate {
     }
     
     func checkState() {
-        if let metrics:Metrics = self.user.metrics {
-            self.state = StatsStateReady(metrics:metrics)
-        } else {
+        if self.user.metrics == nil {
             self.state = StatsStateNeedsSync()
+        } else {
+            self.state = StatsStateReady(user:self.user)
         }
     }
     

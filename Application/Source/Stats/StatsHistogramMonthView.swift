@@ -24,7 +24,7 @@ class StatsHistogramMonthView:UIView {
     override open class var layerClass:AnyClass { get { return CAGradientLayer.self } }
     
     func update(amount:CGFloat) {
-        self.indicatorY.constant = amount
+        self.indicatorY.constant = amount * self.bounds.height
         UIView.animate(withDuration:Constants.animationDuration) { [weak self] in self?.layoutIfNeeded() }
     }
     
@@ -51,7 +51,7 @@ class StatsHistogramMonthView:UIView {
         gradientLayer.startPoint = CGPoint(x:0.5, y:0.3)
         gradientLayer.endPoint = CGPoint(x:0.5, y:1)
         gradientLayer.locations = [0, 1]
-        gradientLayer.colors = [UIColor(white:1, alpha:0).cgColor, UIColor.sharedBlue.withAlphaComponent(0.2).cgColor]
+        gradientLayer.colors = [UIColor(white:1, alpha:0).cgColor, UIColor.sharedBlue.withAlphaComponent(0.3).cgColor]
         
         let borderLeft:UIView = UIView()
         borderLeft.isUserInteractionEnabled = false

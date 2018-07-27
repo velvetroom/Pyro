@@ -27,13 +27,13 @@ struct StatsMessageViewModel:ViewModel {
 
 struct StatsMetricsViewModel:ViewModel {
     var items:[StatsItem]
-    var streak:NSAttributedString
-    var contributions:NSAttributedString
+    var info:NSAttributedString
+    var avatar:String
     
     init() {
         self.items = []
-        self.streak = NSAttributedString()
-        self.contributions = NSAttributedString()
+        self.info = NSAttributedString()
+        self.avatar = String()
     }
 }
 

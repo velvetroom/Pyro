@@ -2,11 +2,11 @@ import UIKit
 
 class StatsMetricsView:UIView {
     weak var month:StatsHistogramMonthView?
-    weak var years:UICollectionView!
     weak var histogram:StatsHistogramView!
+    weak var avatar:Avatar!
+    weak var years:UICollectionView!
     weak var detail:UILabel!
-    weak var streak:UILabel!
-    weak var contributions:UILabel!
+    weak var info:UILabel!
     weak var border:UIView!
     
     init() {
@@ -53,18 +53,16 @@ class StatsMetricsView:UIView {
         self.years = years
         self.addSubview(years)
         
-        let streak:UILabel = UILabel()
-        streak.translatesAutoresizingMaskIntoConstraints = false
-        streak.numberOfLines = 0
-        self.streak = streak
-        self.addSubview(streak)
+        let avatar:Avatar = Avatar()
+        self.avatar = avatar
+        self.addSubview(avatar)
         
-        let contributions:UILabel = UILabel()
-        contributions.translatesAutoresizingMaskIntoConstraints = false
-        contributions.numberOfLines = 0
-        contributions.textAlignment = NSTextAlignment.right
-        self.contributions = contributions
-        self.addSubview(contributions)
+        let info:UILabel = UILabel()
+        info.translatesAutoresizingMaskIntoConstraints = false
+        info.numberOfLines = 0
+        info.textColor = UIColor.black
+        self.info = info
+        self.addSubview(info)
         
         let detail:UILabel = UILabel()
         detail.isUserInteractionEnabled = false
@@ -79,15 +77,16 @@ class StatsMetricsView:UIView {
         self.histogram.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.histogram.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
         
-        self.streak.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
-        self.streak.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
-        self.streak.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.avatar.leftAnchor.constraint(equalTo:self.leftAnchor, constant:Constants.margin).isActive = true
+        self.avatar.widthAnchor.constraint(equalToConstant:Constants.avatar).isActive = true
+        self.avatar.heightAnchor.constraint(equalToConstant:Constants.avatar).isActive = true
         
-        self.contributions.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
-        self.contributions.widthAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
-        self.contributions.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
+        self.info.topAnchor.constraint(equalTo:self.avatar.topAnchor).isActive = true
+        self.info.leftAnchor.constraint(equalTo:self.avatar.rightAnchor, constant:Constants.margin).isActive = true
+        self.info.rightAnchor.constraint(equalTo:self.rightAnchor, constant:-Constants.margin).isActive = true
+        self.info.heightAnchor.constraint(greaterThanOrEqualToConstant:0).isActive = true
         
-        self.years.topAnchor.constraint(equalTo:self.streak.bottomAnchor).isActive = true
+        self.years.topAnchor.constraint(equalTo:self.info.bottomAnchor).isActive = true
         self.years.leftAnchor.constraint(equalTo:self.leftAnchor).isActive = true
         self.years.rightAnchor.constraint(equalTo:self.rightAnchor).isActive = true
         self.years.heightAnchor.constraint(equalToConstant:Constants.yearsHeight).isActive = true
@@ -105,15 +104,11 @@ class StatsMetricsView:UIView {
         
         if #available(iOS 11.0, *) {
             self.histogram.bottomAnchor.constraint(equalTo:self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-            self.streak.bottomAnchor.constraint(equalTo:self.safeAreaLayoutGuide.topAnchor,
-                                                constant:Constants.streakHeight).isActive = true
-            self.contributions.bottomAnchor.constraint(equalTo:self.safeAreaLayoutGuide.topAnchor,
-                                                       constant:Constants.streakHeight).isActive = true
+            self.avatar.topAnchor.constraint(equalTo:self.safeAreaLayoutGuide.topAnchor,
+                                           constant:Constants.margin).isActive = true
         } else {
             self.histogram.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
-            self.streak.bottomAnchor.constraint(equalTo:self.topAnchor, constant:Constants.streakHeight).isActive = true
-            self.contributions.bottomAnchor.constraint(equalTo:self.topAnchor,
-                                                       constant:Constants.streakHeight).isActive = true
+            self.avatar.topAnchor.constraint(equalTo:self.topAnchor, constant:Constants.margin).isActive = true
         }
     }
     
@@ -154,10 +149,10 @@ class StatsMetricsView:UIView {
 }
 
 private struct Constants {
+    static let avatar:CGFloat = 120
     static let border:CGFloat = 1
     static let borderBottom:CGFloat = -27
     static let yearsHeight:CGFloat = 80
-    static let streakHeight:CGFloat = 92
     static let detailTop:CGFloat = -20
     static let margin:CGFloat = 10
 }

@@ -113,8 +113,8 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
             self?.items = viewModel.items
             self?.metrics.years.reloadData()
             self?.showLastYearAfterDelay()
-            self?.metrics.streak.attributedText = viewModel.streak
-            self?.metrics.contributions.attributedText = viewModel.contributions
+            self?.metrics.info.attributedText = viewModel.info
+            self?.metrics.avatar.load(user:viewModel.avatar)
         }
         self.presenter.viewModels.observe { [weak self] (viewModel:StatsMessageViewModel) in
             self?.message.text = viewModel.message
