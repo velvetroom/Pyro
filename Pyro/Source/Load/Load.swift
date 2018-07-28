@@ -3,20 +3,16 @@ import Foundation
 class Load:LoadProtocol {
     weak var delegate:LoadDelegate?
     var scraper:ScraperProtocol?
-    var request:RequestProtocol
-    var user:User!
+    var user:UserProtocol!
     
-    init() {
-        self.request = Request()
-    }
-    
-    func start(user:User) {
+    func start(user:UserProtocol) {
         self.user = user
         self.scraper = Scraper()
         self.next(year:Constants.startingYear)
     }
     
     func next(year:Int) {
+        self.delegate?.load(progress:Float(year - Constants.startingYear) / Float(Constants.totalYears))
         if year <= Constants.endingYear {
             self.load(year:year)
         } else {
@@ -25,7 +21,7 @@ class Load:LoadProtocol {
     }
     
     private func load(year:Int) {
-        self.request.make(user:self.user, year:year, onCompletion: { [weak self] (data:Data) in
+        Configuration.requestType.contributions(user:self.user, year:year, onCompletion: { [weak self] (data:Data) in
             do {
                 try self?.scraper?.makeItems(data:data)
             } catch {
@@ -48,6 +44,7 @@ class Load:LoadProtocol {
 }
 
 private struct Constants {
-    static let startingYear:Int = 1999
+    static let startingYear:Int = 2008
     static let endingYear:Int = 2020
+    static let totalYears:Int = endingYear - startingYear
 }

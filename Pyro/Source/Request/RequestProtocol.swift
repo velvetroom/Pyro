@@ -1,5 +1,9 @@
 import Foundation
 
 protocol RequestProtocol {
-    func make(user:User, year:Int, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void))
+    static func contributions(user:UserProtocol, year:Int,
+                              onCompletion:@escaping((Data) -> Void),
+                              onError:@escaping((Error) -> Void))
+    static func validate(url:String, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void))
+    static func profile(url:String, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void))
 }

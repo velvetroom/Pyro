@@ -1,44 +1,44 @@
 import Foundation
 
-public class ViewModel {
+public class ViewModels {
     var items:[ObjectIdentifier:Any]
     
     init() {
         self.items = [:]
     }
     
-    public func update<Property:ViewModelProtocol>(property:Property) {
-        var item:ViewModelItem<Property> = ViewModelItem<Property>()
-        item.property = property
+    public func update<ViewModelType:ViewModel>(viewModel:ViewModelType) {
+        var item:Item<ViewModelType> = Item<ViewModelType>()
+        item.viewModel = viewModel
         item.observer = self.item().observer
-        self.items[ObjectIdentifier(Property.self)] = item
-        item.observer?(property)
+        self.items[ObjectIdentifier(ViewModelType.self)] = item
+        DispatchQueue.main.async { item.observer?(viewModel) }
     }
     
-    public func observe<Property:ViewModelProtocol>(observer:@escaping((Property) -> Void)) {
-        var item:ViewModelItem<Property> = self.item()
+    public func observe<ViewModelType:ViewModel>(observer:@escaping((ViewModelType) -> Void)) {
+        var item:Item<ViewModelType> = self.item()
         item.observer = observer
-        self.items[ObjectIdentifier(Property.self)] = item
+        self.items[ObjectIdentifier(ViewModelType.self)] = item
     }
     
-    private func item<Property:ViewModelProtocol>() -> ViewModelItem<Property> {
+    private func item<ViewModelType:ViewModel>() -> Item<ViewModelType> {
         guard
-            let item:ViewModelItem<Property> = self.items[ObjectIdentifier(Property.self)] as? ViewModelItem<Property>
-        else { return ViewModelItem<Property>() }
+            let item:Item<ViewModelType> = self.items[ObjectIdentifier(ViewModelType.self)] as? Item<ViewModelType>
+        else { return Item<ViewModelType>() }
         return item
     }
 }
 
-public protocol ViewModelProtocol {
+public protocol ViewModel {
     init()
 }
 
-private struct ViewModelItem<Property:ViewModelProtocol> {
-    var property:Property
-    var observer:((Property) -> Void)?
+private struct Item<ViewModelType:ViewModel> {
+    var viewModel:ViewModelType
+    var observer:((ViewModelType) -> Void)?
     
     init() {
-        self.property = Property()
+        self.viewModel = ViewModelType()
     }
 }
 

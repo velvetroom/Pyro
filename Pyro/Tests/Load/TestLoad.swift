@@ -4,73 +4,81 @@ import XCTest
 class TestLoad:XCTestCase {
     private var load:Load!
     private var delegate:MockLoadDelegate!
-    private var request:MockRequestProtocol!
     private var scraper:MockScraperProtocol!
 
     override func setUp() {
         super.setUp()
+        Configuration.requestType = MockRequestProtocol.self
         self.load = Load()
         self.delegate = MockLoadDelegate()
-        self.request = MockRequestProtocol()
         self.scraper = MockScraperProtocol()
         self.load.delegate = self.delegate
-        self.load.request = self.request
         self.load.scraper = self.scraper
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        MockRequestProtocol.clear()
     }
 
     func testSendsLoadedItemsToDelegate() {
         var received:Bool = false
-        self.request.data = Data()
+        MockRequestProtocol.data = Data()
         self.delegate.onCompleted = { received = true }
-        self.load.start(user:User())
+        self.load.start(user:UserFactory.make())
         XCTAssertTrue(received, "Not received")
     }
     
     func testSendsErrorToDelegate() {
         var received:Bool = false
-        self.request.error = RequestError.emptyResponse
+        MockRequestProtocol.error = RequestError.emptyResponse
         self.delegate.onError = { received = true }
-        self.load.start(user:User())
+        self.load.start(user:UserFactory.make())
         XCTAssertTrue(received, "Not received")
     }
     
     func testReleasesScraperOnSuccess() {
         XCTAssertNotNil(self.load.scraper, "Should initially be not nil")
-        self.request.data = Data()
-        self.load.start(user:User())
+        MockRequestProtocol.data = Data()
+        self.load.start(user:UserFactory.make())
         XCTAssertNil(self.load.scraper, "Should finally be nil")
     }
     
     func testReleasesErrorOnSuccess() {
         XCTAssertNotNil(self.load.scraper, "Should initially be not nil")
-        self.request.error = RequestError.emptyResponse
-        self.load.start(user:User())
+        MockRequestProtocol.error = RequestError.emptyResponse
+        self.load.start(user:UserFactory.make())
         XCTAssertNil(self.load.scraper, "Should finally be nil")
     }
     
     func testRequestAllYears() {
         let receiveStartingYear:XCTestExpectation = self.expectation(description:"Starting year missing")
         let receiveEndingYear:XCTestExpectation = self.expectation(description:"Ending year missing")
-        self.request.data = Data()
-        self.request.onReceived = { (year:Int) in
-            if year == 1999 {
+        var expectProgress:XCTestExpectation? = self.expectation(description:"Progress not received")
+        MockRequestProtocol.data = Data()
+        self.delegate.onProgress = {
+            expectProgress?.fulfill()
+            expectProgress = nil
+        }
+        MockRequestProtocol.onContributions = { (year:Int) in
+            if year == 2008 {
                 receiveStartingYear.fulfill()
             } else if year == 2020 {
                 receiveEndingYear.fulfill()
             }
         }
-        self.load.start(user:User())
+        self.load.start(user:UserFactory.make())
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
     func testScrapsItems() {
         var expect:XCTestExpectation? = self.expectation(description:"Items not cleaned")
-        self.request.data = Data()
+        MockRequestProtocol.data = Data()
         self.scraper.onMakeItems = {
             expect?.fulfill()
             expect = nil
         }
-        self.load.user = User()
+        self.load.user = UserFactory.make()
         self.load.next(year:1990)
         self.waitForExpectations(timeout:0.1, handler:nil)
     }
@@ -82,14 +90,14 @@ class TestLoad:XCTestCase {
     
     func testIfErrorStopRequestingFollowinYears() {
         let completed:XCTestExpectation = self.expectation(description:"Failed to complete")
-        self.request.data = Data()
+        MockRequestProtocol.data = Data()
         var timesRequested:Int = 0
-        self.request.onReceived = { (year:Int) in
+        MockRequestProtocol.onContributions = { (year:Int) in
             timesRequested += 1
         }
         self.scraper.error = ScraperError.dateInTheFuture
         self.delegate.onCompleted = { completed.fulfill() }
-        self.load.user = User()
+        self.load.user = UserFactory.make()
         self.load.next(year:1990)
         self.waitForExpectations(timeout:0.3, handler:nil)
         XCTAssertEqual(timesRequested, 1, "Requested more than expected")

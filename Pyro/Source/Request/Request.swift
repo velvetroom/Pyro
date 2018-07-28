@@ -1,10 +1,32 @@
 import Foundation
 
 class Request:RequestProtocol {
-    private let session:URLSession
+    private static let monostate:Request = Request()
     private weak var task:URLSessionDataTask?
+    private let session:URLSession
     
-    init() {
+    class func contributions(user:UserProtocol, year:Int,
+                             onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
+        guard
+            let url:URL = URL(string:Constants.domain + Constants.users + user.url + Constants.contributions +
+                String(year) + Constants.date)
+        else { return onError(RequestError.userNotValid) }
+        Request.monostate.make(request:request(url:url), onCompletion:onCompletion, onError:onError)
+    }
+    
+    class func validate(url:String, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
+        guard
+            let url:URL = URL(string:Constants.domain + Constants.users + url + Constants.contributions)
+        else { return onError(RequestError.userNotValid) }
+        Request.monostate.make(request:request(url:url), onCompletion:onCompletion, onError:onError)
+    }
+    
+    class func profile(url:String, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
+        guard let url:URL = URL(string:Constants.domain + url) else { return onError(RequestError.userNotValid) }
+        Request.monostate.make(request:request(url:url), onCompletion:onCompletion, onError:onError)
+    }
+    
+    private init() {
         let configuration:URLSessionConfiguration = URLSessionConfiguration.ephemeral
         configuration.allowsCellularAccess = true
         configuration.isDiscretionary = true
@@ -13,13 +35,15 @@ class Request:RequestProtocol {
         self.session = URLSession(configuration:configuration, delegate:nil, delegateQueue:OperationQueue())
     }
     
-    func make(user:User, year:Int, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
-        guard
-            let request:URLRequest = self.request(user:user, year:year)
-        else {
-            onError(RequestError.userNotValid)
-            return
-        }
+    private class func request(url:URL) -> URLRequest {
+        var request:URLRequest = URLRequest(url:url, cachePolicy:
+            URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData, timeoutInterval:Constants.timeout)
+        request.httpMethod = Constants.method
+        request.allowsCellularAccess = true
+        return request
+    }
+    
+    private func make(request:URLRequest, onCompletion:@escaping((Data) -> Void), onError:@escaping((Error) -> Void)) {
         self.task?.cancel()
         self.task = self.session.dataTask(with:request) { (data:Data?, response:URLResponse?, error:Error?) in
             let analyser:RequestAnalyser = RequestAnalyser()
@@ -32,25 +56,13 @@ class Request:RequestProtocol {
         }
         self.task?.resume()
     }
-    
-    private func request(user:User, year:Int) -> URLRequest? {
-        guard
-            let userPath:String = user.url.addingPercentEncoding(withAllowedCharacters:CharacterSet.urlPathAllowed),
-            let url:URL = URL(string:Constants.urlPrefix + userPath + Constants.urlMiddle + String(year) +
-                Constants.urlSuffix)
-        else { return nil }
-        var request:URLRequest = URLRequest(url:url, cachePolicy:
-            URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData, timeoutInterval:Constants.timeout)
-        request.httpMethod = Constants.method
-        request.allowsCellularAccess = true
-        return request
-    }
 }
 
 private struct Constants {
     static let method:String = "GET"
-    static let urlPrefix:String = "https://github.com/users/"
-    static let urlMiddle:String = "/contributions?from="
-    static let urlSuffix:String = "-01-01"
+    static let domain:String = "https://github.com/"
+    static let users:String = "users/"
+    static let contributions:String = "/contributions?from="
+    static let date:String = "-01-01"
     static let timeout:TimeInterval = 15
 }

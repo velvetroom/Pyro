@@ -1,18 +1,14 @@
-import UIKit
+import Foundation
 import CleanArchitecture
 import Pyro
 
-class StatsPresenter:PresenterProtocol {
+class StatsPresenter:Presenter {
     var interactor:StatsInteractor!
-    var viewModel:ViewModel!
-    private var factory:StatsFactory
+    var viewModels:ViewModels!
     
-    required init() {
-        self.factory = StatsFactory()
-    }
+    required init() { }
     
     func synchronize() {
-        self.viewModel.update(property:self.factory.makeStateLoading())
         self.interactor.synchStats()
     }
     
@@ -20,38 +16,26 @@ class StatsPresenter:PresenterProtocol {
         let alert:DeleteView = DeleteView(title:nil, message:nil, preferredStyle:UIAlertController.Style.alert)
         alert.presenter = self
         alert.configureView()
-        self.interactor.router?.present(alert, animated:true, completion:nil)
+        Application.router.present(alert, animated:true, completion:nil)
     }
     
     func confirmDelete() {
         self.interactor.delete()
+        DispatchQueue.main.async { Application.router.popViewController(animated:true) }
     }
     
     func select(item:StatsItem) {
-        var property:StatsMonthsViewModel = StatsMonthsViewModel()
-        property.items = item.months
-        self.viewModel.update(property:property)
+        var viewModel:StatsMonthsViewModel = StatsMonthsViewModel()
+        viewModel.items = item.months
+        self.viewModels.update(viewModel:viewModel)
     }
     
     func didLoad() {
-        self.updateState()
-        self.updateContent()
+        self.interactor.checkState()
+        self.interactor.state.update(viewModels:self.viewModels)
     }
     
     func shouldUpdate() {
-        self.updateState()
-        self.updateContent()
-    }
-    
-    private func updateState() {
-        self.viewModel.update(property:self.factory.makeState(user:self.interactor.user))
-    }
-    
-    private func updateContent() {
-        if let error:Error = self.interactor.error {
-            self.viewModel.update(property:self.factory.makeState(error:error))
-        } else if let metrics:Metrics = self.interactor.user.metrics {
-            self.viewModel.update(property:self.factory.makeContent(metrics:metrics))
-        }
+        self.interactor.state.update(viewModels:self.viewModels)
     }
 }

@@ -14,23 +14,17 @@ class TestStorage:XCTestCase {
     
     func testLoadFromUsersBase() {
         let expectLoadingUsers:XCTestExpectation = self.expectation(description:"Failed to load users")
-        let expectSave:XCTestExpectation = self.expectation(description:"Not saving")
-        self.file.onSave = { expectSave.fulfill() }
+        let expectLoadingFromBundle:XCTestExpectation = self.expectation(description:"Not loading from bundle")
+        self.file.onLoadFromBundle = { expectLoadingFromBundle.fulfill() }
         self.file.error = StorageError.fileNotFound
-        self.storage.load { (users:[User]) in
-            XCTAssertFalse(users.isEmpty, "No users loaded")
-            for user:User in users {
-                XCTAssertFalse(user.name.isEmpty, "Not loaded")
-                XCTAssertFalse(user.url.isEmpty, "Not loaded")
-                XCTAssertFalse(user.identifier.isEmpty, "Failed to assign identifier")
-            }
+        self.storage.load { (users:[UserProtocol]) in
             XCTAssertEqual(Thread.current, Thread.main, "Should be main thread")
             expectLoadingUsers.fulfill()
         }
         self.waitForExpectations(timeout:0.3, handler:nil)
     }
     
-    func testSaveSendsToFile() {
+    func testSaveUsersSendsToFile() {
         let expectSave:XCTestExpectation = self.expectation(description:"Failed to save users")
         self.file.onSave = { expectSave.fulfill() }
         self.storage.save(users:[])
@@ -39,7 +33,34 @@ class TestStorage:XCTestCase {
     
     func testLoadUsersFromFile() {
         let expectLoad:XCTestExpectation = self.expectation(description:"Failed to load users")
-        self.storage.load { (users:[User]) in
+        self.storage.load { (users:[UserProtocol]) in
+            expectLoad.fulfill()
+        }
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testCreatesNewSessionIfNoneFound() {
+        let expectLoading:XCTestExpectation = self.expectation(description:"Failed to load")
+        let expectSave:XCTestExpectation = self.expectation(description:"Not saving")
+        self.file.onSave = { expectSave.fulfill() }
+        self.file.error = StorageError.fileNotFound
+        self.storage.load { (session:SessionProtocol) in
+            XCTAssertEqual(Thread.current, Thread.main, "Should be main thread")
+            expectLoading.fulfill()
+        }
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testSaveSessionSendsToFile() {
+        let expectSave:XCTestExpectation = self.expectation(description:"Failed to save")
+        self.file.onSave = { expectSave.fulfill() }
+        self.storage.save(session:Session_v1())
+        self.waitForExpectations(timeout:0.3, handler:nil)
+    }
+    
+    func testLoadSessionFromFile() {
+        let expectLoad:XCTestExpectation = self.expectation(description:"Failed to load")
+        self.storage.load { (session:SessionProtocol) in
             expectLoad.fulfill()
         }
         self.waitForExpectations(timeout:0.3, handler:nil)

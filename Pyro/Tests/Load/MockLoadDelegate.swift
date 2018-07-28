@@ -4,6 +4,11 @@ import Foundation
 class MockLoadDelegate:LoadDelegate {
     var onCompleted:(() -> Void)?
     var onError:(() -> Void)?
+    var onProgress:(() -> Void)?
+    
+    func load(progress:Float) {
+        self.onProgress?()
+    }
     
     func loadCompleted(items:[ScraperItem]) {
         self.onCompleted?()
